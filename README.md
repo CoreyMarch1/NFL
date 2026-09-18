@@ -26,8 +26,9 @@ ratings (FPI, nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @
   team's cross-model "Std Dev" column (source disagreement) as an uncertainty inflator.
 - The Week 1→2 momentum chart carries no numeric deltas, so momentum is encoded qualitatively
   (direction + rough magnitude) rather than as a simulation input.
-- Market lines were sourced for 8 of the 16 games at build time; the rest are marked N/A rather
-  than estimated.
+- Full market lines (spread, total, moneyline) are sourced for all 16 Week 2 games and shown
+  alongside each projection for comparison — the market is not yet blended into the simulation
+  itself (see the dashboard's improvement levers for that).
 
 Re-run the model with `python3 model/week2_ratings_model.py` (standard library only, no
 external dependencies).

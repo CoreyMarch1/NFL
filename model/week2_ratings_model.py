@@ -146,16 +146,31 @@ MATCHUPS = [
 ]
 # tuple = (home, away)
 
+# Full Week 2 market (spread/total/moneyline), home-team perspective, sourced from
+# sportsbook consensus lines for the Sun 9/20 - Mon 9/21 slate (BUF/DET already final).
 VEGAS = {
-    ("Buffalo Bills","Detroit Lions"): dict(home_spread=-5.5, total=54.5),
-    ("Houston Texans","Cincinnati Bengals"): dict(home_spread=-2.5, total=None),
-    ("Chicago Bears","Minnesota Vikings"): dict(home_spread=-5.5, total=None),
-    ("Dallas Cowboys","Washington Commanders"): dict(home_spread=-4.5, total=None),
-    ("Kansas City Chiefs","Indianapolis Colts"): dict(home_spread=-6.5, total=None),
-    ("San Francisco 49ers","Miami Dolphins"): dict(home_spread=-13.5, total=45.5),
-    ("Tennessee Titans","Philadelphia Eagles"): dict(home_spread=7.0, total=None),
-    ("Los Angeles Rams","New York Giants"): dict(home_spread=-7.0, total=None),
+    ("Buffalo Bills","Detroit Lions"):        dict(home_spread=-5.5, total=54.5, home_ml=None, away_ml=None),
+    ("Atlanta Falcons","Carolina Panthers"):  dict(home_spread=2.5,  total=43.5, home_ml=124,  away_ml=-148),
+    ("Baltimore Ravens","New Orleans Saints"):dict(home_spread=-8.5, total=46.5, home_ml=-395, away_ml=310),
+    ("Chicago Bears","Minnesota Vikings"):    dict(home_spread=-4.5, total=47.5, home_ml=-205, away_ml=170),
+    ("Houston Texans","Cincinnati Bengals"):  dict(home_spread=-2.5, total=45.5, home_ml=-135, away_ml=114),
+    ("New England Patriots","Pittsburgh Steelers"): dict(home_spread=-5.5, total=41.5, home_ml=-218, away_ml=180),
+    ("New York Jets","Green Bay Packers"):    dict(home_spread=3.5,  total=44.5, home_ml=164,  away_ml=-198),
+    ("Tampa Bay Buccaneers","Cleveland Browns"): dict(home_spread=-8.5, total=41.5, home_ml=-455, away_ml=350),
+    ("Tennessee Titans","Philadelphia Eagles"): dict(home_spread=7.0, total=39.5, home_ml=250,  away_ml=-310),
+    ("Denver Broncos","Jacksonville Jaguars"): dict(home_spread=-2.5, total=45.5, home_ml=-148, away_ml=124),
+    ("Los Angeles Chargers","Las Vegas Raiders"): dict(home_spread=-6.5, total=43.5, home_ml=-310, away_ml=250),
+    ("Arizona Cardinals","Seattle Seahawks"): dict(home_spread=3.5,  total=40.5, home_ml=180,  away_ml=-218),
+    ("Dallas Cowboys","Washington Commanders"): dict(home_spread=-4.5, total=50.5, home_ml=-218, away_ml=180),
+    ("San Francisco 49ers","Miami Dolphins"): dict(home_spread=-12.5, total=44.5, home_ml=-900, away_ml=600),
+    ("Kansas City Chiefs","Indianapolis Colts"): dict(home_spread=-6.5, total=46.5, home_ml=-290, away_ml=235),
+    ("Los Angeles Rams","New York Giants"):   dict(home_spread=-7.0, total=48.5, home_ml=-375, away_ml=295),
 }
+
+def ml_to_prob(ml):
+    if ml is None:
+        return None
+    return -ml/(-ml+100) if ml < 0 else 100/(ml+100)
 
 results = []
 for home, away in MATCHUPS:
@@ -166,6 +181,12 @@ for home, away in MATCHUPS:
         r["vegas_total"] = v["total"]
         r["model_home_spread"] = -r["median_margin"]
         r["edge_pts"] = round(r["model_home_spread"] - v["home_spread"], 1)
+        hp, ap = ml_to_prob(v["home_ml"]), ml_to_prob(v["away_ml"])
+        if hp is not None:
+            overround = hp + ap
+            r["vegas_win_home"] = round(hp/overround*100, 1)
+            r["vegas_win_away"] = round(ap/overround*100, 1)
+            r["win_prob_edge"] = round(r["win_home"] - r["vegas_win_home"], 1)
     results.append(r)
 
 out = dict(importance=importance, results=results,
