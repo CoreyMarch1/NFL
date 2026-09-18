@@ -197,60 +197,70 @@ STARTERS = {
     "New York Giants": ("Jaxson Dart", False), "Los Angeles Rams": ("Matthew Stafford", False),
     "Buffalo Bills": ("Josh Allen", False), "Detroit Lions": ("Jared Goff", False),
 }
-# name -> (2025 Att, 2025 PAA/play, 2025 team)
+# Combines passing AND rushing production (SIS DataHub). name -> (games, pass_att,
+# pass_PAA_season_total, rush_att, rush_PAA_season_total, 2025 team)
 QB_2025 = {
-    "Bo Nix": (612, 0.098, "Broncos"), "Matthew Stafford": (597, 0.090, "Rams"),
-    "Caleb Williams": (568, 0.077, "Bears"), "Jared Goff": (578, 0.063, "Lions"),
-    "Patrick Mahomes": (502, 0.086, "Chiefs"), "Jordan Love": (439, 0.093, "Packers"),
-    "Dak Prescott": (600, 0.031, "Cowboys"), "Jalen Hurts": (454, 0.054, "Eagles"),
-    "C.J. Stroud": (423, 0.074, "Texans"), "Drake Maye": (492, 0.034, "Patriots"),
-    "Bryce Young": (478, 0.032, "Panthers"), "Trevor Lawrence": (560, 0.006, "Jaguars"),
-    "Jacoby Brissett": (485, 0.015, "Cardinals"), "Josh Allen": (460, 0.012, "Bills"),
-    "Brock Purdy": (284, 0.094, "49ers"), "Daniel Jones": (384, 0.016, "Colts"),
-    "Justin Herbert": (512, -0.025, "Chargers"), "Tyler Shough": (327, 0.029, "Saints"),
-    "Baker Mayfield": (543, -0.033, "Buccaneers"), "Aaron Rodgers": (498, -0.036, "Steelers"),
-    "Jaxson Dart": (339, 0.008, "Giants"), "Lamar Jackson": (302, -0.019, "Ravens"),
-    "Joe Burrow": (259, 0.025, "Bengals"), "Jayden Daniels": (188, 0.032, "Commanders"),
-    "Cam Ward": (540, -0.082, "Titans"), "Carson Wentz": (169, -0.061, "Vikings"),
-    "Kirk Cousins": (269, 0.014, "Falcons"), "Geno Smith": (448, -0.137, "Raiders"),
-    "Cooper Rush": (52, 0.109, "Ravens"),
+    "Bo Nix": (17, 612, 61.94, 83, -7.13, "Broncos"), "Matthew Stafford": (17, 597, 55.99, 29, -8.75, "Rams"),
+    "Caleb Williams": (17, 568, 45.63, 77, -8.36, "Bears"), "Jared Goff": (17, 578, 38.96, 19, -4.24, "Lions"),
+    "Patrick Mahomes": (14, 502, 45.90, 64, 5.56, "Chiefs"), "Jordan Love": (15, 439, 42.92, 47, 5.11, "Packers"),
+    "Dak Prescott": (17, 600, 19.71, 53, 5.55, "Cowboys"), "Jalen Hurts": (16, 454, 26.44, 105, -14.70, "Eagles"),
+    "C.J. Stroud": (14, 423, 32.99, 48, 0.57, "Texans"), "Drake Maye": (17, 492, 18.25, 103, -3.81, "Patriots"),
+    "Bryce Young": (16, 478, 16.00, 54, 10.65, "Panthers"), "Trevor Lawrence": (17, 560, 3.40, 82, 13.44, "Jaguars"),
+    "Jacoby Brissett": (13, 485, 7.96, 38, -0.27, "Cardinals"), "Josh Allen": (16, 460, 6.24, 112, 21.64, "Bills"),
+    "Brock Purdy": (9, 284, 27.77, 33, 1.02, "49ers"), "Daniel Jones": (13, 384, 6.59, 45, -1.01, "Colts"),
+    "Justin Herbert": (16, 512, -14.01, 83, 3.47, "Chargers"), "Tyler Shough": (11, 327, 10.30, 45, 0.25, "Saints"),
+    "Baker Mayfield": (17, 543, -19.24, 55, 32.35, "Buccaneers"), "Aaron Rodgers": (16, 498, -18.72, 21, -5.90, "Steelers"),
+    "Jaxson Dart": (13, 339, 3.16, 86, 3.84, "Giants"), "Lamar Jackson": (13, 302, -6.33, 67, 8.58, "Ravens"),
+    "Joe Burrow": (8, 259, 6.83, 14, -2.47, "Bengals"), "Jayden Daniels": (7, 188, 6.60, 58, 7.54, "Commanders"),
+    "Cam Ward": (17, 540, -48.66, 39, 2.63, "Titans"), "Carson Wentz": (5, 169, -11.41, 11, 2.38, "Vikings"),
+    "Kirk Cousins": (10, 269, 3.96, 14, -4.14, "Falcons"), "Geno Smith": (15, 448, -69.04, 41, -5.23, "Raiders"),
+    "Cooper Rush": (3, 52, 5.77, 4, -0.46, "Ravens"),
 }
-# name -> (2026 Wk1 Att, 2026 Wk1 PAA/play)
+# name -> (2026 Wk1 pass_att, pass_PAA_total, rush_att, rush_PAA_total)
 QB_2026_WK1 = {
-    "Jayden Daniels": (34, 0.344), "Jared Goff": (39, 0.260), "Dak Prescott": (34, 0.212),
-    "Joe Burrow": (35, 0.173), "Caleb Williams": (29, 0.210), "Jacoby Brissett": (37, 0.139),
-    "Josh Allen": (29, 0.153), "Geno Smith": (24, 0.266), "Jaxson Dart": (29, 0.126),
-    "Cam Ward": (32, 0.054), "Trevor Lawrence": (23, 0.135), "Drew Lock": (22, 0.082),
-    "Bryce Young": (37, 0.009), "Aaron Rodgers": (40, -0.010), "Lamar Jackson": (25, 0.041),
-    "Brock Purdy": (34, 0.004), "Malik Willis": (27, -0.025), "Jalen Hurts": (25, -0.022),
-    "Daniel Jones": (31, -0.047), "C.J. Stroud": (38, -0.028), "Drake Maye": (33, -0.042),
-    "Justin Herbert": (27, -0.080), "Kirk Cousins": (30, -0.055), "Tyler Shough": (56, -0.059),
-    "Carson Wentz": (19, -0.070), "Bo Nix": (28, -0.134), "Baker Mayfield": (28, -0.140),
-    "Patrick Mahomes": (27, -0.125), "Jordan Love": (42, -0.124), "Matthew Stafford": (25, -0.187),
-    "Deshaun Watson": (22, -0.473), "Cooper Rush": (22, -0.569),
+    "Jayden Daniels": (34, 12.04, 5, 2.97), "Jared Goff": (39, 10.38, 2, -0.63),
+    "Dak Prescott": (34, 7.22, 2, 0.74), "Joe Burrow": (35, 6.24, 5, -0.14),
+    "Caleb Williams": (29, 6.52, 10, -3.92), "Jacoby Brissett": (37, 5.29, 6, 0.61),
+    "Josh Allen": (29, 4.75, 6, -3.76), "Geno Smith": (24, 6.39, 6, -0.41),
+    "Jaxson Dart": (29, 3.89, 11, -0.34), "Cam Ward": (32, 1.88, 4, 1.94),
+    "Trevor Lawrence": (23, 3.25, 2, -0.35), "Drew Lock": (22, 1.88, 2, 0.02),
+    "Bryce Young": (37, 0.36, 2, -0.30), "Aaron Rodgers": (40, -0.41, 3, 0.00),
+    "Lamar Jackson": (25, 1.11, 7, 3.18), "Brock Purdy": (34, 0.15, 5, 1.48),
+    "Malik Willis": (27, -0.79, 6, -0.81), "Jalen Hurts": (25, -0.62, 7, 2.01),
+    "Daniel Jones": (31, -1.55, 1, 0.85), "C.J. Stroud": (38, -1.17, 2, -0.74),
+    "Drake Maye": (33, -1.52, 7, 0.01), "Justin Herbert": (27, -2.41, 5, -1.22),
+    "Kirk Cousins": (30, -1.66, 5, -0.63), "Tyler Shough": (56, -3.61, 4, 0.20),
+    "Carson Wentz": (19, -1.55, 5, -0.36), "Bo Nix": (28, -4.28, 3, -0.73),
+    "Baker Mayfield": (28, -4.49, 5, -1.50), "Patrick Mahomes": (27, -3.62, 7, 1.97),
+    "Jordan Love": (42, -5.71, 1, -4.69), "Matthew Stafford": (25, -4.68, 2, 0.00),
+    "Deshaun Watson": (22, -12.76, 6, 3.54), "Cooper Rush": (22, -14.79, 0, 0.00),
 }
-ATT_PER_GAME, STABILIZE_CAP, RECENCY_BOOST = 33.0, 400, 5.0
+STABILIZE_CAP, RECENCY_BOOST = 450, 5.0
 REG_WEIGHT, TEAM_CHANGE_DISCOUNT, QB_ADJ_CAP = 0.11, 0.5, 1.2
 
 def build_qb_profile(team):
     name, is_backup = STARTERS[team]
     d25, d26 = QB_2025.get(name), QB_2026_WK1.get(name)
-    team_change = bool(d25 and d25[2] not in team)
-    paa25 = d25[1] if d25 else None
-    paa26 = d26[1] if d26 else None
-    if paa25 is not None and paa26 is not None:
-        att25, att26 = min(d25[0], STABILIZE_CAP), d26[0]*RECENCY_BOOST
-        blended = (paa25*att25 + paa26*att26) / (att25+att26)
-        hot_cold = round(paa26-paa25, 3)
+    team_change = bool(d25 and d25[5] not in team)
+    total26 = (d26[1]+d26[3]) if d26 else None   # pass PAA + rush PAA, this game
+    if d25 and total26 is not None:
+        games25, patt25, ppaa25, ratt25, rpaa25 = d25[0], d25[1], d25[2], d25[3], d25[4]
+        ppg25 = (ppaa25+rpaa25)/games25
+        w25 = min(patt25+ratt25, STABILIZE_CAP)
+        w26 = (d26[0]+d26[2])*RECENCY_BOOST
+        blended = (ppg25*w25 + total26*w26) / (w25+w26)
+        hot_cold = round(total26-ppg25, 2)
         w = TEAM_CHANGE_DISCOUNT if team_change else 1.0
-        qb_adj = max(-QB_ADJ_CAP, min(QB_ADJ_CAP, w*REG_WEIGHT*(paa25-paa26)*ATT_PER_GAME))
+        qb_adj = max(-QB_ADJ_CAP, min(QB_ADJ_CAP, w*REG_WEIGHT*(ppg25-total26)))
         quality = "team-change" if team_change else "full"
-    elif paa26 is not None:
-        blended, hot_cold, qb_adj, quality = paa26, None, 0.0, "no-2025-baseline"
+        paa25_out = round(ppg25, 2)
+    elif total26 is not None:
+        blended, hot_cold, qb_adj, quality, paa25_out = total26, None, 0.0, "no-2025-baseline", None
     else:
-        blended, hot_cold, qb_adj, quality = None, None, 0.0, "no-data"
-    return dict(team=team, name=name, is_backup=is_backup, paa2025=paa25, paa2026=paa26,
-                blended_paa=round(blended,3) if blended is not None else None,
+        blended, hot_cold, qb_adj, quality, paa25_out = None, None, 0.0, "no-data", None
+    return dict(team=team, name=name, is_backup=is_backup, paa2025=paa25_out,
+                paa2026=round(total26,2) if total26 is not None else None,
+                blended_paa=round(blended,2) if blended is not None else None,
                 hot_cold_delta=hot_cold, qb_adj=round(qb_adj,2), data_quality=quality)
 
 qb_profiles = {team: build_qb_profile(team) for team in STARTERS}
