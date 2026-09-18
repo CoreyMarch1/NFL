@@ -1,0 +1,425 @@
+<title>Week 2 Ratings Model</title>
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#0a0e17; --surface:#121826; --surface2:#1a2233; --border:#263349;
+    --text:#e7ecf5; --text-dim:#93a1b8; --text-faint:#5c6a83;
+    --accent:#4f8cff; --accent-soft:#4f8cff26; --vegas:#ffb443; --vegas-soft:#ffb44326;
+    --good:#34d399; --good-soft:#34d39922; --bad:#fb7373; --bad-soft:#fb737322;
+    --warn:#ffd166; --shadow: 0 8px 24px -8px rgba(0,0,0,.5);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f4f6fb; --surface:#ffffff; --surface2:#edf1f8; --border:#dde3ee;
+      --text:#131a29; --text-dim:#57647d; --text-faint:#8a95ab;
+      --accent:#2f6fed; --accent-soft:#2f6fed17; --vegas:#c97a12; --vegas-soft:#c97a1217;
+      --good:#0f9d68; --good-soft:#0f9d6817; --bad:#d1453a; --bad-soft:#d1453a17;
+      --warn:#b8860b; --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f6fb; --surface:#ffffff; --surface2:#edf1f8; --border:#dde3ee;
+    --text:#131a29; --text-dim:#57647d; --text-faint:#8a95ab;
+    --accent:#2f6fed; --accent-soft:#2f6fed17; --vegas:#c97a12; --vegas-soft:#c97a1217;
+    --good:#0f9d68; --good-soft:#0f9d6817; --bad:#d1453a; --bad-soft:#d1453a17;
+    --warn:#b8860b; --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--text); margin:0;
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .num{font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums;}
+  h1,h2,h3,.disp{font-family:'Barlow Condensed',system-ui,sans-serif; letter-spacing:.01em;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 20px 80px;}
+
+  header.top{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--border);
+  }
+  .topbar{max-width:1180px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{display:flex; align-items:baseline; gap:10px;}
+  .brand .mark{font-family:'Barlow Condensed'; font-weight:700; font-size:22px; letter-spacing:.02em;}
+  .brand .tag{font-size:12px; color:var(--text-dim); font-family:'IBM Plex Mono'; text-transform:uppercase; letter-spacing:.08em;}
+  nav.jump{display:flex; gap:4px; flex-wrap:wrap;}
+  nav.jump a{
+    font-size:12.5px; color:var(--text-dim); text-decoration:none; padding:6px 10px;
+    border-radius:999px; border:1px solid transparent; font-weight:500;
+  }
+  nav.jump a:hover{border-color:var(--border); color:var(--text); background:var(--surface2);}
+
+  .hero{padding:36px 0 8px;}
+  .hero h1{font-size:clamp(30px,4.4vw,44px); font-weight:700; margin:0 0 8px; text-wrap:balance;}
+  .hero p.lede{font-size:15.5px; color:var(--text-dim); max-width:760px; line-height:1.6; margin:0 0 20px;}
+  .stat-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:28px;}
+  .stat{background:var(--surface); padding:16px 18px;}
+  .stat .k{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint); font-weight:600;}
+  .stat .v{font-family:'Barlow Condensed'; font-size:28px; font-weight:700; margin-top:2px;}
+  .stat .v small{font-size:14px; color:var(--text-dim); font-family:'IBM Plex Sans'; font-weight:500;}
+
+  section{padding:38px 0; border-top:1px solid var(--border);}
+  section:first-of-type{border-top:none;}
+  .sec-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:6px;}
+  .sec-head h2{font-size:26px; font-weight:700; margin:0;}
+  .sec-head .idx{font-family:'IBM Plex Mono'; color:var(--accent); font-size:13px; font-weight:600; letter-spacing:.05em;}
+  .sec-sub{color:var(--text-dim); font-size:14px; max-width:760px; line-height:1.6; margin:0 0 22px;}
+
+  /* ratings table */
+  .table-scroll{overflow-x:auto; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:var(--shadow);}
+  table{border-collapse:collapse; width:100%; min-width:820px; font-size:13.5px;}
+  thead th{
+    text-align:left; padding:11px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--text-faint); font-weight:600; border-bottom:1px solid var(--border); background:var(--surface2);
+    position:sticky; top:0; white-space:nowrap;
+  }
+  tbody td{padding:9px 14px; border-bottom:1px solid var(--border); white-space:nowrap;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:var(--surface2);}
+  td.team{display:flex; align-items:center; gap:9px; font-weight:600;}
+  .badge{width:24px; height:24px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; font-size:9.5px; font-weight:700; color:#fff; font-family:'IBM Plex Mono'; flex:none;}
+  .rank-cell{color:var(--text-faint); font-family:'IBM Plex Mono';}
+  .bar-cell{display:flex; align-items:center; gap:8px;}
+  .mini-bar{width:64px; height:7px; border-radius:4px; background:var(--surface2); overflow:hidden; position:relative;}
+  .mini-bar i{position:absolute; top:0; bottom:0; display:block;}
+  .pos{color:var(--good);} .neg{color:var(--bad);}
+  .trend{font-size:12px; font-weight:600; display:inline-flex; align-items:center; gap:3px;}
+  .trend.up{color:var(--good);} .trend.down{color:var(--bad);} .trend.flat{color:var(--text-faint);}
+
+  /* feature importance */
+  .imp-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:22px;}
+  @media (max-width:760px){.imp-grid{grid-template-columns:1fr;}}
+  .panel{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px 22px; box-shadow:var(--shadow);}
+  .panel h3{margin:0 0 4px; font-size:18px; font-weight:600;}
+  .panel .cap{color:var(--text-faint); font-size:12.5px; margin:0 0 16px;}
+  .imp-row{display:grid; grid-template-columns:96px 1fr 48px; align-items:center; gap:10px; margin-bottom:12px; font-size:13px;}
+  .imp-row .lbl{font-weight:600;}
+  .imp-track{height:10px; border-radius:5px; background:var(--surface2); overflow:hidden;}
+  .imp-fill{height:100%; border-radius:5px; background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 60%, var(--good)));}
+  .imp-fill.warn-fill{background:linear-gradient(90deg,var(--vegas),var(--bad));}
+  .imp-val{font-family:'IBM Plex Mono'; text-align:right; color:var(--text-dim);}
+
+  /* levers */
+  .levers{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .lever{display:grid; grid-template-columns:34px 1fr auto; gap:14px; align-items:start; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px;}
+  .lever .rank{font-family:'Barlow Condensed'; font-size:22px; font-weight:700; color:var(--accent);}
+  .lever h4{margin:0 0 3px; font-size:14.5px; font-weight:600;}
+  .lever p{margin:0; font-size:13px; color:var(--text-dim); line-height:1.55;}
+  .gain{align-self:center; font-family:'IBM Plex Mono'; font-size:11px; padding:4px 9px; border-radius:999px; white-space:nowrap; font-weight:600;}
+  .gain.hi{background:var(--good-soft); color:var(--good);}
+  .gain.med{background:var(--warn)22; color:var(--warn);}
+  .gain.lo{background:var(--surface2); color:var(--text-faint);}
+
+  /* matchups */
+  .filters{display:flex; gap:8px; margin-bottom:18px; flex-wrap:wrap;}
+  .filters button{
+    font-family:'IBM Plex Mono'; font-size:11.5px; text-transform:uppercase; letter-spacing:.05em;
+    padding:7px 13px; border-radius:999px; border:1px solid var(--border); background:var(--surface);
+    color:var(--text-dim); cursor:pointer; font-weight:600;
+  }
+  .filters button.active{background:var(--accent-soft); border-color:var(--accent); color:var(--accent);}
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:16px;}
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:12px;}
+  .card .matchup{display:flex; align-items:center; justify-content:space-between;}
+  .team-slot{display:flex; align-items:center; gap:8px;}
+  .team-slot .nm{font-weight:600; font-size:14px;}
+  .team-slot .loc{font-size:10px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.05em;}
+  .at{color:var(--text-faint); font-family:'IBM Plex Mono'; font-size:12px;}
+  .score-row{display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-top:1px dashed var(--border); border-bottom:1px dashed var(--border);}
+  .score-row .sc{font-family:'Barlow Condensed'; font-size:30px; font-weight:700;}
+  .score-row .sc.lead{color:var(--accent);}
+  .winbar{height:8px; border-radius:5px; overflow:hidden; display:flex; background:var(--surface2);}
+  .winbar .h{background:var(--accent);} .winbar .a{background:var(--text-faint);}
+  .winlabels{display:flex; justify-content:space-between; font-size:11px; color:var(--text-dim); font-family:'IBM Plex Mono';}
+  .meta-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px 14px; font-size:12px;}
+  .meta-grid .k{color:var(--text-faint); text-transform:uppercase; font-size:10px; letter-spacing:.05em;}
+  .meta-grid .v{font-family:'IBM Plex Mono'; font-weight:600;}
+  .conf-chip{display:inline-flex; align-items:center; gap:5px; font-size:11px; font-family:'IBM Plex Mono'; font-weight:700; padding:3px 9px; border-radius:999px;}
+  .vegas-line{display:flex; align-items:center; justify-content:space-between; font-size:12px; background:var(--vegas-soft); border:1px solid color-mix(in srgb,var(--vegas) 40%,transparent); border-radius:9px; padding:8px 10px; color:var(--text);}
+  .vegas-line b{color:var(--vegas); font-family:'IBM Plex Mono';}
+  .notes{font-size:12.3px; color:var(--text-dim); line-height:1.55; border-top:1px solid var(--border); padding-top:10px;}
+  .notes b{color:var(--text);}
+
+  /* validation */
+  .valid-box{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:700px){.valid-box{grid-template-columns:1fr;}}
+  .valid-box .panel .big{font-family:'Barlow Condensed'; font-size:44px; font-weight:700; line-height:1;}
+  .flag{display:inline-block; font-size:11px; font-family:'IBM Plex Mono'; padding:4px 10px; border-radius:999px; background:var(--good-soft); color:var(--good); font-weight:700; margin-top:8px;}
+
+  footer{padding:26px 0 10px; color:var(--text-faint); font-size:12px; line-height:1.7; border-top:1px solid var(--border);}
+  code{font-family:'IBM Plex Mono'; background:var(--surface2); padding:1px 5px; border-radius:4px; font-size:.92em;}
+</style>
+
+<header class="top">
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark">GRIDLINE&nbsp;QUANT</span>
+      <span class="tag">Wk 2 Model</span>
+    </div>
+    <nav class="jump">
+      <a href="#ratings">Ratings</a>
+      <a href="#importance">Feature Importance</a>
+      <a href="#matchups">Matchups</a>
+      <a href="#validation">Validation</a>
+      <a href="#levers">Levers</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>A preliminary power-rating engine for Week 2</h1>
+    <p class="lede">Built on the composite of six public models (FPI, nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF), decomposed into offense/defense splits and run through a 5,000-iteration Monte Carlo per game. Treat this as a v0 baseline &mdash; see <a href="#levers" style="color:var(--accent)">improvement levers</a> for what would materially sharpen it before staking real money on it.</p>
+    <div class="stat-row" id="stat-row"></div>
+  </div>
+
+  <section id="ratings">
+    <div class="sec-head"><h2>Team power ratings</h2><span class="idx">01 &nbsp;/&nbsp; RATINGS</span></div>
+    <p class="sec-sub">Offense/defense are a modeled split of the composite net rating around a 22.5&nbsp;pt league-average baseline, tilted by each team's Unexpected Points score (a proxy for scoring pace/style since the source table reports no separate off/def figures). <b>Std Dev</b> is the spread across the six input models &mdash; it becomes each team's simulation-variance input, not a ranking factor. <b>Trend</b> is read directly off the Week&nbsp;1&rarr;2 movement chart (direction + rough magnitude only; the chart carries no numeric deltas, so treat it as qualitative).</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Rk</th><th>Team</th><th>Net&nbsp;rating</th><th>Off</th><th>Def</th><th>Model StdDev</th><th>Trend (Wk1&rarr;2)</th>
+        </tr></thead>
+        <tbody id="ratings-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="importance">
+    <div class="sec-head"><h2>Which inputs move the composite</h2><span class="idx">02 &nbsp;/&nbsp; FEATURES</span></div>
+    <p class="sec-sub">With only one confirmed Week 2 result on the board, a true accuracy-driven feature-importance regression isn't supportable yet (see lever #1). What <em>is</em> computable from the published table today: how tightly each source tracks the six-model consensus, and how far it typically strays from it.</p>
+    <div class="imp-grid">
+      <div class="panel">
+        <h3>Correlation to composite</h3>
+        <p class="cap">Pearson r across all 32 teams &mdash; higher means that model moves in lockstep with the consensus (less independent signal, but more "central").</p>
+        <div id="corr-rows"></div>
+      </div>
+      <div class="panel">
+        <h3>Mean absolute deviation from composite</h3>
+        <p class="cap">Avg. |source &minus; composite|, in rating points &mdash; higher means that model is the one dragging teams away from consensus, for better or worse.</p>
+        <div id="mae-rows"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="matchups">
+    <div class="sec-head"><h2>Week 2 matchup projections</h2><span class="idx">03 &nbsp;/&nbsp; SIMULATION</span></div>
+    <p class="sec-sub">Each of the 16 games: 5,000 Monte Carlo draws on margin (Normal, mean = rating differential + 2.0-pt home-field, sd blended from a 13.0-pt base game-variance and each team's model-disagreement) and total points (Normal on combined offensive ratings). Where a market line was available, it's shown alongside for reference.</p>
+    <div class="filters">
+      <button class="active" data-f="all">All 16</button>
+      <button data-f="vegas">Has market line</button>
+      <button data-f="close">Toss-ups (conf &lt; 20)</button>
+      <button data-f="lopsided">Lopsided (conf &ge; 45)</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="validation">
+    <div class="sec-head"><h2>Reality check: Thursday's game</h2><span class="idx">04 &nbsp;/&nbsp; VALIDATION</span></div>
+    <p class="sec-sub">The Week 2 slate opened Thursday night, so one result is already in &mdash; a live, if tiny, sanity check on the engine before the other 15 kick off.</p>
+    <div class="valid-box">
+      <div class="panel">
+        <h3>Buffalo Bills 41 &ndash; Detroit Lions 31</h3>
+        <p class="cap">Final, Thu Sept 17 &middot; Highmark Stadium</p>
+        <div class="big num" style="color:var(--good)">BUF +10</div>
+        <p style="color:var(--text-dim); font-size:13px; margin-top:8px;">Actual margin. Model's expected margin was <b class="num">BUF +4.7</b> (median sim <b class="num">+4.4</b>), with a 68% interval of <b class="num">[&minus;8.6, +17.7]</b> and a 95% interval of <b class="num">[&minus;21.7, +29.6]</b>.</p>
+        <span class="flag">&#10003; Actual result fell inside the 68% CI</span>
+      </div>
+      <div class="panel">
+        <h3>Reading this correctly</h3>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.65;">One game is not a validation set &mdash; it's one draw from a distribution that's 13&ndash;15 points wide by design. The market (BUF &minus;5.5) was closer to the eventual margin than the model's +4.7, which is the expected pattern this early: Vegas prices injuries, weather, and sharp money the composite doesn't see. That gap is exactly what lever&nbsp;#2 below is for.</p>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.65; margin-top:10px;">Score-wise, the model projected BUF&nbsp;26.7&ndash;DET&nbsp;22.3 (total 49.0) against an actual 41&ndash;31 (total 72) &mdash; both teams well over the model's total, which the off/def split (built on a 22.5-pt league-average baseline, not this specific matchup's pace) had no way to anticipate.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="levers">
+    <div class="sec-head"><h2>Improvement levers, ranked</h2><span class="idx">05 &nbsp;/&nbsp; ROADMAP</span></div>
+    <p class="sec-sub">Ordered by expected accuracy gain per unit of effort to build, given what this v0 model is currently missing.</p>
+    <ol class="levers" id="levers-list"></ol>
+  </section>
+
+  <footer>
+    Sources: ESPN, nfelo, Inpredictable, Unexpected Points, FTN Fantasy, PFF (composite table &amp; Wk1&rarr;2 chart via @SamHoppen). Schedule and market lines via public NFL/sportsbook reporting; lines shown were the only 8 of 16 games with a sourced spread at build time &mdash; the rest are marked N/A rather than estimated.
+    <br>Model is a v0 baseline for internal research use only; nothing here is betting advice, and confidence scores reflect simulated rating disparity, not calibrated real-world hit rates.
+  </footer>
+</div>
+
+<script>
+const TEAM_META = {
+"Buffalo Bills":{ab:"BUF",c:"#00338D"},"Los Angeles Rams":{ab:"LAR",c:"#003594"},
+"Baltimore Ravens":{ab:"BAL",c:"#241773"},"San Francisco 49ers":{ab:"SF",c:"#AA0000"},
+"Kansas City Chiefs":{ab:"KC",c:"#E31837"},"Chicago Bears":{ab:"CHI",c:"#0B162A"},
+"Houston Texans":{ab:"HOU",c:"#03202F"},"Jacksonville Jaguars":{ab:"JAX",c:"#006778"},
+"Philadelphia Eagles":{ab:"PHI",c:"#004C54"},"Detroit Lions":{ab:"DET",c:"#0076B6"},
+"Seattle Seahawks":{ab:"SEA",c:"#69BE28"},"New England Patriots":{ab:"NE",c:"#002244"},
+"Cincinnati Bengals":{ab:"CIN",c:"#FB4F14"},"Dallas Cowboys":{ab:"DAL",c:"#041E42"},
+"Green Bay Packers":{ab:"GB",c:"#203731"},"Los Angeles Chargers":{ab:"LAC",c:"#0080C6"},
+"Denver Broncos":{ab:"DEN",c:"#FA4616"},"Tampa Bay Buccaneers":{ab:"TB",c:"#D50A0A"},
+"Minnesota Vikings":{ab:"MIN",c:"#4F2683"},"New York Giants":{ab:"NYG",c:"#0B2265"},
+"Pittsburgh Steelers":{ab:"PIT",c:"#FFB612"},"Washington Commanders":{ab:"WAS",c:"#773141"},
+"Indianapolis Colts":{ab:"IND",c:"#002C5F"},"New Orleans Saints":{ab:"NO",c:"#9F8458"},
+"Carolina Panthers":{ab:"CAR",c:"#0085CA"},"Arizona Cardinals":{ab:"ARI",c:"#97233F"},
+"Las Vegas Raiders":{ab:"LV",c:"#A5ACAF"},"New York Jets":{ab:"NYJ",c:"#125740"},
+"Atlanta Falcons":{ab:"ATL",c:"#A71930"},"Tennessee Titans":{ab:"TEN",c:"#4B92DB"},
+"Miami Dolphins":{ab:"MIA",c:"#008E97"},"Cleveland Browns":{ab:"CLE",c:"#311D00"}
+};
+
+const TREND = {
+"Buffalo Bills":["up","S"],"Los Angeles Rams":["down","M"],"Baltimore Ravens":["up","M"],
+"San Francisco 49ers":["up","M"],"Kansas City Chiefs":["up","M"],"Chicago Bears":["up","L"],
+"Houston Texans":["up","S"],"Jacksonville Jaguars":["up","L"],"Philadelphia Eagles":["flat","-"],
+"Detroit Lions":["down","S"],"Seattle Seahawks":["down","L"],"New England Patriots":["down","S"],
+"Cincinnati Bengals":["up","S"],"Dallas Cowboys":["down","S"],"Green Bay Packers":["down","M"],
+"Los Angeles Chargers":["down","S"],"Denver Broncos":["down","L"],"Tampa Bay Buccaneers":["up","S"],
+"Minnesota Vikings":["down","M"],"New York Giants":["up","M"],"Pittsburgh Steelers":["down","S"],
+"Washington Commanders":["flat","-"],"Indianapolis Colts":["down","M"],"New Orleans Saints":["up","S"],
+"Carolina Panthers":["up","S"],"Arizona Cardinals":["up","M"],"Las Vegas Raiders":["up","S"],
+"New York Jets":["up","S"],"Atlanta Falcons":["down","L"],"Tennessee Titans":["down","M"],
+"Miami Dolphins":["down","M"],"Cleveland Browns":["down","M"]
+};
+
+const DATA = {"importance": {"fpi": {"corr": 0.927, "mae_vs_composite": 0.816}, "nfelo": {"corr": 0.983, "mae_vs_composite": 0.644}, "inpred": {"corr": 0.968, "mae_vs_composite": 0.738}, "up": {"corr": 0.974, "mae_vs_composite": 0.7}, "dvoa": {"corr": 0.933, "mae_vs_composite": 0.913}, "pff": {"corr": 0.972, "mae_vs_composite": 0.731}}, "results": [{"home": "Buffalo Bills", "away": "Detroit Lions", "home_off": 24.9, "home_def": 20.0, "away_off": 24.1, "away_def": 21.9, "expected_margin": 4.7, "median_margin": 4.4, "ci68": [-8.6, 17.7], "ci95": [-21.7, 29.6], "win_home": 63.0, "win_away": 37.0, "confidence": 26, "proj_home_score": 26.7, "proj_away_score": 22.3, "combined_sd": 13.15, "vegas_home_spread": -5.5, "vegas_total": 54.5, "model_home_spread": -4.4, "edge_pts": 1.1}, {"home": "Atlanta Falcons", "away": "Carolina Panthers", "home_off": 19.8, "home_def": 24.7, "away_off": 21.4, "away_def": 24.2, "expected_margin": -0.1, "median_margin": 0.3, "ci68": [-13.4, 13.7], "ci95": [-26.2, 25.8], "win_home": 50.8, "win_away": 49.2, "confidence": 2, "proj_home_score": 20.6, "proj_away_score": 20.6, "combined_sd": 13.5}, {"home": "Baltimore Ravens", "away": "New Orleans Saints", "home_off": 24.7, "home_def": 20.6, "away_off": 21.5, "away_def": 24.2, "expected_margin": 8.8, "median_margin": 8.7, "ci68": [-4.5, 22.1], "ci95": [-17.0, 34.0], "win_home": 74.6, "win_away": 25.4, "confidence": 49, "proj_home_score": 27.6, "proj_away_score": 18.9, "combined_sd": 13.33}, {"home": "Chicago Bears", "away": "Minnesota Vikings", "home_off": 23.9, "home_def": 21.1, "away_off": 22.1, "away_def": 22.9, "expected_margin": 5.6, "median_margin": 5.6, "ci68": [-7.7, 18.6], "ci95": [-20.6, 31.6], "win_home": 66.2, "win_away": 33.8, "confidence": 32, "proj_home_score": 25.7, "proj_away_score": 20.2, "combined_sd": 13.27, "vegas_home_spread": -5.5, "vegas_total": null, "model_home_spread": -5.6, "edge_pts": -0.1}, {"home": "Houston Texans", "away": "Cincinnati Bengals", "home_off": 23.7, "home_def": 21.2, "away_off": 23.4, "away_def": 22.0, "expected_margin": 3.1, "median_margin": 3.0, "ci68": [-9.7, 16.2], "ci95": [-22.2, 28.7], "win_home": 59.5, "win_away": 40.5, "confidence": 19, "proj_home_score": 25.2, "proj_away_score": 22.1, "combined_sd": 13.11, "vegas_home_spread": -2.5, "vegas_total": null, "model_home_spread": -3.0, "edge_pts": -0.5}, {"home": "New England Patriots", "away": "Pittsburgh Steelers", "home_off": 24.1, "home_def": 22.2, "away_off": 21.9, "away_def": 23.1, "expected_margin": 5.1, "median_margin": 5.1, "ci68": [-8.0, 18.7], "ci95": [-21.1, 31.8], "win_home": 64.8, "win_away": 35.2, "confidence": 30, "proj_home_score": 25.6, "proj_away_score": 20.4, "combined_sd": 13.24}, {"home": "New York Jets", "away": "Green Bay Packers", "home_off": 20.2, "home_def": 24.5, "away_off": 23.5, "away_def": 22.7, "expected_margin": -3.1, "median_margin": -3.0, "ci68": [-16.4, 10.4], "ci95": [-29.3, 24.1], "win_home": 41.2, "win_away": 58.8, "confidence": 18, "proj_home_score": 20.5, "proj_away_score": 23.4, "combined_sd": 13.43}, {"home": "Tampa Bay Buccaneers", "away": "Cleveland Browns", "home_off": 22.5, "home_def": 22.8, "away_off": 19.1, "away_def": 26.2, "expected_margin": 8.8, "median_margin": 9.2, "ci68": [-4.4, 22.3], "ci95": [-17.1, 34.5], "win_home": 74.9, "win_away": 25.1, "confidence": 50, "proj_home_score": 25.3, "proj_away_score": 16.4, "combined_sd": 13.19}, {"home": "Tennessee Titans", "away": "Philadelphia Eagles", "home_off": 19.3, "home_def": 25.1, "away_off": 23.1, "away_def": 20.8, "expected_margin": -6.1, "median_margin": -6.3, "ci68": [-19.3, 7.2], "ci95": [-31.8, 20.3], "win_home": 31.6, "win_away": 68.4, "confidence": 37, "proj_home_score": 18.2, "proj_away_score": 24.4, "combined_sd": 13.24, "vegas_home_spread": 7.0, "vegas_total": null, "model_home_spread": 6.3, "edge_pts": -0.7}, {"home": "Denver Broncos", "away": "Jacksonville Jaguars", "home_off": 23.1, "home_def": 22.6, "away_off": 24.1, "away_def": 21.8, "expected_margin": 0.2, "median_margin": 0.1, "ci68": [-13.6, 13.4], "ci95": [-25.9, 25.9], "win_home": 50.4, "win_away": 49.6, "confidence": 1, "proj_home_score": 23.6, "proj_away_score": 23.6, "combined_sd": 13.36}, {"home": "Los Angeles Chargers", "away": "Las Vegas Raiders", "home_off": 22.8, "home_def": 22.1, "away_off": 20.1, "away_def": 24.0, "expected_margin": 6.6, "median_margin": 7.1, "ci68": [-6.5, 19.6], "ci95": [-19.7, 31.7], "win_home": 70.1, "win_away": 29.9, "confidence": 40, "proj_home_score": 24.8, "proj_away_score": 18.1, "combined_sd": 13.17}, {"home": "Arizona Cardinals", "away": "Seattle Seahawks", "home_off": 20.4, "home_def": 23.9, "away_off": 23.8, "away_def": 21.6, "expected_margin": -3.7, "median_margin": -3.3, "ci68": [-17.7, 10.7], "ci95": [-31.8, 24.2], "win_home": 40.9, "win_away": 59.1, "confidence": 18, "proj_home_score": 20.4, "proj_away_score": 23.9, "combined_sd": 14.45}, {"home": "Dallas Cowboys", "away": "Washington Commanders", "home_off": 22.9, "home_def": 22.0, "away_off": 22.1, "away_def": 23.3, "expected_margin": 4.1, "median_margin": 4.0, "ci68": [-9.1, 17.3], "ci95": [-20.7, 30.5], "win_home": 61.8, "win_away": 38.2, "confidence": 24, "proj_home_score": 24.6, "proj_away_score": 20.5, "combined_sd": 13.11, "vegas_home_spread": -4.5, "vegas_total": null, "model_home_spread": -4.0, "edge_pts": 0.5}, {"home": "San Francisco 49ers", "away": "Miami Dolphins", "home_off": 24.0, "home_def": 20.4, "away_off": 19.2, "away_def": 26.2, "expected_margin": 12.6, "median_margin": 12.5, "ci68": [-0.8, 25.9], "ci95": [-13.8, 37.5], "win_home": 82.7, "win_away": 17.3, "confidence": 65, "proj_home_score": 27.8, "proj_away_score": 15.4, "combined_sd": 13.5, "vegas_home_spread": -13.5, "vegas_total": 45.5, "model_home_spread": -12.5, "edge_pts": 1.0}, {"home": "Kansas City Chiefs", "away": "Indianapolis Colts", "home_off": 24.4, "home_def": 21.1, "away_off": 21.7, "away_def": 23.3, "expected_margin": 6.9, "median_margin": 7.0, "ci68": [-6.5, 20.0], "ci95": [-19.1, 32.0], "win_home": 70.0, "win_away": 30.0, "confidence": 40, "proj_home_score": 26.5, "proj_away_score": 19.6, "combined_sd": 13.19, "vegas_home_spread": -6.5, "vegas_total": null, "model_home_spread": -7.0, "edge_pts": -0.5}, {"home": "Los Angeles Rams", "away": "New York Giants", "home_off": 25.1, "home_def": 20.7, "away_off": 22.1, "away_def": 23.1, "expected_margin": 7.4, "median_margin": 7.7, "ci68": [-5.4, 20.2], "ci95": [-18.3, 33.7], "win_home": 72.0, "win_away": 28.0, "confidence": 44, "proj_home_score": 27.4, "proj_away_score": 19.8, "combined_sd": 13.22, "vegas_home_spread": -7.0, "vegas_total": null, "model_home_spread": -7.7, "edge_pts": -0.7}], "teams": {"Buffalo Bills": {"comp": 4.9, "sd": 0.4, "off": 24.9, "defr": 20.0}, "Los Angeles Rams": {"comp": 4.4, "sd": 0.9, "off": 25.1, "defr": 20.7}, "Baltimore Ravens": {"comp": 4.1, "sd": 0.8, "off": 24.7, "defr": 20.6}, "San Francisco 49ers": {"comp": 3.6, "sd": 1.3, "off": 24.0, "defr": 20.4}, "Kansas City Chiefs": {"comp": 3.3, "sd": 1.1, "off": 24.4, "defr": 21.1}, "Chicago Bears": {"comp": 2.8, "sd": 0.7, "off": 23.9, "defr": 21.1}, "Houston Texans": {"comp": 2.5, "sd": 0.7, "off": 23.7, "defr": 21.2}, "Jacksonville Jaguars": {"comp": 2.3, "sd": 1.1, "off": 24.1, "defr": 21.8}, "Philadelphia Eagles": {"comp": 2.3, "sd": 1.2, "off": 23.1, "defr": 20.8}, "Detroit Lions": {"comp": 2.2, "sd": 1.0, "off": 24.1, "defr": 21.9}, "Seattle Seahawks": {"comp": 2.2, "sd": 2.5, "off": 23.8, "defr": 21.6}, "New England Patriots": {"comp": 1.9, "sd": 1.2, "off": 24.1, "defr": 22.2}, "Cincinnati Bengals": {"comp": 1.4, "sd": 0.5, "off": 23.4, "defr": 22.0}, "Dallas Cowboys": {"comp": 0.9, "sd": 0.8, "off": 22.9, "defr": 22.0}, "Green Bay Packers": {"comp": 0.8, "sd": 1.2, "off": 23.5, "defr": 22.7}, "Los Angeles Chargers": {"comp": 0.7, "sd": 0.8, "off": 22.8, "defr": 22.1}, "Denver Broncos": {"comp": 0.5, "sd": 1.1, "off": 23.1, "defr": 22.6}, "Tampa Bay Buccaneers": {"comp": -0.3, "sd": 0.7, "off": 22.5, "defr": 22.8}, "Minnesota Vikings": {"comp": -0.8, "sd": 1.2, "off": 22.1, "defr": 22.9}, "New York Giants": {"comp": -1.0, "sd": 0.8, "off": 22.1, "defr": 23.1}, "Pittsburgh Steelers": {"comp": -1.2, "sd": 0.6, "off": 21.9, "defr": 23.1}, "Washington Commanders": {"comp": -1.2, "sd": 0.4, "off": 22.1, "defr": 23.3}, "Indianapolis Colts": {"comp": -1.6, "sd": 0.5, "off": 21.7, "defr": 23.3}, "New Orleans Saints": {"comp": -2.7, "sd": 1.3, "off": 21.5, "defr": 24.2}, "Carolina Panthers": {"comp": -2.8, "sd": 0.8, "off": 21.4, "defr": 24.2}, "Arizona Cardinals": {"comp": -3.5, "sd": 2.0, "off": 20.4, "defr": 23.9}, "Las Vegas Raiders": {"comp": -3.9, "sd": 0.7, "off": 20.1, "defr": 24.0}, "New York Jets": {"comp": -4.3, "sd": 1.2, "off": 20.2, "defr": 24.5}, "Atlanta Falcons": {"comp": -4.9, "sd": 1.8, "off": 19.8, "defr": 24.7}, "Tennessee Titans": {"comp": -5.8, "sd": 0.6, "off": 19.3, "defr": 25.1}, "Miami Dolphins": {"comp": -7.0, "sd": 1.3, "off": 19.2, "defr": 26.2}, "Cleveland Browns": {"comp": -7.1, "sd": 0.9, "off": 19.1, "defr": 26.2}}};
+
+const RATINGS_ORDER = ["Buffalo Bills","Los Angeles Rams","Baltimore Ravens","San Francisco 49ers","Kansas City Chiefs","Chicago Bears","Houston Texans","Jacksonville Jaguars","Philadelphia Eagles","Detroit Lions","Seattle Seahawks","New England Patriots","Cincinnati Bengals","Dallas Cowboys","Green Bay Packers","Los Angeles Chargers","Denver Broncos","Tampa Bay Buccaneers","Minnesota Vikings","New York Giants","Pittsburgh Steelers","Washington Commanders","Indianapolis Colts","New Orleans Saints","Carolina Panthers","Arizona Cardinals","Las Vegas Raiders","New York Jets","Atlanta Falcons","Tennessee Titans","Miami Dolphins","Cleveland Browns"];
+
+function badge(team){
+  const m = TEAM_META[team];
+  return `<span class="badge" style="background:${m.c}">${m.ab}</span>`;
+}
+function fmtSigned(n){ return (n>0?'+':'') + n.toFixed(1); }
+
+// ---- stat row ----
+const maxSd = Math.max(...RATINGS_ORDER.map(t=>DATA.teams[t].sd));
+document.getElementById('stat-row').innerHTML = `
+  <div class="stat"><div class="k">Teams modeled</div><div class="v">32</div></div>
+  <div class="stat"><div class="k">Games simulated</div><div class="v">16</div></div>
+  <div class="stat"><div class="k">Iterations / game</div><div class="v">5,000</div></div>
+  <div class="stat"><div class="k">Widest disagreement</div><div class="v">SEA<small> &sigma;=2.5</small></div></div>
+  <div class="stat"><div class="k">Result validated</div><div class="v">1<small> / 16 played</small></div></div>
+`;
+
+// ---- ratings table ----
+const rb = document.getElementById('ratings-body');
+RATINGS_ORDER.forEach((team,i)=>{
+  const d = DATA.teams[team];
+  const [dir,mag] = TREND[team];
+  const arrow = dir==='up' ? '&#9650;' : dir==='down' ? '&#9660;' : '&#8212;';
+  const magLabel = mag==='-' ? '' : mag==='L' ? ' large' : mag==='M' ? ' med' : ' small';
+  const barPct = Math.min(100, (d.sd/maxSd)*100);
+  rb.innerHTML += `<tr>
+    <td class="rank-cell">${i+1}</td>
+    <td class="team">${badge(team)}${team}</td>
+    <td class="num ${d.comp>0?'pos':d.comp<0?'neg':''}">${fmtSigned(d.comp)}</td>
+    <td class="num">${d.off.toFixed(1)}</td>
+    <td class="num">${d.defr.toFixed(1)}</td>
+    <td><div class="bar-cell"><div class="mini-bar"><i style="width:${barPct}%; background:${d.sd>=1.5?'var(--bad)':d.sd>=0.9?'var(--warn)':'var(--good)'}"></i></div><span class="num" style="color:var(--text-dim); font-size:12px;">${d.sd.toFixed(1)}</span></div></td>
+    <td><span class="trend ${dir}">${arrow} ${dir!=='flat'?mag:''}${magLabel? '':''}</span></td>
+  </tr>`;
+});
+
+// ---- feature importance ----
+const IMP_LABELS = {fpi:"FPI",nfelo:"nfelo",inpred:"Inpredictable",up:"Unexp. Pts",dvoa:"FTN DVOA",pff:"PFF"};
+const corrEntries = Object.entries(DATA.importance).sort((a,b)=>b[1].corr-a[1].corr);
+const maeEntries = Object.entries(DATA.importance).sort((a,b)=>b[1].mae_vs_composite-a[1].mae_vs_composite);
+const corrMax = Math.max(...corrEntries.map(e=>e[1].corr));
+const maeMax = Math.max(...maeEntries.map(e=>e[1].mae_vs_composite));
+
+document.getElementById('corr-rows').innerHTML = corrEntries.map(([k,v])=>`
+  <div class="imp-row">
+    <div class="lbl">${IMP_LABELS[k]}</div>
+    <div class="imp-track"><div class="imp-fill" style="width:${(v.corr/corrMax*100).toFixed(0)}%"></div></div>
+    <div class="imp-val">${v.corr.toFixed(3)}</div>
+  </div>`).join('');
+
+document.getElementById('mae-rows').innerHTML = maeEntries.map(([k,v])=>`
+  <div class="imp-row">
+    <div class="lbl">${IMP_LABELS[k]}</div>
+    <div class="imp-track"><div class="imp-fill warn-fill" style="width:${(v.mae_vs_composite/maeMax*100).toFixed(0)}%"></div></div>
+    <div class="imp-val">${v.mae_vs_composite.toFixed(2)}</div>
+  </div>`).join('');
+
+// ---- matchup cards ----
+function confColor(c){ return c>=45 ? 'var(--good)' : c>=20 ? 'var(--warn)' : 'var(--text-faint)'; }
+function noteFor(r){
+  const notes = [];
+  const hSd = DATA.teams[r.home].sd, aSd = DATA.teams[r.away].sd;
+  if (hSd>=1.5 || aSd>=1.5) notes.push(`Wide model disagreement on ${hSd>=1.5?r.home:r.away} (&sigma;=${Math.max(hSd,aSd).toFixed(1)}) inflates this game's variance.`);
+  if (r.vegas_home_spread!==undefined){
+    const gap = Math.abs(r.edge_pts);
+    notes.push(gap>=1 ? `Model leans ${r.edge_pts>0?r.away:r.home} by ${gap.toFixed(1)}pt vs. the market line.` : `Model and market line are tightly aligned (${gap.toFixed(1)}pt apart).`);
+  } else {
+    notes.push('No sourced market line for this game at build time.');
+  }
+  if (r.confidence<10) notes.push('Rated a true toss-up by the simulation.');
+  return notes.join(' ');
+}
+
+const cardsEl = document.getElementById('cards');
+function renderCards(filter){
+  cardsEl.innerHTML = DATA.results.filter(r=>{
+    if(filter==='vegas') return r.vegas_home_spread!==undefined;
+    if(filter==='close') return r.confidence<20;
+    if(filter==='lopsided') return r.confidence>=45;
+    return true;
+  }).map(r=>{
+    const hLead = r.median_margin>=0;
+    const winHpct = r.win_home;
+    return `<div class="card">
+      <div class="matchup">
+        <div class="team-slot">${badge(r.away)}<div><div class="nm">${r.away}</div><div class="loc">Away</div></div></div>
+        <span class="at">@</span>
+        <div class="team-slot" style="flex-direction:row-reverse; text-align:right;">${badge(r.home)}<div><div class="nm">${r.home}</div><div class="loc">Home</div></div></div>
+      </div>
+      <div class="score-row">
+        <div class="sc ${!hLead?'lead':''} num">${r.proj_away_score.toFixed(1)}</div>
+        <div style="font-size:11px; color:var(--text-faint); font-family:'IBM Plex Mono';">PROJ&nbsp;SCORE</div>
+        <div class="sc ${hLead?'lead':''} num">${r.proj_home_score.toFixed(1)}</div>
+      </div>
+      <div>
+        <div class="winbar"><div class="h" style="width:${winHpct}%"></div><div class="a" style="width:${100-winHpct}%"></div></div>
+        <div class="winlabels"><span>${r.away.split(' ').pop()} ${r.win_away.toFixed(0)}%</span><span>${r.home.split(' ').pop()} ${r.win_home.toFixed(0)}%</span></div>
+      </div>
+      <div class="meta-grid">
+        <div><div class="k">Median spread</div><div class="v">${r.home}&nbsp;${fmtSigned(-r.median_margin)}</div></div>
+        <div><div class="k">Confidence</div><div class="v"><span class="conf-chip" style="background:${confColor(r.confidence)}22; color:${confColor(r.confidence)}">${r.confidence}/100</span></div></div>
+        <div><div class="k">68% CI (margin)</div><div class="v">[${fmtSigned(r.ci68[0])}, ${fmtSigned(r.ci68[1])}]</div></div>
+        <div><div class="k">95% CI (margin)</div><div class="v">[${fmtSigned(r.ci95[0])}, ${fmtSigned(r.ci95[1])}]</div></div>
+      </div>
+      ${r.vegas_home_spread!==undefined ? `<div class="vegas-line"><span>Market: ${r.home} <b>${fmtSigned(r.vegas_home_spread)}</b>${r.vegas_total?` &middot; O/U ${r.vegas_total}`:''}</span><span style="color:var(--text-faint)">edge ${fmtSigned(r.edge_pts)}pt</span></div>` : ''}
+      <div class="notes">${noteFor(r)}</div>
+    </div>`;
+  }).join('');
+}
+renderCards('all');
+document.querySelectorAll('.filters button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderCards(btn.dataset.f);
+  });
+});
+
+// ---- levers ----
+const LEVERS = [
+  {t:"Vegas closing lines & line movement", d:"The single highest-leverage input this model lacks entirely. The market already prices injuries, weather, and sharp money — blending model spread with closing line (even a simple 50/50 or regression-weighted blend) would likely cut error more than any other single change.", gain:"hi"},
+  {t:"Backtested weight optimization", d:"Composite currently treats all six sources as equal inputs (implicitly, via the vendor's own composite). Once a few weeks of actual results exist, regress margin/ATS outcomes against each source to find its real predictive weight — today's correlation-to-composite table is a proxy, not a substitute.", gain:"hi"},
+  {t:"True offense/defense splits", d:"This build had to synthesize off/def from a single net-rating column. Sourcing actual split ratings (several of the underlying models publish them) would fix score-total projections, which are currently the model's weakest output (see Bills–Lions total: projected 49, actual 72).", gain:"hi"},
+  {t:"Starter & QB availability", d:"A QB-out swing (5–7 pts) dwarfs the gap between most mid-table teams in this dataset. Not modeled at all here — highest-impact miss for any single game, even if it doesn't move the season-long average error much.", gain:"hi"},
+  {t:"Calibrated game-variance (sd)", d:"Base margin sd (13.0) and total sd (9.5) are reasonable NFL priors, not fit to this data. Backtesting against several seasons of actual results would tighten (or rightly widen) the confidence intervals instead of relying on textbook values.", gain:"med"},
+  {t:"Momentum decay on Wk1→Wk2 change", d:"The change chart is currently read qualitatively (direction + rough size) because it carries no numeric deltas. Digitizing it and testing decay rates (e.g. does a big Week 1 swing predict Week 2 regression or persistence?) is a real, testable hypothesis with this exact dataset.", gain:"med"},
+  {t:"Home-field, by team", d:"A flat 2.0-pt HFA is applied league-wide. Teams with unusual venues/altitude (Denver) or notably loud/quiet crowds likely warrant a team-specific premium instead of the league constant.", gain:"med"},
+  {t:"Rest days & travel", d:"Not modeled. Only marginally relevant in Week 2 specifically (everyone's on a normal week outside the Thursday game), but becomes a real signal from Week 3 onward with byes, short weeks, and cross-country travel.", gain:"lo"},
+  {t:"Situational context (divisional, revenge, letdown spots)", d:"Cheap to add as a small fixed adjustment once there's enough historical data to size it credibly — don't hand-tune these from priors, or they'll just add noise.", gain:"lo"},
+];
+document.getElementById('levers-list').innerHTML = LEVERS.map((l,i)=>`
+  <li class="lever">
+    <div class="rank">${String(i+1).padStart(2,'0')}</div>
+    <div><h4>${l.t}</h4><p>${l.d}</p></div>
+    <div class="gain ${l.gain}">${l.gain==='hi'?'HIGH GAIN':l.gain==='med'?'MED GAIN':'LOW GAIN'}</div>
+  </li>`).join('');
+</script>
