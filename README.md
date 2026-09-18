@@ -7,12 +7,17 @@ ratings (FPI, nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @
 
 - `model/week2_ratings_model.py` — decomposes each team's composite rating into offense/defense
   splits, computes source-vs-composite correlation and divergence (feature importance proxy),
-  and runs a 5,000-iteration Monte Carlo simulation for all 16 Week 2 matchups (spread, win
-  probability, 68%/95% confidence intervals, and a confidence score).
+  blends each Week 2 starting QB's 2025 season form with their 2026 Week 1 game into a capped
+  points-per-game adjustment, and runs a 5,000-iteration Monte Carlo simulation for all 16 Week 2
+  matchups both with and without that QB adjustment (spread, win probability, 68%/95% confidence
+  intervals, and a confidence score).
 - `model/week2_model_output.json` — the model's output, consumed directly by the dashboard.
-- `dashboard/week2_dashboard.html` — interactive dashboard: team ratings, feature importance,
-  per-matchup projections vs. available market lines, a validation check against the Thursday
-  night result, and a ranked list of improvement levers.
+- `data/sis_qb_*.csv` — raw SIS DataHub QB tables (2025 season + 2026 Week 1, rate stats and
+  points-based metrics) used to build the QB adjustment layer.
+- `dashboard/week2_dashboard.html` — interactive dashboard: team ratings, feature importance, a
+  QB report (tier, hot/cold trend vs. 2025 form, backup-starter flags), per-matchup projections
+  vs. market lines, a validation check against the Thursday night result, and a ranked list of
+  improvement levers.
   Published version: https://claude.ai/artifact/UAHh6VMKw8rtVcrH2KXoMZ
 
 ## Key modeling assumptions (v0)
@@ -29,6 +34,11 @@ ratings (FPI, nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @
 - Full market lines (spread, total, moneyline) are sourced for all 16 Week 2 games and shown
   alongside each projection for comparison — the market is not yet blended into the simulation
   itself (see the dashboard's improvement levers for that).
+- Every Week 2 starter also started Week 1 (confirmed against the SIS data), so the composite
+  ratings already reflect each team's current arm. The QB layer instead catches teams whose
+  Week 1 form was likely a small-sample outlier relative to their 2025 baseline (partial
+  regression toward that baseline, capped at ±1.2 pts/game) and flags the three teams
+  (Falcons, Vikings, Seahawks) starting a QB clearly below their normal QB1.
 
 Re-run the model with `python3 model/week2_ratings_model.py` (standard library only, no
 external dependencies).

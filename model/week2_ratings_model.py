@@ -78,12 +78,12 @@ UNCERTAINTY_K = 1.4
 BASE_TOTAL_SD = 9.5
 N_ITERS = 5000
 
-def simulate(home, away):
-    ho, hd = TEAMS[home]["off"], TEAMS[home]["def"]
-    ao, ad = TEAMS[away]["off"], TEAMS[away]["def"]
+def simulate(home, away, home_qb_adj=0.0, away_qb_adj=0.0):
+    ho, hd = TEAMS[home]["off"] + home_qb_adj, TEAMS[home]["def"]
+    ao, ad = TEAMS[away]["off"] + away_qb_adj, TEAMS[away]["def"]
     hsd, asd = TEAMS[home]["sd"], TEAMS[away]["sd"]
 
-    expected_margin = (TEAMS[home]["comp"] - TEAMS[away]["comp"]) + HFA
+    expected_margin = (TEAMS[home]["comp"] - TEAMS[away]["comp"]) + HFA + (home_qb_adj - away_qb_adj)
     combined_margin_sd = math.sqrt(BASE_MARGIN_SD**2 + (UNCERTAINTY_K*(hsd+asd))**2)
     expected_total = ho + ao
     total_sd = math.sqrt(BASE_TOTAL_SD**2 + (UNCERTAINTY_K*0.6*(hsd+asd))**2)
@@ -172,6 +172,96 @@ def ml_to_prob(ml):
         return None
     return -ml/(-ml+100) if ml < 0 else 100/(ml+100)
 
+# ============================================================================
+# QB layer: blends each Week 2 starter's 2025 season form with their 2026
+# Week 1 game to (a) flag hot/cold starts and (b) produce a small, capped
+# points-per-game adjustment fed back into the simulation as partial
+# regression toward the established baseline. Source: SIS DataHub QB tables
+# (2025 season + 2026 Week 1), plus user-confirmed Week 2 starters.
+# ============================================================================
+STARTERS = {
+    "Carolina Panthers": ("Bryce Young", False), "Atlanta Falcons": ("Cooper Rush", True),
+    "New Orleans Saints": ("Tyler Shough", False), "Baltimore Ravens": ("Lamar Jackson", False),
+    "Minnesota Vikings": ("Carson Wentz", True), "Chicago Bears": ("Caleb Williams", False),
+    "Cincinnati Bengals": ("Joe Burrow", False), "Houston Texans": ("C.J. Stroud", False),
+    "Pittsburgh Steelers": ("Aaron Rodgers", False), "New England Patriots": ("Drake Maye", False),
+    "Green Bay Packers": ("Jordan Love", False), "New York Jets": ("Geno Smith", False),
+    "Cleveland Browns": ("Deshaun Watson", False), "Tampa Bay Buccaneers": ("Baker Mayfield", False),
+    "Philadelphia Eagles": ("Jalen Hurts", False), "Tennessee Titans": ("Cam Ward", False),
+    "Jacksonville Jaguars": ("Trevor Lawrence", False), "Denver Broncos": ("Bo Nix", False),
+    "Las Vegas Raiders": ("Kirk Cousins", False), "Los Angeles Chargers": ("Justin Herbert", False),
+    "Seattle Seahawks": ("Drew Lock", True), "Arizona Cardinals": ("Jacoby Brissett", False),
+    "Washington Commanders": ("Jayden Daniels", False), "Dallas Cowboys": ("Dak Prescott", False),
+    "Miami Dolphins": ("Malik Willis", False), "San Francisco 49ers": ("Brock Purdy", False),
+    "Indianapolis Colts": ("Daniel Jones", False), "Kansas City Chiefs": ("Patrick Mahomes", False),
+    "New York Giants": ("Jaxson Dart", False), "Los Angeles Rams": ("Matthew Stafford", False),
+    "Buffalo Bills": ("Josh Allen", False), "Detroit Lions": ("Jared Goff", False),
+}
+# name -> (2025 Att, 2025 PAA/play, 2025 team)
+QB_2025 = {
+    "Bo Nix": (612, 0.098, "Broncos"), "Matthew Stafford": (597, 0.090, "Rams"),
+    "Caleb Williams": (568, 0.077, "Bears"), "Jared Goff": (578, 0.063, "Lions"),
+    "Patrick Mahomes": (502, 0.086, "Chiefs"), "Jordan Love": (439, 0.093, "Packers"),
+    "Dak Prescott": (600, 0.031, "Cowboys"), "Jalen Hurts": (454, 0.054, "Eagles"),
+    "C.J. Stroud": (423, 0.074, "Texans"), "Drake Maye": (492, 0.034, "Patriots"),
+    "Bryce Young": (478, 0.032, "Panthers"), "Trevor Lawrence": (560, 0.006, "Jaguars"),
+    "Jacoby Brissett": (485, 0.015, "Cardinals"), "Josh Allen": (460, 0.012, "Bills"),
+    "Brock Purdy": (284, 0.094, "49ers"), "Daniel Jones": (384, 0.016, "Colts"),
+    "Justin Herbert": (512, -0.025, "Chargers"), "Tyler Shough": (327, 0.029, "Saints"),
+    "Baker Mayfield": (543, -0.033, "Buccaneers"), "Aaron Rodgers": (498, -0.036, "Steelers"),
+    "Jaxson Dart": (339, 0.008, "Giants"), "Lamar Jackson": (302, -0.019, "Ravens"),
+    "Joe Burrow": (259, 0.025, "Bengals"), "Jayden Daniels": (188, 0.032, "Commanders"),
+    "Cam Ward": (540, -0.082, "Titans"), "Carson Wentz": (169, -0.061, "Vikings"),
+    "Kirk Cousins": (269, 0.014, "Falcons"), "Geno Smith": (448, -0.137, "Raiders"),
+    "Cooper Rush": (52, 0.109, "Ravens"),
+}
+# name -> (2026 Wk1 Att, 2026 Wk1 PAA/play)
+QB_2026_WK1 = {
+    "Jayden Daniels": (34, 0.344), "Jared Goff": (39, 0.260), "Dak Prescott": (34, 0.212),
+    "Joe Burrow": (35, 0.173), "Caleb Williams": (29, 0.210), "Jacoby Brissett": (37, 0.139),
+    "Josh Allen": (29, 0.153), "Geno Smith": (24, 0.266), "Jaxson Dart": (29, 0.126),
+    "Cam Ward": (32, 0.054), "Trevor Lawrence": (23, 0.135), "Drew Lock": (22, 0.082),
+    "Bryce Young": (37, 0.009), "Aaron Rodgers": (40, -0.010), "Lamar Jackson": (25, 0.041),
+    "Brock Purdy": (34, 0.004), "Malik Willis": (27, -0.025), "Jalen Hurts": (25, -0.022),
+    "Daniel Jones": (31, -0.047), "C.J. Stroud": (38, -0.028), "Drake Maye": (33, -0.042),
+    "Justin Herbert": (27, -0.080), "Kirk Cousins": (30, -0.055), "Tyler Shough": (56, -0.059),
+    "Carson Wentz": (19, -0.070), "Bo Nix": (28, -0.134), "Baker Mayfield": (28, -0.140),
+    "Patrick Mahomes": (27, -0.125), "Jordan Love": (42, -0.124), "Matthew Stafford": (25, -0.187),
+    "Deshaun Watson": (22, -0.473), "Cooper Rush": (22, -0.569),
+}
+ATT_PER_GAME, STABILIZE_CAP, RECENCY_BOOST = 33.0, 400, 5.0
+REG_WEIGHT, TEAM_CHANGE_DISCOUNT, QB_ADJ_CAP = 0.11, 0.5, 1.2
+
+def build_qb_profile(team):
+    name, is_backup = STARTERS[team]
+    d25, d26 = QB_2025.get(name), QB_2026_WK1.get(name)
+    team_change = bool(d25 and d25[2] not in team)
+    paa25 = d25[1] if d25 else None
+    paa26 = d26[1] if d26 else None
+    if paa25 is not None and paa26 is not None:
+        att25, att26 = min(d25[0], STABILIZE_CAP), d26[0]*RECENCY_BOOST
+        blended = (paa25*att25 + paa26*att26) / (att25+att26)
+        hot_cold = round(paa26-paa25, 3)
+        w = TEAM_CHANGE_DISCOUNT if team_change else 1.0
+        qb_adj = max(-QB_ADJ_CAP, min(QB_ADJ_CAP, w*REG_WEIGHT*(paa25-paa26)*ATT_PER_GAME))
+        quality = "team-change" if team_change else "full"
+    elif paa26 is not None:
+        blended, hot_cold, qb_adj, quality = paa26, None, 0.0, "no-2025-baseline"
+    else:
+        blended, hot_cold, qb_adj, quality = None, None, 0.0, "no-data"
+    return dict(team=team, name=name, is_backup=is_backup, paa2025=paa25, paa2026=paa26,
+                blended_paa=round(blended,3) if blended is not None else None,
+                hot_cold_delta=hot_cold, qb_adj=round(qb_adj,2), data_quality=quality)
+
+qb_profiles = {team: build_qb_profile(team) for team in STARTERS}
+_vals = sorted(p["blended_paa"] for p in qb_profiles.values() if p["blended_paa"] is not None)
+def _tier(v):
+    if v is None: return "Unrated"
+    pct = _vals.index(v)/(len(_vals)-1) if len(_vals) > 1 else 0.5
+    return "Elite" if pct>=0.8 else "Above Average" if pct>=0.6 else "Average" if pct>=0.4 else "Below Average" if pct>=0.2 else "Replacement Level"
+for p in qb_profiles.values():
+    p["tier"] = _tier(p["blended_paa"])
+
 results = []
 for home, away in MATCHUPS:
     r = simulate(home, away)
@@ -189,7 +279,21 @@ for home, away in MATCHUPS:
             r["win_prob_edge"] = round(r["win_home"] - r["vegas_win_home"], 1)
     results.append(r)
 
-out = dict(importance=importance, results=results,
+results_qb = []
+for home, away in MATCHUPS:
+    hq = qb_profiles[home]["qb_adj"]
+    aq = qb_profiles[away]["qb_adj"]
+    r = simulate(home, away, home_qb_adj=hq, away_qb_adj=aq)
+    v = VEGAS.get((home, away))
+    r["home_qb_adj"], r["away_qb_adj"] = hq, aq
+    if v:
+        r["vegas_home_spread"] = v["home_spread"]
+        r["model_home_spread"] = -r["median_margin"]
+        r["edge_pts"] = round(r["model_home_spread"] - v["home_spread"], 1)
+    results_qb.append(r)
+
+out = dict(importance=importance, results=results, results_qb_adjusted=results_qb,
+           qb_profiles=qb_profiles,
            teams={t: dict(comp=TEAMS[t]["comp"], sd=TEAMS[t]["sd"],
                            off=round(TEAMS[t]["off"],1), defr=round(TEAMS[t]["def"],1))
                   for t in TEAMS})
@@ -197,6 +301,8 @@ out = dict(importance=importance, results=results,
 with open("/tmp/claude-0/-home-user-NFL/60adbde6-e2ae-5114-a91c-c73bbab8e423/scratchpad/model_output.json","w") as f:
     json.dump(out, f, indent=2)
 
-for r in results:
-    print(f"{r['away']:24s} @ {r['home']:24s} | model {r['home']} {r.get('model_home_spread', -r['median_margin']):+.1f} "
-          f"(exp {r['expected_margin']:+.1f}, med {r['median_margin']:+.1f}) win% H{r['win_home']}/A{r['win_away']} conf {r['confidence']}")
+print(f"{'Away @ Home':50s} {'Base spread':>12s} {'QB-adj spread':>14s} {'Shift':>7s}")
+for r, rq in zip(results, results_qb):
+    base_sp = -r['median_margin']
+    qb_sp = -rq['median_margin']
+    print(f"{r['away']:22s} @ {r['home']:22s} {base_sp:>+12.1f} {qb_sp:>+14.1f} {qb_sp-base_sp:>+7.1f}")
