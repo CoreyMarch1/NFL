@@ -1,0 +1,689 @@
+{
+  "Arizona Cardinals": {
+    "off_adj": 0.0,
+    "def_adj": 0.21,
+    "detail": [
+      {
+        "pos": "CB",
+        "injured": "Will Johnson",
+        "tier": "CB1",
+        "replacement": "Denzel Burke",
+        "injured_vpg": 0.37,
+        "replacement_vpg": 0.16,
+        "impact": 0.21
+      },
+      {
+        "pos": "RB",
+        "injured": "James Conner",
+        "tier": "RB4",
+        "replacement": "Corey Kiner",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "RB",
+        "injured": "Trey Benson",
+        "tier": "RB5",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Atlanta Falcons": {
+    "off_adj": 0.0,
+    "def_adj": 1.01,
+    "detail": [
+      {
+        "pos": "DE",
+        "injured": "Samson Ebukam",
+        "tier": "DE1",
+        "replacement": null,
+        "injured_vpg": 0.01,
+        "replacement_vpg": 0.0,
+        "impact": 0.01
+      },
+      {
+        "pos": "CB",
+        "injured": "A.J. Terrell Jr.",
+        "tier": "CB1",
+        "replacement": "Dee Alford",
+        "injured_vpg": 1.83,
+        "replacement_vpg": 0.0,
+        "impact": 1.0
+      }
+    ]
+  },
+  "Carolina Panthers": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "RB",
+        "injured": "Trevor Etienne",
+        "tier": "RB3",
+        "replacement": "Jimmy Horn Jr.",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "OT",
+        "injured": "Ikem Ekwonu",
+        "tier": "OT1",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "OT",
+        "injured": "Taylor Moton",
+        "tier": "OT2",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "DT",
+        "injured": "Tershawn Wharton",
+        "tier": "DT3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "LB",
+        "injured": "Nic Scourton",
+        "tier": "LB3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Chicago Bears": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "LB",
+        "injured": "Noah Sewell",
+        "tier": "LB3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "S",
+        "injured": "Coby Bryant",
+        "tier": "S3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "RB",
+        "injured": "Brittain Brown",
+        "tier": "RB3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Cincinnati Bengals": {
+    "off_adj": 1.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "WR",
+        "injured": "Andrei Iosivas",
+        "tier": "WR3",
+        "replacement": null,
+        "injured_vpg": -2.62,
+        "replacement_vpg": 0.0,
+        "impact": 1.0
+      }
+    ]
+  },
+  "Cleveland Browns": {
+    "off_adj": 0.0,
+    "def_adj": 0.01,
+    "detail": [
+      {
+        "pos": "RB",
+        "injured": "Dylan Sampson",
+        "tier": "RB2",
+        "replacement": "Jerome Ford",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "DE",
+        "injured": "Alex Wright",
+        "tier": "DE2",
+        "replacement": "Isaiah McGuire",
+        "injured_vpg": 0.0,
+        "replacement_vpg": -0.01,
+        "impact": 0.01
+      }
+    ]
+  },
+  "Dallas Cowboys": {
+    "off_adj": 0.0,
+    "def_adj": 0.96,
+    "detail": [
+      {
+        "pos": "CB",
+        "injured": "Cobie Durant",
+        "tier": "CB2",
+        "replacement": "Shavon Revel Jr.",
+        "injured_vpg": -1.14,
+        "replacement_vpg": -2.1,
+        "impact": 0.96
+      },
+      {
+        "pos": "RB",
+        "injured": "Malik Davis",
+        "tier": "RB2",
+        "replacement": "Jaydon Blue",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Denver Broncos": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "LB",
+        "injured": "Jonathon Cooper",
+        "tier": "LB3",
+        "replacement": "Dondrea Tillman",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Detroit Lions": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "RB",
+        "injured": "Isiah Pacheco",
+        "tier": "RB3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "C",
+        "injured": "Cade Mays",
+        "tier": "C2",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "S",
+        "injured": "Brian Branch",
+        "tier": "S1",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Green Bay Packers": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "RB",
+        "injured": "Josh Jacobs",
+        "tier": "RB1",
+        "replacement": "Emanuel Wilson",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "TE",
+        "injured": "Luke Musgrave",
+        "tier": "TE2",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "DE",
+        "injured": "Micah Parsons",
+        "tier": "DE1",
+        "replacement": "Rashan Gary",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Houston Texans": {
+    "off_adj": -1.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "WR",
+        "injured": "Jayden Higgins",
+        "tier": "WR2",
+        "replacement": "Xavier Hutchinson",
+        "injured_vpg": 0.0,
+        "replacement_vpg": -1.24,
+        "impact": -1.0
+      },
+      {
+        "pos": "OT",
+        "injured": "Braden Smith",
+        "tier": "OT3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Indianapolis Colts": {
+    "off_adj": -0.09,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "WR",
+        "injured": "Alec Pierce",
+        "tier": "WR3",
+        "replacement": null,
+        "injured_vpg": 0.09,
+        "replacement_vpg": 0.0,
+        "impact": -0.09
+      },
+      {
+        "pos": "DE",
+        "injured": "Micheal Clemons",
+        "tier": "DE3",
+        "replacement": "Tyquan Lewis",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Los Angeles Chargers": {
+    "off_adj": 0.97,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "TE",
+        "injured": "David Njoku",
+        "tier": "TE2",
+        "replacement": null,
+        "injured_vpg": -0.97,
+        "replacement_vpg": 0.0,
+        "impact": 0.97
+      },
+      {
+        "pos": "C",
+        "injured": "Tyler Biadasz",
+        "tier": "C2",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Los Angeles Rams": {
+    "off_adj": 0.48,
+    "def_adj": 0.01,
+    "detail": [
+      {
+        "pos": "RB",
+        "injured": "Ronnie Rivers",
+        "tier": "RB3",
+        "replacement": null,
+        "injured_vpg": -0.48,
+        "replacement_vpg": 0.0,
+        "impact": 0.48
+      },
+      {
+        "pos": "DE",
+        "injured": "Myles Garrett",
+        "tier": "DE1",
+        "replacement": "Braden Fiske",
+        "injured_vpg": 0.0,
+        "replacement_vpg": -0.01,
+        "impact": 0.01
+      }
+    ]
+  },
+  "Miami Dolphins": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "DT",
+        "injured": "Kenneth Grant",
+        "tier": "DT2",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "CB",
+        "injured": "Darrell Baker Jr.",
+        "tier": "CB3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Minnesota Vikings": {
+    "off_adj": 1.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "RB",
+        "injured": "Jordan Mason",
+        "tier": "RB2",
+        "replacement": "Zavier Scott",
+        "injured_vpg": -1.09,
+        "replacement_vpg": 0.0,
+        "impact": 1.0
+      }
+    ]
+  },
+  "New England Patriots": {
+    "off_adj": -0.76,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "WR",
+        "injured": "A.J. Brown",
+        "tier": "WR1",
+        "replacement": "Mack Hollins",
+        "injured_vpg": 0.83,
+        "replacement_vpg": 0.07,
+        "impact": -0.76
+      }
+    ]
+  },
+  "New Orleans Saints": {
+    "off_adj": -0.71,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "OT",
+        "injured": "Kelvin Banks Jr.",
+        "tier": "OT1",
+        "replacement": "Taliese Fuaga",
+        "injured_vpg": 0.33,
+        "replacement_vpg": -0.38,
+        "impact": -0.71
+      },
+      {
+        "pos": "RB",
+        "injured": "Ty Chandler",
+        "tier": "RB7",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "DT",
+        "injured": "Bryan Bresee",
+        "tier": "DT2",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "New York Giants": {
+    "off_adj": 0.0,
+    "def_adj": -1.0,
+    "detail": [
+      {
+        "pos": "CB",
+        "injured": "Paulson Adebo",
+        "tier": "CB1",
+        "replacement": "Andru Phillips",
+        "injured_vpg": -1.33,
+        "replacement_vpg": 0.0,
+        "impact": -1.0
+      },
+      {
+        "pos": "DT",
+        "injured": "Roy Robertson-Harris",
+        "tier": "DT2",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "WR",
+        "injured": "Calvin Austin III",
+        "tier": "WR3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "New York Jets": {
+    "off_adj": -0.32,
+    "def_adj": -0.06,
+    "detail": [
+      {
+        "pos": "TE",
+        "injured": "Mason Taylor",
+        "tier": "TE1",
+        "replacement": null,
+        "injured_vpg": 0.32,
+        "replacement_vpg": 0.0,
+        "impact": -0.32
+      },
+      {
+        "pos": "DT",
+        "injured": "David Onyemata",
+        "tier": "DT1",
+        "replacement": "Jowon Briggs",
+        "injured_vpg": 0.01,
+        "replacement_vpg": 0.07,
+        "impact": -0.06
+      }
+    ]
+  },
+  "Philadelphia Eagles": {
+    "off_adj": -1.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "TE",
+        "injured": "Dallas Goedert",
+        "tier": "TE1",
+        "replacement": null,
+        "injured_vpg": 1.32,
+        "replacement_vpg": 0.0,
+        "impact": -1.0
+      }
+    ]
+  },
+  "San Francisco 49ers": {
+    "off_adj": -1.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "WR",
+        "injured": "Ricky Pearsall",
+        "tier": "WR2",
+        "replacement": "Kendrick Bourne",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "WR",
+        "injured": "Christian Kirk",
+        "tier": "WR4",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "WR",
+        "injured": "Demarcus Robinson",
+        "tier": "WR4",
+        "replacement": null,
+        "injured_vpg": 1.16,
+        "replacement_vpg": 0.0,
+        "impact": -1.0
+      },
+      {
+        "pos": "TE",
+        "injured": "Jake Tonges",
+        "tier": "TE2",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Seattle Seahawks": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "RB",
+        "injured": "Zach Charbonnet",
+        "tier": "RB2",
+        "replacement": "Sam Darnold",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "CB",
+        "injured": "Terrion Arnold",
+        "tier": "CB4",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Tampa Bay Buccaneers": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "WR",
+        "injured": "David Sills V",
+        "tier": "WR6",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Tennessee Titans": {
+    "off_adj": 0.0,
+    "def_adj": 0.0,
+    "detail": [
+      {
+        "pos": "LB",
+        "injured": "Jaylen Harrell",
+        "tier": "LB4",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  },
+  "Washington Commanders": {
+    "off_adj": -1.0,
+    "def_adj": 1.0,
+    "detail": [
+      {
+        "pos": "S",
+        "injured": "Nick Cross",
+        "tier": "S1",
+        "replacement": "Jeremy Reaves",
+        "injured_vpg": 0.82,
+        "replacement_vpg": -1.88,
+        "impact": 1.0
+      },
+      {
+        "pos": "DT",
+        "injured": "Jer'Zhan Newton",
+        "tier": "DT3",
+        "replacement": null,
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "OT",
+        "injured": "Laremy Tunsil",
+        "tier": "OT2",
+        "replacement": "Brandon Coleman",
+        "injured_vpg": 0.0,
+        "replacement_vpg": -1.01,
+        "impact": -1.0
+      },
+      {
+        "pos": "CB",
+        "injured": "Trey Amos",
+        "tier": "CB3",
+        "replacement": "Jonathan Jones",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      },
+      {
+        "pos": "RB",
+        "injured": "Jeremy McNichols",
+        "tier": "RB3",
+        "replacement": "Austin Ekeler",
+        "injured_vpg": 0.0,
+        "replacement_vpg": 0.0,
+        "impact": 0.0
+      }
+    ]
+  }
+}

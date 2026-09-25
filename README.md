@@ -10,11 +10,12 @@ checked against.
 - `model/week3_ratings_model.py` — decomposes each team's composite rating into a **real**
   offense/defense split (SIS DataHub run-defense + pass-defense data; offense is the residual of
   the vendor's own composite = offense − defense identity), blends each Week 3 starting QB's 2025
-  season form with their 2026 season-to-date into a capped points-per-game adjustment, shrinks
-  the resulting margin toward the market line (weight grows as more weeks get validated), and
-  runs a 5,000-iteration Monte Carlo simulation for all 15 active Week 3 matchups at each stage —
-  base, QB-adjusted, and market-blended (spread, win probability, 68%/95% confidence intervals,
-  a confidence score).
+  season form with their 2026 season-to-date into a capped points-per-game adjustment, applies the
+  non-QB injury point adjustment (`model/injury_point_adjustment.py`'s output), shrinks the
+  resulting margin toward the market line (weight grows as more weeks get validated), and runs a
+  5,000-iteration Monte Carlo simulation for all 15 active Week 3 matchups at each stage — base,
+  QB-adjusted, injury-adjusted, and market-blended (spread, win probability, 68%/95% confidence
+  intervals, a confidence score).
 - `model/week3_model_output.json` — the model's output, consumed directly by the dashboard.
 - `model/parse_injuries.py` — parses the full-league injury report (`data/nfl_injuries_*.docx`)
   into structured per-team data, filtered to positions that plausibly move a line (QB, RB, WR, TE,
@@ -31,14 +32,16 @@ checked against.
   starter" read. A player who's changed teams since 2025 gets their prior-team usage slotted into
   the new roster (flagged with a trailing `*`); a jet-sweep WR with a few garbage rush attempts and
   no receiving record is kept out of the RB group by cross-checking position against the 2026
-  receiving file and the injury report's own listed position. Reference data only so far — see the
-  levers list in the dashboard (§07).
+  receiving file and the injury report's own listed position.
+- `model/injury_point_adjustment.py` → `model/week3_injury_adjustments.json` — prices every tiered
+  injury into a real per-team offense/defense point adjustment, fed into `week3_ratings_model.py`'s
+  simulation alongside the QB layer. See "Injury point-adjustment (implemented)" below.
 - `model/convert_snap_counts.py` → `data/nfl_snap_counts_2026_thru_wk2.csv` — per-player,
   per-game snap counts for 2026 Weeks 1-2 (a one-time ingestion script; needs `openpyxl` to read
   the source `.xlsx`, unlike everything else here, which stays standard-library-only). This is the
-  games-played/usage denominator the injury lever has been missing — see "Injury point-adjustment:
-  blocked on data completeness, not methodology" below for why it isn't wired in yet. `TeamId` and
-  `PositionId` in the source file are numeric codes with no legend; both were reverse-engineered by
+  games-played/usage denominator the injury lever needed — see "Injury point-adjustment
+  (implemented)" below for how it's used. `TeamId` and `PositionId` in the source file are numeric
+  codes with no legend; both were reverse-engineered by
   cross-referencing player names already known from the other SIS files (>90% agreement per code)
   and spot-checked against a clean, independent ground truth (current 2026 rosters) before trusting
   them — an initial check against stale 2025-season team labels looked alarming (26% "wrong team"),
@@ -92,12 +95,12 @@ history the Week 3 build was calibrated against.
 - **Real lineup churn handled**: Atlanta gets Michael Penix Jr. back (from Cooper Rush), Minnesota
   starts Kyler Murray, and injuries push Washington (Jayden Daniels, elbow), Seattle (Sam Darnold),
   and the Giants (Jaxson Dart, IR) to backups.
-- **Full-league injury report** parsed and referenced (dashboard §06) — not yet a calibrated
-  point adjustment; see levers list for what that needs. Also fixed a duplicate-data bug in the
-  parser (Washington was showing 159 "injuries" instead of 4 — see `model/parse_injuries.py`
-  above) and added depth-chart tiers (WR1, RB2, ...) from real 2025 season usage (targets/rush
-  attempts, not PAA — see `model/tier_injuries.py` above for why value and role aren't the same
-  thing here).
+- **Full-league injury report** parsed, tiered, and now priced into a real point adjustment
+  (dashboard §06, feeding the simulation alongside the QB layer) — see "Injury point-adjustment
+  (implemented)" below. Also fixed a duplicate-data bug in the parser (Washington was showing 159
+  "injuries" instead of 4 — see `model/parse_injuries.py` above) and added depth-chart tiers (WR1,
+  RB2, ...) from real 2025 season usage (targets/rush attempts, not PAA — see
+  `model/tier_injuries.py` above for why value and role aren't the same thing here).
 
 ## QB layer calibration attempt (against Week 2, no change made)
 
@@ -128,30 +131,46 @@ No constants were changed. Re-run `python3 model/calibrate_qb_layer.py` once Wee
 weeks) are validated — a wider actual sample, and more team-change cases than just one, is what
 would make this exercise trustworthy rather than descriptive.
 
-## Injury point-adjustment: blocked on data completeness, not methodology
+## Injury point-adjustment (implemented)
 
-The snap-count file supplies exactly the missing piece flagged in every earlier version of this
-README: real games-played and per-game usage, finally letting a season-total PAA gap convert into
-a per-game point value the way the QB layer already works. The methodology is ready. It isn't
-wired in because the data isn't complete enough to trust yet:
+`model/injury_point_adjustment.py` turns every §06 injury with a depth-chart tier into an actual
+point adjustment, now applied inside the simulation alongside the QB layer. This closes the lever
+flagged as open since the tiering was first built.
 
-- `data/sis_player_rundef_2026_thru_wk2.csv` and `sis_player_passrush_2026_thru_wk2.csv` are both
-  capped at exactly 200 rows, and `sis_rushing_2026_thru_wk2.csv` at 93 — round numbers that look
-  like an export limit, not a natural stats cutoff (the rushing file's minimum is 5 attempts through
-  2 games, far below what a starting back would have). Real, unambiguous starters are missing
-  entirely from the 2026-to-date files as a result: Myles Garrett, Micah Parsons, and Josh Jacobs
-  all have zero 2026 record in any of these tables, despite obviously playing every week.
-- Checked against the 59 injury entries §06 already tags with a depth-chart tier, only **14 (24%)**
-  have any 2026-to-date value record to compute a real per-game number from. Building the
-  adjustment now would silently skip three-quarters of tagged injuries, and the misses aren't
-  random — they skew toward exactly the highest-snap, most-established players, which is backwards
-  for a lever whose whole point is pricing a real starter going down.
+**What resolved the earlier "missing data" concern:** `Run_Defense_2026` and `Pass_Rush_2026` being
+capped at exactly 200 rows, and `Rushing_2026` at 93, isn't a truncation bug — per SIS, a player
+absent from all three genuinely hasn't had a meaningful 2026 impact. Myles Garrett (traded to the
+Rams in the offseason, played Week 1, then got hurt with negligible stats) confirmed this: he's
+correctly absent, not incorrectly cut off. The methodology treats "no 2026 record" as
+**replacement-level (0.0)**, not "unknown" — which is the right prior for someone who hasn't been
+a real factor this season, whether hurt, suspended, or just buried on the depth chart.
 
-Needed to unblock: complete (non-truncated) `Run_Defense_2026`, `Pass_Rush_2026`, and confirmation
-that `Rushing_2026` covers every back with real carries, not just the top ~93 by some other sort.
-Once that lands, `qb_adj`-style per-game point values for CB/S/LB/DE/DT/RB are a mechanical
-extension of code that already exists (`tier_injuries.py`'s tiering + this file's games-played) —
-this is a data gap, not an engineering one.
+**Method**, mirroring the QB layer's PAA-per-game logic:
+1. For each tagged injury, find the next **healthy** player *below* them on the same 2025-usage
+   depth chart (§06's tier order) — not the team's best available player at that position overall.
+   An early version of this compared a hurt RB3 against the team's actual starting RB1 (who's
+   unaffected and already playing); fixed by searching downward from the injured player's own
+   rank, and tracking already-assigned replacements so simultaneous injuries at the same position
+   don't double up on the same fill-in.
+2. Price the swap as the gap in 2026-to-date points-per-game (2026 PAA total ÷ real games played,
+   from the new snap-count file) between the injured player and their replacement.
+3. Cap each player-swap at ±1.0 pt, then cap the summed offense-side and defense-side adjustment
+   per team at ±2.0 pt each — smaller than the QB layer's ±1.2 cap since these are secondary
+   players on a noisier 2-game sample.
+4. Feed the result into `simulate()` exactly like `qb_adj`: an offense-side adjustment moves a
+   team's own scoring, a defense-side adjustment moves their points allowed, and both flow through
+   to margin, total, and the market blend consistently (the math is `model_margin = (ho−hd)−(ao−ad)
+   + HFA`, so anything added to `ho`/`hd` has to enter the margin formula the same way — this is
+   spelled out in the `simulate()` docstring-comment now).
+
+**The load-bearing assumption, worth stating plainly:** treating an unproven/absent backup as
+league-average (0.0) is generous for many real backups and can make an injury to a *below-average*
+starter look like a net positive (their replacement, presumed average, looks better than they did)
+— this happened for a couple of teams in the Week 3 output and is a real property of the method,
+not a bug. Re-examine once a real replacement-level baseline (rather than 0.0) is available.
+
+Re-run `python3 model/injury_point_adjustment.py` after `tier_injuries.py` any time the injury
+report or 2026-to-date value files change, then re-run `week3_ratings_model.py` to pick it up.
 
 ## Key modeling assumptions
 

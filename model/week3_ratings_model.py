@@ -150,12 +150,22 @@ UNCERTAINTY_K = 1.4
 BASE_TOTAL_SD = 9.5
 N_ITERS = 5000
 
-def simulate(home, away, home_qb_adj=0.0, away_qb_adj=0.0, market_home_spread=None, model_weight=1.0):
-    ho, hd = TEAMS[home]["off"] + home_qb_adj, TEAMS[home]["def"]
-    ao, ad = TEAMS[away]["off"] + away_qb_adj, TEAMS[away]["def"]
+def simulate(home, away, home_qb_adj=0.0, away_qb_adj=0.0, market_home_spread=None, model_weight=1.0,
+             home_off_injury_adj=0.0, home_def_injury_adj=0.0, away_off_injury_adj=0.0, away_def_injury_adj=0.0):
+    ho = TEAMS[home]["off"] + home_qb_adj + home_off_injury_adj
+    hd = TEAMS[home]["def"] + home_def_injury_adj
+    ao = TEAMS[away]["off"] + away_qb_adj + away_off_injury_adj
+    ad = TEAMS[away]["def"] + away_def_injury_adj
     hsd, asd = TEAMS[home]["sd"], TEAMS[away]["sd"]
 
-    model_margin = (TEAMS[home]["comp"] - TEAMS[away]["comp"]) + HFA + (home_qb_adj - away_qb_adj)
+    # off_injury_adj is added to "off" the same way qb_adj is, so it moves margin 1:1; a
+    # def_injury_adj raises "def" (points allowed, lower = better), which moves margin the
+    # opposite way -- both terms are exactly what falls out of expressing model_margin as
+    # (ho-hd)-(ao-ad)+HFA, which is algebraically identical to the composite-based line below.
+    model_margin = ((TEAMS[home]["comp"] - TEAMS[away]["comp"]) + HFA
+                    + (home_qb_adj - away_qb_adj)
+                    + (home_off_injury_adj - away_off_injury_adj)
+                    - (home_def_injury_adj - away_def_injury_adj))
     if market_home_spread is not None:
         # Blend the model's own margin with the market-implied margin BEFORE simulating, so the
         # blend shapes win probability and the CIs too, not just the reported median spread.
@@ -410,12 +420,48 @@ for home, away in MATCHUPS:
     results_qb.append(r)
 
 # ============================================================================
+# Non-QB injuries (lever #2): §06's depth-chart tiers, priced by comparing each
+# injured player's 2026-to-date points-per-game against the next healthy player
+# at that spot's, capped per player and per side. See injury_point_adjustment.py
+# for the full methodology; this just applies its output the same way qb_adj is
+# applied above.
+# ============================================================================
+try:
+    with open(os.path.join(HERE, "week3_injury_adjustments.json")) as f:
+        INJURY_ADJ = json.load(f)
+except FileNotFoundError:
+    INJURY_ADJ = {}
+
+def injury_adj(team):
+    a = INJURY_ADJ.get(team, {})
+    return a.get("off_adj", 0.0), a.get("def_adj", 0.0)
+
+results_injury = []
+for home, away in MATCHUPS:
+    hq, aq = qb_profiles[home]["qb_adj"], qb_profiles[away]["qb_adj"]
+    hoi, hdi = injury_adj(home)
+    aoi, adi = injury_adj(away)
+    r = simulate(home, away, home_qb_adj=hq, away_qb_adj=aq,
+                 home_off_injury_adj=hoi, home_def_injury_adj=hdi,
+                 away_off_injury_adj=aoi, away_def_injury_adj=adi)
+    v = VEGAS.get((home, away))
+    r["home_qb_adj"], r["away_qb_adj"] = hq, aq
+    r["home_off_injury_adj"], r["home_def_injury_adj"] = hoi, hdi
+    r["away_off_injury_adj"], r["away_def_injury_adj"] = aoi, adi
+    if v:
+        r["vegas_home_spread"] = v["home_spread"]
+        r["model_home_spread"] = -r["median_margin"]
+        r["edge_pts"] = round(r["model_home_spread"] - v["home_spread"], 1)
+    results_injury.append(r)
+
+# ============================================================================
 # Market blend (lever #1): shrinks toward the market line early, trusting the
 # model more as validated weeks accumulate. model_weight = N/(N+K), capped at
 # 0.5 -- the market will generally keep information (injuries, weather, sharp
 # money) this composite-based model never sees, so it's a floor, not a stage
 # the model "graduates past." N = games validated so far; K sets how fast
-# trust shifts (K=64 ~= 4 weeks of games).
+# trust shifts (K=64 ~= 4 weeks of games). Blends against the fullest model
+# view (QB + injury adjusted), not just the QB-adjusted stage.
 # ============================================================================
 VALIDATED_GAMES = 16   # update this as more weeks are scored against actuals
 BLEND_STABILIZE_K = 64
@@ -423,13 +469,18 @@ MODEL_WEIGHT = min(0.5, VALIDATED_GAMES / (VALIDATED_GAMES + BLEND_STABILIZE_K))
 
 results_blended = []
 for home, away in MATCHUPS:
-    hq = qb_profiles[home]["qb_adj"]
-    aq = qb_profiles[away]["qb_adj"]
+    hq, aq = qb_profiles[home]["qb_adj"], qb_profiles[away]["qb_adj"]
+    hoi, hdi = injury_adj(home)
+    aoi, adi = injury_adj(away)
     v = VEGAS.get((home, away))
     market_spread = v["home_spread"] if v else None
     r = simulate(home, away, home_qb_adj=hq, away_qb_adj=aq,
+                 home_off_injury_adj=hoi, home_def_injury_adj=hdi,
+                 away_off_injury_adj=aoi, away_def_injury_adj=adi,
                  market_home_spread=market_spread, model_weight=MODEL_WEIGHT)
     r["home_qb_adj"], r["away_qb_adj"] = hq, aq
+    r["home_off_injury_adj"], r["home_def_injury_adj"] = hoi, hdi
+    r["away_off_injury_adj"], r["away_def_injury_adj"] = aoi, adi
     r["model_weight"] = MODEL_WEIGHT
     if v:
         r["vegas_home_spread"] = v["home_spread"]
@@ -438,8 +489,9 @@ for home, away in MATCHUPS:
     results_blended.append(r)
 
 out = dict(importance=importance, results=results, results_qb_adjusted=results_qb,
+           results_injury_adjusted=results_injury,
            results_market_blended=results_blended, model_weight=MODEL_WEIGHT,
-           qb_profiles=qb_profiles,
+           qb_profiles=qb_profiles, injury_adjustments=INJURY_ADJ,
            teams={t: dict(comp=TEAMS[t]["comp"], sd=TEAMS[t]["sd"],
                            off=round(TEAMS[t]["off"],1), defr=round(TEAMS[t]["def"],1))
                   for t in TEAMS})
