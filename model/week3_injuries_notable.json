@@ -20,7 +20,7 @@
       "name": "Trey Benson",
       "pos": "RB",
       "status": "Injured Reserve",
-      "tier": "RB1"
+      "tier": "RB5"
     },
     {
       "name": "Jameson Geers",
@@ -129,7 +129,7 @@
       "name": "Trevor Etienne",
       "pos": "RB",
       "status": "Injured Reserve",
-      "tier": "RB1"
+      "tier": "RB3"
     },
     {
       "name": "Taylor Moton",
@@ -172,7 +172,7 @@
       "name": "Brittain Brown",
       "pos": "RB",
       "status": "Injured Reserve",
-      "tier": "RB2"
+      "tier": "RB3"
     },
     {
       "name": "Nikola Kalinic",
@@ -231,7 +231,7 @@
       "name": "Malik Davis",
       "pos": "RB",
       "status": "Injured Reserve",
-      "tier": "RB4"
+      "tier": "RB2"
     },
     {
       "name": "Devin Moore",
@@ -303,8 +303,7 @@
     {
       "name": "Jayden Reed",
       "pos": "WR",
-      "status": "Out",
-      "tier": "RB1"
+      "status": "Out"
     },
     {
       "name": "Zach Bako-Bewele",
@@ -315,13 +314,12 @@
       "name": "Josh Jacobs",
       "pos": "RB",
       "status": "Out",
-      "tier": "RB6"
+      "tier": "RB1"
     },
     {
       "name": "Savion Williams",
       "pos": "WR",
-      "status": "Injured Reserve",
-      "tier": "RB4"
+      "status": "Injured Reserve"
     },
     {
       "name": "Luke Musgrave",
@@ -368,7 +366,7 @@
       "name": "Alec Pierce",
       "pos": "WR",
       "status": "Out",
-      "tier": "WR1"
+      "tier": "WR3"
     },
     {
       "name": "Carson Towt",
@@ -462,7 +460,7 @@
       "name": "David Njoku",
       "pos": "TE",
       "status": "Injured Reserve",
-      "tier": "TE1*"
+      "tier": "TE2*"
     },
     {
       "name": "Charlie Kolar",
@@ -490,7 +488,7 @@
       "name": "Ronnie Rivers",
       "pos": "RB",
       "status": "Injured Reserve",
-      "tier": "RB2"
+      "tier": "RB3"
     },
     {
       "name": "Keagen Trost",
@@ -525,7 +523,7 @@
       "name": "Jordan Mason",
       "pos": "RB",
       "status": "Injured Reserve",
-      "tier": "RB1"
+      "tier": "RB2"
     },
     {
       "name": "Ben Yurosek",
@@ -543,7 +541,7 @@
       "name": "A.J. Brown",
       "pos": "WR",
       "status": "Injured Reserve",
-      "tier": "WR3*"
+      "tier": "WR1*"
     },
     {
       "name": "Marcus Bryant",
@@ -596,7 +594,7 @@
       "name": "Ty Chandler",
       "pos": "RB",
       "status": "Injured Reserve",
-      "tier": "RB3*"
+      "tier": "RB7*"
     },
     {
       "name": "Rejzohn Wright",
@@ -629,7 +627,7 @@
       "name": "Calvin Austin III",
       "pos": "WR",
       "status": "Injured Reserve",
-      "tier": "WR4*"
+      "tier": "WR3*"
     },
     {
       "name": "Jarrick Bernard-Converse",
@@ -782,7 +780,7 @@
       "name": "Christian Kirk",
       "pos": "WR",
       "status": "Injured Reserve",
-      "tier": "WR5*"
+      "tier": "WR4*"
     },
     {
       "name": "Isaac Guerendo",
@@ -793,7 +791,7 @@
       "name": "Ricky Pearsall",
       "pos": "WR",
       "status": "Injured Reserve",
-      "tier": "WR1"
+      "tier": "WR2"
     }
   ],
   "Seattle Seahawks": [

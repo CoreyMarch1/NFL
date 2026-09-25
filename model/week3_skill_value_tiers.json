@@ -3,39 +3,47 @@
     "WR": [
       [
         "Puka Nacua",
+        164,
         53.48
       ],
       [
         "Davante Adams",
+        113,
         9.18
       ]
     ],
     "TE": [
       [
-        "Tyler Higbee",
-        5.46
-      ],
-      [
         "Colby Parkinson",
+        56,
         2.63
       ],
       [
+        "Tyler Higbee",
+        35,
+        5.46
+      ],
+      [
         "Davis Allen",
+        33,
         0.53
       ]
     ],
     "RB": [
       [
+        "Kyren Williams",
+        310,
+        -12.03
+      ],
+      [
         "Blake Corum",
+        145,
         6.79
       ],
       [
         "Ronnie Rivers",
+        9,
         0.54
-      ],
-      [
-        "Kyren Williams",
-        -12.03
       ]
     ]
   },
@@ -43,51 +51,62 @@
     "TE": [
       [
         "Trey McBride",
+        168,
         27.24
       ],
       [
         "Elijah Higgins",
+        38,
         -3.27
       ]
     ],
     "WR": [
       [
         "Michael Wilson",
+        127,
         8.69
       ],
       [
         "Marvin Harrison Jr.",
+        73,
         0.37
       ],
       [
         "Greg Dortch",
+        33,
         -1.8
       ]
     ],
     "RB": [
       [
-        "Trey Benson",
-        6.8
+        "Michael Carter",
+        137,
+        -10.26
       ],
       [
-        "Corey Kiner",
-        0.85
+        "Bam Knight",
+        113,
+        -4.96
       ],
       [
         "Emari Demercado",
+        44,
         -0.77
       ],
       [
         "James Conner",
+        32,
         -2.73
       ],
       [
-        "Bam Knight",
-        -4.96
+        "Trey Benson",
+        29,
+        6.8
       ],
       [
-        "Michael Carter",
-        -10.26
+        "Corey Kiner",
+        12,
+        0.85
       ]
     ]
   },
@@ -95,39 +114,47 @@
     "WR": [
       [
         "Jaxon Smith-Njigba",
+        163,
         26.06
       ],
       [
         "Cooper Kupp",
+        71,
         8.49
       ]
     ],
     "TE": [
       [
         "AJ Barner",
+        68,
         12.37
       ]
     ],
     "RB": [
       [
         "Kenneth Walker III",
+        257,
         19.49
       ],
       [
         "Zach Charbonnet",
+        184,
         13.41
       ],
       [
-        "Velus Jones Jr.",
-        0.34
+        "Sam Darnold",
+        35,
+        -6.42
       ],
       [
         "George Holani",
+        22,
         -3.23
       ],
       [
-        "Sam Darnold",
-        -6.42
+        "Velus Jones Jr.",
+        4,
+        0.34
       ]
     ]
   },
@@ -135,34 +162,41 @@
     "RB": [
       [
         "Bijan Robinson",
+        389,
         55.27
       ],
       [
-        "Nathan Carter",
-        -0.78
+        "Tyler Allgeier",
+        143,
+        -1.95
       ],
       [
-        "Tyler Allgeier",
-        -1.95
+        "Nathan Carter",
+        9,
+        -0.78
       ]
     ],
     "WR": [
       [
         "Drake London",
+        111,
         19.55
       ],
       [
-        "David Sills V",
-        -11.03
+        "Darnell Mooney",
+        72,
+        -13.33
       ],
       [
-        "Darnell Mooney",
-        -13.33
+        "David Sills V",
+        36,
+        -11.03
       ]
     ],
     "TE": [
       [
         "Kyle Pitts",
+        118,
         1.03
       ]
     ]
@@ -171,38 +205,46 @@
     "WR": [
       [
         "Ja'Marr Chase",
+        186,
         20.44
       ],
       [
         "Tee Higgins",
+        99,
         10.69
       ],
       [
         "Andrei Iosivas",
+        58,
         -11.97
       ]
     ],
     "RB": [
       [
         "Chase Brown",
+        320,
         13.37
       ],
       [
-        "Tahj Brooks",
-        -3.35
+        "Samaje Perine",
+        84,
+        -8.56
       ],
       [
-        "Samaje Perine",
-        -8.56
+        "Tahj Brooks",
+        16,
+        -3.35
       ]
     ],
     "TE": [
       [
         "Mike Gesicki",
+        42,
         2.2
       ],
       [
         "Noah Fant",
+        41,
         -1.93
       ]
     ]
@@ -211,26 +253,31 @@
     "WR": [
       [
         "Amon-Ra St. Brown",
+        175,
         21.75
       ],
       [
         "Jameson Williams",
+        101,
         11.54
       ]
     ],
     "RB": [
       [
         "Jahmyr Gibbs",
+        337,
         26.15
       ],
       [
         "David Montgomery",
+        158,
         -7.11
       ]
     ],
     "TE": [
       [
         "Sam LaPorta",
+        49,
         13.34
       ]
     ]
@@ -239,39 +286,47 @@
     "WR": [
       [
         "Justin Jefferson",
+        141,
         19.64
       ],
       [
         "Jordan Addison",
+        77,
         4.32
       ],
       [
         "Jalen Nailor",
+        53,
         -2.48
       ]
     ],
     "TE": [
       [
         "T.J. Hockenson",
+        66,
         -0.56
       ]
     ],
     "RB": [
       [
+        "Aaron Jones Sr.",
+        174,
+        -8.54
+      ],
+      [
         "Jordan Mason",
+        159,
         3.07
       ],
       [
-        "Ty Chandler",
-        -2.2
-      ],
-      [
         "Zavier Scott",
+        32,
         -5.4
       ],
       [
-        "Aaron Jones Sr.",
-        -8.54
+        "Ty Chandler",
+        17,
+        -2.2
       ]
     ]
   },
@@ -279,43 +334,52 @@
     "WR": [
       [
         "Stefon Diggs",
+        102,
         23.41
       ],
       [
+        "Mack Hollins",
+        65,
+        -1.7
+      ],
+      [
         "Demario Douglas",
+        46,
         9.01
       ],
       [
         "Kayshon Boutte",
+        46,
         4.39
-      ],
-      [
-        "Mack Hollins",
-        -1.7
       ]
     ],
     "TE": [
       [
         "Hunter Henry",
+        87,
         14.4
       ]
     ],
     "RB": [
       [
-        "Rhamondre Stevenson",
-        12.25
-      ],
-      [
         "TreVeyon Henderson",
+        222,
         -0.97
       ],
       [
-        "Terrell Jennings",
-        -1.89
+        "Rhamondre Stevenson",
+        167,
+        12.25
       ],
       [
         "Antonio Gibson",
+        25,
         -5.69
+      ],
+      [
+        "Terrell Jennings",
+        23,
+        -1.89
       ]
     ]
   },
@@ -323,51 +387,62 @@
     "WR": [
       [
         "George Pickens",
+        137,
         19.8
       ],
       [
         "CeeDee Lamb",
+        117,
         9.4
       ],
       [
         "Ryan Flournoy",
+        57,
         6.53
       ],
       [
         "KaVontae Turpin",
+        38,
         6.41
       ],
       [
         "Jalen Tolbert",
+        34,
         -4.8
       ]
     ],
     "TE": [
       [
         "Jake Ferguson",
+        102,
         -8.76
       ]
     ],
     "RB": [
       [
         "Javonte Williams",
+        303,
         10.92
       ],
       [
-        "Hunter Luepke",
-        -1.5
-      ],
-      [
-        "Miles Sanders",
-        -1.8
-      ],
-      [
         "Malik Davis",
+        52,
         -3.17
       ],
       [
         "Jaydon Blue",
+        38,
         -5.55
+      ],
+      [
+        "Miles Sanders",
+        20,
+        -1.8
+      ],
+      [
+        "Hunter Luepke",
+        16,
+        -1.5
       ]
     ]
   },
@@ -375,94 +450,109 @@
     "WR": [
       [
         "Nico Collins",
+        121,
         17.14
       ],
       [
         "Jayden Higgins",
+        68,
         -0.45
       ],
       [
-        "Jaylin Noel",
-        -3.12
-      ],
-      [
         "Xavier Hutchinson",
+        58,
         -4.63
       ],
       [
         "Christian Kirk",
+        52,
         -11.46
+      ],
+      [
+        "Jaylin Noel",
+        35,
+        -3.12
       ]
     ],
     "TE": [
       [
         "Dalton Schultz",
+        105,
         7.43
       ]
     ],
     "RB": [
       [
+        "Woody Marks",
+        232,
+        -12.5
+      ],
+      [
         "Nick Chubb",
+        122,
         9.71
       ],
       [
         "Jawhar Jordan",
+        43,
         7.12
       ],
       [
         "British Brooks",
+        17,
         2.19
       ],
       [
         "Dare Ogunbowale",
+        11,
         -1.52
-      ],
-      [
-        "Woody Marks",
-        -12.5
       ]
     ]
   },
   "Colts": {
     "WR": [
       [
-        "Alec Pierce",
-        16.85
+        "Michael Pittman Jr.",
+        110,
+        -5.9
       ],
       [
         "Josh Downs",
+        88,
         9.04
       ],
       [
-        "Michael Pittman Jr.",
-        -5.9
+        "Alec Pierce",
+        85,
+        16.85
       ]
     ],
     "TE": [
       [
         "Tyler Warren",
+        113,
         5.46
       ]
     ],
     "RB": [
       [
         "Jonathan Taylor",
+        378,
         16.13
       ],
       [
-        "Ashton Dulin",
-        2.26
-      ],
-      [
-        "Ameer Abdullah",
-        1.9
-      ],
-      [
         "DJ Giddens",
+        26,
         -1.45
       ],
       [
+        "Ameer Abdullah",
+        14,
+        1.9
+      ],
+      [
         "Tyler Goodson",
+        9,
         -2.7
       ]
     ]
@@ -470,39 +560,47 @@
   "49ers": {
     "RB": [
       [
-        "Brian Robinson",
-        7.41
+        "Christian McCaffrey",
+        440,
+        -1.93
       ],
       [
-        "Christian McCaffrey",
-        -1.93
+        "Brian Robinson",
+        92,
+        7.41
       ]
     ],
     "TE": [
       [
         "George Kittle",
+        69,
         14.26
       ],
       [
         "Jake Tonges",
+        46,
         6.09
       ]
     ],
     "WR": [
       [
-        "Ricky Pearsall",
-        7.18
-      ],
-      [
         "Jauan Jennings",
+        90,
         -0.12
       ],
       [
+        "Ricky Pearsall",
+        53,
+        7.18
+      ],
+      [
         "Kendrick Bourne",
+        53,
         -3.65
       ],
       [
         "Demarcus Robinson",
+        35,
         -3.9
       ]
     ]
@@ -511,55 +609,57 @@
     "TE": [
       [
         "Tucker Kraft",
+        45,
         21.07
       ],
       [
         "Luke Musgrave",
+        31,
         -6.86
       ]
     ],
     "WR": [
       [
+        "Romeo Doubs",
+        85,
+        -6.48
+      ],
+      [
         "Christian Watson",
+        55,
         8.56
       ],
       [
         "Dontayvion Wicks",
+        47,
         5.63
       ],
       [
         "Matthew Golden",
+        43,
         1.13
-      ],
-      [
-        "Romeo Doubs",
-        -6.48
       ]
     ],
     "RB": [
       [
-        "Jayden Reed",
-        -0.03
-      ],
-      [
-        "Bo Melton",
-        -0.82
-      ],
-      [
-        "Chris Brooks",
-        -1.52
-      ],
-      [
-        "Savion Williams",
-        -2.56
+        "Josh Jacobs",
+        278,
+        -6.61
       ],
       [
         "Emanuel Wilson",
+        125,
         -3.2
       ],
       [
-        "Josh Jacobs",
-        -6.61
+        "Chris Brooks",
+        27,
+        -1.52
+      ],
+      [
+        "Bo Melton",
+        5,
+        -0.82
       ]
     ]
   },
@@ -567,47 +667,57 @@
     "WR": [
       [
         "Zay Flowers",
+        118,
         13.31
       ],
       [
-        "DeAndre Hopkins",
-        9.4
+        "Rashod Bateman",
+        38,
+        -5.87
       ],
       [
-        "Rashod Bateman",
-        -5.87
+        "DeAndre Hopkins",
+        37,
+        9.4
       ]
     ],
     "TE": [
       [
-        "Isaiah Likely",
-        -4.55
+        "Mark Andrews",
+        70,
+        -16.36
       ],
       [
-        "Mark Andrews",
-        -16.36
+        "Isaiah Likely",
+        36,
+        -4.55
       ]
     ],
     "RB": [
       [
+        "Derrick Henry",
+        307,
+        -4.24
+      ],
+      [
+        "Keaton Mitchell",
+        59,
+        -1.86
+      ],
+      [
         "Tyler Huntley",
+        24,
         1.09
       ],
       [
         "Justice Hill",
+        18,
         -1.22
       ],
       [
-        "Keaton Mitchell",
-        -1.86
-      ],
-      [
         "Rasheen Ali",
+        7,
         -2.03
-      ],
-      [
-        "Derrick Henry",
-        -4.24
       ]
     ]
   },
@@ -615,42 +725,51 @@
     "WR": [
       [
         "DK Metcalf",
+        100,
         14.57
       ],
       [
         "Calvin Austin III",
+        56,
         -8.07
       ]
     ],
     "TE": [
       [
-        "Darnell Washington",
-        9.04
+        "Jonnu Smith",
+        55,
+        -7.45
       ],
       [
         "Pat Freiermuth",
+        53,
         7.16
       ],
       [
-        "Jonnu Smith",
-        -7.45
+        "Darnell Washington",
+        43,
+        9.04
       ]
     ],
     "RB": [
       [
         "Jaylen Warren",
+        256,
         20.04
       ],
       [
         "Kenneth Gainwell",
+        199,
         0.94
       ],
       [
         "Kaleb Johnson",
+        28,
         -3.3
       ],
       [
         "Connor Heyward",
+        15,
         -5.85
       ]
     ]
@@ -659,43 +778,52 @@
     "TE": [
       [
         "Colston Loveland",
+        81,
         16.19
       ],
       [
         "Cole Kmet",
+        48,
         -6.11
       ]
     ],
     "WR": [
       [
         "Rome Odunze",
+        90,
         12.29
       ],
       [
-        "Luther Burden III",
-        11.24
-      ],
-      [
         "DJ Moore",
+        84,
         -7.67
       ],
       [
         "Olamide Zaccheaus",
+        64,
         -11.58
+      ],
+      [
+        "Luther Burden III",
+        60,
+        11.24
       ]
     ],
     "RB": [
       [
         "D'Andre Swift",
+        271,
         2.94
       ],
       [
-        "Brittain Brown",
-        2.19
+        "Kyle Monangai",
+        169,
+        -3.31
       ],
       [
-        "Kyle Monangai",
-        -3.31
+        "Brittain Brown",
+        5,
+        2.19
       ]
     ]
   },
@@ -703,38 +831,46 @@
     "WR": [
       [
         "Parker Washington",
+        95,
         14.96
       ],
       [
+        "Brian Thomas Jr.",
+        91,
+        -5.11
+      ],
+      [
         "Travis Hunter",
+        44,
         -2.26
       ],
       [
         "Dyami Brown",
+        37,
         -3.5
-      ],
-      [
-        "Brian Thomas Jr.",
-        -5.11
       ]
     ],
     "TE": [
       [
         "Brenton Strange",
+        60,
         6.3
       ]
     ],
     "RB": [
       [
         "Travis Etienne",
+        312,
         -0.18
       ],
       [
         "Bhayshul Tuten",
+        83,
         -0.2
       ],
       [
         "LeQuint Allen Jr.",
+        23,
         -3.27
       ]
     ]
@@ -743,42 +879,51 @@
     "WR": [
       [
         "Tetairoa McMillan",
+        122,
         9.94
       ],
       [
-        "Jalen Coker",
-        2.7
+        "Xavier Legette",
+        63,
+        -6.88
       ],
       [
-        "Xavier Legette",
-        -6.88
+        "Jalen Coker",
+        42,
+        2.7
       ]
     ],
     "RB": [
       [
-        "Trevor Etienne",
-        1.81
-      ],
-      [
-        "Jimmy Horn Jr.",
-        1.73
-      ],
-      [
         "Rico Dowdle",
+        284,
         -3.14
       ],
       [
         "Chuba Hubbard",
+        173,
         -16.25
+      ],
+      [
+        "Trevor Etienne",
+        20,
+        1.81
+      ],
+      [
+        "Jimmy Horn Jr.",
+        8,
+        1.73
       ]
     ],
     "TE": [
       [
         "Tommy Tremble",
+        37,
         -5.19
       ],
       [
         "Ja'Tavion Sanders",
+        34,
         -5.73
       ]
     ]
@@ -786,39 +931,47 @@
   "Commanders": {
     "WR": [
       [
-        "Terry McLaurin",
-        15.11
-      ],
-      [
         "Deebo Samuel",
+        99,
         0.22
       ],
       [
+        "Terry McLaurin",
+        60,
+        15.11
+      ],
+      [
         "Jaylin Lane",
+        32,
         -5.77
       ]
     ],
     "TE": [
       [
         "Zach Ertz",
+        72,
         -10.2
       ]
     ],
     "RB": [
       [
         "Jacory Croskey-Merritt",
+        175,
         12.16
       ],
       [
         "Chris Rodriguez Jr.",
+        112,
         11.39
       ],
       [
         "Jeremy McNichols",
+        44,
         4.76
       ],
       [
         "Austin Ekeler",
+        14,
         -1.27
       ]
     ]
@@ -827,47 +980,57 @@
     "TE": [
       [
         "Travis Kelce",
+        108,
         8.53
       ],
       [
         "Noah Gray",
+        36,
         -3.24
       ]
     ],
     "WR": [
       [
-        "JuJu Smith-Schuster",
-        6.08
-      ],
-      [
-        "Xavier Worthy",
-        3.26
-      ],
-      [
         "Rashee Rice",
+        79,
         2.28
       ],
       [
-        "Tyquan Thornton",
-        0.96
+        "Marquise Brown",
+        74,
+        -5.5
       ],
       [
-        "Marquise Brown",
-        -5.5
+        "Xavier Worthy",
+        73,
+        3.26
+      ],
+      [
+        "JuJu Smith-Schuster",
+        46,
+        6.08
+      ],
+      [
+        "Tyquan Thornton",
+        37,
+        0.96
       ]
     ],
     "RB": [
       [
-        "Brashard Smith",
-        4.11
-      ],
-      [
         "Kareem Hunt",
+        163,
         -0.76
       ],
       [
         "Isiah Pacheco",
+        118,
         -7.71
+      ],
+      [
+        "Brashard Smith",
+        78,
+        4.11
       ]
     ]
   },
@@ -875,30 +1038,36 @@
     "TE": [
       [
         "Brock Bowers",
+        87,
         10.55
       ],
       [
         "Michael Mayer",
+        50,
         0.28
       ]
     ],
     "WR": [
       [
         "Tre Tucker",
+        91,
         -4.36
       ]
     ],
     "RB": [
       [
-        "Raheem Mostert",
-        -2.74
-      ],
-      [
         "Ashton Jeanty",
+        338,
         -2.98
       ],
       [
+        "Raheem Mostert",
+        22,
+        -2.74
+      ],
+      [
         "Zamir White",
+        12,
         -5.03
       ]
     ]
@@ -906,127 +1075,153 @@
   "Eagles": {
     "WR": [
       [
-        "DeVonta Smith",
-        7.66
-      ],
-      [
         "A.J. Brown",
+        121,
         6.93
       ],
       [
+        "DeVonta Smith",
+        114,
+        7.66
+      ],
+      [
         "Jahan Dotson",
+        36,
         -12.04
       ]
     ],
     "TE": [
       [
         "Dallas Goedert",
+        81,
         -2.59
       ]
     ],
     "RB": [
       [
-        "A.J. Dillon",
-        0.04
-      ],
-      [
         "Saquon Barkley",
+        330,
         -1.39
       ],
       [
         "Will Shipley",
+        14,
         -3.63
+      ],
+      [
+        "A.J. Dillon",
+        12,
+        0.04
       ]
     ]
   },
   "Chargers": {
     "WR": [
       [
-        "Ladd McConkey",
-        6.7
-      ],
-      [
         "Keenan Allen",
+        122,
         4.22
       ],
       [
+        "Ladd McConkey",
+        107,
+        6.7
+      ],
+      [
         "Quentin Johnston",
+        84,
         -4.97
       ],
       [
         "Tre' Harris",
+        43,
         -5.24
       ]
     ],
     "TE": [
       [
         "Oronde Gadsden",
+        69,
         -7.59
       ]
     ],
     "RB": [
       [
         "Omarion Hampton",
+        159,
         8.08
       ],
       [
+        "Kimani Vidal",
+        155,
+        -5.48
+      ],
+      [
         "Jaret Patterson",
+        41,
         5.08
       ],
       [
-        "Najee Harris",
-        -1.02
-      ],
-      [
         "Hassan Haskins",
+        17,
         -2.79
       ],
       [
-        "Kimani Vidal",
-        -5.48
+        "Najee Harris",
+        15,
+        -1.02
       ]
     ]
   },
   "Titans": {
     "RB": [
       [
+        "Tony Pollard",
+        283,
+        -6.37
+      ],
+      [
         "Tyjae Spears",
+        123,
         14.21
       ],
       [
         "Julius Chestnut",
+        11,
         -3.85
-      ],
-      [
-        "Tony Pollard",
-        -6.37
       ]
     ],
     "WR": [
       [
         "Elic Ayomanor",
+        89,
         3.13
       ],
       [
-        "Calvin Ridley",
-        1.65
+        "Chimere Dike",
+        74,
+        -5.68
       ],
       [
         "Van Jefferson",
+        52,
         -3.5
       ],
       [
-        "Chimere Dike",
-        -5.68
+        "Calvin Ridley",
+        37,
+        1.65
       ]
     ],
     "TE": [
       [
         "Chigoziem Okonkwo",
+        79,
         2.36
       ],
       [
         "Gunnar Helm",
+        55,
         -0.17
       ]
     ]
@@ -1035,47 +1230,57 @@
     "TE": [
       [
         "Harold Fannin Jr.",
+        107,
         9.1
       ],
       [
         "David Njoku",
+        48,
         -0.09
       ]
     ],
     "RB": [
       [
-        "Malachi Corley",
-        8.98
+        "Quinshon Judkins",
+        264,
+        -25.06
       ],
       [
         "Dylan Sampson",
+        105,
         2.46
       ],
       [
-        "Raheim Sanders",
-        -1.05
-      ],
-      [
         "Jerome Ford",
+        56,
         -6.94
       ],
       [
-        "Quinshon Judkins",
-        -25.06
+        "Raheim Sanders",
+        27,
+        -1.05
+      ],
+      [
+        "Malachi Corley",
+        13,
+        8.98
       ]
     ],
     "WR": [
       [
-        "Cedric Tillman",
-        -3.61
+        "Jerry Jeudy",
+        106,
+        -15.12
       ],
       [
         "Isaiah Bond",
+        43,
         -7.28
       ],
       [
-        "Jerry Jeudy",
-        -15.12
+        "Cedric Tillman",
+        39,
+        -3.61
       ]
     ]
   },
@@ -1083,46 +1288,56 @@
     "WR": [
       [
         "Courtland Sutton",
+        123,
         5.38
       ],
       [
+        "Troy Franklin",
+        105,
+        -14.26
+      ],
+      [
         "Pat Bryant",
+        51,
         2.08
       ],
       [
         "Marvin Mims Jr.",
+        51,
         -9.45
-      ],
-      [
-        "Troy Franklin",
-        -14.26
       ]
     ],
     "RB": [
       [
+        "RJ Harvey",
+        204,
+        -8.8
+      ],
+      [
         "J.K. Dobbins",
+        153,
         14.7
       ],
       [
         "Tyler Badie",
+        39,
         3.99
       ],
       [
         "Jaleel McLaughlin",
+        37,
         3.92
       ],
       [
         "Adam Prentice",
+        10,
         -0.59
-      ],
-      [
-        "RJ Harvey",
-        -8.8
       ]
     ],
     "TE": [
       [
         "Evan Engram",
+        76,
         -1.47
       ]
     ]
@@ -1131,38 +1346,46 @@
     "RB": [
       [
         "Breece Hall",
+        291,
         15.78
       ],
       [
-        "Kene Nwangwu",
-        0.12
-      ],
-      [
         "Isaiah Davis",
+        43,
         -4.17
       ],
       [
+        "Braelon Allen",
+        18,
+        -8.14
+      ],
+      [
         "Khalil Herbert",
+        16,
         -5.77
       ],
       [
-        "Braelon Allen",
-        -8.14
+        "Kene Nwangwu",
+        13,
+        0.12
       ]
     ],
     "WR": [
       [
         "Garrett Wilson",
+        59,
         2.26
       ],
       [
         "Isaiah Williams",
+        36,
         -5.42
       ]
     ],
     "TE": [
       [
         "Mason Taylor",
+        65,
         -8.62
       ]
     ]
@@ -1171,42 +1394,51 @@
     "RB": [
       [
         "James Cook III",
+        349,
         14.9
       ],
       [
         "Ty Johnson",
+        83,
         5.45
       ],
       [
-        "Elijah Moore",
-        0.12
+        "Ray Davis",
+        58,
+        -1.15
       ],
       [
-        "Ray Davis",
-        -1.15
+        "Elijah Moore",
+        6,
+        0.12
       ]
     ],
     "WR": [
       [
         "Khalil Shakir",
+        95,
         6.87
       ],
       [
-        "Josh Palmer",
-        -5.09
+        "Keon Coleman",
+        59,
+        -9.48
       ],
       [
-        "Keon Coleman",
-        -9.48
+        "Josh Palmer",
+        37,
+        -5.09
       ]
     ],
     "TE": [
       [
         "Dalton Kincaid",
+        49,
         10.9
       ],
       [
         "Dawson Knox",
+        49,
         -0.51
       ]
     ]
@@ -1214,35 +1446,42 @@
   "Giants": {
     "WR": [
       [
-        "Malik Nabers",
-        7.74
-      ],
-      [
         "Wan'Dale Robinson",
+        140,
         4.07
       ],
       [
         "Darius Slayton",
+        63,
         -7.36
+      ],
+      [
+        "Malik Nabers",
+        35,
+        7.74
       ]
     ],
     "RB": [
       [
-        "Cam Skattebo",
-        3.36
-      ],
-      [
         "Tyrone Tracy Jr.",
+        223,
         -0.89
       ],
       [
+        "Cam Skattebo",
+        133,
+        3.36
+      ],
+      [
         "Devin Singletary",
+        119,
         -10.44
       ]
     ],
     "TE": [
       [
         "Theo Johnson",
+        74,
         -3.69
       ]
     ]
@@ -1250,43 +1489,52 @@
   "Buccaneers": {
     "WR": [
       [
-        "Chris Godwin",
-        4.18
-      ],
-      [
         "Emeka Egbuka",
+        130,
         3.63
       ],
       [
         "Mike Evans",
+        61,
         1.94
       ],
       [
-        "Tez Johnson",
-        1.15
+        "Sterling Shepard",
+        53,
+        -11.01
       ],
       [
-        "Sterling Shepard",
-        -11.01
+        "Chris Godwin",
+        51,
+        4.18
+      ],
+      [
+        "Tez Johnson",
+        44,
+        1.15
       ]
     ],
     "RB": [
       [
-        "Rachaad White",
-        -2.44
-      ],
-      [
         "Bucky Irving",
+        208,
         -3.51
       ],
       [
+        "Rachaad White",
+        177,
+        -2.44
+      ],
+      [
         "Sean Tucker",
+        86,
         -6.84
       ]
     ],
     "TE": [
       [
         "Cade Otton",
+        82,
         -12.84
       ]
     ]
@@ -1294,44 +1542,53 @@
   "Saints": {
     "WR": [
       [
-        "Devaughn Vele",
-        2.84
+        "Chris Olave",
+        156,
+        0.71
       ],
       [
-        "Chris Olave",
-        0.71
+        "Devaughn Vele",
+        39,
+        2.84
       ]
     ],
     "TE": [
       [
         "Juwan Johnson",
+        102,
         0.29
       ]
     ],
     "RB": [
       [
-        "Audric Estime",
-        10.39
-      ],
-      [
-        "Kendre Miller",
-        7.27
-      ],
-      [
-        "Evan Hull",
-        -3.5
+        "Alvin Kamara",
+        170,
+        -16.84
       ],
       [
         "Devin Neal",
+        57,
         -8.2
       ],
       [
         "Taysom Hill",
+        52,
         -12.75
       ],
       [
-        "Alvin Kamara",
-        -16.84
+        "Kendre Miller",
+        47,
+        7.27
+      ],
+      [
+        "Audric Estime",
+        46,
+        10.39
+      ],
+      [
+        "Evan Hull",
+        19,
+        -3.5
       ]
     ]
   },
@@ -1339,34 +1596,41 @@
     "WR": [
       [
         "Jaylen Waddle",
+        100,
         3.4
       ],
       [
         "Malik Washington",
+        64,
         -6.79
       ]
     ],
     "TE": [
       [
-        "Greg Dulcich",
-        9.48
+        "Darren Waller",
+        34,
+        3.41
       ],
       [
-        "Darren Waller",
-        3.41
+        "Greg Dulcich",
+        33,
+        9.48
       ]
     ],
     "RB": [
       [
         "De'Von Achane",
+        323,
         17.56
       ],
       [
         "Jaylen Wright",
+        70,
         1.41
       ],
       [
         "Ollie Gordon II",
+        70,
         -4.47
       ]
     ]

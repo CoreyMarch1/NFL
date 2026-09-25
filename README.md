@@ -22,11 +22,16 @@ checked against.
   duplicate second half); Washington, alphabetically last, had no anchor to stop its slice at and
   absorbed the entire second copy (159 "injuries" instead of 4) — fixed by detecting and dropping
   the duplicate before parsing.
-- `model/tier_injuries.py` — ranks each team's RB/WR/TE room by real 2025 season value (receiving
-  + rushing PAA) and tags the injury feed with a depth-chart tier (`WR1`, `RB2`, ...) instead of a
-  bare position; a player who's changed teams since 2025 gets their prior-team value slotted into
-  the new roster (flagged with a trailing `*`). Reference data only so far — see the levers list
-  in the dashboard (§07).
+- `model/tier_injuries.py` — ranks each team's RB/WR/TE room by real 2025 season **usage**
+  (targets for WR/TE, rush attempts + targets for RB) and tags the injury feed with a depth-chart
+  tier (`WR1`, `RB2`, ...) instead of a bare position. Deliberately sorts on usage, not PAA: PAA is
+  an efficiency stat, and an inefficient starter (a 278-carry RB1 having a bad season) would rank
+  below a highly-efficient backup on PAA alone — exactly backwards for a "who's the starter" read.
+  A player who's changed teams since 2025 gets their prior-team usage slotted into the new roster
+  (flagged with a trailing `*`); a jet-sweep WR with a few garbage rush attempts and no receiving
+  record is kept out of the RB group by cross-checking position against the 2026 receiving file
+  and the injury report's own listed position. Reference data only so far — see the levers list in
+  the dashboard (§07).
 - `data/sis_team_*def*.csv`, `sis_team_passrush_*.csv` — raw SIS DataHub team run-defense and
   pass-defense tables (2025 season + 2026 through Week 2), used to build the real off/def split.
   Pass-rush data is collected but intentionally **not** summed into the defense total — a
@@ -67,7 +72,9 @@ Prior week's files (`model/week2_*`, `dashboard/week2_dashboard.html`, `model/ca
 - **Full-league injury report** parsed and referenced (dashboard §06) — not yet a calibrated
   point adjustment; see levers list for what that needs. Also fixed a duplicate-data bug in the
   parser (Washington was showing 159 "injuries" instead of 4 — see `model/parse_injuries.py`
-  above) and added depth-chart tiers (WR1, RB2, ...) from real 2025 season value.
+  above) and added depth-chart tiers (WR1, RB2, ...) from real 2025 season usage (targets/rush
+  attempts, not PAA — see `model/tier_injuries.py` above for why value and role aren't the same
+  thing here).
 
 ## Key modeling assumptions
 
