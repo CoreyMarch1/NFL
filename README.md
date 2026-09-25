@@ -1,63 +1,77 @@
-# NFL Week 2 Composite Ratings Model
+# NFL Composite Ratings Model
 
-A preliminary team rating and game-projection system built on the Week 2 composite power
-ratings (FPI, nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen).
+A team rating and game-projection system built on the weekly composite power ratings (FPI,
+nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 3
+(v0.4)** — Week 2 files are kept alongside as the validated baseline everything since has been
+checked against.
 
-## Contents
+## Contents (current: Week 3)
 
-- `model/week2_ratings_model.py` — decomposes each team's composite rating into offense/defense
-  splits, computes source-vs-composite correlation and divergence (feature importance proxy),
-  blends each Week 2 starting QB's 2025 season form (passing + rushing combined) with their 2026
-  Week 1 game into a capped points-per-game adjustment, shrinks the resulting margin toward the
-  market line (weight grows as more weeks get validated), and runs a 5,000-iteration Monte Carlo
-  simulation for all 16 Week 2 matchups at each stage — base, QB-adjusted, and market-blended
-  (spread, win probability, 68%/95% confidence intervals, and a confidence score).
-- `model/week2_model_output.json` — the model's output, consumed directly by the dashboard.
-- `model/calibrate_market_blend.py` — grid-searches the in-sample MAE-minimizing blend weight on
-  Week 2 (came out to 0.0, pure market — a small-sample overfit, not a real answer) to show why
-  the main model uses a shrinkage formula instead. Re-run this once more weeks validate.
-- `model/validate_week2.py` — scores the base, QB-adjusted, and market-blended projections
-  against confirmed final results for all 16 Week 2 games (margin MAE, straight-up accuracy,
-  total-points error, ATS record vs. market where the model diverged), alongside the same
-  metrics for the closing market line as a benchmark. Output: `model/week2_validation_output.json`.
-- `data/sis_qb_*.csv` — raw SIS DataHub QB tables: 2025 season and 2026 Week 1, passing and
-  rushing, box score/rate/points-based variants, used to build the QB adjustment layer.
-- `dashboard/week2_dashboard.html` — interactive dashboard: team ratings, feature importance, a
-  QB report (tier, hot/cold trend vs. 2025 form, backup-starter flags), per-matchup projections
-  vs. market lines, a full-slate validation scorecard against final results, and a ranked list
-  of improvement levers.
+- `model/week3_ratings_model.py` — decomposes each team's composite rating into a **real**
+  offense/defense split (SIS DataHub run-defense + pass-defense data; offense is the residual of
+  the vendor's own composite = offense − defense identity), blends each Week 3 starting QB's 2025
+  season form with their 2026 season-to-date into a capped points-per-game adjustment, shrinks
+  the resulting margin toward the market line (weight grows as more weeks get validated), and
+  runs a 5,000-iteration Monte Carlo simulation for all 15 active Week 3 matchups at each stage —
+  base, QB-adjusted, and market-blended (spread, win probability, 68%/95% confidence intervals,
+  a confidence score).
+- `model/week3_model_output.json` — the model's output, consumed directly by the dashboard.
+- `model/parse_injuries.py` — parses the full-league injury report (`data/nfl_injuries_*.docx`)
+  into structured per-team data, filtered to positions that plausibly move a line (QB, RB, WR,
+  TE, OT/OG/C, CB). Reference data only so far — see "what's still missing" below.
+- `data/sis_team_*def*.csv`, `sis_team_passrush_*.csv` — raw SIS DataHub team run-defense and
+  pass-defense tables (2025 season + 2026 through Week 2), used to build the real off/def split.
+  Pass-rush data is collected but intentionally **not** summed into the defense total — a
+  sack/pressure event already shows up in pass-defense's own EPA-allowed number for that play,
+  so adding both would double-count.
+- `data/sis_qb_2026_thru_wk2_*.csv` — QB passing tables through Week 2 (season-to-date), replacing
+  the Week-1-only files used for Week 2. Rushing tables haven't been refreshed past Week 1 yet, so
+  the "current season" QB read for Week 3 is passing-only — a documented gap, not an oversight.
+- `dashboard/week3_dashboard.html` — interactive dashboard: team ratings (real off/def split),
+  feature importance, a QB report, per-matchup projections vs. market lines, validation (Week 2's
+  full scorecard + an early Week 3 read), an injury report, and ranked improvement levers.
   Published version: https://claude.ai/artifact/UAHh6VMKw8rtVcrH2KXoMZ
 
-## Key modeling assumptions (v0)
+Prior week's files (`model/week2_*`, `dashboard/week2_dashboard.html`, `model/calibrate_market_blend.py`,
+`model/validate_week2.py`) are kept as-is — they're the validated history the Week 3 build was calibrated against.
 
-- The source table reports only a single net composite rating per team, not separate
-  offense/defense splits. Offense/defense are synthesized around a 22.5-pt league-average
-  baseline, tilted by each team's Unexpected Points score as a pace/style proxy. This is the
-  single biggest thing to replace with real data (see levers list in the dashboard).
+## What changed this week
+
+- **Real offense/defense split** (previously a synthetic 50/50-plus-tilt heuristic). This also
+  surfaced a real bug: the total-points formula summed both teams' offenses in isolation and
+  never referenced either team's defense at all, which was very likely the main driver of Week
+  2's systematic total-points underprediction (Bills–Lions projected 49, actual 72; see Week 2
+  validation below). Fixed alongside the split — Week 2's total-points MAE improves from ~12.0 to
+  ~10.1 pts under the corrected formula (re-run, not a new prediction).
+- **QB data refreshed to season-to-date** (2 games) instead of Week 1 only.
+- **Real lineup churn handled**: Atlanta gets Michael Penix Jr. back (from Cooper Rush), Minnesota
+  starts Kyler Murray, and injuries push Washington (Jayden Daniels, elbow), Seattle (Sam Darnold),
+  and the Giants (Jaxson Dart, IR) to backups.
+- **Full-league injury report** parsed and referenced (dashboard §06) — not yet a calibrated
+  point adjustment; see levers list for what that needs.
+
+## Key modeling assumptions
+
 - Home-field advantage is a flat 2.0 points league-wide.
-- Simulation variance blends a 13.0-pt base NFL game-margin standard deviation with each
-  team's cross-model "Std Dev" column (source disagreement) as an uncertainty inflator.
-- The Week 1→2 momentum chart carries no numeric deltas, so momentum is encoded qualitatively
-  (direction + rough magnitude) rather than as a simulation input.
-- Full market lines (spread, total, moneyline) are sourced for all 16 Week 2 games. The model's
-  own margin is now shrunk toward the market line before simulation, at
+- Simulation variance blends a 13.0-pt base NFL game-margin standard deviation with each team's
+  cross-model "Std Dev" column (source disagreement) as an uncertainty inflator.
+- The Week-to-week composite momentum chart carries no numeric deltas, so momentum is encoded
+  qualitatively (direction + rough magnitude) rather than as a simulation input.
+- The model's own margin is shrunk toward the market line before simulation, at
   `model_weight = validated_games/(validated_games+64)` capped at 0.5 — i.e. mostly market early,
   trusting the model more as validated weeks accumulate. With only Week 2 validated so far,
   that's 20% model / 80% market.
-- Every Week 2 starter also started Week 1 (confirmed against the SIS data), so the composite
-  ratings already reflect each team's current arm. The QB layer instead catches teams whose
-  Week 1 form was likely a small-sample outlier relative to their 2025 baseline (partial
-  regression toward that baseline, capped at ±1.2 pts/game) and flags the three teams
-  (Falcons, Vikings, Seahawks) starting a QB clearly below their normal QB1.
-- The QB value used for that regression combines passing AND rushing production (points above
-  average, SIS DataHub). This matters most for mobile QBs: Mahomes' and Jackson's rushing pulls
-  a mediocre Week 1 passing line back toward average, and Hurts' and Daniels' ground production
-  is a real share of their overall value that passing-only stats would have missed entirely.
+- The QB adjustment is a capped (±1.2 pt/game), recency-weighted partial regression toward each
+  starter's 2025 baseline (passing + rushing where both years' data exist), not a hot/cold
+  overcorrection.
+- Defense per team blends 2025 season value (17 games) with 2026 value through Week 2, weighted
+  more heavily toward the current season than the QB blend to reflect year-over-year roster
+  turnover (`DEF_RECENCY_BOOST = 6` vs. `RECENCY_BOOST = 5` for QBs — both tunable, not fit).
 
-Re-run the model with `python3 model/week2_ratings_model.py` (standard library only, no
-external dependencies).
+Re-run the model with `python3 model/week3_ratings_model.py` (standard library only, no external
+dependencies).
 
-## Week 2 validation (final)
+## Week 2 validation (final, unchanged from last week)
 
 All 16 games are complete. Scored against the model's own pre-game numbers, no hindsight refitting:
 
@@ -79,7 +93,12 @@ as intended," not "the model is now market-competitive." The honest test is Week
 The week was upset-heavy (Panthers 34–3 over the Falcons, Browns and Raiders winning outright as
 6.5–8.5 pt road underdogs, Saints coming back to beat the Ravens), which no rating-based model
 without injury/in-game context was going to catch — but the market didn't fully see those coming
-either and still won out. The clearest, most actionable finding: point totals ran well over the
-model's projections on the week's shootouts (Bills–Lions, Chiefs–Colts, Commanders–Cowboys all
-landed 15–30 points above the model's total), consistent with lever #3 (true offense/defense
-splits) being the more urgent fix. Run `python3 model/validate_week2.py` to reproduce.
+either and still won out. Run `python3 model/validate_week2.py` to reproduce.
+
+## Week 3 so far
+
+Thursday's game is final: **Falcons 35, Packers 14**. The model (run with Cooper Rush still the
+presumed Falcons QB, since Penix's return wasn't yet reflected pre-kickoff) favored Green Bay by
+6 — Michael Penix Jr.'s return plus a 194-yard, 2-TD game from Bijan Robinson blew that out by 27
+points. One data point, and exactly the kind of in-game swing (a QB return, a breakout rushing
+day) a rating-based model has no way to see coming. The other 15 games haven't kicked off yet.

@@ -1,0 +1,595 @@
+<title>Week 3 Ratings Model</title>
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#0a0e17; --surface:#121826; --surface2:#1a2233; --border:#263349;
+    --text:#e7ecf5; --text-dim:#93a1b8; --text-faint:#5c6a83;
+    --accent:#4f8cff; --accent-soft:#4f8cff26; --vegas:#ffb443; --vegas-soft:#ffb44326;
+    --good:#34d399; --good-soft:#34d39922; --bad:#fb7373; --bad-soft:#fb737322;
+    --warn:#ffd166; --shadow: 0 8px 24px -8px rgba(0,0,0,.5);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f4f6fb; --surface:#ffffff; --surface2:#edf1f8; --border:#dde3ee;
+      --text:#131a29; --text-dim:#57647d; --text-faint:#8a95ab;
+      --accent:#2f6fed; --accent-soft:#2f6fed17; --vegas:#c97a12; --vegas-soft:#c97a1217;
+      --good:#0f9d68; --good-soft:#0f9d6817; --bad:#d1453a; --bad-soft:#d1453a17;
+      --warn:#b8860b; --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f6fb; --surface:#ffffff; --surface2:#edf1f8; --border:#dde3ee;
+    --text:#131a29; --text-dim:#57647d; --text-faint:#8a95ab;
+    --accent:#2f6fed; --accent-soft:#2f6fed17; --vegas:#c97a12; --vegas-soft:#c97a1217;
+    --good:#0f9d68; --good-soft:#0f9d6817; --bad:#d1453a; --bad-soft:#d1453a17;
+    --warn:#b8860b; --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--text); margin:0;
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .num{font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums;}
+  h1,h2,h3,.disp{font-family:'Barlow Condensed',system-ui,sans-serif; letter-spacing:.01em;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 20px 80px;}
+
+  header.top{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--border);
+  }
+  .topbar{max-width:1180px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{display:flex; align-items:baseline; gap:10px;}
+  .brand .mark{font-family:'Barlow Condensed'; font-weight:700; font-size:22px; letter-spacing:.02em;}
+  .brand .tag{font-size:12px; color:var(--text-dim); font-family:'IBM Plex Mono'; text-transform:uppercase; letter-spacing:.08em;}
+  nav.jump{display:flex; gap:4px; flex-wrap:wrap;}
+  nav.jump a{
+    font-size:12.5px; color:var(--text-dim); text-decoration:none; padding:6px 10px;
+    border-radius:999px; border:1px solid transparent; font-weight:500;
+  }
+  nav.jump a:hover{border-color:var(--border); color:var(--text); background:var(--surface2);}
+
+  .hero{padding:36px 0 8px;}
+  .hero h1{font-size:clamp(30px,4.4vw,44px); font-weight:700; margin:0 0 8px; text-wrap:balance;}
+  .hero p.lede{font-size:15.5px; color:var(--text-dim); max-width:760px; line-height:1.6; margin:0 0 20px;}
+  .stat-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:28px;}
+  .stat{background:var(--surface); padding:16px 18px;}
+  .stat .k{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint); font-weight:600;}
+  .stat .v{font-family:'Barlow Condensed'; font-size:28px; font-weight:700; margin-top:2px;}
+  .stat .v small{font-size:14px; color:var(--text-dim); font-family:'IBM Plex Sans'; font-weight:500;}
+
+  section{padding:38px 0; border-top:1px solid var(--border);}
+  section:first-of-type{border-top:none;}
+  .sec-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:6px;}
+  .sec-head h2{font-size:26px; font-weight:700; margin:0;}
+  .sec-head .idx{font-family:'IBM Plex Mono'; color:var(--accent); font-size:13px; font-weight:600; letter-spacing:.05em;}
+  .sec-sub{color:var(--text-dim); font-size:14px; max-width:760px; line-height:1.6; margin:0 0 22px;}
+
+  /* ratings table */
+  .table-scroll{overflow-x:auto; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:var(--shadow);}
+  table{border-collapse:collapse; width:100%; min-width:820px; font-size:13.5px;}
+  thead th{
+    text-align:left; padding:11px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--text-faint); font-weight:600; border-bottom:1px solid var(--border); background:var(--surface2);
+    position:sticky; top:0; white-space:nowrap;
+  }
+  tbody td{padding:9px 14px; border-bottom:1px solid var(--border); white-space:nowrap;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:var(--surface2);}
+  td.team{display:flex; align-items:center; gap:9px; font-weight:600;}
+  .badge{width:24px; height:24px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; font-size:9.5px; font-weight:700; color:#fff; font-family:'IBM Plex Mono'; flex:none;}
+  .rank-cell{color:var(--text-faint); font-family:'IBM Plex Mono';}
+  .bar-cell{display:flex; align-items:center; gap:8px;}
+  .mini-bar{width:64px; height:7px; border-radius:4px; background:var(--surface2); overflow:hidden; position:relative;}
+  .mini-bar i{position:absolute; top:0; bottom:0; display:block;}
+  .pos{color:var(--good);} .neg{color:var(--bad);}
+  .trend{font-size:12px; font-weight:600; display:inline-flex; align-items:center; gap:3px;}
+  .trend.up{color:var(--good);} .trend.down{color:var(--bad);} .trend.flat{color:var(--text-faint);}
+
+  /* feature importance */
+  .imp-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:22px;}
+  @media (max-width:760px){.imp-grid{grid-template-columns:1fr;}}
+  .panel{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px 22px; box-shadow:var(--shadow);}
+  .panel h3{margin:0 0 4px; font-size:18px; font-weight:600;}
+  .panel .cap{color:var(--text-faint); font-size:12.5px; margin:0 0 16px;}
+  .imp-row{display:grid; grid-template-columns:96px 1fr 48px; align-items:center; gap:10px; margin-bottom:12px; font-size:13px;}
+  .imp-row .lbl{font-weight:600;}
+  .imp-track{height:10px; border-radius:5px; background:var(--surface2); overflow:hidden;}
+  .imp-fill{height:100%; border-radius:5px; background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 60%, var(--good)));}
+  .imp-fill.warn-fill{background:linear-gradient(90deg,var(--vegas),var(--bad));}
+  .imp-val{font-family:'IBM Plex Mono'; text-align:right; color:var(--text-dim);}
+
+  /* qb report */
+  .tier-chip{display:inline-block; font-size:11px; font-family:'IBM Plex Mono'; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap;}
+  .qb-flag{font-size:10.5px; font-family:'IBM Plex Mono'; font-weight:700; padding:2px 8px; border-radius:6px; text-transform:uppercase; letter-spacing:.04em;}
+  .qb-flag.backup{background:var(--bad-soft); color:var(--bad);}
+  .qb-flag.caution{background:var(--warn)22; color:var(--warn);}
+  .qb-flag.none{color:var(--text-faint);}
+
+  /* levers */
+  .levers{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .lever{display:grid; grid-template-columns:34px 1fr auto; gap:14px; align-items:start; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px;}
+  .lever .rank{font-family:'Barlow Condensed'; font-size:22px; font-weight:700; color:var(--accent);}
+  .lever h4{margin:0 0 3px; font-size:14.5px; font-weight:600;}
+  .lever p{margin:0; font-size:13px; color:var(--text-dim); line-height:1.55;}
+  .gain{align-self:center; font-family:'IBM Plex Mono'; font-size:11px; padding:4px 9px; border-radius:999px; white-space:nowrap; font-weight:600;}
+  .gain.hi{background:var(--good-soft); color:var(--good);}
+  .gain.med{background:var(--warn)22; color:var(--warn);}
+  .gain.lo{background:var(--surface2); color:var(--text-faint);}
+
+  /* matchups */
+  .filters{display:flex; gap:8px; margin-bottom:18px; flex-wrap:wrap;}
+  .filters button{
+    font-family:'IBM Plex Mono'; font-size:11.5px; text-transform:uppercase; letter-spacing:.05em;
+    padding:7px 13px; border-radius:999px; border:1px solid var(--border); background:var(--surface);
+    color:var(--text-dim); cursor:pointer; font-weight:600;
+  }
+  .filters button.active{background:var(--accent-soft); border-color:var(--accent); color:var(--accent);}
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:16px;}
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:12px;}
+  .card .matchup{display:flex; align-items:center; justify-content:space-between;}
+  .team-slot{display:flex; align-items:center; gap:8px;}
+  .team-slot .nm{font-weight:600; font-size:14px;}
+  .team-slot .loc{font-size:10px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.05em;}
+  .at{color:var(--text-faint); font-family:'IBM Plex Mono'; font-size:12px;}
+  .score-row{display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-top:1px dashed var(--border); border-bottom:1px dashed var(--border);}
+  .score-row .sc{font-family:'Barlow Condensed'; font-size:30px; font-weight:700;}
+  .score-row .sc.lead{color:var(--accent);}
+  .winbar{height:8px; border-radius:5px; overflow:hidden; display:flex; background:var(--surface2);}
+  .winbar .h{background:var(--accent);} .winbar .a{background:var(--text-faint);}
+  .winlabels{display:flex; justify-content:space-between; font-size:11px; color:var(--text-dim); font-family:'IBM Plex Mono';}
+  .meta-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px 14px; font-size:12px;}
+  .meta-grid .k{color:var(--text-faint); text-transform:uppercase; font-size:10px; letter-spacing:.05em;}
+  .meta-grid .v{font-family:'IBM Plex Mono'; font-weight:600;}
+  .conf-chip{display:inline-flex; align-items:center; gap:5px; font-size:11px; font-family:'IBM Plex Mono'; font-weight:700; padding:3px 9px; border-radius:999px;}
+  .vegas-line{display:flex; align-items:center; justify-content:space-between; font-size:12px; background:var(--vegas-soft); border:1px solid color-mix(in srgb,var(--vegas) 40%,transparent); border-radius:9px; padding:8px 10px; color:var(--text);}
+  .vegas-line b{color:var(--vegas); font-family:'IBM Plex Mono';}
+  .notes{font-size:12.3px; color:var(--text-dim); line-height:1.55; border-top:1px solid var(--border); padding-top:10px;}
+  .notes b{color:var(--text);}
+
+  /* validation */
+  .valid-box{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:700px){.valid-box{grid-template-columns:1fr;}}
+  .valid-box .panel .big{font-family:'Barlow Condensed'; font-size:44px; font-weight:700; line-height:1;}
+  .flag{display:inline-block; font-size:11px; font-family:'IBM Plex Mono'; padding:4px 10px; border-radius:999px; background:var(--good-soft); color:var(--good); font-weight:700; margin-top:8px;}
+
+  footer{padding:26px 0 10px; color:var(--text-faint); font-size:12px; line-height:1.7; border-top:1px solid var(--border);}
+  code{font-family:'IBM Plex Mono'; background:var(--surface2); padding:1px 5px; border-radius:4px; font-size:.92em;}
+</style>
+
+<header class="top">
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark">GRIDLINE&nbsp;QUANT</span>
+      <span class="tag">Wk 2 Model</span>
+    </div>
+    <nav class="jump">
+      <a href="#ratings">Ratings</a>
+      <a href="#importance">Feature Importance</a>
+      <a href="#qb-report">QB Report</a>
+      <a href="#matchups">Matchups</a>
+      <a href="#validation">Validation</a>
+      <a href="#injuries">Injuries</a>
+      <a href="#levers">Levers</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>A preliminary power-rating engine for Week 3</h1>
+    <p class="lede">Built on the composite of six public models (FPI, nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF), decomposed into a <b>real</b> offense/defense split (SIS DataHub run &amp; pass defense data &mdash; no longer a synthetic 50/50 heuristic) and run through a 5,000-iteration Monte Carlo per game, layered with a QB-level adjustment from confirmed Week 3 starters (SIS DataHub, 2025 season + 2026 through Week&nbsp;2), then shrunk toward the market line at a weight calibrated on Week 2's validated results. Treat this as a v0.4 baseline &mdash; see <a href="#levers" style="color:var(--accent)">improvement levers</a> for what would materially sharpen it before staking real money on it.</p>
+    <div class="stat-row" id="stat-row"></div>
+  </div>
+
+  <section id="ratings">
+    <div class="sec-head"><h2>Team power ratings</h2><span class="idx">01 &nbsp;/&nbsp; RATINGS</span></div>
+    <p class="sec-sub">Offense/defense are now a <b>real</b> split, not a synthetic heuristic: defense comes from SIS DataHub's team run-defense and pass-defense points-above-average (2025 season blended with 2026 through Week&nbsp;2, weighted for roster turnover), and offense is the residual of the vendor's own identity &mdash; composite&nbsp;=&nbsp;offense&nbsp;&minus;&nbsp;defense &mdash; so it needs no separate offense data at all. <b>Std Dev</b> is the spread across the six input models &mdash; it becomes each team's simulation-variance input, not a ranking factor. <b>Trend</b> is read directly off the Week&nbsp;2&rarr;3 movement chart (direction + rough magnitude only; the chart carries no numeric deltas, so treat it as qualitative).</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Rk</th><th>Team</th><th>Net&nbsp;rating</th><th>Off</th><th>Def</th><th>Model StdDev</th><th>Trend (Wk2&rarr;3)</th>
+        </tr></thead>
+        <tbody id="ratings-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="importance">
+    <div class="sec-head"><h2>Which inputs move the composite</h2><span class="idx">02 &nbsp;/&nbsp; FEATURES</span></div>
+    <p class="sec-sub">With one full week (16 games) validated, a true accuracy-driven feature-importance regression is still too small a sample to trust (see lever #2). What <em>is</em> computable from the published table today: how tightly each source tracks the six-model consensus, and how far it typically strays from it.</p>
+    <div class="imp-grid">
+      <div class="panel">
+        <h3>Correlation to composite</h3>
+        <p class="cap">Pearson r across all 32 teams &mdash; higher means that model moves in lockstep with the consensus (less independent signal, but more "central").</p>
+        <div id="corr-rows"></div>
+      </div>
+      <div class="panel">
+        <h3>Mean absolute deviation from composite</h3>
+        <p class="cap">Avg. |source &minus; composite|, in rating points &mdash; higher means that model is the one dragging teams away from consensus, for better or worse.</p>
+        <div id="mae-rows"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="qb-report">
+    <div class="sec-head"><h2>QB report: who's actually starting</h2><span class="idx">03 &nbsp;/&nbsp; STARTERS</span></div>
+    <p class="sec-sub">Combines <b>passing and rushing</b> production (SIS DataHub points-above-average) into one per-game value, blending each Week 3 starter's full 2025 season form with their 2026 season-to-date (2 games; the rushing tables haven't been refreshed past Week 1 yet, so the current-season read here is passing-only &mdash; a documented gap, not an oversight), then feeds a small, capped points-per-game adjustment back into the simulation as partial regression toward the established baseline. <b>Unlike Week 2, this week's slate has real lineup churn</b>: Atlanta gets Michael Penix Jr. back from injury (replacing Cooper Rush), Minnesota hands the job to Kyler Murray, and Jayden Daniels' elbow injury, Sam Darnold's (Seahawks) injury, and Jaxson Dart's knee injury (IR) push Washington, Seattle, and New York (Giants) to backups &mdash; four teams flagged <code>Backup</code> below, versus zero last week.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Team</th><th>QB</th><th>Tier</th><th>Blended value (pts/gm, pass+rush)</th><th>Wk1 vs. 2025 form</th><th>QB adj.</th><th>Flag</th>
+        </tr></thead>
+        <tbody id="qb-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="matchups">
+    <div class="sec-head"><h2>Week 3 matchup projections</h2><span class="idx">04 &nbsp;/&nbsp; SIMULATION</span></div>
+    <p class="sec-sub">Numbers below are the <b>market-blended</b> run: the model's own margin (rating differential + 2.0-pt home-field + QB adjustment, now built on a real offense/defense split &mdash; see &sect;01) is shrunk toward the market line before the 5,000-game Monte Carlo, at a <span id="blend-weight-inline"></span> weight calibrated on Week 2's validated results &mdash; see &sect;05. Each card also shows the pure (pre-blend) model spread for comparison. Every game carries the actual Sat/Sun/Mon market spread and total &mdash; Thursday's Falcons&ndash;Packers line is in the validation section instead, since that game is already final.</p>
+    <div class="filters">
+      <button class="active" data-f="all">All 16</button>
+      <button data-f="vegas">Biggest market edge</button>
+      <button data-f="close">Toss-ups (conf &lt; 20)</button>
+      <button data-f="lopsided">Lopsided (conf &ge; 45)</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="validation">
+    <div class="sec-head"><h2>Validation</h2><span class="idx">05 &nbsp;/&nbsp; VALIDATION</span></div>
+    <p class="sec-sub">Week 2's full 16-game scorecard below is what calibrated this week's market-blend weight and confirmed the totals bug (fixed this week &mdash; see &sect;01). Week 3's own slate is still mostly ahead of us; one early read follows.</p>
+    <div class="valid-box" style="margin-bottom:24px;">
+      <div class="panel">
+        <h3>Week 3 so far: Falcons 35 &ndash; Packers 14</h3>
+        <p class="cap">Final, Thu Sept 24 &middot; Lambeau Field</p>
+        <div class="big num" style="color:var(--bad)">Model: GB &minus;6.0 &middot; Actual: ATL +21</div>
+        <p style="color:var(--text-dim); font-size:13px; margin-top:8px;">The model (with Cooper Rush still the presumed Falcons arm going in) favored Green Bay by 6; Michael Penix Jr.'s return plus a 194-yard, 2-TD game from Bijan Robinson blew that out by 27&nbsp;points. A reminder that no rating-based model catches a QB return or a runaway rushing performance in-game &mdash; one data point, not a trend.</p>
+      </div>
+      <div class="panel">
+        <h3>What's different about this build</h3>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.65;">Two structural fixes landed this week, both aimed at the exact gaps Week 2 exposed: offense/defense is now a real split from SIS DataHub run &amp; pass defense data instead of a synthetic 50/50 heuristic, and the total-points formula was rewritten to actually use both teams' defense (it previously summed the two offenses in isolation, which is likely why totals ran so low). Full injury report is also now integrated (backup-QB flags in &sect;03); non-QB injuries are parsed and referenced but not yet a calibrated point adjustment &mdash; see &sect;06.</p>
+      </div>
+    </div>
+    <h3 style="margin:0 0 4px; font-size:18px; font-weight:600;">Week 2 final scorecard (complete, 16/16)</h3>
+    <p class="cap" style="margin:0 0 14px;">Unchanged from last week &mdash; kept here because it's the basis for this week's market-blend weight.</p>
+    <div class="stat-row" id="valid-stats" style="margin-bottom:22px;"></div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Matchup</th><th>Final</th><th>Model spread (blended)</th><th>Market spread</th><th>Error</th><th>Winner</th>
+        </tr></thead>
+        <tbody id="valid-body"></tbody>
+      </table>
+    </div>
+    <div class="valid-box" style="margin-top:20px;">
+      <div class="panel">
+        <h3>What actually happened</h3>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.65;">Week 2 was upset-heavy: Carolina routed a Cooper-Rush-led Atlanta 34&ndash;3 (the model had that game near a coin flip), Cleveland won outright at Tampa Bay as 8.5-point underdogs, Las Vegas won outright at the Chargers as 6.5-point underdogs, and New Orleans came back to beat Baltimore on the road. None of those are visible in a pre-season composite rating with no injury or in-game context &mdash; but the closing market didn't fully see them coming either, and it still out-performed both model versions on every measure here.</p>
+      </div>
+      <div class="panel">
+        <h3>What this says about the model</h3>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.65;">Straight-up accuracy matched the model's own confidence (a coin-flip-heavy slate should land near 60&ndash;65%), but margin error and total-points error were both worse than the textbook priors this build leaned on &mdash; and worse than just taking the closing line. That's the whole reason for the market blend feeding this week's numbers: shrink toward the market by a weight that grows as validated weeks accumulate (currently <span id="blend-weight-inline-2"></span>, since Week 2 is the only week scored so far). Blended against Week 2 itself, MAE drops to <b class="num">11.84pt</b> and straight-up accuracy rises to <b class="num">11/16</b>, matching the market &mdash; <b>a calibration check, not an out-of-sample validation</b>, since the blend weight and the market itself both came from this same slate; Week 3 is the real test. The clearest, most falsifiable lesson: point totals ran systematically low on the week's shootouts (Bills&ndash;Lions, Chiefs&ndash;Colts, Commanders&ndash;Cowboys all landed 15&ndash;30&nbsp;points over the model's total) &mdash; traced to a real bug (total points never used either team's defense) rather than just a missing-data gap, and <b>fixed this week</b> alongside the real off/def split (&sect;01).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="injuries">
+    <div class="sec-head"><h2>Injury report</h2><span class="idx">06 &nbsp;/&nbsp; AVAILABILITY</span></div>
+    <p class="sec-sub">Full-league report (all 32 teams, per user instruction: Questionable&nbsp;=&nbsp;will play, Doubtful/Out/Injured&nbsp;Reserve&nbsp;=&nbsp;won't), filtered to positions that move a line &mdash; QB, RB, WR, TE, OT/OG/C, CB. <b>This is a reference list, not yet a calibrated adjustment</b>: the report has no depth-chart rank, so a WR1 and a WR4 both just show as "WR out" &mdash; turning this into a point value needs per-player value data (lever list below). QB-position entries here are already reflected in &sect;03's starters; everything else is new context this build doesn't yet price in.</p>
+    <div class="filters">
+      <button class="active" data-f-inj="all">All 15 games</button>
+      <button data-f-inj="has">Has a notable OUT</button>
+    </div>
+    <div class="cards" id="injury-cards"></div>
+  </section>
+
+  <section id="levers">
+    <div class="sec-head"><h2>Improvement levers, ranked</h2><span class="idx">07 &nbsp;/&nbsp; ROADMAP</span></div>
+    <p class="sec-sub">Ordered by expected accuracy gain per unit of effort to build, given what this v0 model is currently missing.</p>
+    <ol class="levers" id="levers-list"></ol>
+  </section>
+
+  <footer>
+    Sources: ESPN, nfelo, Inpredictable, Unexpected Points, FTN Fantasy, PFF (composite table &amp; Wk2&rarr;3 chart via @SamHoppen). Schedule via public NFL reporting; spreads and totals for the Sat 9/26&ndash;Mon 9/28 slate via sportsbook consensus lines (moneylines not sourced this week). QB passing data (2025 season + 2026 through Week 2) and team run/pass defense data (2025 + 2026 through Week 2) via SIS DataHub; Week 3 starters and injury report as supplied by the user. Week 2 final scores via public NFL box scores.
+    <br>Model is a v0 baseline for internal research use only; nothing here is betting advice, and confidence scores reflect simulated rating disparity, not calibrated real-world hit rates.
+  </footer>
+</div>
+
+<script>
+const TEAM_META = {
+"Buffalo Bills":{ab:"BUF",c:"#00338D"},"Los Angeles Rams":{ab:"LAR",c:"#003594"},
+"Baltimore Ravens":{ab:"BAL",c:"#241773"},"San Francisco 49ers":{ab:"SF",c:"#AA0000"},
+"Kansas City Chiefs":{ab:"KC",c:"#E31837"},"Chicago Bears":{ab:"CHI",c:"#0B162A"},
+"Houston Texans":{ab:"HOU",c:"#03202F"},"Jacksonville Jaguars":{ab:"JAX",c:"#006778"},
+"Philadelphia Eagles":{ab:"PHI",c:"#004C54"},"Detroit Lions":{ab:"DET",c:"#0076B6"},
+"Seattle Seahawks":{ab:"SEA",c:"#69BE28"},"New England Patriots":{ab:"NE",c:"#002244"},
+"Cincinnati Bengals":{ab:"CIN",c:"#FB4F14"},"Dallas Cowboys":{ab:"DAL",c:"#041E42"},
+"Green Bay Packers":{ab:"GB",c:"#203731"},"Los Angeles Chargers":{ab:"LAC",c:"#0080C6"},
+"Denver Broncos":{ab:"DEN",c:"#FA4616"},"Tampa Bay Buccaneers":{ab:"TB",c:"#D50A0A"},
+"Minnesota Vikings":{ab:"MIN",c:"#4F2683"},"New York Giants":{ab:"NYG",c:"#0B2265"},
+"Pittsburgh Steelers":{ab:"PIT",c:"#FFB612"},"Washington Commanders":{ab:"WAS",c:"#773141"},
+"Indianapolis Colts":{ab:"IND",c:"#002C5F"},"New Orleans Saints":{ab:"NO",c:"#9F8458"},
+"Carolina Panthers":{ab:"CAR",c:"#0085CA"},"Arizona Cardinals":{ab:"ARI",c:"#97233F"},
+"Las Vegas Raiders":{ab:"LV",c:"#A5ACAF"},"New York Jets":{ab:"NYJ",c:"#125740"},
+"Atlanta Falcons":{ab:"ATL",c:"#A71930"},"Tennessee Titans":{ab:"TEN",c:"#4B92DB"},
+"Miami Dolphins":{ab:"MIA",c:"#008E97"},"Cleveland Browns":{ab:"CLE",c:"#311D00"}
+};
+
+const TREND = {
+"Buffalo Bills":["up","S"],"Los Angeles Rams":["up","S"],"San Francisco 49ers":["up","M"],
+"Seattle Seahawks":["up","L"],"Baltimore Ravens":["up","S"],"Kansas City Chiefs":["up","S"],
+"New England Patriots":["up","S"],"Philadelphia Eagles":["up","S"],"Detroit Lions":["up","S"],
+"Jacksonville Jaguars":["flat","-"],"Houston Texans":["up","S"],"Cincinnati Bengals":["up","S"],
+"Dallas Cowboys":["up","M"],"Denver Broncos":["up","S"],"Minnesota Vikings":["up","M"],
+"Green Bay Packers":["down","S"],"Los Angeles Chargers":["down","S"],"Chicago Bears":["down","L"],
+"Tampa Bay Buccaneers":["down","S"],"Indianapolis Colts":["up","S"],"Carolina Panthers":["up","S"],
+"Pittsburgh Steelers":["down","S"],"New Orleans Saints":["up","S"],"Las Vegas Raiders":["up","S"],
+"Washington Commanders":["down","M"],"New York Jets":["up","S"],"Arizona Cardinals":["down","S"],
+"New York Giants":["down","L"],"Atlanta Falcons":["down","S"],"Tennessee Titans":["up","S"],
+"Cleveland Browns":["up","L"],"Miami Dolphins":["down","L"]
+};
+
+const DATA = {"importance": {"fpi": {"corr": 0.957, "mae_vs_composite": 0.797}, "nfelo": {"corr": 0.985, "mae_vs_composite": 0.466}, "inpred": {"corr": 0.955, "mae_vs_composite": 0.847}, "up": {"corr": 0.963, "mae_vs_composite": 0.791}, "dvoa": {"corr": 0.945, "mae_vs_composite": 0.969}, "pff": {"corr": 0.959, "mae_vs_composite": 0.841}}, "results": [{"home": "Dallas Cowboys", "away": "Baltimore Ravens", "home_off": 29.0, "home_def": 27.3, "away_off": 25.8, "away_def": 21.9, "model_margin": -0.2, "expected_margin": -0.2, "median_margin": -0.5, "ci68": [-13.5, 12.8], "ci95": [-26.6, 24.8], "win_home": 48.1, "win_away": 51.9, "confidence": 4, "proj_home_score": 29.3, "proj_away_score": 29.7, "combined_sd": 13.15, "vegas_home_spread": 3.5, "vegas_total": 52.5, "model_home_spread": 0.5, "edge_pts": -3.0}, {"home": "Tampa Bay Buccaneers", "away": "Minnesota Vikings", "home_off": 20.6, "home_def": 21.6, "away_off": 23.0, "away_def": 22.4, "model_margin": 0.4, "expected_margin": 0.4, "median_margin": 0.8, "ci68": [-12.7, 14.0], "ci95": [-25.4, 25.9], "win_home": 52.4, "win_away": 47.6, "confidence": 5, "proj_home_score": 21.6, "proj_away_score": 21.1, "combined_sd": 13.33, "vegas_home_spread": 1.5, "vegas_total": 42.5, "model_home_spread": -0.8, "edge_pts": -2.3}, {"home": "Denver Broncos", "away": "Los Angeles Rams", "home_off": 22.8, "home_def": 21.2, "away_off": 24.8, "away_def": 19.3, "model_margin": -1.9, "expected_margin": -1.9, "median_margin": -2.0, "ci68": [-15.1, 11.3], "ci95": [-27.3, 23.2], "win_home": 44.2, "win_away": 55.8, "confidence": 12, "proj_home_score": 20.7, "proj_away_score": 22.6, "combined_sd": 13.19, "vegas_home_spread": 2.5, "vegas_total": 45.5, "model_home_spread": 2.0, "edge_pts": -0.5}, {"home": "Chicago Bears", "away": "Philadelphia Eagles", "home_off": 20.9, "home_def": 21.8, "away_off": 23.7, "away_def": 21.2, "model_margin": -1.4, "expected_margin": -1.4, "median_margin": -1.4, "ci68": [-15.5, 12.4], "ci95": [-29.1, 26.3], "win_home": 46.0, "win_away": 54.0, "confidence": 8, "proj_home_score": 20.6, "proj_away_score": 22.0, "combined_sd": 14.1, "vegas_home_spread": 4.5, "vegas_total": 43.5, "model_home_spread": 1.4, "edge_pts": -3.1}, {"home": "Jacksonville Jaguars", "away": "New England Patriots", "home_off": 20.5, "home_def": 18.5, "away_off": 22.0, "away_def": 19.5, "model_margin": 1.5, "expected_margin": 1.5, "median_margin": 1.4, "ci68": [-11.5, 14.8], "ci95": [-23.8, 27.2], "win_home": 54.4, "win_away": 45.6, "confidence": 9, "proj_home_score": 18.7, "proj_away_score": 17.2, "combined_sd": 13.27, "vegas_home_spread": -3.0, "vegas_total": 45.5, "model_home_spread": -1.4, "edge_pts": 1.6}, {"home": "Pittsburgh Steelers", "away": "Cincinnati Bengals", "home_off": 19.5, "home_def": 21.3, "away_off": 26.1, "away_def": 24.3, "model_margin": -1.6, "expected_margin": -1.6, "median_margin": -1.6, "ci68": [-14.6, 12.0], "ci95": [-27.6, 25.2], "win_home": 45.1, "win_away": 54.9, "confidence": 10, "proj_home_score": 22.3, "proj_away_score": 23.8, "combined_sd": 13.19, "vegas_home_spread": 3.5, "vegas_total": 42.5, "model_home_spread": 1.6, "edge_pts": -1.9}, {"home": "Buffalo Bills", "away": "Los Angeles Chargers", "home_off": 30.9, "home_def": 25.1, "away_off": 22.9, "away_def": 23.4, "model_margin": 8.3, "expected_margin": 8.3, "median_margin": 8.4, "ci68": [-4.6, 21.5], "ci95": [-17.4, 34.9], "win_home": 74.3, "win_away": 25.7, "confidence": 49, "proj_home_score": 32.9, "proj_away_score": 24.4, "combined_sd": 13.11, "vegas_home_spread": -7.0, "vegas_total": 50.5, "model_home_spread": -8.4, "edge_pts": -1.4}, {"home": "Cleveland Browns", "away": "Carolina Panthers", "home_off": 13.2, "home_def": 19.5, "away_off": 18.4, "away_def": 20.0, "model_margin": -2.7, "expected_margin": -2.7, "median_margin": -2.3, "ci68": [-15.8, 10.7], "ci95": [-26.6, 22.9], "win_home": 43.0, "win_away": 57.0, "confidence": 14, "proj_home_score": 12.7, "proj_away_score": 15.1, "combined_sd": 13.11, "vegas_home_spread": 2.5, "vegas_total": 42.5, "model_home_spread": 2.3, "edge_pts": -0.2}, {"home": "Detroit Lions", "away": "New York Jets", "home_off": 25.3, "home_def": 23.3, "away_off": 17.7, "away_def": 21.6, "model_margin": 7.9, "expected_margin": 7.9, "median_margin": 7.7, "ci68": [-5.2, 21.1], "ci95": [-17.8, 33.3], "win_home": 71.9, "win_away": 28.1, "confidence": 44, "proj_home_score": 25.5, "proj_away_score": 17.7, "combined_sd": 13.22, "vegas_home_spread": -6.5, "vegas_total": 47.5, "model_home_spread": -7.7, "edge_pts": -1.2}, {"home": "Indianapolis Colts", "away": "Houston Texans", "home_off": 28.5, "home_def": 29.6, "away_off": 27.1, "away_def": 25.2, "model_margin": -1.0, "expected_margin": -1.0, "median_margin": -1.1, "ci68": [-14.6, 12.0], "ci95": [-26.8, 24.4], "win_home": 47.2, "win_away": 52.8, "confidence": 6, "proj_home_score": 32.1, "proj_away_score": 33.3, "combined_sd": 13.22, "vegas_home_spread": 3.0, "vegas_total": 42.5, "model_home_spread": 1.1, "edge_pts": -1.9}, {"home": "Miami Dolphins", "away": "Kansas City Chiefs", "home_off": 14.4, "home_def": 22.4, "away_off": 26.3, "away_def": 22.4, "model_margin": -9.9, "expected_margin": -9.9, "median_margin": -9.4, "ci68": [-22.9, 3.0], "ci95": [-35.2, 15.6], "win_home": 22.1, "win_away": 77.9, "confidence": 56, "proj_home_score": 15.4, "proj_away_score": 25.1, "combined_sd": 13.15, "vegas_home_spread": 11.5, "vegas_total": 45.5, "model_home_spread": 9.4, "edge_pts": -2.1}, {"home": "New York Giants", "away": "Tennessee Titans", "home_off": 23.0, "home_def": 27.3, "away_off": 18.4, "away_def": 23.6, "model_margin": 2.9, "expected_margin": 2.9, "median_margin": 3.3, "ci68": [-10.4, 16.6], "ci95": [-24.0, 29.5], "win_home": 58.8, "win_away": 41.2, "confidence": 18, "proj_home_score": 25.2, "proj_away_score": 22.2, "combined_sd": 13.75, "vegas_home_spread": -2.5, "vegas_total": 39.5, "model_home_spread": -3.3, "edge_pts": -0.8}, {"home": "Washington Commanders", "away": "Seattle Seahawks", "home_off": 22.6, "home_def": 25.8, "away_off": 22.5, "away_def": 17.9, "model_margin": -5.8, "expected_margin": -5.8, "median_margin": -5.9, "ci68": [-19.2, 7.6], "ci95": [-30.6, 21.4], "win_home": 32.7, "win_away": 67.3, "confidence": 35, "proj_home_score": 19.1, "proj_away_score": 24.9, "combined_sd": 13.33, "vegas_home_spread": 7.0, "vegas_total": 40.5, "model_home_spread": 5.9, "edge_pts": -1.1}, {"home": "San Francisco 49ers", "away": "Arizona Cardinals", "home_off": 28.6, "home_def": 23.7, "away_off": 19.6, "away_def": 23.9, "model_margin": 11.2, "expected_margin": 11.2, "median_margin": 11.1, "ci68": [-2.5, 24.8], "ci95": [-15.7, 37.1], "win_home": 79.6, "win_away": 20.4, "confidence": 59, "proj_home_score": 30.9, "proj_away_score": 19.8, "combined_sd": 13.75, "vegas_home_spread": -8.5, "vegas_total": 47.5, "model_home_spread": -11.1, "edge_pts": -2.6}, {"home": "New Orleans Saints", "away": "Las Vegas Raiders", "home_off": 22.7, "home_def": 25.0, "away_off": 17.8, "away_def": 21.0, "model_margin": 2.9, "expected_margin": 2.9, "median_margin": 3.0, "ci68": [-10.5, 16.0], "ci95": [-23.2, 28.0], "win_home": 59.1, "win_away": 40.9, "confidence": 18, "proj_home_score": 22.1, "proj_away_score": 19.2, "combined_sd": 13.24, "vegas_home_spread": -3.0, "vegas_total": 43.5, "model_home_spread": -3.0, "edge_pts": 0.0}], "results_qb_adjusted": [{"home": "Dallas Cowboys", "away": "Baltimore Ravens", "home_off": 28.5, "home_def": 27.3, "away_off": 25.8, "away_def": 21.9, "model_margin": -0.8, "expected_margin": -0.8, "median_margin": -0.5, "ci68": [-13.6, 11.9], "ci95": [-26.4, 25.7], "win_home": 48.5, "win_away": 51.5, "confidence": 3, "proj_home_score": 29.0, "proj_away_score": 29.6, "combined_sd": 13.15, "home_qb_adj": -0.54, "away_qb_adj": 0.07, "vegas_home_spread": 3.5, "model_home_spread": 0.5, "edge_pts": -3.0}, {"home": "Tampa Bay Buccaneers", "away": "Minnesota Vikings", "home_off": 21.3, "home_def": 21.6, "away_off": 23.3, "away_def": 22.4, "model_margin": 0.8, "expected_margin": 0.8, "median_margin": 1.0, "ci68": [-12.4, 14.0], "ci95": [-24.9, 26.9], "win_home": 53.2, "win_away": 46.8, "confidence": 6, "proj_home_score": 22.2, "proj_away_score": 21.3, "combined_sd": 13.33, "home_qb_adj": 0.67, "away_qb_adj": 0.29, "vegas_home_spread": 1.5, "model_home_spread": -1.0, "edge_pts": -2.5}, {"home": "Denver Broncos", "away": "Los Angeles Rams", "home_off": 23.4, "home_def": 21.2, "away_off": 24.8, "away_def": 19.3, "model_margin": -1.4, "expected_margin": -1.4, "median_margin": -1.6, "ci68": [-14.7, 12.0], "ci95": [-27.1, 25.4], "win_home": 45.0, "win_away": 55.0, "confidence": 10, "proj_home_score": 21.2, "proj_away_score": 22.6, "combined_sd": 13.19, "home_qb_adj": 0.55, "away_qb_adj": 0.07, "vegas_home_spread": 2.5, "model_home_spread": 1.6, "edge_pts": -0.9}, {"home": "Chicago Bears", "away": "Philadelphia Eagles", "home_off": 20.9, "home_def": 21.8, "away_off": 23.7, "away_def": 21.2, "model_margin": -1.3, "expected_margin": -1.3, "median_margin": -1.2, "ci68": [-15.4, 12.9], "ci95": [-28.4, 27.4], "win_home": 46.6, "win_away": 53.4, "confidence": 7, "proj_home_score": 20.9, "proj_away_score": 22.0, "combined_sd": 14.1, "home_qb_adj": 0.0, "away_qb_adj": -0.08, "vegas_home_spread": 4.5, "model_home_spread": 1.2, "edge_pts": -3.3}, {"home": "Jacksonville Jaguars", "away": "New England Patriots", "home_off": 20.7, "home_def": 18.5, "away_off": 22.3, "away_def": 19.5, "model_margin": 1.4, "expected_margin": 1.4, "median_margin": 1.2, "ci68": [-11.9, 14.3], "ci95": [-24.5, 27.2], "win_home": 53.6, "win_away": 46.4, "confidence": 7, "proj_home_score": 18.6, "proj_away_score": 17.4, "combined_sd": 13.27, "home_qb_adj": 0.22, "away_qb_adj": 0.28, "vegas_home_spread": -3.0, "model_home_spread": -1.2, "edge_pts": 1.8}, {"home": "Pittsburgh Steelers", "away": "Cincinnati Bengals", "home_off": 20.0, "home_def": 21.3, "away_off": 26.0, "away_def": 24.3, "model_margin": -1.0, "expected_margin": -1.0, "median_margin": -1.4, "ci68": [-13.7, 12.1], "ci95": [-26.3, 24.7], "win_home": 45.8, "win_away": 54.2, "confidence": 8, "proj_home_score": 22.8, "proj_away_score": 23.8, "combined_sd": 13.19, "home_qb_adj": 0.52, "away_qb_adj": -0.06, "vegas_home_spread": 3.5, "model_home_spread": 1.4, "edge_pts": -2.1}, {"home": "Buffalo Bills", "away": "Los Angeles Chargers", "home_off": 30.7, "home_def": 25.1, "away_off": 23.2, "away_def": 23.4, "model_margin": 7.8, "expected_margin": 7.8, "median_margin": 7.9, "ci68": [-5.1, 20.9], "ci95": [-17.0, 33.6], "win_home": 73.1, "win_away": 26.9, "confidence": 46, "proj_home_score": 32.6, "proj_away_score": 24.7, "combined_sd": 13.11, "home_qb_adj": -0.14, "away_qb_adj": 0.34, "vegas_home_spread": -7.0, "model_home_spread": -7.9, "edge_pts": -0.9}, {"home": "Cleveland Browns", "away": "Carolina Panthers", "home_off": 13.2, "home_def": 19.5, "away_off": 18.4, "away_def": 20.0, "model_margin": -2.7, "expected_margin": -2.7, "median_margin": -2.8, "ci68": [-15.6, 10.5], "ci95": [-26.7, 22.8], "win_home": 41.7, "win_away": 58.3, "confidence": 17, "proj_home_score": 12.5, "proj_away_score": 15.1, "combined_sd": 13.11, "home_qb_adj": 0.0, "away_qb_adj": 0.0, "vegas_home_spread": 2.5, "model_home_spread": 2.8, "edge_pts": 0.3}, {"home": "Detroit Lions", "away": "New York Jets", "home_off": 24.9, "home_def": 23.3, "away_off": 17.3, "away_def": 21.6, "model_margin": 8.0, "expected_margin": 8.0, "median_margin": 7.8, "ci68": [-5.2, 21.2], "ci95": [-18.0, 33.2], "win_home": 73.3, "win_away": 26.7, "confidence": 47, "proj_home_score": 25.0, "proj_away_score": 17.1, "combined_sd": 13.22, "home_qb_adj": -0.37, "away_qb_adj": -0.43, "vegas_home_spread": -6.5, "model_home_spread": -7.8, "edge_pts": -1.3}, {"home": "Indianapolis Colts", "away": "Houston Texans", "home_off": 28.8, "home_def": 29.6, "away_off": 27.7, "away_def": 25.2, "model_margin": -1.3, "expected_margin": -1.3, "median_margin": -1.3, "ci68": [-14.7, 12.2], "ci95": [-27.7, 24.5], "win_home": 46.3, "win_away": 53.7, "confidence": 7, "proj_home_score": 32.5, "proj_away_score": 33.8, "combined_sd": 13.22, "home_qb_adj": 0.29, "away_qb_adj": 0.61, "vegas_home_spread": 3.0, "model_home_spread": 1.3, "edge_pts": -1.7}, {"home": "Miami Dolphins", "away": "Kansas City Chiefs", "home_off": 14.4, "home_def": 22.4, "away_off": 26.4, "away_def": 22.4, "model_margin": -10.1, "expected_margin": -10.1, "median_margin": -10.3, "ci68": [-23.1, 3.4], "ci95": [-34.4, 16.8], "win_home": 22.9, "win_away": 77.1, "confidence": 54, "proj_home_score": 15.4, "proj_away_score": 25.3, "combined_sd": 13.15, "home_qb_adj": 0.0, "away_qb_adj": 0.17, "vegas_home_spread": 11.5, "model_home_spread": 10.3, "edge_pts": -1.2}, {"home": "New York Giants", "away": "Tennessee Titans", "home_off": 23.0, "home_def": 27.3, "away_off": 18.0, "away_def": 23.6, "model_margin": 3.3, "expected_margin": 3.3, "median_margin": 3.0, "ci68": [-10.8, 16.8], "ci95": [-23.5, 29.9], "win_home": 58.4, "win_away": 41.6, "confidence": 17, "proj_home_score": 24.9, "proj_away_score": 21.8, "combined_sd": 13.75, "home_qb_adj": 0.0, "away_qb_adj": -0.41, "vegas_home_spread": -2.5, "model_home_spread": -3.0, "edge_pts": -0.5}, {"home": "Washington Commanders", "away": "Seattle Seahawks", "home_off": 22.6, "home_def": 25.8, "away_off": 22.5, "away_def": 17.9, "model_margin": -5.8, "expected_margin": -5.8, "median_margin": -6.1, "ci68": [-19.2, 7.2], "ci95": [-31.2, 19.8], "win_home": 32.3, "win_away": 67.7, "confidence": 35, "proj_home_score": 18.9, "proj_away_score": 24.9, "combined_sd": 13.33, "home_qb_adj": 0.0, "away_qb_adj": 0.0, "vegas_home_spread": 7.0, "model_home_spread": 6.1, "edge_pts": -0.9}, {"home": "San Francisco 49ers", "away": "Arizona Cardinals", "home_off": 28.3, "home_def": 23.7, "away_off": 19.7, "away_def": 23.9, "model_margin": 10.9, "expected_margin": 10.9, "median_margin": 10.6, "ci68": [-3.3, 24.5], "ci95": [-15.8, 37.6], "win_home": 78.3, "win_away": 21.7, "confidence": 57, "proj_home_score": 30.6, "proj_away_score": 19.9, "combined_sd": 13.75, "home_qb_adj": -0.28, "away_qb_adj": 0.06, "vegas_home_spread": -8.5, "model_home_spread": -10.6, "edge_pts": -2.1}, {"home": "New Orleans Saints", "away": "Las Vegas Raiders", "home_off": 22.9, "home_def": 25.0, "away_off": 17.7, "away_def": 21.0, "model_margin": 3.3, "expected_margin": 3.3, "median_margin": 3.3, "ci68": [-9.0, 16.5], "ci95": [-21.9, 28.8], "win_home": 59.9, "win_away": 40.1, "confidence": 20, "proj_home_score": 22.6, "proj_away_score": 19.1, "combined_sd": 13.24, "home_qb_adj": 0.23, "away_qb_adj": -0.16, "vegas_home_spread": -3.0, "model_home_spread": -3.3, "edge_pts": -0.3}], "results_market_blended": [{"home": "Dallas Cowboys", "away": "Baltimore Ravens", "home_off": 28.5, "home_def": 27.3, "away_off": 25.8, "away_def": 21.9, "model_margin": -0.8, "expected_margin": -3.0, "median_margin": -3.1, "ci68": [-16.0, 9.9], "ci95": [-28.6, 22.4], "win_home": 41.4, "win_away": 58.6, "confidence": 17, "proj_home_score": 27.8, "proj_away_score": 30.8, "combined_sd": 13.15, "home_qb_adj": -0.54, "away_qb_adj": 0.07, "model_weight": 0.2, "vegas_home_spread": 3.5, "model_home_spread": 3.1, "edge_pts": -0.4}, {"home": "Tampa Bay Buccaneers", "away": "Minnesota Vikings", "home_off": 21.3, "home_def": 21.6, "away_off": 23.3, "away_def": 22.4, "model_margin": 0.8, "expected_margin": -1.0, "median_margin": -1.0, "ci68": [-13.8, 11.9], "ci95": [-26.7, 25.4], "win_home": 46.8, "win_away": 53.2, "confidence": 6, "proj_home_score": 21.3, "proj_away_score": 22.2, "combined_sd": 13.33, "home_qb_adj": 0.67, "away_qb_adj": 0.29, "model_weight": 0.2, "vegas_home_spread": 1.5, "model_home_spread": 1.0, "edge_pts": -0.5}, {"home": "Denver Broncos", "away": "Los Angeles Rams", "home_off": 23.4, "home_def": 21.2, "away_off": 24.8, "away_def": 19.3, "model_margin": -1.4, "expected_margin": -2.3, "median_margin": -2.2, "ci68": [-14.8, 11.3], "ci95": [-27.9, 23.7], "win_home": 43.0, "win_away": 57.0, "confidence": 14, "proj_home_score": 20.8, "proj_away_score": 22.9, "combined_sd": 13.19, "home_qb_adj": 0.55, "away_qb_adj": 0.07, "model_weight": 0.2, "vegas_home_spread": 2.5, "model_home_spread": 2.2, "edge_pts": -0.3}, {"home": "Chicago Bears", "away": "Philadelphia Eagles", "home_off": 20.9, "home_def": 21.8, "away_off": 23.7, "away_def": 21.2, "model_margin": -1.3, "expected_margin": -3.9, "median_margin": -3.7, "ci68": [-17.6, 10.3], "ci95": [-31.2, 24.7], "win_home": 39.6, "win_away": 60.4, "confidence": 21, "proj_home_score": 19.5, "proj_away_score": 23.2, "combined_sd": 14.1, "home_qb_adj": 0.0, "away_qb_adj": -0.08, "model_weight": 0.2, "vegas_home_spread": 4.5, "model_home_spread": 3.7, "edge_pts": -0.8}, {"home": "Jacksonville Jaguars", "away": "New England Patriots", "home_off": 20.7, "home_def": 18.5, "away_off": 22.3, "away_def": 19.5, "model_margin": 1.4, "expected_margin": 2.7, "median_margin": 2.7, "ci68": [-10.9, 15.8], "ci95": [-23.7, 28.5], "win_home": 58.1, "win_away": 41.9, "confidence": 16, "proj_home_score": 19.4, "proj_away_score": 16.8, "combined_sd": 13.27, "home_qb_adj": 0.22, "away_qb_adj": 0.28, "model_weight": 0.2, "vegas_home_spread": -3.0, "model_home_spread": -2.7, "edge_pts": 0.3}, {"home": "Pittsburgh Steelers", "away": "Cincinnati Bengals", "home_off": 20.0, "home_def": 21.3, "away_off": 26.0, "away_def": 24.3, "model_margin": -1.0, "expected_margin": -3.0, "median_margin": -2.9, "ci68": [-16.0, 10.6], "ci95": [-28.9, 23.3], "win_home": 42.0, "win_away": 58.0, "confidence": 16, "proj_home_score": 22.0, "proj_away_score": 24.7, "combined_sd": 13.19, "home_qb_adj": 0.52, "away_qb_adj": -0.06, "model_weight": 0.2, "vegas_home_spread": 3.5, "model_home_spread": 2.9, "edge_pts": -0.6}, {"home": "Buffalo Bills", "away": "Los Angeles Chargers", "home_off": 30.7, "home_def": 25.1, "away_off": 23.2, "away_def": 23.4, "model_margin": 7.8, "expected_margin": 7.2, "median_margin": 7.3, "ci68": [-5.8, 20.2], "ci95": [-18.4, 32.5], "win_home": 71.0, "win_away": 29.0, "confidence": 42, "proj_home_score": 32.3, "proj_away_score": 25.0, "combined_sd": 13.11, "home_qb_adj": -0.14, "away_qb_adj": 0.34, "model_weight": 0.2, "vegas_home_spread": -7.0, "model_home_spread": -7.3, "edge_pts": -0.3}, {"home": "Cleveland Browns", "away": "Carolina Panthers", "home_off": 13.2, "home_def": 19.5, "away_off": 18.4, "away_def": 20.0, "model_margin": -2.7, "expected_margin": -2.5, "median_margin": -2.6, "ci68": [-15.6, 10.6], "ci95": [-26.7, 22.6], "win_home": 42.0, "win_away": 58.0, "confidence": 16, "proj_home_score": 12.6, "proj_away_score": 15.1, "combined_sd": 13.11, "home_qb_adj": 0.0, "away_qb_adj": 0.0, "model_weight": 0.2, "vegas_home_spread": 2.5, "model_home_spread": 2.6, "edge_pts": 0.1}, {"home": "Detroit Lions", "away": "New York Jets", "home_off": 24.9, "home_def": 23.3, "away_off": 17.3, "away_def": 21.6, "model_margin": 8.0, "expected_margin": 6.8, "median_margin": 6.9, "ci68": [-6.3, 20.1], "ci95": [-19.2, 32.7], "win_home": 69.7, "win_away": 30.3, "confidence": 39, "proj_home_score": 24.6, "proj_away_score": 17.7, "combined_sd": 13.22, "home_qb_adj": -0.37, "away_qb_adj": -0.43, "model_weight": 0.2, "vegas_home_spread": -6.5, "model_home_spread": -6.9, "edge_pts": -0.4}, {"home": "Indianapolis Colts", "away": "Houston Texans", "home_off": 28.8, "home_def": 29.6, "away_off": 27.7, "away_def": 25.2, "model_margin": -1.3, "expected_margin": -2.7, "median_margin": -2.4, "ci68": [-15.7, 10.8], "ci95": [-29.1, 23.3], "win_home": 42.8, "win_away": 57.2, "confidence": 14, "proj_home_score": 31.9, "proj_away_score": 34.6, "combined_sd": 13.22, "home_qb_adj": 0.29, "away_qb_adj": 0.61, "model_weight": 0.2, "vegas_home_spread": 3.0, "model_home_spread": 2.4, "edge_pts": -0.6}, {"home": "Miami Dolphins", "away": "Kansas City Chiefs", "home_off": 14.4, "home_def": 22.4, "away_off": 26.4, "away_def": 22.4, "model_margin": -10.1, "expected_margin": -11.2, "median_margin": -11.5, "ci68": [-24.0, 1.5], "ci95": [-35.8, 14.8], "win_home": 18.7, "win_away": 81.3, "confidence": 63, "proj_home_score": 14.8, "proj_away_score": 26.1, "combined_sd": 13.15, "home_qb_adj": 0.0, "away_qb_adj": 0.17, "model_weight": 0.2, "vegas_home_spread": 11.5, "model_home_spread": 11.5, "edge_pts": 0.0}, {"home": "New York Giants", "away": "Tennessee Titans", "home_off": 23.0, "home_def": 27.3, "away_off": 18.0, "away_def": 23.6, "model_margin": 3.3, "expected_margin": 2.7, "median_margin": 2.4, "ci68": [-11.1, 16.4], "ci95": [-24.8, 29.2], "win_home": 57.4, "win_away": 42.6, "confidence": 15, "proj_home_score": 24.7, "proj_away_score": 22.2, "combined_sd": 13.75, "home_qb_adj": 0.0, "away_qb_adj": -0.41, "model_weight": 0.2, "vegas_home_spread": -2.5, "model_home_spread": -2.4, "edge_pts": 0.1}, {"home": "Washington Commanders", "away": "Seattle Seahawks", "home_off": 22.6, "home_def": 25.8, "away_off": 22.5, "away_def": 17.9, "model_margin": -5.8, "expected_margin": -6.8, "median_margin": -6.6, "ci68": [-19.8, 6.2], "ci95": [-32.4, 19.2], "win_home": 30.8, "win_away": 69.2, "confidence": 38, "proj_home_score": 18.7, "proj_away_score": 25.3, "combined_sd": 13.33, "home_qb_adj": 0.0, "away_qb_adj": 0.0, "model_weight": 0.2, "vegas_home_spread": 7.0, "model_home_spread": 6.6, "edge_pts": -0.4}, {"home": "San Francisco 49ers", "away": "Arizona Cardinals", "home_off": 28.3, "home_def": 23.7, "away_off": 19.7, "away_def": 23.9, "model_margin": 10.9, "expected_margin": 9.0, "median_margin": 9.3, "ci68": [-4.6, 23.0], "ci95": [-17.4, 36.5], "win_home": 74.3, "win_away": 25.7, "confidence": 49, "proj_home_score": 29.9, "proj_away_score": 20.6, "combined_sd": 13.75, "home_qb_adj": -0.28, "away_qb_adj": 0.06, "model_weight": 0.2, "vegas_home_spread": -8.5, "model_home_spread": -9.3, "edge_pts": -0.8}, {"home": "New Orleans Saints", "away": "Las Vegas Raiders", "home_off": 22.9, "home_def": 25.0, "away_off": 17.7, "away_def": 21.0, "model_margin": 3.3, "expected_margin": 3.1, "median_margin": 3.1, "ci68": [-10.0, 16.5], "ci95": [-22.4, 29.8], "win_home": 59.3, "win_away": 40.7, "confidence": 19, "proj_home_score": 22.4, "proj_away_score": 19.2, "combined_sd": 13.24, "home_qb_adj": 0.23, "away_qb_adj": -0.16, "model_weight": 0.2, "vegas_home_spread": -3.0, "model_home_spread": -3.1, "edge_pts": -0.1}], "model_weight": 0.2, "qb_profiles": {"Carolina Panthers": {"team": "Carolina Panthers", "name": "Bryce Young", "is_backup": false, "paa2025": 1.67, "paa2026": 1.62, "blended_paa": 1.65, "hot_cold_delta": -0.04, "qb_adj": 0.0, "data_quality": "full", "tier": "Above Average"}, "Atlanta Falcons": {"team": "Atlanta Falcons", "name": "Michael Penix Jr.", "is_backup": false, "paa2025": 0.32, "paa2026": null, "blended_paa": 0.32, "hot_cold_delta": null, "qb_adj": 0.0, "data_quality": "no-2026-games-yet", "tier": "Average"}, "New Orleans Saints": {"team": "New Orleans Saints", "name": "Tyler Shough", "is_backup": false, "paa2025": 0.96, "paa2026": -1.13, "blended_paa": -0.18, "hot_cold_delta": -2.09, "qb_adj": 0.23, "data_quality": "full", "tier": "Below Average"}, "Baltimore Ravens": {"team": "Baltimore Ravens", "name": "Lamar Jackson", "is_backup": false, "paa2025": 0.17, "paa2026": -0.46, "blended_paa": -0.1, "hot_cold_delta": -0.63, "qb_adj": 0.07, "data_quality": "full", "tier": "Average"}, "Minnesota Vikings": {"team": "Minnesota Vikings", "name": "Kyler Murray", "is_backup": false, "paa2025": 3.58, "paa2026": -1.69, "blended_paa": 2.97, "hot_cold_delta": -5.26, "qb_adj": 0.29, "data_quality": "team-change", "tier": "Elite"}, "Chicago Bears": {"team": "Chicago Bears", "name": "Case Keenum", "is_backup": true, "paa2025": null, "paa2026": null, "blended_paa": null, "hot_cold_delta": null, "qb_adj": 0.0, "data_quality": "no-data", "tier": "Unrated"}, "Cincinnati Bengals": {"team": "Cincinnati Bengals", "name": "Joe Burrow", "is_backup": false, "paa2025": 0.54, "paa2026": 1.14, "blended_paa": 0.87, "hot_cold_delta": 0.59, "qb_adj": -0.06, "data_quality": "full", "tier": "Average"}, "Houston Texans": {"team": "Houston Texans", "name": "C.J. Stroud", "is_backup": false, "paa2025": 2.4, "paa2026": -3.13, "blended_paa": -0.41, "hot_cold_delta": -5.53, "qb_adj": 0.61, "data_quality": "full", "tier": "Below Average"}, "Pittsburgh Steelers": {"team": "Pittsburgh Steelers", "name": "Aaron Rodgers", "is_backup": false, "paa2025": -1.54, "paa2026": -6.26, "blended_paa": -3.75, "hot_cold_delta": -4.73, "qb_adj": 0.52, "data_quality": "full", "tier": "Replacement Level"}, "New England Patriots": {"team": "New England Patriots", "name": "Drake Maye", "is_backup": false, "paa2025": 0.85, "paa2026": -1.74, "blended_paa": -0.13, "hot_cold_delta": -2.58, "qb_adj": 0.28, "data_quality": "full", "tier": "Below Average"}, "Green Bay Packers": {"team": "Green Bay Packers", "name": "Jordan Love", "is_backup": false, "paa2025": 3.2, "paa2026": -4.64, "blended_paa": -0.26, "hot_cold_delta": -7.84, "qb_adj": 0.86, "data_quality": "full", "tier": "Below Average"}, "New York Jets": {"team": "New York Jets", "name": "Geno Smith", "is_backup": false, "paa2025": -4.95, "paa2026": 2.95, "blended_paa": -1.64, "hot_cold_delta": 7.9, "qb_adj": -0.43, "data_quality": "team-change", "tier": "Replacement Level"}, "Cleveland Browns": {"team": "Cleveland Browns", "name": "Deshaun Watson", "is_backup": false, "paa2025": null, "paa2026": -3.37, "blended_paa": -3.37, "hot_cold_delta": null, "qb_adj": 0.0, "data_quality": "no-2025-baseline", "tier": "Replacement Level"}, "Tampa Bay Buccaneers": {"team": "Tampa Bay Buccaneers", "name": "Baker Mayfield", "is_backup": false, "paa2025": 0.77, "paa2026": -5.37, "blended_paa": -1.73, "hot_cold_delta": -6.14, "qb_adj": 0.67, "data_quality": "full", "tier": "Replacement Level"}, "Philadelphia Eagles": {"team": "Philadelphia Eagles", "name": "Jalen Hurts", "is_backup": false, "paa2025": 0.73, "paa2026": 1.45, "blended_paa": 1.02, "hot_cold_delta": 0.71, "qb_adj": -0.08, "data_quality": "full", "tier": "Above Average"}, "Tennessee Titans": {"team": "Tennessee Titans", "name": "Cam Ward", "is_backup": false, "paa2025": -2.71, "paa2026": 1.06, "blended_paa": -1.33, "hot_cold_delta": 3.77, "qb_adj": -0.41, "data_quality": "full", "tier": "Replacement Level"}, "Jacksonville Jaguars": {"team": "Jacksonville Jaguars", "name": "Trevor Lawrence", "is_backup": false, "paa2025": 0.99, "paa2026": -1.02, "blended_paa": 0.25, "hot_cold_delta": -2.01, "qb_adj": 0.22, "data_quality": "full", "tier": "Average"}, "Denver Broncos": {"team": "Denver Broncos", "name": "Bo Nix", "is_backup": false, "paa2025": 3.22, "paa2026": -1.8, "blended_paa": 1.23, "hot_cold_delta": -5.02, "qb_adj": 0.55, "data_quality": "full", "tier": "Above Average"}, "Las Vegas Raiders": {"team": "Las Vegas Raiders", "name": "Kirk Cousins", "is_backup": false, "paa2025": -0.02, "paa2026": 2.98, "blended_paa": 1.51, "hot_cold_delta": 2.99, "qb_adj": -0.16, "data_quality": "team-change", "tier": "Above Average"}, "Los Angeles Chargers": {"team": "Los Angeles Chargers", "name": "Justin Herbert", "is_backup": false, "paa2025": -0.66, "paa2026": -3.79, "blended_paa": -1.83, "hot_cold_delta": -3.13, "qb_adj": 0.34, "data_quality": "full", "tier": "Replacement Level"}, "Seattle Seahawks": {"team": "Seattle Seahawks", "name": "Drew Lock", "is_backup": true, "paa2025": null, "paa2026": 3.96, "blended_paa": 3.96, "hot_cold_delta": null, "qb_adj": 0.0, "data_quality": "no-2025-baseline", "tier": "Elite"}, "Arizona Cardinals": {"team": "Arizona Cardinals", "name": "Jacoby Brissett", "is_backup": false, "paa2025": 0.59, "paa2026": 0.01, "blended_paa": 0.35, "hot_cold_delta": -0.59, "qb_adj": 0.06, "data_quality": "full", "tier": "Average"}, "Washington Commanders": {"team": "Washington Commanders", "name": "Marcus Mariota", "is_backup": true, "paa2025": null, "paa2026": 1.94, "blended_paa": 1.94, "hot_cold_delta": null, "qb_adj": 0.0, "data_quality": "no-2025-baseline", "tier": "Above Average"}, "Dallas Cowboys": {"team": "Dallas Cowboys", "name": "Dak Prescott", "is_backup": false, "paa2025": 1.49, "paa2026": 6.38, "blended_paa": 3.54, "hot_cold_delta": 4.9, "qb_adj": -0.54, "data_quality": "full", "tier": "Elite"}, "Miami Dolphins": {"team": "Miami Dolphins", "name": "Malik Willis", "is_backup": false, "paa2025": null, "paa2026": 0.1, "blended_paa": 0.1, "hot_cold_delta": null, "qb_adj": 0.0, "data_quality": "no-2025-baseline", "tier": "Average"}, "San Francisco 49ers": {"team": "San Francisco 49ers", "name": "Brock Purdy", "is_backup": false, "paa2025": 3.2, "paa2026": 5.79, "blended_paa": 4.41, "hot_cold_delta": 2.59, "qb_adj": -0.28, "data_quality": "full", "tier": "Elite"}, "Indianapolis Colts": {"team": "Indianapolis Colts", "name": "Daniel Jones", "is_backup": false, "paa2025": 0.43, "paa2026": -2.19, "blended_paa": -0.67, "hot_cold_delta": -2.62, "qb_adj": 0.29, "data_quality": "full", "tier": "Below Average"}, "Kansas City Chiefs": {"team": "Kansas City Chiefs", "name": "Patrick Mahomes", "is_backup": false, "paa2025": 3.68, "paa2026": 2.13, "blended_paa": 2.98, "hot_cold_delta": -1.54, "qb_adj": 0.17, "data_quality": "full", "tier": "Elite"}, "New York Giants": {"team": "New York Giants", "name": "Jameis Winston", "is_backup": true, "paa2025": null, "paa2026": -1.02, "blended_paa": -1.02, "hot_cold_delta": null, "qb_adj": 0.0, "data_quality": "no-2025-baseline", "tier": "Below Average"}, "Los Angeles Rams": {"team": "Los Angeles Rams", "name": "Matthew Stafford", "is_backup": false, "paa2025": 2.78, "paa2026": 2.13, "blended_paa": 2.53, "hot_cold_delta": -0.64, "qb_adj": 0.07, "data_quality": "full", "tier": "Elite"}, "Buffalo Bills": {"team": "Buffalo Bills", "name": "Josh Allen", "is_backup": false, "paa2025": 1.74, "paa2026": 3.06, "blended_paa": 2.27, "hot_cold_delta": 1.31, "qb_adj": -0.14, "data_quality": "full", "tier": "Above Average"}, "Detroit Lions": {"team": "Detroit Lions", "name": "Jared Goff", "is_backup": false, "paa2025": 2.04, "paa2026": 5.39, "blended_paa": 3.59, "hot_cold_delta": 3.35, "qb_adj": -0.37, "data_quality": "full", "tier": "Elite"}}, "teams": {"Buffalo Bills": {"comp": 5.8, "sd": 0.6, "off": 30.9, "defr": 25.1}, "Los Angeles Rams": {"comp": 5.5, "sd": 0.6, "off": 24.8, "defr": 19.3}, "San Francisco 49ers": {"comp": 4.9, "sd": 1.3, "off": 28.6, "defr": 23.7}, "Seattle Seahawks": {"comp": 4.6, "sd": 1.1, "off": 22.5, "defr": 17.9}, "Baltimore Ravens": {"comp": 3.9, "sd": 0.4, "off": 25.8, "defr": 21.9}, "Kansas City Chiefs": {"comp": 3.9, "sd": 0.5, "off": 26.3, "defr": 22.4}, "New England Patriots": {"comp": 2.5, "sd": 1.1, "off": 22.0, "defr": 19.5}, "Philadelphia Eagles": {"comp": 2.5, "sd": 1.6, "off": 23.7, "defr": 21.2}, "Detroit Lions": {"comp": 2.0, "sd": 0.8, "off": 25.3, "defr": 23.3}, "Jacksonville Jaguars": {"comp": 2.0, "sd": 0.8, "off": 20.5, "defr": 18.5}, "Houston Texans": {"comp": 1.9, "sd": 0.7, "off": 27.1, "defr": 25.2}, "Cincinnati Bengals": {"comp": 1.8, "sd": 0.8, "off": 26.1, "defr": 24.3}, "Dallas Cowboys": {"comp": 1.7, "sd": 1.0, "off": 29.0, "defr": 27.3}, "Denver Broncos": {"comp": 1.6, "sd": 1.0, "off": 22.8, "defr": 21.2}, "Minnesota Vikings": {"comp": 0.6, "sd": 1.2, "off": 23.0, "defr": 22.4}, "Green Bay Packers": {"comp": 0.0, "sd": 1.5, "off": 22.3, "defr": 22.3}, "Los Angeles Chargers": {"comp": -0.5, "sd": 0.6, "off": 22.9, "defr": 23.4}, "Chicago Bears": {"comp": -0.9, "sd": 2.3, "off": 20.9, "defr": 21.8}, "Tampa Bay Buccaneers": {"comp": -1.0, "sd": 0.9, "off": 20.6, "defr": 21.6}, "Indianapolis Colts": {"comp": -1.1, "sd": 1.0, "off": 28.5, "defr": 29.6}, "Carolina Panthers": {"comp": -1.6, "sd": 0.6, "off": 18.4, "defr": 20.0}, "Pittsburgh Steelers": {"comp": -1.8, "sd": 0.8, "off": 19.5, "defr": 21.3}, "New Orleans Saints": {"comp": -2.3, "sd": 1.3, "off": 22.7, "defr": 25.0}, "Las Vegas Raiders": {"comp": -3.2, "sd": 0.5, "off": 17.8, "defr": 21.0}, "Washington Commanders": {"comp": -3.2, "sd": 1.0, "off": 22.6, "defr": 25.8}, "New York Jets": {"comp": -3.9, "sd": 0.9, "off": 17.7, "defr": 21.6}, "Arizona Cardinals": {"comp": -4.3, "sd": 1.9, "off": 19.6, "defr": 23.9}, "New York Giants": {"comp": -4.3, "sd": 2.4, "off": 23.0, "defr": 27.3}, "Atlanta Falcons": {"comp": -4.8, "sd": 1.7, "off": 14.4, "defr": 19.2}, "Tennessee Titans": {"comp": -5.2, "sd": 0.8, "off": 18.4, "defr": 23.6}, "Cleveland Browns": {"comp": -6.3, "sd": 0.6, "off": 13.2, "defr": 19.5}, "Miami Dolphins": {"comp": -8.0, "sd": 0.9, "off": 14.4, "defr": 22.4}}};
+
+const VALIDATION = {"base": [{"matchup": "Detroit Lions @ Buffalo Bills", "actual": "31-41", "actual_margin": 10, "pred_margin": 4.4, "err": 5.6, "su_hit": true, "vegas_spread": -5.5, "pred_total": 49.0, "actual_total": 72}, {"matchup": "Carolina Panthers @ Atlanta Falcons", "actual": "34-3", "actual_margin": -31, "pred_margin": 0.3, "err": 31.3, "su_hit": false, "vegas_spread": 2.5, "pred_total": 41.2, "actual_total": 37}, {"matchup": "New Orleans Saints @ Baltimore Ravens", "actual": "24-17", "actual_margin": -7, "pred_margin": 8.7, "err": 15.7, "su_hit": false, "vegas_spread": -8.5, "pred_total": 46.5, "actual_total": 41}, {"matchup": "Minnesota Vikings @ Chicago Bears", "actual": "9-3", "actual_margin": -6, "pred_margin": 5.6, "err": 11.6, "su_hit": false, "vegas_spread": -4.5, "pred_total": 45.9, "actual_total": 12}, {"matchup": "Cincinnati Bengals @ Houston Texans", "actual": "20-6", "actual_margin": -14, "pred_margin": 3.0, "err": 17.0, "su_hit": false, "vegas_spread": -2.5, "pred_total": 47.3, "actual_total": 26}, {"matchup": "Pittsburgh Steelers @ New England Patriots", "actual": "3-20", "actual_margin": 17, "pred_margin": 5.1, "err": 11.9, "su_hit": true, "vegas_spread": -5.5, "pred_total": 46.0, "actual_total": 23}, {"matchup": "Green Bay Packers @ New York Jets", "actual": "20-17", "actual_margin": -3, "pred_margin": -3.0, "err": 0.0, "su_hit": true, "vegas_spread": 3.5, "pred_total": 43.9, "actual_total": 37}, {"matchup": "Cleveland Browns @ Tampa Bay Buccaneers", "actual": "23-19", "actual_margin": -4, "pred_margin": 9.2, "err": 13.2, "su_hit": false, "vegas_spread": -8.5, "pred_total": 41.7, "actual_total": 42}, {"matchup": "Philadelphia Eagles @ Tennessee Titans", "actual": "24-20", "actual_margin": -4, "pred_margin": -6.3, "err": 2.3, "su_hit": true, "vegas_spread": 7.0, "pred_total": 42.6, "actual_total": 44}, {"matchup": "Jacksonville Jaguars @ Denver Broncos", "actual": "13-20", "actual_margin": 7, "pred_margin": 0.1, "err": 6.9, "su_hit": true, "vegas_spread": -2.5, "pred_total": 47.2, "actual_total": 33}, {"matchup": "Las Vegas Raiders @ Los Angeles Chargers", "actual": "26-14", "actual_margin": -12, "pred_margin": 7.1, "err": 19.1, "su_hit": false, "vegas_spread": -6.5, "pred_total": 42.9, "actual_total": 40}, {"matchup": "Seattle Seahawks @ Arizona Cardinals", "actual": "31-7", "actual_margin": -24, "pred_margin": -3.3, "err": 20.7, "su_hit": true, "vegas_spread": 3.5, "pred_total": 44.3, "actual_total": 38}, {"matchup": "Washington Commanders @ Dallas Cowboys", "actual": "20-37", "actual_margin": 17, "pred_margin": 4.0, "err": 13.0, "su_hit": true, "vegas_spread": -4.5, "pred_total": 45.1, "actual_total": 57}, {"matchup": "Miami Dolphins @ San Francisco 49ers", "actual": "13-35", "actual_margin": 22, "pred_margin": 12.5, "err": 9.5, "su_hit": true, "vegas_spread": -12.5, "pred_total": 43.2, "actual_total": 48}, {"matchup": "Indianapolis Colts @ Kansas City Chiefs", "actual": "30-33", "actual_margin": 3, "pred_margin": 7.0, "err": 4.0, "su_hit": true, "vegas_spread": -6.5, "pred_total": 46.1, "actual_total": 63}, {"matchup": "New York Giants @ Los Angeles Rams", "actual": "6-28", "actual_margin": 22, "pred_margin": 7.7, "err": 14.3, "su_hit": true, "vegas_spread": -7.0, "pred_total": 47.2, "actual_total": 34}], "qb_adjusted": [{"matchup": "Detroit Lions @ Buffalo Bills", "actual": "31-41", "actual_margin": 10, "pred_margin": 5.9, "err": 4.1, "su_hit": true, "vegas_spread": -5.5, "pred_total": 48.1, "actual_total": 72}, {"matchup": "Carolina Panthers @ Atlanta Falcons", "actual": "34-3", "actual_margin": -31, "pred_margin": 0.4, "err": 31.4, "su_hit": false, "vegas_spread": 2.5, "pred_total": 42.4, "actual_total": 37}, {"matchup": "New Orleans Saints @ Baltimore Ravens", "actual": "24-17", "actual_margin": -7, "pred_margin": 8.0, "err": 15.0, "su_hit": false, "vegas_spread": -8.5, "pred_total": 46.4, "actual_total": 41}, {"matchup": "Minnesota Vikings @ Chicago Bears", "actual": "9-3", "actual_margin": -6, "pred_margin": 5.4, "err": 11.4, "su_hit": false, "vegas_spread": -4.5, "pred_total": 45.9, "actual_total": 12}, {"matchup": "Cincinnati Bengals @ Houston Texans", "actual": "20-6", "actual_margin": -14, "pred_margin": 3.8, "err": 17.8, "su_hit": false, "vegas_spread": -2.5, "pred_total": 46.9, "actual_total": 26}, {"matchup": "Pittsburgh Steelers @ New England Patriots", "actual": "3-20", "actual_margin": 17, "pred_margin": 5.6, "err": 11.4, "su_hit": true, "vegas_spread": -5.5, "pred_total": 46.2, "actual_total": 23}, {"matchup": "Green Bay Packers @ New York Jets", "actual": "20-17", "actual_margin": -3, "pred_margin": -5.0, "err": 2.0, "su_hit": true, "vegas_spread": 3.5, "pred_total": 44.3, "actual_total": 37}, {"matchup": "Cleveland Browns @ Tampa Bay Buccaneers", "actual": "23-19", "actual_margin": -4, "pred_margin": 9.4, "err": 13.4, "su_hit": false, "vegas_spread": -8.5, "pred_total": 42.3, "actual_total": 42}, {"matchup": "Philadelphia Eagles @ Tennessee Titans", "actual": "24-20", "actual_margin": -4, "pred_margin": -6.7, "err": 2.7, "su_hit": true, "vegas_spread": 7.0, "pred_total": 41.6, "actual_total": 44}, {"matchup": "Jacksonville Jaguars @ Denver Broncos", "actual": "13-20", "actual_margin": 7, "pred_margin": 1.1, "err": 5.9, "su_hit": true, "vegas_spread": -2.5, "pred_total": 47.9, "actual_total": 33}, {"matchup": "Las Vegas Raiders @ Los Angeles Chargers", "actual": "26-14", "actual_margin": -12, "pred_margin": 6.5, "err": 18.5, "su_hit": false, "vegas_spread": -6.5, "pred_total": 43.1, "actual_total": 40}, {"matchup": "Seattle Seahawks @ Arizona Cardinals", "actual": "31-7", "actual_margin": -24, "pred_margin": -4.6, "err": 19.4, "su_hit": true, "vegas_spread": 3.5, "pred_total": 43.7, "actual_total": 38}, {"matchup": "Washington Commanders @ Dallas Cowboys", "actual": "20-37", "actual_margin": 17, "pred_margin": 4.4, "err": 12.6, "su_hit": true, "vegas_spread": -4.5, "pred_total": 43.0, "actual_total": 57}, {"matchup": "Miami Dolphins @ San Francisco 49ers", "actual": "13-35", "actual_margin": 22, "pred_margin": 12.8, "err": 9.2, "su_hit": true, "vegas_spread": -12.5, "pred_total": 43.5, "actual_total": 48}, {"matchup": "Indianapolis Colts @ Kansas City Chiefs", "actual": "30-33", "actual_margin": 3, "pred_margin": 7.3, "err": 4.3, "su_hit": true, "vegas_spread": -6.5, "pred_total": 46.9, "actual_total": 63}, {"matchup": "New York Giants @ Los Angeles Rams", "actual": "6-28", "actual_margin": 22, "pred_margin": 8.6, "err": 13.4, "su_hit": true, "vegas_spread": -7.0, "pred_total": 47.4, "actual_total": 34}], "market_blended": [{"matchup": "Detroit Lions @ Buffalo Bills", "actual": "31-41", "actual_margin": 10, "pred_margin": 5.6, "err": 4.4, "su_hit": true, "vegas_spread": -5.5, "pred_total": 48.3, "actual_total": 72}, {"matchup": "Carolina Panthers @ Atlanta Falcons", "actual": "34-3", "actual_margin": -31, "pred_margin": -1.8, "err": 29.2, "su_hit": true, "vegas_spread": 2.5, "pred_total": 42.3, "actual_total": 37}, {"matchup": "New Orleans Saints @ Baltimore Ravens", "actual": "24-17", "actual_margin": -7, "pred_margin": 8.4, "err": 15.4, "su_hit": false, "vegas_spread": -8.5, "pred_total": 46.1, "actual_total": 41}, {"matchup": "Minnesota Vikings @ Chicago Bears", "actual": "9-3", "actual_margin": -6, "pred_margin": 4.8, "err": 10.8, "su_hit": false, "vegas_spread": -4.5, "pred_total": 46.2, "actual_total": 12}, {"matchup": "Cincinnati Bengals @ Houston Texans", "actual": "20-6", "actual_margin": -14, "pred_margin": 3.0, "err": 17.0, "su_hit": false, "vegas_spread": -2.5, "pred_total": 46.9, "actual_total": 26}, {"matchup": "Pittsburgh Steelers @ New England Patriots", "actual": "3-20", "actual_margin": 17, "pred_margin": 5.4, "err": 11.6, "su_hit": true, "vegas_spread": -5.5, "pred_total": 45.8, "actual_total": 23}, {"matchup": "Green Bay Packers @ New York Jets", "actual": "20-17", "actual_margin": -3, "pred_margin": -3.7, "err": 0.7, "su_hit": true, "vegas_spread": 3.5, "pred_total": 44.5, "actual_total": 37}, {"matchup": "Cleveland Browns @ Tampa Bay Buccaneers", "actual": "23-19", "actual_margin": -4, "pred_margin": 8.9, "err": 12.9, "su_hit": false, "vegas_spread": -8.5, "pred_total": 42.5, "actual_total": 42}, {"matchup": "Philadelphia Eagles @ Tennessee Titans", "actual": "24-20", "actual_margin": -4, "pred_margin": -7.2, "err": 3.2, "su_hit": true, "vegas_spread": 7.0, "pred_total": 41.7, "actual_total": 44}, {"matchup": "Jacksonville Jaguars @ Denver Broncos", "actual": "13-20", "actual_margin": 7, "pred_margin": 2.0, "err": 5.0, "su_hit": true, "vegas_spread": -2.5, "pred_total": 47.7, "actual_total": 33}, {"matchup": "Las Vegas Raiders @ Los Angeles Chargers", "actual": "26-14", "actual_margin": -12, "pred_margin": 6.8, "err": 18.8, "su_hit": false, "vegas_spread": -6.5, "pred_total": 43.6, "actual_total": 40}, {"matchup": "Seattle Seahawks @ Arizona Cardinals", "actual": "31-7", "actual_margin": -24, "pred_margin": -3.3, "err": 20.7, "su_hit": true, "vegas_spread": 3.5, "pred_total": 43.7, "actual_total": 38}, {"matchup": "Washington Commanders @ Dallas Cowboys", "actual": "20-37", "actual_margin": 17, "pred_margin": 4.6, "err": 12.4, "su_hit": true, "vegas_spread": -4.5, "pred_total": 43.1, "actual_total": 57}, {"matchup": "Miami Dolphins @ San Francisco 49ers", "actual": "13-35", "actual_margin": 22, "pred_margin": 12.6, "err": 9.4, "su_hit": true, "vegas_spread": -12.5, "pred_total": 43.5, "actual_total": 48}, {"matchup": "Indianapolis Colts @ Kansas City Chiefs", "actual": "30-33", "actual_margin": 3, "pred_margin": 6.5, "err": 3.5, "su_hit": true, "vegas_spread": -6.5, "pred_total": 46.7, "actual_total": 63}, {"matchup": "New York Giants @ Los Angeles Rams", "actual": "6-28", "actual_margin": 22, "pred_margin": 7.6, "err": 14.4, "su_hit": true, "vegas_spread": -7.0, "pred_total": 47.6, "actual_total": 34}], "summary": {"base_mae": 12.26, "qb_mae": 12.03, "blend_mae": 11.84, "blend_su": 11, "model_weight": 0.2, "base_su": 10, "qb_su": 10, "n": 16}};
+const INJURIES = {"Arizona Cardinals": [{"name": "Will Johnson", "pos": "CB", "status": "Injured Reserve"}, {"name": "Tip Reiman", "pos": "TE", "status": "Out"}, {"name": "James Conner", "pos": "RB", "status": "Injured Reserve"}, {"name": "Trey Benson", "pos": "RB", "status": "Injured Reserve"}, {"name": "Jameson Geers", "pos": "TE", "status": "Injured Reserve"}], "Atlanta Falcons": [{"name": "Jack Strand", "pos": "QB", "status": "Out"}, {"name": "Cooper Rush", "pos": "QB", "status": "Out"}, {"name": "Robert Longerbeam", "pos": "CB", "status": "Out"}, {"name": "Ethan Onianwa", "pos": "OT", "status": "Out"}, {"name": "Malcolm DeWalt IV", "pos": "CB", "status": "Out"}, {"name": "A.J. Terrell Jr.", "pos": "CB", "status": "Injured Reserve"}, {"name": "Trey Sermon", "pos": "RB", "status": "Injured Reserve"}, {"name": "Storm Norton", "pos": "OT", "status": "Out"}, {"name": "Beaux Collins", "pos": "WR", "status": "Injured Reserve"}], "Baltimore Ravens": [{"name": "T.J. Tampa", "pos": "CB", "status": "Injured Reserve"}, {"name": "Ja'Kobi Lane", "pos": "WR", "status": "Injured Reserve"}, {"name": "Bilhal Kone", "pos": "CB", "status": "Injured Reserve"}, {"name": "Adam Randall", "pos": "RB", "status": "Injured Reserve"}, {"name": "Danny Pinter", "pos": "C", "status": "Injured Reserve"}, {"name": "Skylar Thompson", "pos": "QB", "status": "Injured Reserve"}], "Buffalo Bills": [{"name": "Tyrell Shavers", "pos": "WR", "status": "Out"}, {"name": "Dorian Strong", "pos": "CB", "status": "Out"}], "Carolina Panthers": [{"name": "Jonathon Brooks", "pos": "RB", "status": "Injured Reserve"}, {"name": "Trevor Etienne", "pos": "RB", "status": "Injured Reserve"}, {"name": "Taylor Moton", "pos": "OT", "status": "Out"}, {"name": "Ikem Ekwonu", "pos": "OT", "status": "Out"}, {"name": "Chris Brazzell II", "pos": "WR", "status": "Injured Reserve"}], "Chicago Bears": [{"name": "Caleb Williams", "pos": "QB", "status": "Doubtful"}, {"name": "Kyler Gordon", "pos": "CB", "status": "Out"}, {"name": "Dallis Flowers", "pos": "CB", "status": "Injured Reserve"}, {"name": "Hayden Large", "pos": "TE", "status": "Injured Reserve"}, {"name": "Brittain Brown", "pos": "RB", "status": "Injured Reserve"}, {"name": "Nikola Kalinic", "pos": "TE", "status": "Injured Reserve"}], "Cincinnati Bengals": [{"name": "Andrei Iosivas", "pos": "WR", "status": "Out"}, {"name": "Brian Parker II", "pos": "OT", "status": "Injured Reserve"}, {"name": "Ja'Sir Taylor", "pos": "CB", "status": "Injured Reserve"}], "Cleveland Browns": [{"name": "Dylan Sampson", "pos": "RB", "status": "Injured Reserve"}, {"name": "Dillon Gabriel", "pos": "QB", "status": "Injured Reserve"}, {"name": "Joe Royer", "pos": "TE", "status": "Out"}, {"name": "Damarri Mathis", "pos": "CB", "status": "Injured Reserve"}], "Dallas Cowboys": [{"name": "Cobie Durant", "pos": "CB", "status": "Out"}, {"name": "Malik Davis", "pos": "RB", "status": "Injured Reserve"}, {"name": "Devin Moore", "pos": "CB", "status": "Injured Reserve"}, {"name": "Matt Hennessy", "pos": "C", "status": "Injured Reserve"}, {"name": "DJ Rogers", "pos": "TE", "status": "Injured Reserve"}, {"name": "Princeton Fant", "pos": "TE", "status": "Injured Reserve"}], "Denver Broncos": [{"name": "Frank Crum", "pos": "OT", "status": "Injured Reserve"}, {"name": "Caleb Lohner", "pos": "TE", "status": "Injured Reserve"}, {"name": "Michael Deiter", "pos": "C", "status": "Injured Reserve"}], "Detroit Lions": [{"name": "Avonte Maddox", "pos": "CB", "status": "Injured Reserve"}, {"name": "Isiah Pacheco", "pos": "RB", "status": "Injured Reserve"}, {"name": "Cade Mays", "pos": "C", "status": "Injured Reserve"}, {"name": "Giovanni Manu", "pos": "OT", "status": "Out"}, {"name": "Kendrick Law", "pos": "WR", "status": "Injured Reserve"}], "Green Bay Packers": [{"name": "Jayden Reed", "pos": "WR", "status": "Out"}, {"name": "Zach Bako-Bewele", "pos": "OT", "status": "Out"}, {"name": "Josh Jacobs", "pos": "RB", "status": "Out"}, {"name": "Savion Williams", "pos": "WR", "status": "Injured Reserve"}, {"name": "Luke Musgrave", "pos": "TE", "status": "Out"}, {"name": "Thomas Yassmin", "pos": "TE", "status": "Injured Reserve"}], "Houston Texans": [{"name": "Jayden Higgins", "pos": "WR", "status": "Injured Reserve"}, {"name": "Tank Dell", "pos": "WR", "status": "Injured Reserve"}, {"name": "Braden Smith", "pos": "OT", "status": "Injured Reserve"}, {"name": "Ja'Marcus Ingram", "pos": "CB", "status": "Injured Reserve"}, {"name": "Graham Mertz", "pos": "QB", "status": "Injured Reserve"}], "Indianapolis Colts": [{"name": "Alec Pierce", "pos": "WR", "status": "Out"}, {"name": "Carson Towt", "pos": "TE", "status": "Injured Reserve"}, {"name": "D.J. Montgomery", "pos": "WR", "status": "Injured Reserve"}, {"name": "Will Mallory", "pos": "TE", "status": "Injured Reserve"}, {"name": "Cameron Mitchell", "pos": "CB", "status": "Injured Reserve"}], "Jacksonville Jaguars": [{"name": "Sam Mustipher", "pos": "C", "status": "Injured Reserve"}, {"name": "Garrett DiGiorgio", "pos": "OT", "status": "Injured Reserve"}], "Kansas City Chiefs": [{"name": "Jimmy Holiday", "pos": "WR", "status": "Injured Reserve"}, {"name": "Jeff Caldwell", "pos": "WR", "status": "Injured Reserve"}, {"name": "Matt Waletzko", "pos": "OT", "status": "Injured Reserve"}, {"name": "John Michael Gyllenborg", "pos": "TE", "status": "Injured Reserve"}], "Las Vegas Raiders": [{"name": "Dont'e Thornton Jr.", "pos": "WR", "status": "Injured Reserve"}, {"name": "Carter Runyon", "pos": "TE", "status": "Injured Reserve"}, {"name": "Chigozie Anusiem", "pos": "CB", "status": "Injured Reserve"}, {"name": "Chris Collier", "pos": "RB", "status": "Injured Reserve"}, {"name": "Corey Rucker", "pos": "WR", "status": "Injured Reserve"}, {"name": "Justin Shorter", "pos": "WR", "status": "Injured Reserve"}], "Los Angeles Chargers": [{"name": "David Njoku", "pos": "TE", "status": "Injured Reserve"}, {"name": "Charlie Kolar", "pos": "TE", "status": "Out"}, {"name": "KeAndre Lambert-Smith", "pos": "WR", "status": "Injured Reserve"}, {"name": "Isaiah World", "pos": "OT", "status": "Out"}, {"name": "Tyler Biadasz", "pos": "C", "status": "Injured Reserve"}], "Los Angeles Rams": [{"name": "Ronnie Rivers", "pos": "RB", "status": "Injured Reserve"}, {"name": "Keagen Trost", "pos": "OT", "status": "Injured Reserve"}, {"name": "Matthew Caldwell", "pos": "QB", "status": "Injured Reserve"}], "Miami Dolphins": [{"name": "Storm Duck", "pos": "CB", "status": "Out"}, {"name": "Darrell Baker Jr.", "pos": "CB", "status": "Out"}, {"name": "Cole Turner", "pos": "TE", "status": "Injured Reserve"}], "Minnesota Vikings": [{"name": "Jordan Mason", "pos": "RB", "status": "Injured Reserve"}, {"name": "Ben Yurosek", "pos": "TE", "status": "Injured Reserve"}, {"name": "Michael Jurgens", "pos": "C", "status": "Injured Reserve"}], "New England Patriots": [{"name": "A.J. Brown", "pos": "WR", "status": "Injured Reserve"}, {"name": "Marcus Bryant", "pos": "OT", "status": "Injured Reserve"}, {"name": "Myles Montgomery", "pos": "RB", "status": "Injured Reserve"}, {"name": "Jeremiah Webb", "pos": "WR", "status": "Injured Reserve"}, {"name": "Julian Hill", "pos": "TE", "status": "Injured Reserve"}], "New Orleans Saints": [{"name": "Kelvin Banks Jr.", "pos": "OT", "status": "Injured Reserve"}, {"name": "David Long Jr.", "pos": "CB", "status": "Injured Reserve"}, {"name": "Mason Tipton", "pos": "WR", "status": "Out"}, {"name": "Jordyn Tyson", "pos": "WR", "status": "Injured Reserve"}, {"name": "Moliki Matavao", "pos": "TE", "status": "Injured Reserve"}, {"name": "Ty Chandler", "pos": "RB", "status": "Injured Reserve"}, {"name": "Rejzohn Wright", "pos": "CB", "status": "Injured Reserve"}, {"name": "Nick Saldiveri", "pos": "OT", "status": "Out"}], "New York Giants": [{"name": "Jaxson Dart", "pos": "QB", "status": "Injured Reserve"}, {"name": "Paulson Adebo", "pos": "CB", "status": "Injured Reserve"}, {"name": "Korie Black", "pos": "CB", "status": "Injured Reserve"}, {"name": "Calvin Austin III", "pos": "WR", "status": "Injured Reserve"}, {"name": "Jarrick Bernard-Converse", "pos": "CB", "status": "Injured Reserve"}, {"name": "Rico Payton", "pos": "CB", "status": "Injured Reserve"}, {"name": "Gunner Olszewski", "pos": "WR", "status": "Injured Reserve"}, {"name": "Thaddeus Dixon", "pos": "CB", "status": "Injured Reserve"}], "New York Jets": [{"name": "Mason Taylor", "pos": "TE", "status": "Doubtful"}, {"name": "Arian Smith", "pos": "WR", "status": "Injured Reserve"}, {"name": "Omar Cooper Jr.", "pos": "WR", "status": "Injured Reserve"}, {"name": "Tim Patrick", "pos": "WR", "status": "Injured Reserve"}, {"name": "Tre Brown", "pos": "CB", "status": "Injured Reserve"}, {"name": "Chip Trayanum", "pos": "RB", "status": "Injured Reserve"}], "Philadelphia Eagles": [{"name": "Dallas Goedert", "pos": "TE", "status": "Doubtful"}, {"name": "Eli Stowers", "pos": "TE", "status": "Injured Reserve"}, {"name": "Jakorian Bennett", "pos": "CB", "status": "Injured Reserve"}, {"name": "Grant Calcaterra", "pos": "TE", "status": "Injured Reserve"}, {"name": "Johnny Wilson", "pos": "WR", "status": "Injured Reserve"}], "Pittsburgh Steelers": [{"name": "Jack Driscoll", "pos": "OT", "status": "Injured Reserve"}, {"name": "Donte Kent", "pos": "CB", "status": "Out"}, {"name": "Cole Burgess", "pos": "WR", "status": "Injured Reserve"}, {"name": "Daequan Hardy", "pos": "CB", "status": "Injured Reserve"}], "San Francisco 49ers": [{"name": "Demarcus Robinson", "pos": "WR", "status": "Out"}, {"name": "Brandon Aiyuk", "pos": "WR", "status": "Out"}, {"name": "De'Zhaun Stribling", "pos": "WR", "status": "Injured Reserve"}, {"name": "Jake Tonges", "pos": "TE", "status": "Injured Reserve"}, {"name": "Nate Hobbs", "pos": "CB", "status": "Injured Reserve"}, {"name": "Nick Zakelj", "pos": "OT", "status": "Injured Reserve"}, {"name": "Brett Toth", "pos": "C", "status": "Injured Reserve"}, {"name": "Austen Pleasants", "pos": "OT", "status": "Injured Reserve"}, {"name": "Christian Kirk", "pos": "WR", "status": "Injured Reserve"}, {"name": "Isaac Guerendo", "pos": "RB", "status": "Out"}, {"name": "Ricky Pearsall", "pos": "WR", "status": "Injured Reserve"}], "Seattle Seahawks": [{"name": "Zach Charbonnet", "pos": "RB", "status": "Out"}, {"name": "Irv Charles", "pos": "WR", "status": "Injured Reserve"}, {"name": "Terrion Arnold", "pos": "CB", "status": "Out"}, {"name": "Jake Bobo", "pos": "WR", "status": "Injured Reserve"}], "Tampa Bay Buccaneers": [{"name": "Josh Hayes", "pos": "CB", "status": "Injured Reserve"}, {"name": "David Sills V", "pos": "WR", "status": "Injured Reserve"}], "Tennessee Titans": [{"name": "Joshua Williams", "pos": "CB", "status": "Injured Reserve"}, {"name": "Jaren Kanak", "pos": "TE", "status": "Injured Reserve"}], "Washington Commanders": [{"name": "Jayden Daniels", "pos": "QB", "status": "Out"}, {"name": "Laremy Tunsil", "pos": "OT", "status": "Injured Reserve"}, {"name": "Trey Amos", "pos": "CB", "status": "Injured Reserve"}, {"name": "Jeremy McNichols", "pos": "RB", "status": "Injured Reserve"}, {"name": "Will Johnson", "pos": "CB", "status": "Injured Reserve"}, {"name": "Tip Reiman", "pos": "TE", "status": "Out"}, {"name": "James Conner", "pos": "RB", "status": "Injured Reserve"}, {"name": "Trey Benson", "pos": "RB", "status": "Injured Reserve"}, {"name": "Jameson Geers", "pos": "TE", "status": "Injured Reserve"}, {"name": "Atlanta FalconsNAMEPOSEST. RETURN DATESTATUSCOMMENTJack Strand", "pos": "QB", "status": "Out"}, {"name": "Cooper Rush", "pos": "QB", "status": "Out"}, {"name": "Robert Longerbeam", "pos": "CB", "status": "Out"}, {"name": "Ethan Onianwa", "pos": "OT", "status": "Out"}, {"name": "Malcolm DeWalt IV", "pos": "CB", "status": "Out"}, {"name": "A.J. Terrell Jr.", "pos": "CB", "status": "Injured Reserve"}, {"name": "Trey Sermon", "pos": "RB", "status": "Injured Reserve"}, {"name": "Storm Norton", "pos": "OT", "status": "Out"}, {"name": "Beaux Collins", "pos": "WR", "status": "Injured Reserve"}, {"name": "T.J. Tampa", "pos": "CB", "status": "Injured Reserve"}, {"name": "Ja'Kobi Lane", "pos": "WR", "status": "Injured Reserve"}, {"name": "Bilhal Kone", "pos": "CB", "status": "Injured Reserve"}, {"name": "Adam Randall", "pos": "RB", "status": "Injured Reserve"}, {"name": "Danny Pinter", "pos": "C", "status": "Injured Reserve"}, {"name": "Skylar Thompson", "pos": "QB", "status": "Injured Reserve"}, {"name": "Tyrell Shavers", "pos": "WR", "status": "Out"}, {"name": "Dorian Strong", "pos": "CB", "status": "Out"}, {"name": "Jonathon Brooks", "pos": "RB", "status": "Injured Reserve"}, {"name": "Trevor Etienne", "pos": "RB", "status": "Injured Reserve"}, {"name": "Taylor Moton", "pos": "OT", "status": "Out"}, {"name": "Ikem Ekwonu", "pos": "OT", "status": "Out"}, {"name": "Chris Brazzell II", "pos": "WR", "status": "Injured Reserve"}, {"name": "Caleb Williams", "pos": "QB", "status": "Doubtful"}, {"name": "Kyler Gordon", "pos": "CB", "status": "Out"}, {"name": "Dallis Flowers", "pos": "CB", "status": "Injured Reserve"}, {"name": "Hayden Large", "pos": "TE", "status": "Injured Reserve"}, {"name": "Brittain Brown", "pos": "RB", "status": "Injured Reserve"}, {"name": "Nikola Kalinic", "pos": "TE", "status": "Injured Reserve"}, {"name": "Cincinnati BengalsNAMEPOSEST. RETURN DATESTATUSCOMMENTAndrei Iosivas", "pos": "WR", "status": "Out"}, {"name": "Brian Parker II", "pos": "OT", "status": "Injured Reserve"}, {"name": "Ja'Sir Taylor", "pos": "CB", "status": "Injured Reserve"}, {"name": "Dylan Sampson", "pos": "RB", "status": "Injured Reserve"}, {"name": "Dillon Gabriel", "pos": "QB", "status": "Injured Reserve"}, {"name": "Joe Royer", "pos": "TE", "status": "Out"}, {"name": "Damarri Mathis", "pos": "CB", "status": "Injured Reserve"}, {"name": "Cobie Durant", "pos": "CB", "status": "Out"}, {"name": "Malik Davis", "pos": "RB", "status": "Injured Reserve"}, {"name": "Devin Moore", "pos": "CB", "status": "Injured Reserve"}, {"name": "Matt Hennessy", "pos": "C", "status": "Injured Reserve"}, {"name": "DJ Rogers", "pos": "TE", "status": "Injured Reserve"}, {"name": "Princeton Fant", "pos": "TE", "status": "Injured Reserve"}, {"name": "Frank Crum", "pos": "OT", "status": "Injured Reserve"}, {"name": "Caleb Lohner", "pos": "TE", "status": "Injured Reserve"}, {"name": "Michael Deiter", "pos": "C", "status": "Injured Reserve"}, {"name": "Avonte Maddox", "pos": "CB", "status": "Injured Reserve"}, {"name": "Isiah Pacheco", "pos": "RB", "status": "Injured Reserve"}, {"name": "Cade Mays", "pos": "C", "status": "Injured Reserve"}, {"name": "Giovanni Manu", "pos": "OT", "status": "Out"}, {"name": "Kendrick Law", "pos": "WR", "status": "Injured Reserve"}, {"name": "Jayden Reed", "pos": "WR", "status": "Out"}, {"name": "Zach Bako-Bewele", "pos": "OT", "status": "Out"}, {"name": "Josh Jacobs", "pos": "RB", "status": "Out"}, {"name": "Savion Williams", "pos": "WR", "status": "Injured Reserve"}, {"name": "Luke Musgrave", "pos": "TE", "status": "Out"}, {"name": "Thomas Yassmin", "pos": "TE", "status": "Injured Reserve"}, {"name": "Jayden Higgins", "pos": "WR", "status": "Injured Reserve"}, {"name": "Tank Dell", "pos": "WR", "status": "Injured Reserve"}, {"name": "Braden Smith", "pos": "OT", "status": "Injured Reserve"}, {"name": "Ja'Marcus Ingram", "pos": "CB", "status": "Injured Reserve"}, {"name": "Graham Mertz", "pos": "QB", "status": "Injured Reserve"}, {"name": "Alec Pierce", "pos": "WR", "status": "Out"}, {"name": "Carson Towt", "pos": "TE", "status": "Injured Reserve"}, {"name": "D.J. Montgomery", "pos": "WR", "status": "Injured Reserve"}, {"name": "Will Mallory", "pos": "TE", "status": "Injured Reserve"}, {"name": "Cameron Mitchell", "pos": "CB", "status": "Injured Reserve"}, {"name": "Sam Mustipher", "pos": "C", "status": "Injured Reserve"}, {"name": "Garrett DiGiorgio", "pos": "OT", "status": "Injured Reserve"}, {"name": "Jimmy Holiday", "pos": "WR", "status": "Injured Reserve"}, {"name": "Jeff Caldwell", "pos": "WR", "status": "Injured Reserve"}, {"name": "Matt Waletzko", "pos": "OT", "status": "Injured Reserve"}, {"name": "John Michael Gyllenborg", "pos": "TE", "status": "Injured Reserve"}, {"name": "Dont'e Thornton Jr.", "pos": "WR", "status": "Injured Reserve"}, {"name": "Carter Runyon", "pos": "TE", "status": "Injured Reserve"}, {"name": "Chigozie Anusiem", "pos": "CB", "status": "Injured Reserve"}, {"name": "Chris Collier", "pos": "RB", "status": "Injured Reserve"}, {"name": "Corey Rucker", "pos": "WR", "status": "Injured Reserve"}, {"name": "Justin Shorter", "pos": "WR", "status": "Injured Reserve"}, {"name": "David Njoku", "pos": "TE", "status": "Injured Reserve"}, {"name": "Charlie Kolar", "pos": "TE", "status": "Out"}, {"name": "KeAndre Lambert-Smith", "pos": "WR", "status": "Injured Reserve"}, {"name": "Isaiah World", "pos": "OT", "status": "Out"}, {"name": "Tyler Biadasz", "pos": "C", "status": "Injured Reserve"}, {"name": "Ronnie Rivers", "pos": "RB", "status": "Injured Reserve"}, {"name": "Keagen Trost", "pos": "OT", "status": "Injured Reserve"}, {"name": "Matthew Caldwell", "pos": "QB", "status": "Injured Reserve"}, {"name": "Storm Duck", "pos": "CB", "status": "Out"}, {"name": "Darrell Baker Jr.", "pos": "CB", "status": "Out"}, {"name": "Cole Turner", "pos": "TE", "status": "Injured Reserve"}, {"name": "Jordan Mason", "pos": "RB", "status": "Injured Reserve"}, {"name": "Ben Yurosek", "pos": "TE", "status": "Injured Reserve"}, {"name": "Michael Jurgens", "pos": "C", "status": "Injured Reserve"}, {"name": "A.J. Brown", "pos": "WR", "status": "Injured Reserve"}, {"name": "Marcus Bryant", "pos": "OT", "status": "Injured Reserve"}, {"name": "Myles Montgomery", "pos": "RB", "status": "Injured Reserve"}, {"name": "Jeremiah Webb", "pos": "WR", "status": "Injured Reserve"}, {"name": "Julian Hill", "pos": "TE", "status": "Injured Reserve"}, {"name": "Kelvin Banks Jr.", "pos": "OT", "status": "Injured Reserve"}, {"name": "David Long Jr.", "pos": "CB", "status": "Injured Reserve"}, {"name": "Mason Tipton", "pos": "WR", "status": "Out"}, {"name": "Jordyn Tyson", "pos": "WR", "status": "Injured Reserve"}, {"name": "Moliki Matavao", "pos": "TE", "status": "Injured Reserve"}, {"name": "Ty Chandler", "pos": "RB", "status": "Injured Reserve"}, {"name": "Rejzohn Wright", "pos": "CB", "status": "Injured Reserve"}, {"name": "Nick Saldiveri", "pos": "OT", "status": "Out"}, {"name": "Jaxson Dart", "pos": "QB", "status": "Injured Reserve"}, {"name": "Paulson Adebo", "pos": "CB", "status": "Injured Reserve"}, {"name": "Korie Black", "pos": "CB", "status": "Injured Reserve"}, {"name": "Calvin Austin III", "pos": "WR", "status": "Injured Reserve"}, {"name": "Jarrick Bernard-Converse", "pos": "CB", "status": "Injured Reserve"}, {"name": "Rico Payton", "pos": "CB", "status": "Injured Reserve"}, {"name": "Gunner Olszewski", "pos": "WR", "status": "Injured Reserve"}, {"name": "Thaddeus Dixon", "pos": "CB", "status": "Injured Reserve"}, {"name": "Mason Taylor", "pos": "TE", "status": "Doubtful"}, {"name": "Arian Smith", "pos": "WR", "status": "Injured Reserve"}, {"name": "Omar Cooper Jr.", "pos": "WR", "status": "Injured Reserve"}, {"name": "Tim Patrick", "pos": "WR", "status": "Injured Reserve"}, {"name": "Tre Brown", "pos": "CB", "status": "Injured Reserve"}, {"name": "Chip Trayanum", "pos": "RB", "status": "Injured Reserve"}, {"name": "Dallas Goedert", "pos": "TE", "status": "Doubtful"}, {"name": "Eli Stowers", "pos": "TE", "status": "Injured Reserve"}, {"name": "Jakorian Bennett", "pos": "CB", "status": "Injured Reserve"}, {"name": "Grant Calcaterra", "pos": "TE", "status": "Injured Reserve"}, {"name": "Johnny Wilson", "pos": "WR", "status": "Injured Reserve"}, {"name": "Jack Driscoll", "pos": "OT", "status": "Injured Reserve"}, {"name": "Donte Kent", "pos": "CB", "status": "Out"}, {"name": "Cole Burgess", "pos": "WR", "status": "Injured Reserve"}, {"name": "Daequan Hardy", "pos": "CB", "status": "Injured Reserve"}, {"name": "Demarcus Robinson", "pos": "WR", "status": "Out"}, {"name": "Brandon Aiyuk", "pos": "WR", "status": "Out"}, {"name": "De'Zhaun Stribling", "pos": "WR", "status": "Injured Reserve"}, {"name": "Jake Tonges", "pos": "TE", "status": "Injured Reserve"}, {"name": "Nate Hobbs", "pos": "CB", "status": "Injured Reserve"}, {"name": "Nick Zakelj", "pos": "OT", "status": "Injured Reserve"}, {"name": "Brett Toth", "pos": "C", "status": "Injured Reserve"}, {"name": "Austen Pleasants", "pos": "OT", "status": "Injured Reserve"}, {"name": "Christian Kirk", "pos": "WR", "status": "Injured Reserve"}, {"name": "Isaac Guerendo", "pos": "RB", "status": "Out"}, {"name": "Ricky Pearsall", "pos": "WR", "status": "Injured Reserve"}, {"name": "Zach Charbonnet", "pos": "RB", "status": "Out"}, {"name": "Irv Charles", "pos": "WR", "status": "Injured Reserve"}, {"name": "Terrion Arnold", "pos": "CB", "status": "Out"}, {"name": "Jake Bobo", "pos": "WR", "status": "Injured Reserve"}, {"name": "Josh Hayes", "pos": "CB", "status": "Injured Reserve"}, {"name": "David Sills V", "pos": "WR", "status": "Injured Reserve"}, {"name": "Joshua Williams", "pos": "CB", "status": "Injured Reserve"}, {"name": "Jaren Kanak", "pos": "TE", "status": "Injured Reserve"}, {"name": "Washington CommandersNAMEPOSEST. RETURN DATESTATUSCOMMENTJayden Daniels", "pos": "QB", "status": "Out"}, {"name": "Laremy Tunsil", "pos": "OT", "status": "Injured Reserve"}, {"name": "Trey Amos", "pos": "CB", "status": "Injured Reserve"}, {"name": "Jeremy McNichols", "pos": "RB", "status": "Injured Reserve"}]};
+const RATINGS_ORDER = ["Buffalo Bills","Los Angeles Rams","San Francisco 49ers","Seattle Seahawks","Baltimore Ravens","Kansas City Chiefs","New England Patriots","Philadelphia Eagles","Detroit Lions","Jacksonville Jaguars","Houston Texans","Cincinnati Bengals","Dallas Cowboys","Denver Broncos","Minnesota Vikings","Green Bay Packers","Los Angeles Chargers","Chicago Bears","Tampa Bay Buccaneers","Indianapolis Colts","Carolina Panthers","Pittsburgh Steelers","New Orleans Saints","Las Vegas Raiders","Washington Commanders","New York Jets","Arizona Cardinals","New York Giants","Atlanta Falcons","Tennessee Titans","Cleveland Browns","Miami Dolphins"];
+
+function badge(team){
+  const m = TEAM_META[team];
+  return `<span class="badge" style="background:${m.c}">${m.ab}</span>`;
+}
+function fmtSigned(n){ return (n>0?'+':'') + n.toFixed(1); }
+
+// ---- stat row ----
+const maxSd = Math.max(...RATINGS_ORDER.map(t=>DATA.teams[t].sd));
+const edgeVals = DATA.results.map(r=>r.edge_pts).filter(v=>v!==undefined);
+const avgAbsEdge = edgeVals.reduce((s,v)=>s+Math.abs(v),0)/edgeVals.length;
+const backupCount = Object.values(DATA.qb_profiles).filter(p=>p.is_backup).length;
+document.getElementById('stat-row').innerHTML = `
+  <div class="stat"><div class="k">Teams modeled</div><div class="v">32</div></div>
+  <div class="stat"><div class="k">Games simulated</div><div class="v">16</div></div>
+  <div class="stat"><div class="k">Market blend weight</div><div class="v">${Math.round(DATA.model_weight*100)}%<small> model / ${Math.round((1-DATA.model_weight)*100)}% mkt</small></div></div>
+  <div class="stat"><div class="k">Backup QBs starting</div><div class="v">${backupCount}<small> of 32 teams</small></div></div>
+  <div class="stat"><div class="k">Pure-model edge vs. market</div><div class="v">${avgAbsEdge.toFixed(1)}<small>pt / 16 games</small></div></div>
+  <div class="stat"><div class="k">Week 2 validated</div><div class="v">${VALIDATION.summary.qb_su}/16<small> SU, see &sect;05</small></div></div>
+`;
+['blend-weight-inline','blend-weight-inline-2'].forEach(id=>{
+  const el = document.getElementById(id);
+  if (el) el.textContent = `${Math.round(DATA.model_weight*100)}% model / ${Math.round((1-DATA.model_weight)*100)}% market`;
+});
+
+// ---- ratings table ----
+const rb = document.getElementById('ratings-body');
+RATINGS_ORDER.forEach((team,i)=>{
+  const d = DATA.teams[team];
+  const [dir,mag] = TREND[team];
+  const arrow = dir==='up' ? '&#9650;' : dir==='down' ? '&#9660;' : '&#8212;';
+  const magLabel = mag==='-' ? '' : mag==='L' ? ' large' : mag==='M' ? ' med' : ' small';
+  const barPct = Math.min(100, (d.sd/maxSd)*100);
+  rb.innerHTML += `<tr>
+    <td class="rank-cell">${i+1}</td>
+    <td class="team">${badge(team)}${team}</td>
+    <td class="num ${d.comp>0?'pos':d.comp<0?'neg':''}">${fmtSigned(d.comp)}</td>
+    <td class="num">${d.off.toFixed(1)}</td>
+    <td class="num">${d.defr.toFixed(1)}</td>
+    <td><div class="bar-cell"><div class="mini-bar"><i style="width:${barPct}%; background:${d.sd>=1.5?'var(--bad)':d.sd>=0.9?'var(--warn)':'var(--good)'}"></i></div><span class="num" style="color:var(--text-dim); font-size:12px;">${d.sd.toFixed(1)}</span></div></td>
+    <td><span class="trend ${dir}">${arrow} ${dir!=='flat'?mag:''}${magLabel? '':''}</span></td>
+  </tr>`;
+});
+
+// ---- feature importance ----
+const IMP_LABELS = {fpi:"FPI",nfelo:"nfelo",inpred:"Inpredictable",up:"Unexp. Pts",dvoa:"FTN DVOA",pff:"PFF"};
+const corrEntries = Object.entries(DATA.importance).sort((a,b)=>b[1].corr-a[1].corr);
+const maeEntries = Object.entries(DATA.importance).sort((a,b)=>b[1].mae_vs_composite-a[1].mae_vs_composite);
+const corrMax = Math.max(...corrEntries.map(e=>e[1].corr));
+const maeMax = Math.max(...maeEntries.map(e=>e[1].mae_vs_composite));
+
+document.getElementById('corr-rows').innerHTML = corrEntries.map(([k,v])=>`
+  <div class="imp-row">
+    <div class="lbl">${IMP_LABELS[k]}</div>
+    <div class="imp-track"><div class="imp-fill" style="width:${(v.corr/corrMax*100).toFixed(0)}%"></div></div>
+    <div class="imp-val">${v.corr.toFixed(3)}</div>
+  </div>`).join('');
+
+document.getElementById('mae-rows').innerHTML = maeEntries.map(([k,v])=>`
+  <div class="imp-row">
+    <div class="lbl">${IMP_LABELS[k]}</div>
+    <div class="imp-track"><div class="imp-fill warn-fill" style="width:${(v.mae_vs_composite/maeMax*100).toFixed(0)}%"></div></div>
+    <div class="imp-val">${v.mae_vs_composite.toFixed(2)}</div>
+  </div>`).join('');
+
+// ---- QB report ----
+const TIER_COLOR = {
+  "Elite":"var(--good)", "Above Average":"var(--accent)", "Average":"var(--text-dim)",
+  "Below Average":"var(--warn)", "Replacement Level":"var(--bad)", "Unrated":"var(--text-faint)"
+};
+const qbRows = Object.values(DATA.qb_profiles)
+  .filter(p => p.blended_paa !== null)
+  .sort((a,b)=> b.blended_paa - a.blended_paa);
+document.getElementById('qb-body').innerHTML = qbRows.map(p=>{
+  const tc = TIER_COLOR[p.tier] || 'var(--text-faint)';
+  let flag = '<span class="qb-flag none">&mdash;</span>';
+  if (p.is_backup) flag = '<span class="qb-flag backup">Backup</span>';
+  else if (p.data_quality==='team-change') flag = '<span class="qb-flag caution">New team</span>';
+  else if (p.data_quality==='no-2025-baseline') flag = '<span class="qb-flag caution">No 2025 sample</span>';
+  const hc = p.hot_cold_delta;
+  const hcHtml = hc===null ? '<span style="color:var(--text-faint)">n/a</span>'
+    : `<span class="${hc>=0?'pos':'neg'} num">${hc>=0?'&#9650;':'&#9660;'} ${Math.abs(hc).toFixed(1)}pt ${hc>=0?'hotter':'colder'}</span>`;
+  const barPct = Math.min(100, Math.max(0, (p.blended_paa+10)/(8+10)*100));
+  return `<tr>
+    <td class="team">${badge(p.team)}${p.team}</td>
+    <td>${p.name}</td>
+    <td><span class="tier-chip" style="background:${tc}22; color:${tc}">${p.tier}</span></td>
+    <td><div class="bar-cell"><div class="mini-bar"><i style="width:${barPct}%; background:${tc}"></i></div><span class="num" style="font-size:12px; color:var(--text-dim);">${fmtSigned(p.blended_paa)}pt</span></div></td>
+    <td>${hcHtml}</td>
+    <td class="num ${p.qb_adj>0?'pos':p.qb_adj<0?'neg':''}">${p.qb_adj===0?'&mdash;':fmtSigned(p.qb_adj)+'pt'}</td>
+    <td>${flag}</td>
+  </tr>`;
+}).join('');
+
+// ---- matchup cards ----
+function confColor(c){ return c>=45 ? 'var(--good)' : c>=20 ? 'var(--warn)' : 'var(--text-faint)'; }
+function noteFor(r){
+  const notes = [];
+  const hp = DATA.qb_profiles[r.home], ap = DATA.qb_profiles[r.away];
+  if (hp?.is_backup) notes.push(`${r.home} start ${hp.name} in place of their normal QB1.`);
+  if (ap?.is_backup) notes.push(`${r.away} start ${ap.name} in place of their normal QB1.`);
+  if (Math.abs(r.home_qb_adj||0)>=0.5) notes.push(`${r.home}'s QB adj of ${fmtSigned(r.home_qb_adj)}pt reflects a ${r.home_qb_adj<0?'hot':'cold'} Week 1 relative to 2025 form.`);
+  if (Math.abs(r.away_qb_adj||0)>=0.5) notes.push(`${r.away}'s QB adj of ${fmtSigned(r.away_qb_adj)}pt reflects a ${r.away_qb_adj<0?'hot':'cold'} Week 1 relative to 2025 form.`);
+  const hSd = DATA.teams[r.home].sd, aSd = DATA.teams[r.away].sd;
+  if (hSd>=1.5 || aSd>=1.5) notes.push(`Wide model disagreement on ${hSd>=1.5?r.home:r.away} (&sigma;=${Math.max(hSd,aSd).toFixed(1)}) inflates this game's variance.`);
+  if (r.vegas_home_spread!==undefined){
+    const gap = Math.abs(r.edge_pts);
+    notes.push(gap>=1.5 ? `Model leans ${r.edge_pts>0?r.away:r.home} by ${gap.toFixed(1)}pt vs. the market line.` : `Model and market line are tightly aligned (${gap.toFixed(1)}pt apart).`);
+  }
+  if (r.win_prob_edge!==undefined && Math.abs(r.win_prob_edge)>=5) {
+    notes.push(`Model gives ${r.win_prob_edge>0?r.home:r.away} ${Math.abs(r.win_prob_edge).toFixed(0)}pt more win probability than the moneyline implies.`);
+  }
+  if (r.confidence<10) notes.push('Rated a true toss-up by the simulation.');
+  return notes.join(' ');
+}
+
+const baseByGame = Object.fromEntries(DATA.results.map(r=>[r.home+'|'+r.away, r]));
+const qbByGame = Object.fromEntries(DATA.results_qb_adjusted.map(r=>[r.home+'|'+r.away, r]));
+const MW = DATA.model_weight;
+const cardsEl = document.getElementById('cards');
+function renderCards(filter){
+  cardsEl.innerHTML = DATA.results_market_blended.filter(r=>{
+    if(filter==='vegas') return r.edge_pts!==undefined && Math.abs(r.edge_pts)>=2;
+    if(filter==='close') return r.confidence<20;
+    if(filter==='lopsided') return r.confidence>=45;
+    return true;
+  }).map(r=>{
+    const hLead = r.median_margin>=0;
+    const winHpct = r.win_home;
+    const hBackup = DATA.qb_profiles[r.home]?.is_backup;
+    const aBackup = DATA.qb_profiles[r.away]?.is_backup;
+    const qb = qbByGame[r.home+'|'+r.away];
+    return `<div class="card">
+      <div class="matchup">
+        <div class="team-slot">${badge(r.away)}<div><div class="nm">${r.away}${aBackup?' <span class="qb-flag backup" style="margin-left:4px;">Backup</span>':''}</div><div class="loc">Away</div></div></div>
+        <span class="at">@</span>
+        <div class="team-slot" style="flex-direction:row-reverse; text-align:right;">${badge(r.home)}<div><div class="nm">${hBackup?'<span class="qb-flag backup" style="margin-right:4px;">Backup</span> ':''}${r.home}</div><div class="loc">Home</div></div></div>
+      </div>
+      <div class="score-row">
+        <div class="sc ${!hLead?'lead':''} num">${r.proj_away_score.toFixed(1)}</div>
+        <div style="font-size:11px; color:var(--text-faint); font-family:'IBM Plex Mono';">PROJ&nbsp;SCORE</div>
+        <div class="sc ${hLead?'lead':''} num">${r.proj_home_score.toFixed(1)}</div>
+      </div>
+      <div>
+        <div class="winbar"><div class="h" style="width:${winHpct}%"></div><div class="a" style="width:${100-winHpct}%"></div></div>
+        <div class="winlabels"><span>${r.away.split(' ').pop()} ${r.win_away.toFixed(0)}%</span><span>${r.home.split(' ').pop()} ${r.win_home.toFixed(0)}%</span></div>
+      </div>
+      <div class="meta-grid">
+        <div><div class="k">Blended median spread</div><div class="v">${r.home}&nbsp;${fmtSigned(-r.median_margin)}</div></div>
+        <div><div class="k">Confidence</div><div class="v"><span class="conf-chip" style="background:${confColor(r.confidence)}22; color:${confColor(r.confidence)}">${r.confidence}/100</span></div></div>
+        <div><div class="k">68% CI (margin)</div><div class="v">[${fmtSigned(r.ci68[0])}, ${fmtSigned(r.ci68[1])}]</div></div>
+        <div><div class="k">95% CI (margin)</div><div class="v">[${fmtSigned(r.ci95[0])}, ${fmtSigned(r.ci95[1])}]</div></div>
+        <div><div class="k">Pure model spread</div><div class="v" style="color:var(--text-faint)">${r.home}&nbsp;${fmtSigned(-qb.median_margin)}</div></div>
+        <div><div class="k">Blend weight</div><div class="v" style="color:var(--text-faint)">${Math.round(MW*100)}% model / ${Math.round((1-MW)*100)}% mkt</div></div>
+      </div>
+      ${r.vegas_home_spread!==undefined ? `<div class="vegas-line"><span>Market: ${r.home} <b>${fmtSigned(r.vegas_home_spread)}</b>${r.vegas_total?` &middot; O/U ${r.vegas_total}`:''}${r.vegas_win_home!==undefined?` &middot; ML-implied ${r.vegas_win_home.toFixed(0)}/${r.vegas_win_away.toFixed(0)}`:''}</span><span style="color:var(--text-faint)">edge ${fmtSigned(r.edge_pts)}pt</span></div>` : ''}
+      <div class="notes">${noteFor(r)}</div>
+    </div>`;
+  }).join('');
+}
+renderCards('all');
+document.querySelectorAll('.filters button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderCards(btn.dataset.f);
+  });
+});
+
+// ---- validation ----
+(function(){
+  const rows = VALIDATION.market_blended || VALIDATION.qb_adjusted;
+  const s = VALIDATION.summary;
+  const vegasErrs = rows.filter(r=>r.vegas_spread!==null&&r.vegas_spread!==undefined)
+    .map(r=>Math.abs(-r.vegas_spread - r.actual_margin));
+  const vegasMae = vegasErrs.reduce((a,b)=>a+b,0)/vegasErrs.length;
+  const vegasSu = rows.filter(r=>r.vegas_spread!==null&&r.vegas_spread!==undefined)
+    .filter(r=> ((-r.vegas_spread)>0) === (r.actual_margin>0)).length;
+
+  document.getElementById('valid-stats').innerHTML = `
+    <div class="stat"><div class="k">Games validated</div><div class="v">${s.n}<small> / 16 final</small></div></div>
+    <div class="stat"><div class="k">Blended MAE (margin)</div><div class="v">${s.blend_mae}<small>pt</small></div></div>
+    <div class="stat"><div class="k">Pure-model MAE</div><div class="v">${s.qb_mae}<small>pt (base ${s.base_mae})</small></div></div>
+    <div class="stat"><div class="k">Market MAE</div><div class="v">${vegasMae.toFixed(2)}<small>pt</small></div></div>
+    <div class="stat"><div class="k">Blended straight-up</div><div class="v">${s.blend_su}/${s.n}<small> (${Math.round(s.blend_su/s.n*100)}%)</small></div></div>
+    <div class="stat"><div class="k">Market straight-up</div><div class="v">${vegasSu}/${vegasErrs.length}<small> (${Math.round(vegasSu/vegasErrs.length*100)}%)</small></div></div>
+  `;
+
+  document.getElementById('valid-body').innerHTML = rows.map(r=>{
+    const big = r.err >= 15;
+    return `<tr>
+      <td class="team">${r.matchup}</td>
+      <td class="num">${r.actual}</td>
+      <td class="num">${fmtSigned(r.pred_margin)}</td>
+      <td class="num" style="color:var(--text-faint)">${r.vegas_spread!==null&&r.vegas_spread!==undefined?fmtSigned(-r.vegas_spread):'&mdash;'}</td>
+      <td class="num ${big?'neg':''}" style="${big?'font-weight:700;':''}">${r.err.toFixed(1)}pt${big?' &#9888;':''}</td>
+      <td><span class="conf-chip" style="background:${r.su_hit?'var(--good-soft)':'var(--bad-soft)'}; color:${r.su_hit?'var(--good)':'var(--bad)'}">${r.su_hit?'HIT':'MISS'}</span></td>
+    </tr>`;
+  }).join('');
+})();
+
+// ---- injury report ----
+const POS_ORDER = {QB:0, RB:1, WR:2, TE:3, OT:4, OG:5, C:6, CB:7};
+const injCardsEl = document.getElementById('injury-cards');
+function renderInjuryCards(filter){
+  injCardsEl.innerHTML = DATA.results_market_blended.filter(r=>{
+    const n = (INJURIES[r.home]||[]).length + (INJURIES[r.away]||[]).length;
+    return filter==='has' ? n>0 : true;
+  }).map(r=>{
+    const hList = (INJURIES[r.home]||[]).slice().sort((a,b)=>(POS_ORDER[a.pos]??9)-(POS_ORDER[b.pos]??9));
+    const aList = (INJURIES[r.away]||[]).slice().sort((a,b)=>(POS_ORDER[a.pos]??9)-(POS_ORDER[b.pos]??9));
+    const chip = p => `<span class="qb-flag ${p.status==='Injured Reserve'?'backup':'caution'}" style="margin:2px 4px 2px 0; display:inline-block;">${p.pos} ${p.name}</span>`;
+    return `<div class="card">
+      <div class="matchup">
+        <div class="team-slot">${badge(r.away)}<div><div class="nm">${r.away}</div><div class="loc">Away</div></div></div>
+        <span class="at">@</span>
+        <div class="team-slot" style="flex-direction:row-reverse; text-align:right;">${badge(r.home)}<div><div class="nm">${r.home}</div><div class="loc">Home</div></div></div>
+      </div>
+      <div class="notes" style="border-top:none; padding-top:0;">
+        <div style="margin-bottom:8px;"><b>${r.away.split(' ').pop()} out:</b><br>${aList.length? aList.map(chip).join('') : '<span style="color:var(--text-faint)">Nothing notable</span>'}</div>
+        <div><b>${r.home.split(' ').pop()} out:</b><br>${hList.length? hList.map(chip).join('') : '<span style="color:var(--text-faint)">Nothing notable</span>'}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+renderInjuryCards('all');
+document.querySelectorAll('[data-f-inj]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('[data-f-inj]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderInjuryCards(btn.dataset.fInj);
+  });
+});
+
+// ---- levers ----
+const LEVERS = [
+  {t:"Blend market lines into the projection itself", d:"Implemented in v0.3: the model's margin now shrinks toward the market line before simulation (weight = validated_games/(validated_games+64), capped at 50%) instead of just displaying the line for comparison. Calibrated on Week 2 (the only week validated so far), it cut margin MAE to 11.84pt and matched the market's straight-up rate — but that's an in-sample calibration, not proof it generalizes. Still open: opening-to-closing line movement as a live sharp-money signal, which this only captures via the closing number.", gain:"hi", done:true},
+  {t:"Backtested weight optimization", d:"Composite currently treats all six sources as equal inputs (implicitly, via the vendor's own composite). Week 2 is now a first (16-game, far too small to regress on) data point — margin MAE came in at 12.0 pts against the market's 11.7, and straight-up accuracy (10/16) trailed the closing line (11/16). Once several more weeks accumulate, regress margin/ATS outcomes against each source to find its real predictive weight — today's correlation-to-composite table is a proxy, not a substitute.", gain:"hi"},
+  {t:"True offense/defense splits", d:"Implemented this week: defense is now SIS DataHub's real run-defense + pass-defense points-above-average (2025 season blended with 2026 through Week 2), and offense is the residual of the vendor's own composite=off−def identity, needing no separate offense data. This also surfaced and fixed a real bug — total points previously summed both teams' offenses in isolation, never referencing either defense — which was very likely the main driver of Week 2's systematic total-points miss.", gain:"hi", done:true},
+  {t:"Starter & QB availability", d:"Implemented in v0.2: every Week 2 starter is confirmed against Week 1 (no changes league-wide), and a capped, recency-weighted QB adjustment now feeds the simulation directly — see the QB Report section. Remaining gap: it only covers the QB position; O-line, WR1, and CB1 availability are still unmodeled and can move a line just as much.", gain:"hi", done:true},
+  {t:"Non-QB injuries: turn the feed into a point adjustment", d:"The practice-report/inactive feed itself now exists (§06) and is parsed into structured data, closing the sourcing half of this gap. What's still missing: a depth-chart rank (so a WR1 and a WR4 don't read the same) and a per-player value metric to convert ‘out’ into points, the same way the QB layer uses PAA. Without that, a numeric adjustment here would just be a guess dressed up as a number.", gain:"hi"},
+  {t:"Calibrated game-variance (sd)", d:"Base margin sd (13.0) and total sd (9.5) are reasonable NFL priors, not fit to this data. Backtesting against several seasons of actual results would tighten (or rightly widen) the confidence intervals instead of relying on textbook values.", gain:"med"},
+  {t:"Momentum decay on Wk1→Wk2 change", d:"The change chart is currently read qualitatively (direction + rough size) because it carries no numeric deltas. Digitizing it and testing decay rates (e.g. does a big Week 1 swing predict Week 2 regression or persistence?) is a real, testable hypothesis with this exact dataset.", gain:"med"},
+  {t:"Home-field, by team", d:"A flat 2.0-pt HFA is applied league-wide. Teams with unusual venues/altitude (Denver) or notably loud/quiet crowds likely warrant a team-specific premium instead of the league constant.", gain:"med"},
+  {t:"Rest days & travel", d:"Not modeled. Only marginally relevant in Week 2 specifically (everyone's on a normal week outside the Thursday game), but becomes a real signal from Week 3 onward with byes, short weeks, and cross-country travel.", gain:"lo"},
+  {t:"Situational context (divisional, revenge, letdown spots)", d:"Cheap to add as a small fixed adjustment once there's enough historical data to size it credibly — don't hand-tune these from priors, or they'll just add noise.", gain:"lo"},
+];
+document.getElementById('levers-list').innerHTML = LEVERS.map((l,i)=>`
+  <li class="lever">
+    <div class="rank">${String(i+1).padStart(2,'0')}</div>
+    <div><h4>${l.t}</h4><p>${l.d}</p></div>
+    <div class="gain ${l.done?'hi':l.gain}" style="${l.done?'background:var(--good-soft); color:var(--good);':''}">${l.done?'DONE':l.gain==='hi'?'HIGH GAIN':l.gain==='med'?'MED GAIN':'LOW GAIN'}</div>
+  </li>`).join('');
+</script>

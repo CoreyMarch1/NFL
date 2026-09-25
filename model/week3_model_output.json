@@ -1,0 +1,1965 @@
+{
+  "importance": {
+    "fpi": {
+      "corr": 0.957,
+      "mae_vs_composite": 0.797
+    },
+    "nfelo": {
+      "corr": 0.985,
+      "mae_vs_composite": 0.466
+    },
+    "inpred": {
+      "corr": 0.955,
+      "mae_vs_composite": 0.847
+    },
+    "up": {
+      "corr": 0.963,
+      "mae_vs_composite": 0.791
+    },
+    "dvoa": {
+      "corr": 0.945,
+      "mae_vs_composite": 0.969
+    },
+    "pff": {
+      "corr": 0.959,
+      "mae_vs_composite": 0.841
+    }
+  },
+  "results": [
+    {
+      "home": "Dallas Cowboys",
+      "away": "Baltimore Ravens",
+      "home_off": 29.0,
+      "home_def": 27.3,
+      "away_off": 25.8,
+      "away_def": 21.9,
+      "model_margin": -0.2,
+      "expected_margin": -0.2,
+      "median_margin": -0.5,
+      "ci68": [
+        -13.5,
+        12.8
+      ],
+      "ci95": [
+        -26.6,
+        24.8
+      ],
+      "win_home": 48.1,
+      "win_away": 51.9,
+      "confidence": 4,
+      "proj_home_score": 29.3,
+      "proj_away_score": 29.7,
+      "combined_sd": 13.15,
+      "vegas_home_spread": 3.5,
+      "vegas_total": 52.5,
+      "model_home_spread": 0.5,
+      "edge_pts": -3.0
+    },
+    {
+      "home": "Tampa Bay Buccaneers",
+      "away": "Minnesota Vikings",
+      "home_off": 20.6,
+      "home_def": 21.6,
+      "away_off": 23.0,
+      "away_def": 22.4,
+      "model_margin": 0.4,
+      "expected_margin": 0.4,
+      "median_margin": 0.8,
+      "ci68": [
+        -12.7,
+        14.0
+      ],
+      "ci95": [
+        -25.4,
+        25.9
+      ],
+      "win_home": 52.4,
+      "win_away": 47.6,
+      "confidence": 5,
+      "proj_home_score": 21.6,
+      "proj_away_score": 21.1,
+      "combined_sd": 13.33,
+      "vegas_home_spread": 1.5,
+      "vegas_total": 42.5,
+      "model_home_spread": -0.8,
+      "edge_pts": -2.3
+    },
+    {
+      "home": "Denver Broncos",
+      "away": "Los Angeles Rams",
+      "home_off": 22.8,
+      "home_def": 21.2,
+      "away_off": 24.8,
+      "away_def": 19.3,
+      "model_margin": -1.9,
+      "expected_margin": -1.9,
+      "median_margin": -2.0,
+      "ci68": [
+        -15.1,
+        11.3
+      ],
+      "ci95": [
+        -27.3,
+        23.2
+      ],
+      "win_home": 44.2,
+      "win_away": 55.8,
+      "confidence": 12,
+      "proj_home_score": 20.7,
+      "proj_away_score": 22.6,
+      "combined_sd": 13.19,
+      "vegas_home_spread": 2.5,
+      "vegas_total": 45.5,
+      "model_home_spread": 2.0,
+      "edge_pts": -0.5
+    },
+    {
+      "home": "Chicago Bears",
+      "away": "Philadelphia Eagles",
+      "home_off": 20.9,
+      "home_def": 21.8,
+      "away_off": 23.7,
+      "away_def": 21.2,
+      "model_margin": -1.4,
+      "expected_margin": -1.4,
+      "median_margin": -1.4,
+      "ci68": [
+        -15.5,
+        12.4
+      ],
+      "ci95": [
+        -29.1,
+        26.3
+      ],
+      "win_home": 46.0,
+      "win_away": 54.0,
+      "confidence": 8,
+      "proj_home_score": 20.6,
+      "proj_away_score": 22.0,
+      "combined_sd": 14.1,
+      "vegas_home_spread": 4.5,
+      "vegas_total": 43.5,
+      "model_home_spread": 1.4,
+      "edge_pts": -3.1
+    },
+    {
+      "home": "Jacksonville Jaguars",
+      "away": "New England Patriots",
+      "home_off": 20.5,
+      "home_def": 18.5,
+      "away_off": 22.0,
+      "away_def": 19.5,
+      "model_margin": 1.5,
+      "expected_margin": 1.5,
+      "median_margin": 1.4,
+      "ci68": [
+        -11.5,
+        14.8
+      ],
+      "ci95": [
+        -23.8,
+        27.2
+      ],
+      "win_home": 54.4,
+      "win_away": 45.6,
+      "confidence": 9,
+      "proj_home_score": 18.7,
+      "proj_away_score": 17.2,
+      "combined_sd": 13.27,
+      "vegas_home_spread": -3.0,
+      "vegas_total": 45.5,
+      "model_home_spread": -1.4,
+      "edge_pts": 1.6
+    },
+    {
+      "home": "Pittsburgh Steelers",
+      "away": "Cincinnati Bengals",
+      "home_off": 19.5,
+      "home_def": 21.3,
+      "away_off": 26.1,
+      "away_def": 24.3,
+      "model_margin": -1.6,
+      "expected_margin": -1.6,
+      "median_margin": -1.6,
+      "ci68": [
+        -14.6,
+        12.0
+      ],
+      "ci95": [
+        -27.6,
+        25.2
+      ],
+      "win_home": 45.1,
+      "win_away": 54.9,
+      "confidence": 10,
+      "proj_home_score": 22.3,
+      "proj_away_score": 23.8,
+      "combined_sd": 13.19,
+      "vegas_home_spread": 3.5,
+      "vegas_total": 42.5,
+      "model_home_spread": 1.6,
+      "edge_pts": -1.9
+    },
+    {
+      "home": "Buffalo Bills",
+      "away": "Los Angeles Chargers",
+      "home_off": 30.9,
+      "home_def": 25.1,
+      "away_off": 22.9,
+      "away_def": 23.4,
+      "model_margin": 8.3,
+      "expected_margin": 8.3,
+      "median_margin": 8.4,
+      "ci68": [
+        -4.6,
+        21.5
+      ],
+      "ci95": [
+        -17.4,
+        34.9
+      ],
+      "win_home": 74.3,
+      "win_away": 25.7,
+      "confidence": 49,
+      "proj_home_score": 32.9,
+      "proj_away_score": 24.4,
+      "combined_sd": 13.11,
+      "vegas_home_spread": -7.0,
+      "vegas_total": 50.5,
+      "model_home_spread": -8.4,
+      "edge_pts": -1.4
+    },
+    {
+      "home": "Cleveland Browns",
+      "away": "Carolina Panthers",
+      "home_off": 13.2,
+      "home_def": 19.5,
+      "away_off": 18.4,
+      "away_def": 20.0,
+      "model_margin": -2.7,
+      "expected_margin": -2.7,
+      "median_margin": -2.3,
+      "ci68": [
+        -15.8,
+        10.7
+      ],
+      "ci95": [
+        -26.6,
+        22.9
+      ],
+      "win_home": 43.0,
+      "win_away": 57.0,
+      "confidence": 14,
+      "proj_home_score": 12.7,
+      "proj_away_score": 15.1,
+      "combined_sd": 13.11,
+      "vegas_home_spread": 2.5,
+      "vegas_total": 42.5,
+      "model_home_spread": 2.3,
+      "edge_pts": -0.2
+    },
+    {
+      "home": "Detroit Lions",
+      "away": "New York Jets",
+      "home_off": 25.3,
+      "home_def": 23.3,
+      "away_off": 17.7,
+      "away_def": 21.6,
+      "model_margin": 7.9,
+      "expected_margin": 7.9,
+      "median_margin": 7.7,
+      "ci68": [
+        -5.2,
+        21.1
+      ],
+      "ci95": [
+        -17.8,
+        33.3
+      ],
+      "win_home": 71.9,
+      "win_away": 28.1,
+      "confidence": 44,
+      "proj_home_score": 25.5,
+      "proj_away_score": 17.7,
+      "combined_sd": 13.22,
+      "vegas_home_spread": -6.5,
+      "vegas_total": 47.5,
+      "model_home_spread": -7.7,
+      "edge_pts": -1.2
+    },
+    {
+      "home": "Indianapolis Colts",
+      "away": "Houston Texans",
+      "home_off": 28.5,
+      "home_def": 29.6,
+      "away_off": 27.1,
+      "away_def": 25.2,
+      "model_margin": -1.0,
+      "expected_margin": -1.0,
+      "median_margin": -1.1,
+      "ci68": [
+        -14.6,
+        12.0
+      ],
+      "ci95": [
+        -26.8,
+        24.4
+      ],
+      "win_home": 47.2,
+      "win_away": 52.8,
+      "confidence": 6,
+      "proj_home_score": 32.1,
+      "proj_away_score": 33.3,
+      "combined_sd": 13.22,
+      "vegas_home_spread": 3.0,
+      "vegas_total": 42.5,
+      "model_home_spread": 1.1,
+      "edge_pts": -1.9
+    },
+    {
+      "home": "Miami Dolphins",
+      "away": "Kansas City Chiefs",
+      "home_off": 14.4,
+      "home_def": 22.4,
+      "away_off": 26.3,
+      "away_def": 22.4,
+      "model_margin": -9.9,
+      "expected_margin": -9.9,
+      "median_margin": -9.4,
+      "ci68": [
+        -22.9,
+        3.0
+      ],
+      "ci95": [
+        -35.2,
+        15.6
+      ],
+      "win_home": 22.1,
+      "win_away": 77.9,
+      "confidence": 56,
+      "proj_home_score": 15.4,
+      "proj_away_score": 25.1,
+      "combined_sd": 13.15,
+      "vegas_home_spread": 11.5,
+      "vegas_total": 45.5,
+      "model_home_spread": 9.4,
+      "edge_pts": -2.1
+    },
+    {
+      "home": "New York Giants",
+      "away": "Tennessee Titans",
+      "home_off": 23.0,
+      "home_def": 27.3,
+      "away_off": 18.4,
+      "away_def": 23.6,
+      "model_margin": 2.9,
+      "expected_margin": 2.9,
+      "median_margin": 3.3,
+      "ci68": [
+        -10.4,
+        16.6
+      ],
+      "ci95": [
+        -24.0,
+        29.5
+      ],
+      "win_home": 58.8,
+      "win_away": 41.2,
+      "confidence": 18,
+      "proj_home_score": 25.2,
+      "proj_away_score": 22.2,
+      "combined_sd": 13.75,
+      "vegas_home_spread": -2.5,
+      "vegas_total": 39.5,
+      "model_home_spread": -3.3,
+      "edge_pts": -0.8
+    },
+    {
+      "home": "Washington Commanders",
+      "away": "Seattle Seahawks",
+      "home_off": 22.6,
+      "home_def": 25.8,
+      "away_off": 22.5,
+      "away_def": 17.9,
+      "model_margin": -5.8,
+      "expected_margin": -5.8,
+      "median_margin": -5.9,
+      "ci68": [
+        -19.2,
+        7.6
+      ],
+      "ci95": [
+        -30.6,
+        21.4
+      ],
+      "win_home": 32.7,
+      "win_away": 67.3,
+      "confidence": 35,
+      "proj_home_score": 19.1,
+      "proj_away_score": 24.9,
+      "combined_sd": 13.33,
+      "vegas_home_spread": 7.0,
+      "vegas_total": 40.5,
+      "model_home_spread": 5.9,
+      "edge_pts": -1.1
+    },
+    {
+      "home": "San Francisco 49ers",
+      "away": "Arizona Cardinals",
+      "home_off": 28.6,
+      "home_def": 23.7,
+      "away_off": 19.6,
+      "away_def": 23.9,
+      "model_margin": 11.2,
+      "expected_margin": 11.2,
+      "median_margin": 11.1,
+      "ci68": [
+        -2.5,
+        24.8
+      ],
+      "ci95": [
+        -15.7,
+        37.1
+      ],
+      "win_home": 79.6,
+      "win_away": 20.4,
+      "confidence": 59,
+      "proj_home_score": 30.9,
+      "proj_away_score": 19.8,
+      "combined_sd": 13.75,
+      "vegas_home_spread": -8.5,
+      "vegas_total": 47.5,
+      "model_home_spread": -11.1,
+      "edge_pts": -2.6
+    },
+    {
+      "home": "New Orleans Saints",
+      "away": "Las Vegas Raiders",
+      "home_off": 22.7,
+      "home_def": 25.0,
+      "away_off": 17.8,
+      "away_def": 21.0,
+      "model_margin": 2.9,
+      "expected_margin": 2.9,
+      "median_margin": 3.0,
+      "ci68": [
+        -10.5,
+        16.0
+      ],
+      "ci95": [
+        -23.2,
+        28.0
+      ],
+      "win_home": 59.1,
+      "win_away": 40.9,
+      "confidence": 18,
+      "proj_home_score": 22.1,
+      "proj_away_score": 19.2,
+      "combined_sd": 13.24,
+      "vegas_home_spread": -3.0,
+      "vegas_total": 43.5,
+      "model_home_spread": -3.0,
+      "edge_pts": 0.0
+    }
+  ],
+  "results_qb_adjusted": [
+    {
+      "home": "Dallas Cowboys",
+      "away": "Baltimore Ravens",
+      "home_off": 28.5,
+      "home_def": 27.3,
+      "away_off": 25.8,
+      "away_def": 21.9,
+      "model_margin": -0.8,
+      "expected_margin": -0.8,
+      "median_margin": -0.5,
+      "ci68": [
+        -13.6,
+        11.9
+      ],
+      "ci95": [
+        -26.4,
+        25.7
+      ],
+      "win_home": 48.5,
+      "win_away": 51.5,
+      "confidence": 3,
+      "proj_home_score": 29.0,
+      "proj_away_score": 29.6,
+      "combined_sd": 13.15,
+      "home_qb_adj": -0.54,
+      "away_qb_adj": 0.07,
+      "vegas_home_spread": 3.5,
+      "model_home_spread": 0.5,
+      "edge_pts": -3.0
+    },
+    {
+      "home": "Tampa Bay Buccaneers",
+      "away": "Minnesota Vikings",
+      "home_off": 21.3,
+      "home_def": 21.6,
+      "away_off": 23.3,
+      "away_def": 22.4,
+      "model_margin": 0.8,
+      "expected_margin": 0.8,
+      "median_margin": 1.0,
+      "ci68": [
+        -12.4,
+        14.0
+      ],
+      "ci95": [
+        -24.9,
+        26.9
+      ],
+      "win_home": 53.2,
+      "win_away": 46.8,
+      "confidence": 6,
+      "proj_home_score": 22.2,
+      "proj_away_score": 21.3,
+      "combined_sd": 13.33,
+      "home_qb_adj": 0.67,
+      "away_qb_adj": 0.29,
+      "vegas_home_spread": 1.5,
+      "model_home_spread": -1.0,
+      "edge_pts": -2.5
+    },
+    {
+      "home": "Denver Broncos",
+      "away": "Los Angeles Rams",
+      "home_off": 23.4,
+      "home_def": 21.2,
+      "away_off": 24.8,
+      "away_def": 19.3,
+      "model_margin": -1.4,
+      "expected_margin": -1.4,
+      "median_margin": -1.6,
+      "ci68": [
+        -14.7,
+        12.0
+      ],
+      "ci95": [
+        -27.1,
+        25.4
+      ],
+      "win_home": 45.0,
+      "win_away": 55.0,
+      "confidence": 10,
+      "proj_home_score": 21.2,
+      "proj_away_score": 22.6,
+      "combined_sd": 13.19,
+      "home_qb_adj": 0.55,
+      "away_qb_adj": 0.07,
+      "vegas_home_spread": 2.5,
+      "model_home_spread": 1.6,
+      "edge_pts": -0.9
+    },
+    {
+      "home": "Chicago Bears",
+      "away": "Philadelphia Eagles",
+      "home_off": 20.9,
+      "home_def": 21.8,
+      "away_off": 23.7,
+      "away_def": 21.2,
+      "model_margin": -1.3,
+      "expected_margin": -1.3,
+      "median_margin": -1.2,
+      "ci68": [
+        -15.4,
+        12.9
+      ],
+      "ci95": [
+        -28.4,
+        27.4
+      ],
+      "win_home": 46.6,
+      "win_away": 53.4,
+      "confidence": 7,
+      "proj_home_score": 20.9,
+      "proj_away_score": 22.0,
+      "combined_sd": 14.1,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.08,
+      "vegas_home_spread": 4.5,
+      "model_home_spread": 1.2,
+      "edge_pts": -3.3
+    },
+    {
+      "home": "Jacksonville Jaguars",
+      "away": "New England Patriots",
+      "home_off": 20.7,
+      "home_def": 18.5,
+      "away_off": 22.3,
+      "away_def": 19.5,
+      "model_margin": 1.4,
+      "expected_margin": 1.4,
+      "median_margin": 1.2,
+      "ci68": [
+        -11.9,
+        14.3
+      ],
+      "ci95": [
+        -24.5,
+        27.2
+      ],
+      "win_home": 53.6,
+      "win_away": 46.4,
+      "confidence": 7,
+      "proj_home_score": 18.6,
+      "proj_away_score": 17.4,
+      "combined_sd": 13.27,
+      "home_qb_adj": 0.22,
+      "away_qb_adj": 0.28,
+      "vegas_home_spread": -3.0,
+      "model_home_spread": -1.2,
+      "edge_pts": 1.8
+    },
+    {
+      "home": "Pittsburgh Steelers",
+      "away": "Cincinnati Bengals",
+      "home_off": 20.0,
+      "home_def": 21.3,
+      "away_off": 26.0,
+      "away_def": 24.3,
+      "model_margin": -1.0,
+      "expected_margin": -1.0,
+      "median_margin": -1.4,
+      "ci68": [
+        -13.7,
+        12.1
+      ],
+      "ci95": [
+        -26.3,
+        24.7
+      ],
+      "win_home": 45.8,
+      "win_away": 54.2,
+      "confidence": 8,
+      "proj_home_score": 22.8,
+      "proj_away_score": 23.8,
+      "combined_sd": 13.19,
+      "home_qb_adj": 0.52,
+      "away_qb_adj": -0.06,
+      "vegas_home_spread": 3.5,
+      "model_home_spread": 1.4,
+      "edge_pts": -2.1
+    },
+    {
+      "home": "Buffalo Bills",
+      "away": "Los Angeles Chargers",
+      "home_off": 30.7,
+      "home_def": 25.1,
+      "away_off": 23.2,
+      "away_def": 23.4,
+      "model_margin": 7.8,
+      "expected_margin": 7.8,
+      "median_margin": 7.9,
+      "ci68": [
+        -5.1,
+        20.9
+      ],
+      "ci95": [
+        -17.0,
+        33.6
+      ],
+      "win_home": 73.1,
+      "win_away": 26.9,
+      "confidence": 46,
+      "proj_home_score": 32.6,
+      "proj_away_score": 24.7,
+      "combined_sd": 13.11,
+      "home_qb_adj": -0.14,
+      "away_qb_adj": 0.34,
+      "vegas_home_spread": -7.0,
+      "model_home_spread": -7.9,
+      "edge_pts": -0.9
+    },
+    {
+      "home": "Cleveland Browns",
+      "away": "Carolina Panthers",
+      "home_off": 13.2,
+      "home_def": 19.5,
+      "away_off": 18.4,
+      "away_def": 20.0,
+      "model_margin": -2.7,
+      "expected_margin": -2.7,
+      "median_margin": -2.8,
+      "ci68": [
+        -15.6,
+        10.5
+      ],
+      "ci95": [
+        -26.7,
+        22.8
+      ],
+      "win_home": 41.7,
+      "win_away": 58.3,
+      "confidence": 17,
+      "proj_home_score": 12.5,
+      "proj_away_score": 15.1,
+      "combined_sd": 13.11,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.0,
+      "vegas_home_spread": 2.5,
+      "model_home_spread": 2.8,
+      "edge_pts": 0.3
+    },
+    {
+      "home": "Detroit Lions",
+      "away": "New York Jets",
+      "home_off": 24.9,
+      "home_def": 23.3,
+      "away_off": 17.3,
+      "away_def": 21.6,
+      "model_margin": 8.0,
+      "expected_margin": 8.0,
+      "median_margin": 7.8,
+      "ci68": [
+        -5.2,
+        21.2
+      ],
+      "ci95": [
+        -18.0,
+        33.2
+      ],
+      "win_home": 73.3,
+      "win_away": 26.7,
+      "confidence": 47,
+      "proj_home_score": 25.0,
+      "proj_away_score": 17.1,
+      "combined_sd": 13.22,
+      "home_qb_adj": -0.37,
+      "away_qb_adj": -0.43,
+      "vegas_home_spread": -6.5,
+      "model_home_spread": -7.8,
+      "edge_pts": -1.3
+    },
+    {
+      "home": "Indianapolis Colts",
+      "away": "Houston Texans",
+      "home_off": 28.8,
+      "home_def": 29.6,
+      "away_off": 27.7,
+      "away_def": 25.2,
+      "model_margin": -1.3,
+      "expected_margin": -1.3,
+      "median_margin": -1.3,
+      "ci68": [
+        -14.7,
+        12.2
+      ],
+      "ci95": [
+        -27.7,
+        24.5
+      ],
+      "win_home": 46.3,
+      "win_away": 53.7,
+      "confidence": 7,
+      "proj_home_score": 32.5,
+      "proj_away_score": 33.8,
+      "combined_sd": 13.22,
+      "home_qb_adj": 0.29,
+      "away_qb_adj": 0.61,
+      "vegas_home_spread": 3.0,
+      "model_home_spread": 1.3,
+      "edge_pts": -1.7
+    },
+    {
+      "home": "Miami Dolphins",
+      "away": "Kansas City Chiefs",
+      "home_off": 14.4,
+      "home_def": 22.4,
+      "away_off": 26.4,
+      "away_def": 22.4,
+      "model_margin": -10.1,
+      "expected_margin": -10.1,
+      "median_margin": -10.3,
+      "ci68": [
+        -23.1,
+        3.4
+      ],
+      "ci95": [
+        -34.4,
+        16.8
+      ],
+      "win_home": 22.9,
+      "win_away": 77.1,
+      "confidence": 54,
+      "proj_home_score": 15.4,
+      "proj_away_score": 25.3,
+      "combined_sd": 13.15,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.17,
+      "vegas_home_spread": 11.5,
+      "model_home_spread": 10.3,
+      "edge_pts": -1.2
+    },
+    {
+      "home": "New York Giants",
+      "away": "Tennessee Titans",
+      "home_off": 23.0,
+      "home_def": 27.3,
+      "away_off": 18.0,
+      "away_def": 23.6,
+      "model_margin": 3.3,
+      "expected_margin": 3.3,
+      "median_margin": 3.0,
+      "ci68": [
+        -10.8,
+        16.8
+      ],
+      "ci95": [
+        -23.5,
+        29.9
+      ],
+      "win_home": 58.4,
+      "win_away": 41.6,
+      "confidence": 17,
+      "proj_home_score": 24.9,
+      "proj_away_score": 21.8,
+      "combined_sd": 13.75,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.41,
+      "vegas_home_spread": -2.5,
+      "model_home_spread": -3.0,
+      "edge_pts": -0.5
+    },
+    {
+      "home": "Washington Commanders",
+      "away": "Seattle Seahawks",
+      "home_off": 22.6,
+      "home_def": 25.8,
+      "away_off": 22.5,
+      "away_def": 17.9,
+      "model_margin": -5.8,
+      "expected_margin": -5.8,
+      "median_margin": -6.1,
+      "ci68": [
+        -19.2,
+        7.2
+      ],
+      "ci95": [
+        -31.2,
+        19.8
+      ],
+      "win_home": 32.3,
+      "win_away": 67.7,
+      "confidence": 35,
+      "proj_home_score": 18.9,
+      "proj_away_score": 24.9,
+      "combined_sd": 13.33,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.0,
+      "vegas_home_spread": 7.0,
+      "model_home_spread": 6.1,
+      "edge_pts": -0.9
+    },
+    {
+      "home": "San Francisco 49ers",
+      "away": "Arizona Cardinals",
+      "home_off": 28.3,
+      "home_def": 23.7,
+      "away_off": 19.7,
+      "away_def": 23.9,
+      "model_margin": 10.9,
+      "expected_margin": 10.9,
+      "median_margin": 10.6,
+      "ci68": [
+        -3.3,
+        24.5
+      ],
+      "ci95": [
+        -15.8,
+        37.6
+      ],
+      "win_home": 78.3,
+      "win_away": 21.7,
+      "confidence": 57,
+      "proj_home_score": 30.6,
+      "proj_away_score": 19.9,
+      "combined_sd": 13.75,
+      "home_qb_adj": -0.28,
+      "away_qb_adj": 0.06,
+      "vegas_home_spread": -8.5,
+      "model_home_spread": -10.6,
+      "edge_pts": -2.1
+    },
+    {
+      "home": "New Orleans Saints",
+      "away": "Las Vegas Raiders",
+      "home_off": 22.9,
+      "home_def": 25.0,
+      "away_off": 17.7,
+      "away_def": 21.0,
+      "model_margin": 3.3,
+      "expected_margin": 3.3,
+      "median_margin": 3.3,
+      "ci68": [
+        -9.0,
+        16.5
+      ],
+      "ci95": [
+        -21.9,
+        28.8
+      ],
+      "win_home": 59.9,
+      "win_away": 40.1,
+      "confidence": 20,
+      "proj_home_score": 22.6,
+      "proj_away_score": 19.1,
+      "combined_sd": 13.24,
+      "home_qb_adj": 0.23,
+      "away_qb_adj": -0.16,
+      "vegas_home_spread": -3.0,
+      "model_home_spread": -3.3,
+      "edge_pts": -0.3
+    }
+  ],
+  "results_market_blended": [
+    {
+      "home": "Dallas Cowboys",
+      "away": "Baltimore Ravens",
+      "home_off": 28.5,
+      "home_def": 27.3,
+      "away_off": 25.8,
+      "away_def": 21.9,
+      "model_margin": -0.8,
+      "expected_margin": -3.0,
+      "median_margin": -3.1,
+      "ci68": [
+        -16.0,
+        9.9
+      ],
+      "ci95": [
+        -28.6,
+        22.4
+      ],
+      "win_home": 41.4,
+      "win_away": 58.6,
+      "confidence": 17,
+      "proj_home_score": 27.8,
+      "proj_away_score": 30.8,
+      "combined_sd": 13.15,
+      "home_qb_adj": -0.54,
+      "away_qb_adj": 0.07,
+      "model_weight": 0.2,
+      "vegas_home_spread": 3.5,
+      "model_home_spread": 3.1,
+      "edge_pts": -0.4
+    },
+    {
+      "home": "Tampa Bay Buccaneers",
+      "away": "Minnesota Vikings",
+      "home_off": 21.3,
+      "home_def": 21.6,
+      "away_off": 23.3,
+      "away_def": 22.4,
+      "model_margin": 0.8,
+      "expected_margin": -1.0,
+      "median_margin": -1.0,
+      "ci68": [
+        -13.8,
+        11.9
+      ],
+      "ci95": [
+        -26.7,
+        25.4
+      ],
+      "win_home": 46.8,
+      "win_away": 53.2,
+      "confidence": 6,
+      "proj_home_score": 21.3,
+      "proj_away_score": 22.2,
+      "combined_sd": 13.33,
+      "home_qb_adj": 0.67,
+      "away_qb_adj": 0.29,
+      "model_weight": 0.2,
+      "vegas_home_spread": 1.5,
+      "model_home_spread": 1.0,
+      "edge_pts": -0.5
+    },
+    {
+      "home": "Denver Broncos",
+      "away": "Los Angeles Rams",
+      "home_off": 23.4,
+      "home_def": 21.2,
+      "away_off": 24.8,
+      "away_def": 19.3,
+      "model_margin": -1.4,
+      "expected_margin": -2.3,
+      "median_margin": -2.2,
+      "ci68": [
+        -14.8,
+        11.3
+      ],
+      "ci95": [
+        -27.9,
+        23.7
+      ],
+      "win_home": 43.0,
+      "win_away": 57.0,
+      "confidence": 14,
+      "proj_home_score": 20.8,
+      "proj_away_score": 22.9,
+      "combined_sd": 13.19,
+      "home_qb_adj": 0.55,
+      "away_qb_adj": 0.07,
+      "model_weight": 0.2,
+      "vegas_home_spread": 2.5,
+      "model_home_spread": 2.2,
+      "edge_pts": -0.3
+    },
+    {
+      "home": "Chicago Bears",
+      "away": "Philadelphia Eagles",
+      "home_off": 20.9,
+      "home_def": 21.8,
+      "away_off": 23.7,
+      "away_def": 21.2,
+      "model_margin": -1.3,
+      "expected_margin": -3.9,
+      "median_margin": -3.7,
+      "ci68": [
+        -17.6,
+        10.3
+      ],
+      "ci95": [
+        -31.2,
+        24.7
+      ],
+      "win_home": 39.6,
+      "win_away": 60.4,
+      "confidence": 21,
+      "proj_home_score": 19.5,
+      "proj_away_score": 23.2,
+      "combined_sd": 14.1,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.08,
+      "model_weight": 0.2,
+      "vegas_home_spread": 4.5,
+      "model_home_spread": 3.7,
+      "edge_pts": -0.8
+    },
+    {
+      "home": "Jacksonville Jaguars",
+      "away": "New England Patriots",
+      "home_off": 20.7,
+      "home_def": 18.5,
+      "away_off": 22.3,
+      "away_def": 19.5,
+      "model_margin": 1.4,
+      "expected_margin": 2.7,
+      "median_margin": 2.7,
+      "ci68": [
+        -10.9,
+        15.8
+      ],
+      "ci95": [
+        -23.7,
+        28.5
+      ],
+      "win_home": 58.1,
+      "win_away": 41.9,
+      "confidence": 16,
+      "proj_home_score": 19.4,
+      "proj_away_score": 16.8,
+      "combined_sd": 13.27,
+      "home_qb_adj": 0.22,
+      "away_qb_adj": 0.28,
+      "model_weight": 0.2,
+      "vegas_home_spread": -3.0,
+      "model_home_spread": -2.7,
+      "edge_pts": 0.3
+    },
+    {
+      "home": "Pittsburgh Steelers",
+      "away": "Cincinnati Bengals",
+      "home_off": 20.0,
+      "home_def": 21.3,
+      "away_off": 26.0,
+      "away_def": 24.3,
+      "model_margin": -1.0,
+      "expected_margin": -3.0,
+      "median_margin": -2.9,
+      "ci68": [
+        -16.0,
+        10.6
+      ],
+      "ci95": [
+        -28.9,
+        23.3
+      ],
+      "win_home": 42.0,
+      "win_away": 58.0,
+      "confidence": 16,
+      "proj_home_score": 22.0,
+      "proj_away_score": 24.7,
+      "combined_sd": 13.19,
+      "home_qb_adj": 0.52,
+      "away_qb_adj": -0.06,
+      "model_weight": 0.2,
+      "vegas_home_spread": 3.5,
+      "model_home_spread": 2.9,
+      "edge_pts": -0.6
+    },
+    {
+      "home": "Buffalo Bills",
+      "away": "Los Angeles Chargers",
+      "home_off": 30.7,
+      "home_def": 25.1,
+      "away_off": 23.2,
+      "away_def": 23.4,
+      "model_margin": 7.8,
+      "expected_margin": 7.2,
+      "median_margin": 7.3,
+      "ci68": [
+        -5.8,
+        20.2
+      ],
+      "ci95": [
+        -18.4,
+        32.5
+      ],
+      "win_home": 71.0,
+      "win_away": 29.0,
+      "confidence": 42,
+      "proj_home_score": 32.3,
+      "proj_away_score": 25.0,
+      "combined_sd": 13.11,
+      "home_qb_adj": -0.14,
+      "away_qb_adj": 0.34,
+      "model_weight": 0.2,
+      "vegas_home_spread": -7.0,
+      "model_home_spread": -7.3,
+      "edge_pts": -0.3
+    },
+    {
+      "home": "Cleveland Browns",
+      "away": "Carolina Panthers",
+      "home_off": 13.2,
+      "home_def": 19.5,
+      "away_off": 18.4,
+      "away_def": 20.0,
+      "model_margin": -2.7,
+      "expected_margin": -2.5,
+      "median_margin": -2.6,
+      "ci68": [
+        -15.6,
+        10.6
+      ],
+      "ci95": [
+        -26.7,
+        22.6
+      ],
+      "win_home": 42.0,
+      "win_away": 58.0,
+      "confidence": 16,
+      "proj_home_score": 12.6,
+      "proj_away_score": 15.1,
+      "combined_sd": 13.11,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.0,
+      "model_weight": 0.2,
+      "vegas_home_spread": 2.5,
+      "model_home_spread": 2.6,
+      "edge_pts": 0.1
+    },
+    {
+      "home": "Detroit Lions",
+      "away": "New York Jets",
+      "home_off": 24.9,
+      "home_def": 23.3,
+      "away_off": 17.3,
+      "away_def": 21.6,
+      "model_margin": 8.0,
+      "expected_margin": 6.8,
+      "median_margin": 6.9,
+      "ci68": [
+        -6.3,
+        20.1
+      ],
+      "ci95": [
+        -19.2,
+        32.7
+      ],
+      "win_home": 69.7,
+      "win_away": 30.3,
+      "confidence": 39,
+      "proj_home_score": 24.6,
+      "proj_away_score": 17.7,
+      "combined_sd": 13.22,
+      "home_qb_adj": -0.37,
+      "away_qb_adj": -0.43,
+      "model_weight": 0.2,
+      "vegas_home_spread": -6.5,
+      "model_home_spread": -6.9,
+      "edge_pts": -0.4
+    },
+    {
+      "home": "Indianapolis Colts",
+      "away": "Houston Texans",
+      "home_off": 28.8,
+      "home_def": 29.6,
+      "away_off": 27.7,
+      "away_def": 25.2,
+      "model_margin": -1.3,
+      "expected_margin": -2.7,
+      "median_margin": -2.4,
+      "ci68": [
+        -15.7,
+        10.8
+      ],
+      "ci95": [
+        -29.1,
+        23.3
+      ],
+      "win_home": 42.8,
+      "win_away": 57.2,
+      "confidence": 14,
+      "proj_home_score": 31.9,
+      "proj_away_score": 34.6,
+      "combined_sd": 13.22,
+      "home_qb_adj": 0.29,
+      "away_qb_adj": 0.61,
+      "model_weight": 0.2,
+      "vegas_home_spread": 3.0,
+      "model_home_spread": 2.4,
+      "edge_pts": -0.6
+    },
+    {
+      "home": "Miami Dolphins",
+      "away": "Kansas City Chiefs",
+      "home_off": 14.4,
+      "home_def": 22.4,
+      "away_off": 26.4,
+      "away_def": 22.4,
+      "model_margin": -10.1,
+      "expected_margin": -11.2,
+      "median_margin": -11.5,
+      "ci68": [
+        -24.0,
+        1.5
+      ],
+      "ci95": [
+        -35.8,
+        14.8
+      ],
+      "win_home": 18.7,
+      "win_away": 81.3,
+      "confidence": 63,
+      "proj_home_score": 14.8,
+      "proj_away_score": 26.1,
+      "combined_sd": 13.15,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.17,
+      "model_weight": 0.2,
+      "vegas_home_spread": 11.5,
+      "model_home_spread": 11.5,
+      "edge_pts": 0.0
+    },
+    {
+      "home": "New York Giants",
+      "away": "Tennessee Titans",
+      "home_off": 23.0,
+      "home_def": 27.3,
+      "away_off": 18.0,
+      "away_def": 23.6,
+      "model_margin": 3.3,
+      "expected_margin": 2.7,
+      "median_margin": 2.4,
+      "ci68": [
+        -11.1,
+        16.4
+      ],
+      "ci95": [
+        -24.8,
+        29.2
+      ],
+      "win_home": 57.4,
+      "win_away": 42.6,
+      "confidence": 15,
+      "proj_home_score": 24.7,
+      "proj_away_score": 22.2,
+      "combined_sd": 13.75,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.41,
+      "model_weight": 0.2,
+      "vegas_home_spread": -2.5,
+      "model_home_spread": -2.4,
+      "edge_pts": 0.1
+    },
+    {
+      "home": "Washington Commanders",
+      "away": "Seattle Seahawks",
+      "home_off": 22.6,
+      "home_def": 25.8,
+      "away_off": 22.5,
+      "away_def": 17.9,
+      "model_margin": -5.8,
+      "expected_margin": -6.8,
+      "median_margin": -6.6,
+      "ci68": [
+        -19.8,
+        6.2
+      ],
+      "ci95": [
+        -32.4,
+        19.2
+      ],
+      "win_home": 30.8,
+      "win_away": 69.2,
+      "confidence": 38,
+      "proj_home_score": 18.7,
+      "proj_away_score": 25.3,
+      "combined_sd": 13.33,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.0,
+      "model_weight": 0.2,
+      "vegas_home_spread": 7.0,
+      "model_home_spread": 6.6,
+      "edge_pts": -0.4
+    },
+    {
+      "home": "San Francisco 49ers",
+      "away": "Arizona Cardinals",
+      "home_off": 28.3,
+      "home_def": 23.7,
+      "away_off": 19.7,
+      "away_def": 23.9,
+      "model_margin": 10.9,
+      "expected_margin": 9.0,
+      "median_margin": 9.3,
+      "ci68": [
+        -4.6,
+        23.0
+      ],
+      "ci95": [
+        -17.4,
+        36.5
+      ],
+      "win_home": 74.3,
+      "win_away": 25.7,
+      "confidence": 49,
+      "proj_home_score": 29.9,
+      "proj_away_score": 20.6,
+      "combined_sd": 13.75,
+      "home_qb_adj": -0.28,
+      "away_qb_adj": 0.06,
+      "model_weight": 0.2,
+      "vegas_home_spread": -8.5,
+      "model_home_spread": -9.3,
+      "edge_pts": -0.8
+    },
+    {
+      "home": "New Orleans Saints",
+      "away": "Las Vegas Raiders",
+      "home_off": 22.9,
+      "home_def": 25.0,
+      "away_off": 17.7,
+      "away_def": 21.0,
+      "model_margin": 3.3,
+      "expected_margin": 3.1,
+      "median_margin": 3.1,
+      "ci68": [
+        -10.0,
+        16.5
+      ],
+      "ci95": [
+        -22.4,
+        29.8
+      ],
+      "win_home": 59.3,
+      "win_away": 40.7,
+      "confidence": 19,
+      "proj_home_score": 22.4,
+      "proj_away_score": 19.2,
+      "combined_sd": 13.24,
+      "home_qb_adj": 0.23,
+      "away_qb_adj": -0.16,
+      "model_weight": 0.2,
+      "vegas_home_spread": -3.0,
+      "model_home_spread": -3.1,
+      "edge_pts": -0.1
+    }
+  ],
+  "model_weight": 0.2,
+  "qb_profiles": {
+    "Carolina Panthers": {
+      "team": "Carolina Panthers",
+      "name": "Bryce Young",
+      "is_backup": false,
+      "paa2025": 1.67,
+      "paa2026": 1.62,
+      "blended_paa": 1.65,
+      "hot_cold_delta": -0.04,
+      "qb_adj": 0.0,
+      "data_quality": "full",
+      "tier": "Above Average"
+    },
+    "Atlanta Falcons": {
+      "team": "Atlanta Falcons",
+      "name": "Michael Penix Jr.",
+      "is_backup": false,
+      "paa2025": 0.32,
+      "paa2026": null,
+      "blended_paa": 0.32,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2026-games-yet",
+      "tier": "Average"
+    },
+    "New Orleans Saints": {
+      "team": "New Orleans Saints",
+      "name": "Tyler Shough",
+      "is_backup": false,
+      "paa2025": 0.96,
+      "paa2026": -1.13,
+      "blended_paa": -0.18,
+      "hot_cold_delta": -2.09,
+      "qb_adj": 0.23,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "Baltimore Ravens": {
+      "team": "Baltimore Ravens",
+      "name": "Lamar Jackson",
+      "is_backup": false,
+      "paa2025": 0.17,
+      "paa2026": -0.46,
+      "blended_paa": -0.1,
+      "hot_cold_delta": -0.63,
+      "qb_adj": 0.07,
+      "data_quality": "full",
+      "tier": "Average"
+    },
+    "Minnesota Vikings": {
+      "team": "Minnesota Vikings",
+      "name": "Kyler Murray",
+      "is_backup": false,
+      "paa2025": 3.58,
+      "paa2026": -1.69,
+      "blended_paa": 2.97,
+      "hot_cold_delta": -5.26,
+      "qb_adj": 0.29,
+      "data_quality": "team-change",
+      "tier": "Elite"
+    },
+    "Chicago Bears": {
+      "team": "Chicago Bears",
+      "name": "Case Keenum",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": null,
+      "blended_paa": null,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-data",
+      "tier": "Unrated"
+    },
+    "Cincinnati Bengals": {
+      "team": "Cincinnati Bengals",
+      "name": "Joe Burrow",
+      "is_backup": false,
+      "paa2025": 0.54,
+      "paa2026": 1.14,
+      "blended_paa": 0.87,
+      "hot_cold_delta": 0.59,
+      "qb_adj": -0.06,
+      "data_quality": "full",
+      "tier": "Average"
+    },
+    "Houston Texans": {
+      "team": "Houston Texans",
+      "name": "C.J. Stroud",
+      "is_backup": false,
+      "paa2025": 2.4,
+      "paa2026": -3.13,
+      "blended_paa": -0.41,
+      "hot_cold_delta": -5.53,
+      "qb_adj": 0.61,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "Pittsburgh Steelers": {
+      "team": "Pittsburgh Steelers",
+      "name": "Aaron Rodgers",
+      "is_backup": false,
+      "paa2025": -1.54,
+      "paa2026": -6.26,
+      "blended_paa": -3.75,
+      "hot_cold_delta": -4.73,
+      "qb_adj": 0.52,
+      "data_quality": "full",
+      "tier": "Replacement Level"
+    },
+    "New England Patriots": {
+      "team": "New England Patriots",
+      "name": "Drake Maye",
+      "is_backup": false,
+      "paa2025": 0.85,
+      "paa2026": -1.74,
+      "blended_paa": -0.13,
+      "hot_cold_delta": -2.58,
+      "qb_adj": 0.28,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "Green Bay Packers": {
+      "team": "Green Bay Packers",
+      "name": "Jordan Love",
+      "is_backup": false,
+      "paa2025": 3.2,
+      "paa2026": -4.64,
+      "blended_paa": -0.26,
+      "hot_cold_delta": -7.84,
+      "qb_adj": 0.86,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "New York Jets": {
+      "team": "New York Jets",
+      "name": "Geno Smith",
+      "is_backup": false,
+      "paa2025": -4.95,
+      "paa2026": 2.95,
+      "blended_paa": -1.64,
+      "hot_cold_delta": 7.9,
+      "qb_adj": -0.43,
+      "data_quality": "team-change",
+      "tier": "Replacement Level"
+    },
+    "Cleveland Browns": {
+      "team": "Cleveland Browns",
+      "name": "Deshaun Watson",
+      "is_backup": false,
+      "paa2025": null,
+      "paa2026": -3.37,
+      "blended_paa": -3.37,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Replacement Level"
+    },
+    "Tampa Bay Buccaneers": {
+      "team": "Tampa Bay Buccaneers",
+      "name": "Baker Mayfield",
+      "is_backup": false,
+      "paa2025": 0.77,
+      "paa2026": -5.37,
+      "blended_paa": -1.73,
+      "hot_cold_delta": -6.14,
+      "qb_adj": 0.67,
+      "data_quality": "full",
+      "tier": "Replacement Level"
+    },
+    "Philadelphia Eagles": {
+      "team": "Philadelphia Eagles",
+      "name": "Jalen Hurts",
+      "is_backup": false,
+      "paa2025": 0.73,
+      "paa2026": 1.45,
+      "blended_paa": 1.02,
+      "hot_cold_delta": 0.71,
+      "qb_adj": -0.08,
+      "data_quality": "full",
+      "tier": "Above Average"
+    },
+    "Tennessee Titans": {
+      "team": "Tennessee Titans",
+      "name": "Cam Ward",
+      "is_backup": false,
+      "paa2025": -2.71,
+      "paa2026": 1.06,
+      "blended_paa": -1.33,
+      "hot_cold_delta": 3.77,
+      "qb_adj": -0.41,
+      "data_quality": "full",
+      "tier": "Replacement Level"
+    },
+    "Jacksonville Jaguars": {
+      "team": "Jacksonville Jaguars",
+      "name": "Trevor Lawrence",
+      "is_backup": false,
+      "paa2025": 0.99,
+      "paa2026": -1.02,
+      "blended_paa": 0.25,
+      "hot_cold_delta": -2.01,
+      "qb_adj": 0.22,
+      "data_quality": "full",
+      "tier": "Average"
+    },
+    "Denver Broncos": {
+      "team": "Denver Broncos",
+      "name": "Bo Nix",
+      "is_backup": false,
+      "paa2025": 3.22,
+      "paa2026": -1.8,
+      "blended_paa": 1.23,
+      "hot_cold_delta": -5.02,
+      "qb_adj": 0.55,
+      "data_quality": "full",
+      "tier": "Above Average"
+    },
+    "Las Vegas Raiders": {
+      "team": "Las Vegas Raiders",
+      "name": "Kirk Cousins",
+      "is_backup": false,
+      "paa2025": -0.02,
+      "paa2026": 2.98,
+      "blended_paa": 1.51,
+      "hot_cold_delta": 2.99,
+      "qb_adj": -0.16,
+      "data_quality": "team-change",
+      "tier": "Above Average"
+    },
+    "Los Angeles Chargers": {
+      "team": "Los Angeles Chargers",
+      "name": "Justin Herbert",
+      "is_backup": false,
+      "paa2025": -0.66,
+      "paa2026": -3.79,
+      "blended_paa": -1.83,
+      "hot_cold_delta": -3.13,
+      "qb_adj": 0.34,
+      "data_quality": "full",
+      "tier": "Replacement Level"
+    },
+    "Seattle Seahawks": {
+      "team": "Seattle Seahawks",
+      "name": "Drew Lock",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": 3.96,
+      "blended_paa": 3.96,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Elite"
+    },
+    "Arizona Cardinals": {
+      "team": "Arizona Cardinals",
+      "name": "Jacoby Brissett",
+      "is_backup": false,
+      "paa2025": 0.59,
+      "paa2026": 0.01,
+      "blended_paa": 0.35,
+      "hot_cold_delta": -0.59,
+      "qb_adj": 0.06,
+      "data_quality": "full",
+      "tier": "Average"
+    },
+    "Washington Commanders": {
+      "team": "Washington Commanders",
+      "name": "Marcus Mariota",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": 1.94,
+      "blended_paa": 1.94,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Above Average"
+    },
+    "Dallas Cowboys": {
+      "team": "Dallas Cowboys",
+      "name": "Dak Prescott",
+      "is_backup": false,
+      "paa2025": 1.49,
+      "paa2026": 6.38,
+      "blended_paa": 3.54,
+      "hot_cold_delta": 4.9,
+      "qb_adj": -0.54,
+      "data_quality": "full",
+      "tier": "Elite"
+    },
+    "Miami Dolphins": {
+      "team": "Miami Dolphins",
+      "name": "Malik Willis",
+      "is_backup": false,
+      "paa2025": null,
+      "paa2026": 0.1,
+      "blended_paa": 0.1,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Average"
+    },
+    "San Francisco 49ers": {
+      "team": "San Francisco 49ers",
+      "name": "Brock Purdy",
+      "is_backup": false,
+      "paa2025": 3.2,
+      "paa2026": 5.79,
+      "blended_paa": 4.41,
+      "hot_cold_delta": 2.59,
+      "qb_adj": -0.28,
+      "data_quality": "full",
+      "tier": "Elite"
+    },
+    "Indianapolis Colts": {
+      "team": "Indianapolis Colts",
+      "name": "Daniel Jones",
+      "is_backup": false,
+      "paa2025": 0.43,
+      "paa2026": -2.19,
+      "blended_paa": -0.67,
+      "hot_cold_delta": -2.62,
+      "qb_adj": 0.29,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "Kansas City Chiefs": {
+      "team": "Kansas City Chiefs",
+      "name": "Patrick Mahomes",
+      "is_backup": false,
+      "paa2025": 3.68,
+      "paa2026": 2.13,
+      "blended_paa": 2.98,
+      "hot_cold_delta": -1.54,
+      "qb_adj": 0.17,
+      "data_quality": "full",
+      "tier": "Elite"
+    },
+    "New York Giants": {
+      "team": "New York Giants",
+      "name": "Jameis Winston",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": -1.02,
+      "blended_paa": -1.02,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Below Average"
+    },
+    "Los Angeles Rams": {
+      "team": "Los Angeles Rams",
+      "name": "Matthew Stafford",
+      "is_backup": false,
+      "paa2025": 2.78,
+      "paa2026": 2.13,
+      "blended_paa": 2.53,
+      "hot_cold_delta": -0.64,
+      "qb_adj": 0.07,
+      "data_quality": "full",
+      "tier": "Elite"
+    },
+    "Buffalo Bills": {
+      "team": "Buffalo Bills",
+      "name": "Josh Allen",
+      "is_backup": false,
+      "paa2025": 1.74,
+      "paa2026": 3.06,
+      "blended_paa": 2.27,
+      "hot_cold_delta": 1.31,
+      "qb_adj": -0.14,
+      "data_quality": "full",
+      "tier": "Above Average"
+    },
+    "Detroit Lions": {
+      "team": "Detroit Lions",
+      "name": "Jared Goff",
+      "is_backup": false,
+      "paa2025": 2.04,
+      "paa2026": 5.39,
+      "blended_paa": 3.59,
+      "hot_cold_delta": 3.35,
+      "qb_adj": -0.37,
+      "data_quality": "full",
+      "tier": "Elite"
+    }
+  },
+  "teams": {
+    "Buffalo Bills": {
+      "comp": 5.8,
+      "sd": 0.6,
+      "off": 30.9,
+      "defr": 25.1
+    },
+    "Los Angeles Rams": {
+      "comp": 5.5,
+      "sd": 0.6,
+      "off": 24.8,
+      "defr": 19.3
+    },
+    "San Francisco 49ers": {
+      "comp": 4.9,
+      "sd": 1.3,
+      "off": 28.6,
+      "defr": 23.7
+    },
+    "Seattle Seahawks": {
+      "comp": 4.6,
+      "sd": 1.1,
+      "off": 22.5,
+      "defr": 17.9
+    },
+    "Baltimore Ravens": {
+      "comp": 3.9,
+      "sd": 0.4,
+      "off": 25.8,
+      "defr": 21.9
+    },
+    "Kansas City Chiefs": {
+      "comp": 3.9,
+      "sd": 0.5,
+      "off": 26.3,
+      "defr": 22.4
+    },
+    "New England Patriots": {
+      "comp": 2.5,
+      "sd": 1.1,
+      "off": 22.0,
+      "defr": 19.5
+    },
+    "Philadelphia Eagles": {
+      "comp": 2.5,
+      "sd": 1.6,
+      "off": 23.7,
+      "defr": 21.2
+    },
+    "Detroit Lions": {
+      "comp": 2.0,
+      "sd": 0.8,
+      "off": 25.3,
+      "defr": 23.3
+    },
+    "Jacksonville Jaguars": {
+      "comp": 2.0,
+      "sd": 0.8,
+      "off": 20.5,
+      "defr": 18.5
+    },
+    "Houston Texans": {
+      "comp": 1.9,
+      "sd": 0.7,
+      "off": 27.1,
+      "defr": 25.2
+    },
+    "Cincinnati Bengals": {
+      "comp": 1.8,
+      "sd": 0.8,
+      "off": 26.1,
+      "defr": 24.3
+    },
+    "Dallas Cowboys": {
+      "comp": 1.7,
+      "sd": 1.0,
+      "off": 29.0,
+      "defr": 27.3
+    },
+    "Denver Broncos": {
+      "comp": 1.6,
+      "sd": 1.0,
+      "off": 22.8,
+      "defr": 21.2
+    },
+    "Minnesota Vikings": {
+      "comp": 0.6,
+      "sd": 1.2,
+      "off": 23.0,
+      "defr": 22.4
+    },
+    "Green Bay Packers": {
+      "comp": 0.0,
+      "sd": 1.5,
+      "off": 22.3,
+      "defr": 22.3
+    },
+    "Los Angeles Chargers": {
+      "comp": -0.5,
+      "sd": 0.6,
+      "off": 22.9,
+      "defr": 23.4
+    },
+    "Chicago Bears": {
+      "comp": -0.9,
+      "sd": 2.3,
+      "off": 20.9,
+      "defr": 21.8
+    },
+    "Tampa Bay Buccaneers": {
+      "comp": -1.0,
+      "sd": 0.9,
+      "off": 20.6,
+      "defr": 21.6
+    },
+    "Indianapolis Colts": {
+      "comp": -1.1,
+      "sd": 1.0,
+      "off": 28.5,
+      "defr": 29.6
+    },
+    "Carolina Panthers": {
+      "comp": -1.6,
+      "sd": 0.6,
+      "off": 18.4,
+      "defr": 20.0
+    },
+    "Pittsburgh Steelers": {
+      "comp": -1.8,
+      "sd": 0.8,
+      "off": 19.5,
+      "defr": 21.3
+    },
+    "New Orleans Saints": {
+      "comp": -2.3,
+      "sd": 1.3,
+      "off": 22.7,
+      "defr": 25.0
+    },
+    "Las Vegas Raiders": {
+      "comp": -3.2,
+      "sd": 0.5,
+      "off": 17.8,
+      "defr": 21.0
+    },
+    "Washington Commanders": {
+      "comp": -3.2,
+      "sd": 1.0,
+      "off": 22.6,
+      "defr": 25.8
+    },
+    "New York Jets": {
+      "comp": -3.9,
+      "sd": 0.9,
+      "off": 17.7,
+      "defr": 21.6
+    },
+    "Arizona Cardinals": {
+      "comp": -4.3,
+      "sd": 1.9,
+      "off": 19.6,
+      "defr": 23.9
+    },
+    "New York Giants": {
+      "comp": -4.3,
+      "sd": 2.4,
+      "off": 23.0,
+      "defr": 27.3
+    },
+    "Atlanta Falcons": {
+      "comp": -4.8,
+      "sd": 1.7,
+      "off": 14.4,
+      "defr": 19.2
+    },
+    "Tennessee Titans": {
+      "comp": -5.2,
+      "sd": 0.8,
+      "off": 18.4,
+      "defr": 23.6
+    },
+    "Cleveland Browns": {
+      "comp": -6.3,
+      "sd": 0.6,
+      "off": 13.2,
+      "defr": 19.5
+    },
+    "Miami Dolphins": {
+      "comp": -8.0,
+      "sd": 0.9,
+      "off": 14.4,
+      "defr": 22.4
+    }
+  }
+}

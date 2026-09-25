@@ -1,0 +1,5250 @@
+{
+  "Arizona Cardinals": [
+    {
+      "name": "Max Melton",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dadrion Taylor-Demerson",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Garrett Williams",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Hjalte Froholdt",
+      "pos": "C",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Roy Lopez",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Will Johnson",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kitan Crawford",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kaleb Proctor",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Zachary Carter",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tip Reiman",
+      "pos": "TE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "James Conner",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Trey Benson",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Chase Bisontis",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Joey Blount",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jameson Geers",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Atlanta Falcons": [
+    {
+      "name": "Jack Strand",
+      "pos": "QB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Cooper Rush",
+      "pos": "QB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Robert Longerbeam",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Ethan Onianwa",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Malcolm DeWalt IV",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Samson Ebukam",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "A.J. Terrell Jr.",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Da'Shawn Hand",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cameron Williams",
+      "pos": "OL",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Trey Sermon",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Storm Norton",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "JD Bertrand",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Anterio Thompson",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Beaux Collins",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "DeAngelo Malone",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    }
+  ],
+  "Baltimore Ravens": [
+    {
+      "name": "Chris Moore",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ronnie Stanley",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Malaki Starks",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Trey Hendrickson",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "T.J. Tampa",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ja'Kobi Lane",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bilhal Kone",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Adam Randall",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Danny Pinter",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jahquez Robinson",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Skylar Thompson",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Buffalo Bills": [
+    {
+      "name": "Ed Oliver",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "DJ Moore",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Keon Coleman",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "T.J. Sanders",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ar'maj Reed-Adams",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jordan Hancock",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tyrell Shavers",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Dorian Strong",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Zane Durant",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Carolina Panthers": [
+    {
+      "name": "Devin Lloyd",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Xavier Legette",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jalen Coker",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nick Scott",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jonathon Brooks",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Claudin Cherelus",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Trevor Etienne",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brady Christensen",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bam Martin-Scott",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Taylor Moton",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Ikem Ekwonu",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Tershawn Wharton",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Chris Brazzell II",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nic Scourton",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Chicago Bears": [
+    {
+      "name": "Anthony Johnson Jr.",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyrique Stevenson Sr.",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Cairo SantosP",
+      "pos": "K",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tyson Bagent",
+      "pos": "QB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Kyle Monangai",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Caleb Williams",
+      "pos": "QB",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Shemar Turner",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Noah Sewell",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Kyler Gordon",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Dallis Flowers",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jonathan Garvin",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Hayden Large",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Coby Bryant",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ruben Hyppolite II",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tony Fields II",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brittain Brown",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nephi Sewell",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nikola Kalinic",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Cincinnati Bengals": [
+    {
+      "name": "Andrei Iosivas",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "B.J. Hill",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Brian Parker II",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ja'Sir Taylor",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Cleveland Browns": [
+    {
+      "name": "Tyson Campbell",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Quincy Williams",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Grant Delpit",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Teven Jenkins",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dylan Sampson",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jeremiah Owusu-Koramoah",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Dillon Gabriel",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kendrick Green",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kalia Davis",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Edefuan Ulofoshio",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Elijah Chatman",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Joe Royer",
+      "pos": "TE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Alex Wright",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Damarri Mathis",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Dallas Cowboys": [
+    {
+      "name": "P.J. Locke",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Cobie Durant",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Malik Hooker",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "DeMarvion Overshown",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Malik Davis",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyler Smith",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Devin Moore",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Matt Hennessy",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "DJ Rogers",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Marist Liufau",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kelvin Gilliam Jr.",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Princeton Fant",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Denver Broncos": [
+    {
+      "name": "Marvin Mims Jr.",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jonah Coleman",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jonathon Cooper",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Nick Gargiulo",
+      "pos": "G",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Frank Crum",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Caleb Lohner",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Levelle Bailey",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Matt Henningsen",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Michael Deiter",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Detroit Lions": [
+    {
+      "name": "Ben Bartch",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tate Ratledge",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Blake Miller",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Christian Mahogany",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Thomas Harper",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Avonte Maddox",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Isiah Pacheco",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cade Mays",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Payton Turner",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Giovanni Manu",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Kerby Joseph",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Brian Branch",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Damone Clark",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kendrick Law",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Green Bay Packers": [
+    {
+      "name": "Edgerrin Cooper",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Anthony Campbell",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jayden Reed",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Zach Bako-Bewele",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Aaron Banks",
+      "pos": "G",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Warren Brinson",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Josh Jacobs",
+      "pos": "RB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Savion Williams",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jordon Riley",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Collin Oliver",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Luke Musgrave",
+      "pos": "TE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Micah Parsons",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Thomas Yassmin",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Johnathan Baldwin II",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Houston Texans": [
+    {
+      "name": "Nico Collins",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jadeveon Clowney",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "M.J. Stewart",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Trent Brown",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jake Hummel",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ed Ingram",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Henry To'oTo'o",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kayden McDonald",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jayden Higgins",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tank Dell",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Sam Hagen",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Braden Smith",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Solomon Byrd",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ali Gaye",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "E.J. Speed",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Ja'Marcus Ingram",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Dylan Horton",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "K.C. Ossai",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Graham Mertz",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Indianapolis Colts": [
+    {
+      "name": "Ashton Dulin",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Charvarius Ward",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Alec Pierce",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Micheal Clemons",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Carson Towt",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Sean McKeon",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "D.J. Montgomery",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Will Mallory",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cameron Mitchell",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Jacksonville Jaguars": [
+    {
+      "name": "LeQuint Allen Jr.",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jakobi Meyers",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "DaVon Hamilton",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Cole Van Lanen",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Robert Hainsey",
+      "pos": "C",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "B.J. Green II",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Sam Mustipher",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Patrick Mekari",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Zach Durfee",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Parker Hughes",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jared Bartlett",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Garrett DiGiorgio",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Kansas City Chiefs": [
+    {
+      "name": "L'Jarius Sneed",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Chris Jones",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Cooper McDonald",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Omarr Norman-Lott",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jimmy Holiday",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jeff Caldwell",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Matt Waletzko",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ethan Downs",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "John Michael Gyllenborg",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Las Vegas Raiders": [
+    {
+      "name": "Kwity Paye",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Brock Bowers",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Treydan Stukes",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Aidan O'Connell",
+      "pos": "QB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dont'e Thornton Jr.",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Carter Runyon",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Keyron Crawford",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Chigozie Anusiem",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Justin Pickett",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brennan Jackson",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Chris Collier",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Corey Rucker",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Justin Shorter",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Los Angeles Chargers": [
+    {
+      "name": "Brenen Thompson",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dalvin Tomlinson",
+      "pos": "DT",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Elijah Molden",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tuli Tuipulotu",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Rodney Shelley",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "David Njoku",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kayode Awosika",
+      "pos": "G",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Charlie Kolar",
+      "pos": "TE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Trey Pipkins III",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "KeAndre Lambert-Smith",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Isaiah World",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Denzel Perryman",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Scott Matlock",
+      "pos": "FB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Branson Taylor",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyler Biadasz",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Los Angeles Rams": [
+    {
+      "name": "Jordan Whittington",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Colby Parkinson",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Puka Nacua",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Kamren Kinchens",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nate Landman",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ronnie Rivers",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Myles Garrett",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Keir Thomas II",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Justin Dedich",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Keagen Trost",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Matthew Caldwell",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Daniel Rickert",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Eddie Walls III",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Miami Dolphins": [
+    {
+      "name": "Jaylen Wright",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ryan Miller",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Caleb Douglas",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Chris Bell",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Robert Beal Jr.",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "JuJu Brents",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tucker AddingtonL",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ronnie Harrison Jr.",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kyle Louis",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Trey Moore",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kenneth Grant",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Storm Duck",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Darrell Baker Jr.",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Cole Turner",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Rene Konga",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Minnesota Vikings": [
+    {
+      "name": "DeeJay Dallas",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Aaron Jones Sr.",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jalen Redmond",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nick Samac",
+      "pos": "C",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jake Golday",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Brett Thorson",
+      "pos": "P",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jordan Mason",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ben Yurosek",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Michael Jurgens",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyler Batty",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jamal Adams",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "New England Patriots": [
+    {
+      "name": "Dre'Mont Jones",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Craig Woodson",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Eli Raridon",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dell Pettus",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brenden Schooler",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Reggie Gilliam",
+      "pos": "FB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Morgan Moses",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Quintayvious Hutchins",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Mike Onwenu",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "A.J. Brown",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bryce Baringer",
+      "pos": "P",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Khalil Jacobs",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Marcus Bryant",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Harold Landry III",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Myles Montgomery",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jeremiah Webb",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Julian Hill",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "New Orleans Saints": [
+    {
+      "name": "Kendre Miller",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Travis Etienne Jr.",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Christen Miller",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Kelvin Banks Jr.",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Barion Brown",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Martin Emerson Jr.",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Zach WoodL",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Lorenzo Styles Jr.",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Dillon Radunz",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jaylan Ford",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "David Long Jr.",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Mason Tipton",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jordyn Tyson",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Moliki Matavao",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ty Chandler",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Rejzohn Wright",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bryan Bresee",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nick Saldiveri",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    }
+  ],
+  "New York Giants": [
+    {
+      "name": "Andrew Thomas",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jaxson Dart",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Deonte Banks",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tyler Nubin",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Brian Burns",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Shelby Harris",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Paulson Adebo",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Roy Robertson-Harris",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Korie Black",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Calvin Austin III",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jarrick Bernard-Converse",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Rico Payton",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Gunner Olszewski",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Thaddeus Dixon",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "New York Jets": [
+    {
+      "name": "Kiko Mauigoa",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Kene Nwangwu",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Mason Taylor",
+      "pos": "TE",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Adonai Mitchell",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Minkah Fitzpatrick",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Joseph Ossai",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Arian Smith",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "David Onyemata",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Marcelino McCrary-Ball",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Omar Cooper Jr.",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tim Patrick",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "VJ Payne",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kingsley Jonathan",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tre Brown",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyler Baron",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Chip Trayanum",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Anez Cooper",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Philadelphia Eagles": [
+    {
+      "name": "Jonathan Greenard",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Will Shipley",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Andrew Mukuba",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jalen Carter",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tank Bigsby",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dallas Goedert",
+      "pos": "TE",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "DeVonta Smith",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Saquon Barkley",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Landon Dickerson",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Eli Stowers",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Andre' Sam",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jakorian Bennett",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Grant Calcaterra",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Johnny Wilson",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tucker Large",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    }
+  ],
+  "Pittsburgh Steelers": [
+    {
+      "name": "Michael Pittman Jr.",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Rico Dowdle",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jaylen Warren",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Gennings Dunker",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jamel Dean",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Joey Porter Jr.",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "DeShon Elliott",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jack Driscoll",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Donte Kent",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Logan Lee",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cole Burgess",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Daequan Hardy",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "San Francisco 49ers": [
+    {
+      "name": "Romello Height",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nick Bosa",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Mike Evans",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "C.J. West",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "James Thompson Jr.",
+      "pos": "DT",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Demarcus Robinson",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Brandon Aiyuk",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jack Jones",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "De'Zhaun Stribling",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jake Tonges",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Alfred Collins",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Mykel Williams",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Nate Hobbs",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Sam Okuayinonu",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nick Martin",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nick Zakelj",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brett Toth",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Austen Pleasants",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Christian Kirk",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Isaac Guerendo",
+      "pos": "RB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Ricky Pearsall",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Mikail Kamara",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Andrew Farmer II",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Darrick Forrest",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Seattle Seahawks": [
+    {
+      "name": "Ty Okada",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Julian Love",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jadarian Price",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Anthony Bradford",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Zach Charbonnet",
+      "pos": "RB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Brandon Pili",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Irv Charles",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Terrion Arnold",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Mason Richman",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bud Clark",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jake Bobo",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Robbie Ouzts",
+      "pos": "FB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Tampa Bay Buccaneers": [
+    {
+      "name": "Josiah Trotter",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Rueben Bain Jr.",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Anthony Nelson",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Josh Hayes",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Mohamed Kamara",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "David Sills V",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Tennessee Titans": [
+    {
+      "name": "Daniel Bellinger",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tony Pollard",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Micah Robinson",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tyjae Spears",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Cor'Dale Flott",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Solomon Thomas",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Milo Eifler",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kendell Brooks",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Andre James",
+      "pos": "C",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tanoh Kpassagnon",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Dorian Mausi",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Joshua Williams",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jaylen Harrell",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jaren Kanak",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ],
+  "Washington Commanders": [
+    {
+      "name": "Jayden Daniels",
+      "pos": "QB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Chig Okonkwo",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Leo Chenal",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Frankie Luvu",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Charles Omenihu",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Percy Butler",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dorance Armstrong",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Javon Kinlaw",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nick Cross",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jaylin Lane",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Sam Cosmi",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jordan Magee",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jer'Zhan Newton",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Laremy Tunsil",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Deatrich Wise Jr.",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Trey Amos",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jeremy McNichols",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Arizona CardinalsNAMEPOSEST. RETURN DATESTATUSCOMMENTMax Melton",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dadrion Taylor-Demerson",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Garrett Williams",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Hjalte Froholdt",
+      "pos": "C",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Roy Lopez",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Will Johnson",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kitan Crawford",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kaleb Proctor",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Zachary Carter",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tip Reiman",
+      "pos": "TE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "James Conner",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Trey Benson",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Chase Bisontis",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Joey Blount",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jameson Geers",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Atlanta FalconsNAMEPOSEST. RETURN DATESTATUSCOMMENTJack Strand",
+      "pos": "QB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Cooper Rush",
+      "pos": "QB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Robert Longerbeam",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Ethan Onianwa",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Malcolm DeWalt IV",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Samson Ebukam",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "A.J. Terrell Jr.",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Da'Shawn Hand",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cameron Williams",
+      "pos": "OL",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Trey Sermon",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Storm Norton",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "JD Bertrand",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Anterio Thompson",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Beaux Collins",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "DeAngelo Malone",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Baltimore RavensNAMEPOSEST. RETURN DATESTATUSCOMMENTChris Moore",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ronnie Stanley",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Malaki Starks",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Trey Hendrickson",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "T.J. Tampa",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ja'Kobi Lane",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bilhal Kone",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Adam Randall",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Danny Pinter",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jahquez Robinson",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Skylar Thompson",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Buffalo BillsNAMEPOSEST. RETURN DATESTATUSCOMMENTEd Oliver",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "DJ Moore",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Keon Coleman",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "T.J. Sanders",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ar'maj Reed-Adams",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jordan Hancock",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tyrell Shavers",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Dorian Strong",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Zane Durant",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Carolina PanthersNAMEPOSEST. RETURN DATESTATUSCOMMENTDevin Lloyd",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Xavier Legette",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jalen Coker",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nick Scott",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jonathon Brooks",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Claudin Cherelus",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Trevor Etienne",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brady Christensen",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bam Martin-Scott",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Taylor Moton",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Ikem Ekwonu",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Tershawn Wharton",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Chris Brazzell II",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nic Scourton",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Chicago BearsNAMEPOSEST. RETURN DATESTATUSCOMMENTAnthony Johnson Jr.",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyrique Stevenson Sr.",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Cairo SantosP",
+      "pos": "K",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tyson Bagent",
+      "pos": "QB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Kyle Monangai",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Caleb Williams",
+      "pos": "QB",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Shemar Turner",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Noah Sewell",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Kyler Gordon",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Dallis Flowers",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jonathan Garvin",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Hayden Large",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Coby Bryant",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ruben Hyppolite II",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tony Fields II",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brittain Brown",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nephi Sewell",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nikola Kalinic",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cincinnati BengalsNAMEPOSEST. RETURN DATESTATUSCOMMENTAndrei Iosivas",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "B.J. Hill",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Brian Parker II",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ja'Sir Taylor",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cleveland BrownsNAMEPOSEST. RETURN DATESTATUSCOMMENTTyson Campbell",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Quincy Williams",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Grant Delpit",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Teven Jenkins",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dylan Sampson",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jeremiah Owusu-Koramoah",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Dillon Gabriel",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kendrick Green",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kalia Davis",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Edefuan Ulofoshio",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Elijah Chatman",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Joe Royer",
+      "pos": "TE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Alex Wright",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Damarri Mathis",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Dallas CowboysNAMEPOSEST. RETURN DATESTATUSCOMMENTP.J. Locke",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Cobie Durant",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Malik Hooker",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "DeMarvion Overshown",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Malik Davis",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyler Smith",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Devin Moore",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Matt Hennessy",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "DJ Rogers",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Marist Liufau",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kelvin Gilliam Jr.",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Princeton Fant",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Denver BroncosNAMEPOSEST. RETURN DATESTATUSCOMMENTMarvin Mims Jr.",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jonah Coleman",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jonathon Cooper",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Nick Gargiulo",
+      "pos": "G",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Frank Crum",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Caleb Lohner",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Levelle Bailey",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Matt Henningsen",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Michael Deiter",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Detroit LionsNAMEPOSEST. RETURN DATESTATUSCOMMENTBen Bartch",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tate Ratledge",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Blake Miller",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Christian Mahogany",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Thomas Harper",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Avonte Maddox",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Isiah Pacheco",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cade Mays",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Payton Turner",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Giovanni Manu",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Kerby Joseph",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Brian Branch",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Damone Clark",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kendrick Law",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Green Bay PackersNAMEPOSEST. RETURN DATESTATUSCOMMENTEdgerrin Cooper",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Anthony Campbell",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jayden Reed",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Zach Bako-Bewele",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Aaron Banks",
+      "pos": "G",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Warren Brinson",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Josh Jacobs",
+      "pos": "RB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Savion Williams",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jordon Riley",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Collin Oliver",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Luke Musgrave",
+      "pos": "TE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Micah Parsons",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Thomas Yassmin",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Johnathan Baldwin II",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Houston TexansNAMEPOSEST. RETURN DATESTATUSCOMMENTNico Collins",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jadeveon Clowney",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "M.J. Stewart",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Trent Brown",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jake Hummel",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ed Ingram",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Henry To'oTo'o",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kayden McDonald",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jayden Higgins",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tank Dell",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Sam Hagen",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Braden Smith",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Solomon Byrd",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ali Gaye",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "E.J. Speed",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Ja'Marcus Ingram",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Dylan Horton",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "K.C. Ossai",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Graham Mertz",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Indianapolis ColtsNAMEPOSEST. RETURN DATESTATUSCOMMENTAshton Dulin",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Charvarius Ward",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Alec Pierce",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Micheal Clemons",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Carson Towt",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Sean McKeon",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "D.J. Montgomery",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Will Mallory",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cameron Mitchell",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jacksonville JaguarsNAMEPOSEST. RETURN DATESTATUSCOMMENTLeQuint Allen Jr.",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jakobi Meyers",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "DaVon Hamilton",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Cole Van Lanen",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Robert Hainsey",
+      "pos": "C",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "B.J. Green II",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Sam Mustipher",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Patrick Mekari",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Zach Durfee",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Parker Hughes",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jared Bartlett",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Garrett DiGiorgio",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kansas City ChiefsNAMEPOSEST. RETURN DATESTATUSCOMMENTL'Jarius Sneed",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Chris Jones",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Cooper McDonald",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Omarr Norman-Lott",
+      "pos": "DT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jimmy Holiday",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jeff Caldwell",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Matt Waletzko",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ethan Downs",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "John Michael Gyllenborg",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Las Vegas RaidersNAMEPOSEST. RETURN DATESTATUSCOMMENTKwity Paye",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Brock Bowers",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Treydan Stukes",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Aidan O'Connell",
+      "pos": "QB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dont'e Thornton Jr.",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Carter Runyon",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Keyron Crawford",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Chigozie Anusiem",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Justin Pickett",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brennan Jackson",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Chris Collier",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Corey Rucker",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Justin Shorter",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Los Angeles ChargersNAMEPOSEST. RETURN DATESTATUSCOMMENTBrenen Thompson",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dalvin Tomlinson",
+      "pos": "DT",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Elijah Molden",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tuli Tuipulotu",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Rodney Shelley",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "David Njoku",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kayode Awosika",
+      "pos": "G",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Charlie Kolar",
+      "pos": "TE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Trey Pipkins III",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "KeAndre Lambert-Smith",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Isaiah World",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Denzel Perryman",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Scott Matlock",
+      "pos": "FB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Branson Taylor",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyler Biadasz",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Los Angeles RamsNAMEPOSEST. RETURN DATESTATUSCOMMENTJordan Whittington",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Colby Parkinson",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Puka Nacua",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Kamren Kinchens",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nate Landman",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ronnie Rivers",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Myles Garrett",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Keir Thomas II",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Justin Dedich",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Keagen Trost",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Matthew Caldwell",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Daniel Rickert",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Eddie Walls III",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Miami DolphinsNAMEPOSEST. RETURN DATESTATUSCOMMENTJaylen Wright",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ryan Miller",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Caleb Douglas",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Chris Bell",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Robert Beal Jr.",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "JuJu Brents",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tucker AddingtonL",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Ronnie Harrison Jr.",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kyle Louis",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Trey Moore",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kenneth Grant",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Storm Duck",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Darrell Baker Jr.",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Cole Turner",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Rene Konga",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Minnesota VikingsNAMEPOSEST. RETURN DATESTATUSCOMMENTDeeJay Dallas",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Aaron Jones Sr.",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jalen Redmond",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nick Samac",
+      "pos": "C",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jake Golday",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Brett Thorson",
+      "pos": "P",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jordan Mason",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ben Yurosek",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Michael Jurgens",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyler Batty",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jamal Adams",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "New England PatriotsNAMEPOSEST. RETURN DATESTATUSCOMMENTDre'Mont Jones",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Craig Woodson",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Eli Raridon",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dell Pettus",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brenden Schooler",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Reggie Gilliam",
+      "pos": "FB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Morgan Moses",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Quintayvious Hutchins",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Mike Onwenu",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "A.J. Brown",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bryce Baringer",
+      "pos": "P",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Khalil Jacobs",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Marcus Bryant",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Harold Landry III",
+      "pos": "LB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Myles Montgomery",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jeremiah Webb",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Julian Hill",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "New Orleans SaintsNAMEPOSEST. RETURN DATESTATUSCOMMENTKendre Miller",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Travis Etienne Jr.",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Christen Miller",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Kelvin Banks Jr.",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Barion Brown",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Martin Emerson Jr.",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Zach WoodL",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Lorenzo Styles Jr.",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Dillon Radunz",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jaylan Ford",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "David Long Jr.",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Mason Tipton",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jordyn Tyson",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Moliki Matavao",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Ty Chandler",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Rejzohn Wright",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bryan Bresee",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nick Saldiveri",
+      "pos": "OT",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "New York GiantsNAMEPOSEST. RETURN DATESTATUSCOMMENTAndrew Thomas",
+      "pos": "OT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jaxson Dart",
+      "pos": "QB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Deonte Banks",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tyler Nubin",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Brian Burns",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Shelby Harris",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Paulson Adebo",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Roy Robertson-Harris",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Korie Black",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Calvin Austin III",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jarrick Bernard-Converse",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Rico Payton",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Gunner Olszewski",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Thaddeus Dixon",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "New York JetsNAMEPOSEST. RETURN DATESTATUSCOMMENTKiko Mauigoa",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Kene Nwangwu",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Mason Taylor",
+      "pos": "TE",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Adonai Mitchell",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Minkah Fitzpatrick",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Joseph Ossai",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Arian Smith",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "David Onyemata",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Marcelino McCrary-Ball",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Omar Cooper Jr.",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tim Patrick",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "VJ Payne",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kingsley Jonathan",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tre Brown",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tyler Baron",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Chip Trayanum",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Anez Cooper",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Philadelphia EaglesNAMEPOSEST. RETURN DATESTATUSCOMMENTJonathan Greenard",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Will Shipley",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Andrew Mukuba",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jalen Carter",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tank Bigsby",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dallas Goedert",
+      "pos": "TE",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "DeVonta Smith",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Saquon Barkley",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Landon Dickerson",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Eli Stowers",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Andre' Sam",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jakorian Bennett",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Grant Calcaterra",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Johnny Wilson",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tucker Large",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Pittsburgh SteelersNAMEPOSEST. RETURN DATESTATUSCOMMENTMichael Pittman Jr.",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Rico Dowdle",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jaylen Warren",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Gennings Dunker",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jamel Dean",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Joey Porter Jr.",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "DeShon Elliott",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jack Driscoll",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Donte Kent",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Logan Lee",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Cole Burgess",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Daequan Hardy",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "NAMEPOSEST. RETURN DATESTATUSCOMMENTRomello Height",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nick Bosa",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Mike Evans",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "C.J. West",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "James Thompson Jr.",
+      "pos": "DT",
+      "status": "Doubtful",
+      "will_play": false
+    },
+    {
+      "name": "Demarcus Robinson",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Brandon Aiyuk",
+      "pos": "WR",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jack Jones",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "De'Zhaun Stribling",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jake Tonges",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Alfred Collins",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Mykel Williams",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Nate Hobbs",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Sam Okuayinonu",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nick Martin",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Nick Zakelj",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Brett Toth",
+      "pos": "C",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Austen Pleasants",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Christian Kirk",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Isaac Guerendo",
+      "pos": "RB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Ricky Pearsall",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Mikail Kamara",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Andrew Farmer II",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Darrick Forrest",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Seattle SeahawksNAMEPOSEST. RETURN DATESTATUSCOMMENTTy Okada",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Julian Love",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jadarian Price",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Anthony Bradford",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Zach Charbonnet",
+      "pos": "RB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Brandon Pili",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Irv Charles",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Terrion Arnold",
+      "pos": "CB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Mason Richman",
+      "pos": "G",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Bud Clark",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jake Bobo",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Robbie Ouzts",
+      "pos": "FB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tampa Bay BuccaneersNAMEPOSEST. RETURN DATESTATUSCOMMENTJosiah Trotter",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Rueben Bain Jr.",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Anthony Nelson",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Josh Hayes",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Mohamed Kamara",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "David Sills V",
+      "pos": "WR",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Tennessee TitansNAMEPOSEST. RETURN DATESTATUSCOMMENTDaniel Bellinger",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tony Pollard",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Micah Robinson",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tyjae Spears",
+      "pos": "RB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Cor'Dale Flott",
+      "pos": "CB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Solomon Thomas",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Milo Eifler",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Kendell Brooks",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Andre James",
+      "pos": "C",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Tanoh Kpassagnon",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Dorian Mausi",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Joshua Williams",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jaylen Harrell",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jaren Kanak",
+      "pos": "TE",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Washington CommandersNAMEPOSEST. RETURN DATESTATUSCOMMENTJayden Daniels",
+      "pos": "QB",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Chig Okonkwo",
+      "pos": "TE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Leo Chenal",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Frankie Luvu",
+      "pos": "LB",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Charles Omenihu",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Percy Butler",
+      "pos": "S",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Dorance Armstrong",
+      "pos": "DE",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Javon Kinlaw",
+      "pos": "DT",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Nick Cross",
+      "pos": "S",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Jaylin Lane",
+      "pos": "WR",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Sam Cosmi",
+      "pos": "G",
+      "status": "Questionable",
+      "will_play": true
+    },
+    {
+      "name": "Jordan Magee",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jer'Zhan Newton",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Laremy Tunsil",
+      "pos": "OT",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Deatrich Wise Jr.",
+      "pos": "DE",
+      "status": "Out",
+      "will_play": false
+    },
+    {
+      "name": "Trey Amos",
+      "pos": "CB",
+      "status": "Injured Reserve",
+      "will_play": false
+    },
+    {
+      "name": "Jeremy McNichols",
+      "pos": "RB",
+      "status": "Injured Reserve",
+      "will_play": false
+    }
+  ]
+}
