@@ -247,9 +247,14 @@ recommends which of the remaining 30 teams to pick in each of Weeks 3–18.
 - `dashboard/survivor_roadmap.html` — the published roadmap: a week-by-week pick with a
   confidence tier, alternatives on request, a "close calls to watch" list (weeks below "Very
   Safe"), a **pick finder** (choose any team, see every remaining week they play ranked best
-  matchup first, independent of the plan above — flags when the plan actually uses a different
-  team that week instead, so you can see the tradeoff of overriding it), and the same transparency
-  about assumptions and blind spots as the main dashboard.
+  matchup first — each row shows whether the current plan already uses that team that week, or
+  which team it uses instead, with a button to slot them in), and the same transparency about
+  assumptions and blind spots as the main dashboard. Every week's pick can be **overridden** from
+  its own dropdown: the rest of the season re-optimizes live around the forced pick (a client-side
+  port of the same assignment-problem solver used to build the plan), and a **reset** button
+  restores the original optimal plan exactly, with no re-solve. A **save** button stores the
+  current set of overrides — persisted in the artifact's own database, so it's there next time
+  anyone opens the link — and a saved-paths list lets you reload or delete them later.
   Published version: https://claude.ai/artifact/YDVPUeuoXnxhY1JqgCawok
 
 **What this can't see:** weekly injury reports, starter changes, and market-line movement for any
