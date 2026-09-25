@@ -33,6 +33,17 @@ checked against.
   no receiving record is kept out of the RB group by cross-checking position against the 2026
   receiving file and the injury report's own listed position. Reference data only so far — see the
   levers list in the dashboard (§07).
+- `model/convert_snap_counts.py` → `data/nfl_snap_counts_2026_thru_wk2.csv` — per-player,
+  per-game snap counts for 2026 Weeks 1-2 (a one-time ingestion script; needs `openpyxl` to read
+  the source `.xlsx`, unlike everything else here, which stays standard-library-only). This is the
+  games-played/usage denominator the injury lever has been missing — see "Injury point-adjustment:
+  blocked on data completeness, not methodology" below for why it isn't wired in yet. `TeamId` and
+  `PositionId` in the source file are numeric codes with no legend; both were reverse-engineered by
+  cross-referencing player names already known from the other SIS files (>90% agreement per code)
+  and spot-checked against a clean, independent ground truth (current 2026 rosters) before trusting
+  them — an initial check against stale 2025-season team labels looked alarming (26% "wrong team"),
+  but that turned out to be an error in the check, not the data: most of those were real 2025→2026
+  trades the stale reference didn't know about.
 - `data/sis_team_*def*.csv`, `sis_team_passrush_*.csv` — raw SIS DataHub team run-defense and
   pass-defense tables (2025 season + 2026 through Week 2), used to build the real off/def split.
   Pass-rush data is collected but intentionally **not** summed into the defense total — a
@@ -116,6 +127,31 @@ Two findings, neither of which changed the production constants:
 No constants were changed. Re-run `python3 model/calibrate_qb_layer.py` once Week 3 (or more
 weeks) are validated — a wider actual sample, and more team-change cases than just one, is what
 would make this exercise trustworthy rather than descriptive.
+
+## Injury point-adjustment: blocked on data completeness, not methodology
+
+The snap-count file supplies exactly the missing piece flagged in every earlier version of this
+README: real games-played and per-game usage, finally letting a season-total PAA gap convert into
+a per-game point value the way the QB layer already works. The methodology is ready. It isn't
+wired in because the data isn't complete enough to trust yet:
+
+- `data/sis_player_rundef_2026_thru_wk2.csv` and `sis_player_passrush_2026_thru_wk2.csv` are both
+  capped at exactly 200 rows, and `sis_rushing_2026_thru_wk2.csv` at 93 — round numbers that look
+  like an export limit, not a natural stats cutoff (the rushing file's minimum is 5 attempts through
+  2 games, far below what a starting back would have). Real, unambiguous starters are missing
+  entirely from the 2026-to-date files as a result: Myles Garrett, Micah Parsons, and Josh Jacobs
+  all have zero 2026 record in any of these tables, despite obviously playing every week.
+- Checked against the 59 injury entries §06 already tags with a depth-chart tier, only **14 (24%)**
+  have any 2026-to-date value record to compute a real per-game number from. Building the
+  adjustment now would silently skip three-quarters of tagged injuries, and the misses aren't
+  random — they skew toward exactly the highest-snap, most-established players, which is backwards
+  for a lever whose whole point is pricing a real starter going down.
+
+Needed to unblock: complete (non-truncated) `Run_Defense_2026`, `Pass_Rush_2026`, and confirmation
+that `Rushing_2026` covers every back with real carries, not just the top ~93 by some other sort.
+Once that lands, `qb_adj`-style per-game point values for CB/S/LB/DE/DT/RB are a mechanical
+extension of code that already exists (`tier_injuries.py`'s tiering + this file's games-played) —
+this is a data gap, not an engineering one.
 
 ## Key modeling assumptions
 
