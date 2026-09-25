@@ -247,7 +247,7 @@ recommends which of the remaining 30 teams to pick in each of Weeks 3–18.
 - `dashboard/survivor_roadmap.html` — the published roadmap: a week-by-week pick with a
   confidence tier, alternatives on request, a "close calls to watch" list (weeks below "Very
   Safe"), and the same transparency about assumptions and blind spots as the main dashboard.
-  Published version: (published from this session; ask if you don't have the link).
+  Published version: https://claude.ai/artifact/YDVPUeuoXnxhY1JqgCawok
 
 **What this can't see:** weekly injury reports, starter changes, and market-line movement for any
 week past the current one — the composite rating is held static at this week's snapshot for the
