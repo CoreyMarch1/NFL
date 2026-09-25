@@ -5,7 +5,8 @@
     --text:#e7ecf5; --text-dim:#93a1b8; --text-faint:#5c6a83;
     --accent:#4f8cff; --accent-soft:#4f8cff26;
     --good:#34d399; --good-soft:#34d39922; --bad:#fb7373; --bad-soft:#fb737322;
-    --warn:#ffd166; --warn-soft:#ffd16622; --shadow: 0 8px 24px -8px rgba(0,0,0,.5);
+    --warn:#ffd166; --warn-soft:#ffd16622; --override:#a78bfa; --override-soft:#a78bfa26;
+    --shadow: 0 8px 24px -8px rgba(0,0,0,.5);
   }
   @media (prefers-color-scheme: light){
     :root:not([data-theme="dark"]){
@@ -13,7 +14,8 @@
       --text:#131a29; --text-dim:#57647d; --text-faint:#8a95ab;
       --accent:#2f6fed; --accent-soft:#2f6fed17;
       --good:#0f9d68; --good-soft:#0f9d6817; --bad:#d1453a; --bad-soft:#d1453a17;
-      --warn:#b8860b; --warn-soft:#b8860b17; --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
+      --warn:#b8860b; --warn-soft:#b8860b17; --override:#7c5cd6; --override-soft:#7c5cd617;
+      --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
     }
   }
   :root[data-theme="light"]{
@@ -21,7 +23,8 @@
     --text:#131a29; --text-dim:#57647d; --text-faint:#8a95ab;
     --accent:#2f6fed; --accent-soft:#2f6fed17;
     --good:#0f9d68; --good-soft:#0f9d6817; --bad:#d1453a; --bad-soft:#d1453a17;
-    --warn:#b8860b; --warn-soft:#b8860b17; --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
+    --warn:#b8860b; --warn-soft:#b8860b17; --override:#7c5cd6; --override-soft:#7c5cd617;
+    --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
   }
   *{box-sizing:border-box;}
   body{background:var(--bg); color:var(--text); margin:0; font-family:'IBM Plex Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased;}
@@ -85,6 +88,30 @@
   .watch-item{background:var(--warn-soft); border:1px solid var(--warn); border-radius:10px; padding:12px 14px; font-size:13px; line-height:1.55;}
   .watch-item b{color:var(--text);}
 
+  .plan-controls{display:flex; gap:10px; align-items:center; margin-bottom:14px; flex-wrap:wrap;}
+  .btn-secondary,.btn-primary{border-radius:8px; padding:8px 14px; font:500 13px 'IBM Plex Sans',sans-serif; cursor:pointer; border:1px solid transparent;}
+  .btn-secondary{background:var(--surface2); border-color:var(--border); color:var(--text);}
+  .btn-primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .btn-secondary:disabled,.btn-primary:disabled{opacity:.45; cursor:not-allowed;}
+  .override-note{font-size:12px; color:var(--override); font-weight:600;}
+  .save-form{display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; align-items:flex-start;}
+  .save-form input{flex:1; min-width:220px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:8px 12px; color:var(--text); font:400 13px 'IBM Plex Sans',sans-serif;}
+  .save-error{width:100%; font-size:12px; color:var(--bad);}
+
+  .override-row{display:flex; align-items:center; gap:8px; margin-top:10px; flex-wrap:wrap;}
+  .override-label{font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.04em;}
+  .pick-override{background:var(--surface2); border:1px solid var(--border); border-radius:6px; color:var(--text); font:500 12px 'IBM Plex Sans',sans-serif; padding:4px 8px; cursor:pointer; max-width:220px;}
+  .clear-override{background:none; border:1px solid var(--border); border-radius:6px; color:var(--text-faint); cursor:pointer; font-size:11px; padding:3px 8px;}
+  .week-row.overridden{--tier-color:var(--override);}
+  .override-tag{font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:var(--override); background:var(--override-soft); border:1px solid var(--override); border-radius:6px; padding:2px 7px; margin-left:8px; vertical-align:middle;}
+
+  .saved-list{display:flex; flex-direction:column; gap:8px;}
+  .saved-row{display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px 14px; flex-wrap:wrap;}
+  .saved-row .name{font-weight:600; flex:1; min-width:140px; font-size:13.5px;}
+  .saved-row .meta{font-size:11.5px; color:var(--text-faint);}
+
+  .finder-pick-btn{background:none; border:1px solid var(--accent); color:var(--accent); border-radius:6px; font-size:11px; padding:3px 8px; cursor:pointer; margin-left:auto;}
+
   .team-select{width:100%; max-width:340px; font:500 14px 'IBM Plex Sans',sans-serif; color:var(--text); background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px 14px; margin-bottom:18px; appearance:none; cursor:pointer;}
   .team-select:focus{outline:2px solid var(--accent); outline-offset:1px;}
   .finder-results{display:flex; flex-direction:column; gap:8px;}
@@ -138,13 +165,30 @@
 
   <section>
     <h2 class="sec">The 16-week plan</h2>
-    <p class="sec-sub">Each week shows the recommended pick, the win probability behind it, and a confidence tier. Tap a week for the next-best alternatives &mdash; useful context, though swapping one in changes the plan for later weeks too (see methodology below).</p>
+    <p class="sec-sub">Each week shows the recommended pick, the win probability behind it, and a confidence tier. Change any week's pick with its dropdown and the rest of the season re-optimizes around it automatically &mdash; tap a week for alternatives, or reset to get back the original plan.</p>
+    <div class="plan-controls">
+      <button class="btn-secondary" id="reset-btn">Reset to optimal plan</button>
+      <button class="btn-primary" id="save-btn" disabled title="Loading...">Save this path</button>
+      <span class="override-note" id="override-note" hidden></span>
+    </div>
+    <div class="save-form" id="save-form" hidden>
+      <input type="text" id="save-name" placeholder="Name this path, e.g. &quot;Save Bills for Week 14&quot;" maxlength="60">
+      <button class="btn-primary" id="save-confirm">Save</button>
+      <button class="btn-secondary" id="save-cancel">Cancel</button>
+      <div class="save-error" id="save-error" hidden></div>
+    </div>
     <div class="roadmap" id="roadmap"></div>
+  </section>
+
+  <section id="saved-section" hidden>
+    <h2 class="sec">Saved paths</h2>
+    <p class="sec-sub">Paths you've saved, stored with this artifact so they're here the next time you open it.</p>
+    <div class="saved-list" id="saved-list"></div>
   </section>
 
   <section>
     <h2 class="sec">Pick finder</h2>
-    <p class="sec-sub">Pick a team to see every remaining week they play, best matchup first &mdash; independent of the plan above. Useful for asking "if I want to save this team, when's the best week to spend them?"</p>
+    <p class="sec-sub">Pick a team to see every remaining week they play, best matchup first. Rows show whether the current plan already uses them that week, or which team it uses instead &mdash; use the button on any other row to override the plan and slot them in there.</p>
     <select id="team-select" class="team-select"></select>
     <div class="finder-results" id="finder-results"></div>
   </section>
@@ -208,70 +252,235 @@ function badge(team){
 const TIER_VAR = {"Very Safe":"var(--good)","Safe":"var(--accent)","Moderate":"var(--warn)","Risky":"var(--bad)"};
 const TIER_SOFT = {"Very Safe":"var(--good-soft)","Safe":"var(--accent-soft)","Moderate":"var(--warn-soft)","Risky":"var(--bad-soft)"};
 
-document.getElementById('survival-stat').textContent = (PLAN.survival_prob*100).toFixed(1) + '%';
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+const usedTeams = new Set(PLAN.already_used.map(u => u.team));
+
+// ---- Live re-optimization engine ----
+// Week x team probability matrix for the whole remaining season, built from the per-team
+// schedules already computed server-side. Excludes teams already spent in Weeks 1-2 -- those
+// can never be picked again regardless of what the user overrides elsewhere.
+const ALL_WEEKS = [];
+for (let w = 3; w <= 18; w++) ALL_WEEKS.push(w);
+const WEEK_TEAM = {};
+ALL_WEEKS.forEach(w => WEEK_TEAM[w] = {});
+Object.entries(PLAN.team_schedule).forEach(([team, rows]) => {
+  if (usedTeams.has(team)) return;
+  rows.forEach(r => { WEEK_TEAM[r.week][team] = r; });
+});
+const AVAILABLE_TEAMS = Object.keys(PLAN.team_schedule).filter(t => !usedTeams.has(t)).sort();
+
+function tierOf(p){
+  return p >= 0.80 ? 'Very Safe' : p >= 0.68 ? 'Safe' : p >= 0.55 ? 'Moderate' : 'Risky';
+}
+
+// Hungarian algorithm (Kuhn-Munkres) for a rectangular cost matrix, n rows <= m columns:
+// assigns every row to a distinct column minimizing total cost. Standard O(n^2 m) formulation.
+// Verified against this page's own server-computed baseline (model/survivor_model.py's
+// scipy.optimize.linear_sum_assignment) before shipping -- exact match on all 16 weeks.
+function hungarian(cost){
+  const n = cost.length, m = cost[0].length, INF = 1e15;
+  const u = new Array(n+1).fill(0), v = new Array(m+1).fill(0);
+  const p = new Array(m+1).fill(0), way = new Array(m+1).fill(0);
+  for (let i = 1; i <= n; i++){
+    p[0] = i;
+    let j0 = 0;
+    const minv = new Array(m+1).fill(INF);
+    const used = new Array(m+1).fill(false);
+    do {
+      used[j0] = true;
+      const i0 = p[j0];
+      let delta = INF, j1 = -1;
+      for (let j = 1; j <= m; j++){
+        if (!used[j]){
+          const cur = cost[i0-1][j-1] - u[i0] - v[j];
+          if (cur < minv[j]){ minv[j] = cur; way[j] = j0; }
+          if (minv[j] < delta){ delta = minv[j]; j1 = j; }
+        }
+      }
+      for (let j = 0; j <= m; j++){
+        if (used[j]){ u[p[j]] += delta; v[j] -= delta; }
+        else { minv[j] -= delta; }
+      }
+      j0 = j1;
+    } while (p[j0] !== 0);
+    do {
+      const j1 = way[j0];
+      p[j0] = p[j1];
+      j0 = j1;
+    } while (j0 !== 0);
+  }
+  const rowAssignment = new Array(n).fill(-1);
+  for (let j = 1; j <= m; j++) if (p[j] !== 0) rowAssignment[p[j]-1] = j-1;
+  return rowAssignment;
+}
+
+let overrides = {}; // week (number) -> team, user-forced picks
+let currentPlanWeekMap = {}; // week -> team, from whichever plan is live right now
+
+function computeCurrentPlan(){
+  // No overrides: use the exact server-computed baseline, byte-for-byte -- no reason to risk any
+  // divergence (tie-breaking, floating point) between this page's solver and the one that
+  // produced it when the two are solving the identical, unconstrained problem.
+  if (Object.keys(overrides).length === 0) {
+    return {plan: PLAN.plan, survivalProb: PLAN.survival_prob};
+  }
+
+  const forcedWeeks = new Set(Object.keys(overrides).map(Number));
+  const forcedTeams = new Set(Object.values(overrides));
+  const freeWeeks = ALL_WEEKS.filter(w => !forcedWeeks.has(w));
+  const freeTeams = AVAILABLE_TEAMS.filter(t => !forcedTeams.has(t));
+
+  const INFEASIBLE = 1e6;
+  const cost = freeWeeks.map(w => freeTeams.map(t => {
+    const info = WEEK_TEAM[w][t];
+    return info ? -Math.log(Math.max(info.p_blend, 1e-6)) : INFEASIBLE;
+  }));
+  const assignment = freeWeeks.length ? hungarian(cost) : [];
+  const solvedByWeek = {};
+  freeWeeks.forEach((w, i) => {
+    const j = assignment[i];
+    if (j >= 0 && cost[i][j] < INFEASIBLE) solvedByWeek[w] = freeTeams[j];
+  });
+
+  let survivalProb = 1;
+  const plan = ALL_WEEKS.map(w => {
+    const team = overrides[w] || solvedByWeek[w];
+    if (!team) return {week: w, team: null, error: 'No feasible team left for this week.'};
+    const info = WEEK_TEAM[w][team];
+    survivalProb *= info.p_blend;
+    const alts = Object.entries(WEEK_TEAM[w])
+      .filter(([t]) => t !== team && !forcedTeams.has(t))
+      .sort((a, b) => b[1].p_blend - a[1].p_blend)
+      .slice(0, 3)
+      .map(([t, i2]) => ({team: t, p_blend: i2.p_blend, opponent: i2.opponent, is_home: i2.is_home}));
+    return {
+      week: w, team, opponent: info.opponent, is_home: info.is_home, p_blend: info.p_blend,
+      tier: tierOf(info.p_blend), isOverride: !!overrides[w], alternatives: alts,
+      source: w === 3 ? 'week3_model' : 'composite+wintotal',
+    };
+  });
+  return {plan, survivalProb};
+}
+
+function renderRoadmap(plan){
+  document.getElementById('roadmap').innerHTML = plan.map((p, idx) => {
+    if (!p.team) {
+      return `<div class="week-row"><div class="week-card">Week ${p.week}: ${p.error}</div></div>`;
+    }
+    const color = TIER_VAR[p.tier];
+    const soft = TIER_SOFT[p.tier];
+    const altRows = (p.alternatives || []).map(a =>
+      `<div class="alt-row"><span>${a.team} (${a.is_home ? 'vs' : '@'} ${a.opponent})</span><span class="num">${(a.p_blend*100).toFixed(1)}%</span></div>`
+    ).join('');
+    const sourceNote = p.source === 'week3_model'
+      ? "Source: this week's full market-blended model (real lines, QB + injury adjustments)."
+      : 'Source: composite rating &times; season win total blend' + (p.p_comp != null ? ` (model ${(p.p_comp*100).toFixed(0)}% / win-total ${(p.p_mkt*100).toFixed(0)}%)` : '') + '.';
+    const forcedElsewhere = new Set(Object.entries(overrides).filter(([w]) => Number(w) !== p.week).map(([, t]) => t));
+    const teamOptions = Object.keys(WEEK_TEAM[p.week]).filter(t => !forcedElsewhere.has(t)).sort().map(t =>
+      `<option value="${t}" ${t === p.team ? 'selected' : ''}>${t}</option>`
+    ).join('');
+    return `<div class="week-row${p.isOverride ? ' overridden' : ''}" style="--tier-color:${color}">
+      <div class="week-card">
+        <div class="week-head">
+          <div class="wk-num">WK ${p.week}</div>
+          <div class="matchup">
+            ${badge(p.team)}
+            <div><div class="team-name">${p.team}${p.isOverride ? '<span class="override-tag">Your pick</span>' : ''}</div><div class="opp">${p.is_home ? 'vs' : '@'} ${p.opponent}</div></div>
+          </div>
+          <div class="prob-block">
+            <div class="meter"><div class="fill" style="width:${(p.p_blend*100).toFixed(0)}%"></div></div>
+            <div class="prob-num num">${(p.p_blend*100).toFixed(1)}%</div>
+            <div class="tier-chip" style="background:${soft}; color:${color};">${p.tier}</div>
+          </div>
+        </div>
+        <div class="override-row">
+          <label class="override-label" for="pick-${p.week}">Change pick</label>
+          <select class="pick-override" id="pick-${p.week}" data-week="${p.week}">${teamOptions}</select>
+          ${p.isOverride ? `<button class="clear-override" data-week="${p.week}" title="Revert to the solver's pick">&times; Clear</button>` : ''}
+        </div>
+        <button class="toggle-alt" data-i="${idx}">Show alternatives</button>
+        <div class="alt-panel" id="alt-${idx}">
+          ${altRows}
+          <div class="source-tag">${sourceNote}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  document.querySelectorAll('.toggle-alt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = document.getElementById('alt-' + btn.dataset.i);
+      const open = panel.classList.toggle('open');
+      btn.textContent = open ? 'Hide alternatives' : 'Show alternatives';
+    });
+  });
+  document.querySelectorAll('.pick-override').forEach(sel => {
+    sel.addEventListener('change', () => {
+      overrides[Number(sel.dataset.week)] = sel.value;
+      refresh();
+    });
+  });
+  document.querySelectorAll('.clear-override').forEach(btn => {
+    btn.addEventListener('click', () => {
+      delete overrides[Number(btn.dataset.week)];
+      refresh();
+    });
+  });
+}
+
+function renderWatchList(plan){
+  const watchWeeks = plan.filter(p => p.team && (p.tier === 'Moderate' || p.tier === 'Risky'));
+  const watchList = document.getElementById('watch-list');
+  const sectionEl = document.getElementById('watch-section');
+  if (watchWeeks.length === 0) {
+    sectionEl.hidden = true;
+    return;
+  }
+  sectionEl.hidden = false;
+  watchList.innerHTML = watchWeeks.map(p =>
+    `<div class="watch-item"><b>Week ${p.week}: ${p.team}</b> ${p.is_home ? 'vs' : '@'} ${p.opponent} sits at ${(p.p_blend*100).toFixed(1)}% (${p.tier})${p.isOverride ? ' &mdash; your override' : ''} &mdash; worth re-checking against the injury report and line as the week approaches.</div>`
+  ).join('');
+}
+
+function updateOverrideNote(){
+  const note = document.getElementById('override-note');
+  const n = Object.keys(overrides).length;
+  if (n === 0) { note.hidden = true; return; }
+  note.hidden = false;
+  note.textContent = `${n} override${n > 1 ? 's' : ''} active`;
+}
+
+function refresh(){
+  const {plan, survivalProb} = computeCurrentPlan();
+  currentPlanWeekMap = {};
+  plan.forEach(p => { if (p.team) currentPlanWeekMap[p.week] = p.team; });
+  renderRoadmap(plan);
+  document.getElementById('survival-stat').textContent = (survivalProb*100).toFixed(1) + '%';
+  renderWatchList(plan);
+  updateOverrideNote();
+  renderFinder(teamSelect.value);
+}
 
 document.getElementById('used-strip').innerHTML = PLAN.already_used.map(u =>
   `<div class="used-chip">${badge(u.team)}<span>Week ${u.week}: <b>${u.team}</b></span><span class="check">&#10003;</span></div>`
 ).join('');
 
-document.getElementById('roadmap').innerHTML = PLAN.plan.map((p, idx) => {
-  const color = TIER_VAR[p.tier];
-  const soft = TIER_SOFT[p.tier];
-  const altRows = p.alternatives.map(a =>
-    `<div class="alt-row"><span>${a.team} (${a.is_home?'vs':'@'} ${a.opponent})</span><span class="num">${(a.p_blend*100).toFixed(1)}%</span></div>`
-  ).join('');
-  const sourceNote = p.source === 'week3_model'
-    ? "Source: this week's full market-blended model (real lines, QB + injury adjustments)."
-    : 'Source: composite rating &times; season win total blend' + (p.p_comp!=null ? ` (model ${(p.p_comp*100).toFixed(0)}% / win-total ${(p.p_mkt*100).toFixed(0)}%)` : '') + '.';
-  return `<div class="week-row" style="--tier-color:${color}">
-    <div class="week-card">
-      <div class="week-head">
-        <div class="wk-num">WK ${p.week}</div>
-        <div class="matchup">
-          ${badge(p.team)}
-          <div><div class="team-name">${p.team}</div><div class="opp">${p.is_home?'vs':'@'} ${p.opponent}</div></div>
-        </div>
-        <div class="prob-block">
-          <div class="meter"><div class="fill" style="width:${(p.p_blend*100).toFixed(0)}%"></div></div>
-          <div class="prob-num num">${(p.p_blend*100).toFixed(1)}%</div>
-          <div class="tier-chip" style="background:${soft}; color:${color};">${p.tier}</div>
-        </div>
-      </div>
-      <button class="toggle-alt" data-i="${idx}">Show alternatives</button>
-      <div class="alt-panel" id="alt-${idx}">
-        ${altRows}
-        <div class="source-tag">${sourceNote}</div>
-      </div>
-    </div>
-  </div>`;
-}).join('');
-
-document.querySelectorAll('.toggle-alt').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const panel = document.getElementById('alt-' + btn.dataset.i);
-    const open = panel.classList.toggle('open');
-    btn.textContent = open ? 'Hide alternatives' : 'Show alternatives';
-  });
+document.getElementById('reset-btn').addEventListener('click', () => {
+  overrides = {};
+  refresh();
 });
 
-const watchWeeks = PLAN.plan.filter(p => p.tier === 'Moderate' || p.tier === 'Risky');
-const watchList = document.getElementById('watch-list');
-if (watchWeeks.length === 0) {
-  document.getElementById('watch-section').style.display = 'none';
-} else {
-  watchList.innerHTML = watchWeeks.map(p =>
-    `<div class="watch-item"><b>Week ${p.week}: ${p.team}</b> ${p.is_home?'vs':'@'} ${p.opponent} sits at ${(p.p_blend*100).toFixed(1)}% (${p.tier}) &mdash; the thinnest margin in the plan. Worth re-checking against the injury report and line as the week approaches.</div>`
-  ).join('');
-}
-
 // ---- Pick finder: choose a team, see every remaining week they play, best matchup first ----
-const usedTeams = new Set(PLAN.already_used.map(u => u.team));
 const teamNames = Object.keys(PLAN.team_schedule).sort();
 const teamSelect = document.getElementById('team-select');
 teamSelect.innerHTML = teamNames.map(t => {
   const label = usedTeams.has(t) ? `${t} (already used)` : t;
   return `<option value="${t}">${label}</option>`;
 }).join('');
+teamSelect.value = PLAN.plan[0] ? PLAN.plan[0].team : teamNames[0];
 
 function renderFinder(team){
   const rows = PLAN.team_schedule[team] || [];
@@ -279,38 +488,146 @@ function renderFinder(team){
   if (usedTeams.has(team)) {
     const usedWk = PLAN.already_used.find(u => u.team === team).week;
     resultsEl.innerHTML = `<div class="finder-empty">${team} was already picked in Week ${usedWk} &mdash; not available again this season. Their remaining schedule below is for reference only.</div>` +
-      rows.map((r, i) => finderRow(r, i, true)).join('');
+      rows.map((r, i) => finderRow(r, i, true, team)).join('');
     return;
   }
   if (rows.length === 0) {
     resultsEl.innerHTML = `<div class="finder-empty">No remaining games found for ${team}.</div>`;
     return;
   }
-  resultsEl.innerHTML = rows.map((r, i) => finderRow(r, i, false)).join('');
+  resultsEl.innerHTML = rows.map((r, i) => finderRow(r, i, false, team)).join('');
+  resultsEl.querySelectorAll('.finder-pick-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      overrides[Number(btn.dataset.week)] = btn.dataset.team;
+      refresh();
+    });
+  });
 }
 
-function finderRow(r, i, disabled){
+function finderRow(r, i, disabled, team){
   const color = TIER_VAR[r.tier];
   const soft = TIER_SOFT[r.tier];
-  const note = r.is_plan_pick
+  const planTeamThisWeek = currentPlanWeekMap[r.week];
+  const isPlanPick = planTeamThisWeek === team;
+  const usesInstead = (planTeamThisWeek && planTeamThisWeek !== team) ? planTeamThisWeek : null;
+  const note = isPlanPick
     ? `<span class="finder-pick-tag">Plan's pick</span>`
-    : r.plan_uses_instead
-      ? `<span class="finder-note">Plan uses ${r.plan_uses_instead} this week instead</span>`
+    : usesInstead
+      ? `<span class="finder-note">Plan uses ${usesInstead} this week instead</span>`
       : '';
-  return `<div class="finder-row${r.is_plan_pick ? ' is-pick' : ''}" style="opacity:${disabled && !r.is_plan_pick ? .6 : 1}">
+  const actionBtn = (!disabled && !isPlanPick)
+    ? `<button class="finder-pick-btn" data-week="${r.week}" data-team="${team}">Use for Wk ${r.week}</button>`
+    : '';
+  return `<div class="finder-row${isPlanPick ? ' is-pick' : ''}" style="opacity:${disabled && !isPlanPick ? .6 : 1}">
     <div class="finder-rank num">#${i+1}</div>
     <div class="finder-wk">WK ${r.week}</div>
-    <div class="finder-matchup">${r.is_home?'vs':'@'} ${r.opponent}</div>
+    <div class="finder-matchup">${r.is_home ? 'vs' : '@'} ${r.opponent}</div>
     <div class="tier-chip" style="background:${soft}; color:${color};">${r.tier}</div>
     <div class="prob-num num" style="min-width:44px;">${(r.p_blend*100).toFixed(1)}%</div>
     ${note}
+    ${actionBtn}
   </div>`;
 }
 
 teamSelect.addEventListener('change', () => renderFinder(teamSelect.value));
-// Open on a real, working state rather than an empty shell -- default to the current plan's
-// Week 3 pick, the most immediately relevant team to look up.
-const defaultTeam = PLAN.plan[0] ? PLAN.plan[0].team : teamNames[0];
-teamSelect.value = defaultTeam;
-renderFinder(defaultTeam);
+
+// ---- Saved paths (the `db` capability -- persists with this artifact across sessions) ----
+let dbNS = null;
+
+async function initDb(){
+  if (!window.claude || !window.claude.use) { disableSaving(); return; }
+  const db = await window.claude.use('db');
+  if (!db) { disableSaving(); return; }
+  dbNS = db;
+  const btn = document.getElementById('save-btn');
+  btn.disabled = false;
+  btn.title = '';
+  await loadSavedPaths();
+}
+function disableSaving(){
+  const btn = document.getElementById('save-btn');
+  btn.disabled = true;
+  btn.title = 'Saved paths need this page open on claude.ai';
+}
+
+async function loadSavedPaths(){
+  if (!dbNS) return;
+  const sectionEl = document.getElementById('saved-section');
+  try {
+    const snap = await dbNS.collection('saved_paths').orderBy('createdAt', 'desc').get();
+    const listEl = document.getElementById('saved-list');
+    if (snap.empty) { sectionEl.hidden = true; return; }
+    sectionEl.hidden = false;
+    const byId = Object.fromEntries(snap.docs.map(doc => [doc.id, doc.data()]));
+    listEl.innerHTML = snap.docs.map(doc => {
+      const d = doc.data();
+      const date = new Date(d.createdAt).toLocaleDateString(undefined, {month: 'short', day: 'numeric'});
+      const n = Object.keys(d.overrides || {}).length;
+      return `<div class="saved-row">
+        <div class="name">${escapeHtml(d.name)}</div>
+        <div class="meta">${date} &middot; ${(d.survivalProb*100).toFixed(1)}% &middot; ${n} override${n === 1 ? '' : 's'}</div>
+        <button class="btn-secondary saved-load" data-id="${doc.id}">Load</button>
+        <button class="btn-secondary saved-delete" data-id="${doc.id}">Delete</button>
+      </div>`;
+    }).join('');
+    listEl.querySelectorAll('.saved-load').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const d = byId[btn.dataset.id];
+        overrides = {};
+        Object.entries(d.overrides || {}).forEach(([w, t]) => { overrides[Number(w)] = t; });
+        refresh();
+      });
+    });
+    listEl.querySelectorAll('.saved-delete').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        try { await dbNS.collection('saved_paths').doc(btn.dataset.id).delete(); }
+        catch (e) { console.error('delete failed', e); }
+        await loadSavedPaths();
+      });
+    });
+  } catch (e) {
+    console.error('loadSavedPaths failed', e);
+    sectionEl.hidden = true;
+  }
+}
+
+document.getElementById('save-btn').addEventListener('click', () => {
+  document.getElementById('save-form').hidden = false;
+  document.getElementById('save-error').hidden = true;
+  document.getElementById('save-name').focus();
+});
+document.getElementById('save-cancel').addEventListener('click', () => {
+  document.getElementById('save-form').hidden = true;
+  document.getElementById('save-name').value = '';
+});
+document.getElementById('save-confirm').addEventListener('click', async () => {
+  const nameEl = document.getElementById('save-name');
+  const name = nameEl.value.trim();
+  const errEl = document.getElementById('save-error');
+  errEl.hidden = true;
+  if (!name) { errEl.textContent = 'Give this path a name first.'; errEl.hidden = false; return; }
+  if (!dbNS) { errEl.textContent = 'Saving is unavailable right now.'; errEl.hidden = false; return; }
+  const confirmBtn = document.getElementById('save-confirm');
+  confirmBtn.disabled = true;
+  try {
+    const {survivalProb} = computeCurrentPlan();
+    await dbNS.collection('saved_paths').add({
+      name, createdAt: Date.now(), overrides: {...overrides}, survivalProb,
+    });
+    document.getElementById('save-form').hidden = true;
+    nameEl.value = '';
+    await loadSavedPaths();
+  } catch (e) {
+    errEl.textContent = 'Could not save this path. Try again in a moment.';
+    errEl.hidden = false;
+    console.error('save failed', e);
+  } finally {
+    confirmBtn.disabled = false;
+  }
+});
+
+initDb();
+refresh();
+
 </script>
