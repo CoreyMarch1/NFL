@@ -25,8 +25,13 @@ checked against.
   sack/pressure event already shows up in pass-defense's own EPA-allowed number for that play,
   so adding both would double-count.
 - `data/sis_qb_2026_thru_wk2_*.csv` — QB passing tables through Week 2 (season-to-date), replacing
-  the Week-1-only files used for Week 2. Rushing tables haven't been refreshed past Week 1 yet, so
-  the "current season" QB read for Week 3 is passing-only — a documented gap, not an oversight.
+  the Week-1-only files used for Week 2.
+- `data/sis_rushing_2026_thru_wk2.csv` — per-player rushing value (SIS DataHub) through Week 2,
+  now feeding the `QB_2026_YTD` rush columns that were held at zero last build — the "passing-only"
+  QB gap from the previous version of this README is closed.
+- `data/sis_receiving_2025.csv`, `data/sis_receiving_2026_thru_wk2.csv` — per-player receiving
+  value (SIS DataHub), full 2025 season and 2026 season-to-date. Not wired into the model yet; see
+  the injury-adjustment lever below.
 - `dashboard/week3_dashboard.html` — interactive dashboard: team ratings (real off/def split),
   feature importance, a QB report, per-matchup projections vs. market lines, validation (Week 2's
   full scorecard + an early Week 3 read), an injury report, and ranked improvement levers.
@@ -43,7 +48,8 @@ Prior week's files (`model/week2_*`, `dashboard/week2_dashboard.html`, `model/ca
   2's systematic total-points underprediction (Bills–Lions projected 49, actual 72; see Week 2
   validation below). Fixed alongside the split — Week 2's total-points MAE improves from ~12.0 to
   ~10.1 pts under the corrected formula (re-run, not a new prediction).
-- **QB data refreshed to season-to-date** (2 games) instead of Week 1 only.
+- **QB data refreshed to season-to-date** (2 games) instead of Week 1 only — passing and rushing
+  both now (rushing was passing-only in the first Week 3 build; the rushing table arrived after).
 - **Real lineup churn handled**: Atlanta gets Michael Penix Jr. back (from Cooper Rush), Minnesota
   starts Kyler Murray, and injuries push Washington (Jayden Daniels, elbow), Seattle (Sam Darnold),
   and the Giants (Jaxson Dart, IR) to backups.

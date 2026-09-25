@@ -311,27 +311,28 @@ QB_2025 = {
     "Michael Penix Jr.": (9, 276, 5.24, 21, -2.33, "Falcons"),
     "Kyler Murray": (5, 161, 10.83, 29, 7.06, "Cardinals"),
 }
-# name -> (2026 pass_att through Wk2, pass_PAA_total through Wk2, rush_att, rush_PAA_total)
-# rush columns held at 0 -- see note above (weeks 1-2 rushing tables not yet available)
+# name -> (2026 pass_att through Wk2, pass_PAA_total through Wk2, rush_att through Wk2, rush_PAA_total through Wk2)
+# Rush columns now real (SIS DataHub Rushing_2026 CSV, cross-checked below); a QB missing from that
+# table simply had negligible/no rush volume through Wk2 and keeps (0, 0.0).
 QB_2026_YTD = {
-    "Jayden Daniels": (51, 17.85, 0, 0.0), "Dak Prescott": (65, 12.77, 0, 0.0),
-    "Jared Goff": (77, 10.79, 0, 0.0), "Brock Purdy": (56, 11.57, 0, 0.0),
-    "Drew Lock": (48, 7.93, 0, 0.0), "Josh Allen": (60, 6.11, 0, 0.0),
-    "Geno Smith": (65, 5.90, 0, 0.0), "Caleb Williams": (55, 6.83, 0, 0.0),
-    "Kirk Cousins": (59, 5.95, 0, 0.0), "Bryce Young": (73, 3.25, 0, 0.0),
-    "Patrick Mahomes": (74, 4.27, 0, 0.0), "Matthew Stafford": (56, 4.27, 0, 0.0),
-    "Jalen Hurts": (62, 2.89, 0, 0.0), "Joe Burrow": (66, 2.27, 0, 0.0),
-    "Cam Ward": (52, 2.12, 0, 0.0), "Jacoby Brissett": (65, 0.01, 0, 0.0),
-    "Malik Willis": (50, 0.21, 0, 0.0), "Jaxson Dart": (34, 4.16, 0, 0.0),
-    "Tyler Shough": (90, -2.26, 0, 0.0), "Lamar Jackson": (56, -0.92, 0, 0.0),
-    "Marcus Mariota": (16, 3.87, 0, 0.0), "Bo Nix": (59, -3.60, 0, 0.0),
-    "Trevor Lawrence": (52, -2.04, 0, 0.0), "Drake Maye": (55, -3.47, 0, 0.0),
-    "Daniel Jones": (62, -4.38, 0, 0.0), "C.J. Stroud": (93, -6.27, 0, 0.0),
-    "Jameis Winston": (27, -2.04, 0, 0.0), "Deshaun Watson": (52, -6.73, 0, 0.0),
-    "Jordan Love": (71, -9.28, 0, 0.0), "Justin Herbert": (54, -7.57, 0, 0.0),
-    "Cooper Rush": (39, -24.10, 0, 0.0), "Carson Wentz": (39, -8.47, 0, 0.0),
+    "Jayden Daniels": (51, 17.85, 12, 6.72), "Dak Prescott": (65, 12.77, 6, 0.77),
+    "Jared Goff": (77, 10.79, 5, -0.72), "Brock Purdy": (56, 11.57, 8, 1.09),
+    "Drew Lock": (48, 7.93, 0, 0.0), "Josh Allen": (60, 6.11, 20, -1.79),
+    "Geno Smith": (65, 5.90, 11, 2.57), "Caleb Williams": (55, 6.83, 15, 0.30),
+    "Kirk Cousins": (59, 5.95, 9, -1.23), "Bryce Young": (73, 3.25, 0, 0.0),
+    "Patrick Mahomes": (74, 4.27, 9, 2.97), "Matthew Stafford": (56, 4.27, 6, -0.51),
+    "Jalen Hurts": (62, 2.89, 12, 0.11), "Joe Burrow": (66, 2.27, 6, -0.12),
+    "Cam Ward": (52, 2.12, 8, 3.25), "Jacoby Brissett": (65, 0.01, 7, -0.55),
+    "Malik Willis": (50, 0.21, 8, -0.61), "Jaxson Dart": (34, 4.16, 11, -0.30),
+    "Tyler Shough": (90, -2.26, 13, 3.07), "Lamar Jackson": (56, -0.92, 11, 5.29),
+    "Marcus Mariota": (16, 3.87, 0, 0.0), "Bo Nix": (59, -3.60, 8, -0.65),
+    "Trevor Lawrence": (52, -2.04, 0, 0.0), "Drake Maye": (55, -3.47, 11, 0.19),
+    "Daniel Jones": (62, -4.38, 0, 0.0), "C.J. Stroud": (93, -6.27, 5, -0.82),
+    "Jameis Winston": (27, -2.04, 0, 0.0), "Deshaun Watson": (52, -6.73, 13, 7.37),
+    "Jordan Love": (71, -9.28, 0, 0.0), "Justin Herbert": (54, -7.57, 8, -3.22),
+    "Cooper Rush": (39, -24.10, 0, 0.0), "Carson Wentz": (39, -8.47, 8, 2.32),
     "Aaron Rodgers": (79, -12.53, 0, 0.0), "Kyler Murray": (5, -3.37, 0, 0.0),
-    "Baker Mayfield": (62, -10.73, 0, 0.0),
+    "Baker Mayfield": (62, -10.73, 9, 4.71),
 }
 GAMES_2026 = 2   # elapsed through Week 2
 STABILIZE_CAP, RECENCY_BOOST = 450, 5.0
