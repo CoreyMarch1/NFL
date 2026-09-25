@@ -224,3 +224,33 @@ presumed Falcons QB, since Penix's return wasn't yet reflected pre-kickoff) favo
 6 — Michael Penix Jr.'s return plus a 194-yard, 2-TD game from Bijan Robinson blew that out by 27
 points. One data point, and exactly the kind of in-game swing (a QB return, a breakout rushing
 day) a rating-based model has no way to see coming. The other 15 games haven't kicked off yet.
+
+## Secondary tool: Survivor pool roadmap
+
+A separate, full-season tool for NFL survivor pools (pick one team per week to win outright; the
+same team can never be picked twice; one loss or tie and you're out). Given two picks already
+spent — Jacksonville Jaguars (Week 1) and San Francisco 49ers (Week 2), both assumed won — it
+recommends which of the remaining 30 teams to pick in each of Weeks 3–18.
+
+- `model/survivor_model.py` → `model/survivor_plan.json` — for every future matchup, blends this
+  week's composite rating with each team's 2026 season win total (a September sportsbook
+  consensus, researched separately) 50/50; Week 3 itself uses the fully-built weekly model instead
+  (real market lines, QB and injury adjustments — strictly more information than the blend has for
+  any other week). Then, instead of greedily taking the best team each week, solves a
+  weeks-by-teams assignment problem (`scipy.optimize.linear_sum_assignment`) that picks one
+  distinct team per week to maximize the *product* of all 16 win probabilities at once — the
+  correct objective for "maximize the odds of surviving the whole season," and the reason a team
+  can look like a strong pick in one week's alternatives while the plan actually saves them for a
+  tougher week later. Needs `scipy`, unlike the weekly model.
+- `data/nfl_2026_schedule.csv` — the full 2026 regular-season schedule (converted from the
+  uploaded `.xlsx`), every team's opponent and home/away for all 18 weeks.
+- `dashboard/survivor_roadmap.html` — the published roadmap: a week-by-week pick with a
+  confidence tier, alternatives on request, a "close calls to watch" list (weeks below "Very
+  Safe"), and the same transparency about assumptions and blind spots as the main dashboard.
+  Published version: (published from this session; ask if you don't have the link).
+
+**What this can't see:** weekly injury reports, starter changes, and market-line movement for any
+week past the current one — the composite rating is held static at this week's snapshot for the
+whole season rather than re-derived weekly. Re-run `survivor_model.py` each week as the picture
+updates; the assignment re-optimizes the *remaining* weeks around whatever's actually true by then,
+which is why the plan is a living document, not a one-time answer.

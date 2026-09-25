@@ -1,0 +1,580 @@
+{
+  "already_used": [
+    {
+      "week": 1,
+      "team": "Jacksonville Jaguars"
+    },
+    {
+      "week": 2,
+      "team": "San Francisco 49ers"
+    }
+  ],
+  "plan": [
+    {
+      "week": 3,
+      "team": "Kansas City Chiefs",
+      "opponent": "Miami Dolphins",
+      "is_home": false,
+      "p_blend": 0.798,
+      "p_comp": null,
+      "p_mkt": null,
+      "source": "week3_model",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "Detroit Lions",
+          "p_blend": 0.707,
+          "opponent": "New York Jets",
+          "is_home": true
+        },
+        {
+          "team": "Seattle Seahawks",
+          "p_blend": 0.707,
+          "opponent": "Washington Commanders",
+          "is_home": false
+        },
+        {
+          "team": "Buffalo Bills",
+          "p_blend": 0.697,
+          "opponent": "Los Angeles Chargers",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "team": "Chicago Bears",
+      "opponent": "New York Jets",
+      "is_home": true,
+      "p_blend": 0.713,
+      "p_comp": 0.6497,
+      "p_mkt": 0.7763,
+      "source": "composite+wintotal",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "Baltimore Ravens",
+          "p_blend": 0.8111,
+          "opponent": "Tennessee Titans",
+          "is_home": true
+        },
+        {
+          "team": "Minnesota Vikings",
+          "p_blend": 0.7878,
+          "opponent": "Miami Dolphins",
+          "is_home": true
+        },
+        {
+          "team": "Kansas City Chiefs",
+          "p_blend": 0.6897,
+          "opponent": "Las Vegas Raiders",
+          "is_home": false
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "team": "Cincinnati Bengals",
+      "opponent": "Miami Dolphins",
+      "is_home": false,
+      "p_blend": 0.7532,
+      "p_comp": 0.7257,
+      "p_mkt": 0.7806,
+      "source": "composite+wintotal",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "New England Patriots",
+          "p_blend": 0.7497,
+          "opponent": "Las Vegas Raiders",
+          "is_home": true
+        },
+        {
+          "team": "Detroit Lions",
+          "p_blend": 0.7051,
+          "opponent": "Arizona Cardinals",
+          "is_home": false
+        },
+        {
+          "team": "Baltimore Ravens",
+          "p_blend": 0.6856,
+          "opponent": "Atlanta Falcons",
+          "is_home": false
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "team": "Los Angeles Rams",
+      "opponent": "Arizona Cardinals",
+      "is_home": true,
+      "p_blend": 0.8553,
+      "p_comp": 0.818,
+      "p_mkt": 0.8926,
+      "source": "composite+wintotal",
+      "tier": "Very Safe",
+      "alternatives": [
+        {
+          "team": "New England Patriots",
+          "p_blend": 0.7586,
+          "opponent": "New York Jets",
+          "is_home": true
+        },
+        {
+          "team": "Baltimore Ravens",
+          "p_blend": 0.7564,
+          "opponent": "Cleveland Browns",
+          "is_home": false
+        },
+        {
+          "team": "Philadelphia Eagles",
+          "p_blend": 0.7273,
+          "opponent": "Carolina Panthers",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "team": "Houston Texans",
+      "opponent": "New York Giants",
+      "is_home": true,
+      "p_blend": 0.7047,
+      "p_comp": 0.7359,
+      "p_mkt": 0.6736,
+      "source": "composite+wintotal",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "Los Angeles Rams",
+          "p_blend": 0.7369,
+          "opponent": "Las Vegas Raiders",
+          "is_home": false
+        },
+        {
+          "team": "Denver Broncos",
+          "p_blend": 0.6756,
+          "opponent": "Arizona Cardinals",
+          "is_home": false
+        },
+        {
+          "team": "New York Jets",
+          "p_blend": 0.654,
+          "opponent": "Miami Dolphins",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "team": "Dallas Cowboys",
+      "opponent": "Arizona Cardinals",
+      "is_home": true,
+      "p_blend": 0.7774,
+      "p_comp": 0.7308,
+      "p_mkt": 0.824,
+      "source": "composite+wintotal",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "Cincinnati Bengals",
+          "p_blend": 0.7649,
+          "opponent": "Tennessee Titans",
+          "is_home": true
+        },
+        {
+          "team": "New England Patriots",
+          "p_blend": 0.7384,
+          "opponent": "Miami Dolphins",
+          "is_home": false
+        },
+        {
+          "team": "Pittsburgh Steelers",
+          "p_blend": 0.7105,
+          "opponent": "Cleveland Browns",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "team": "Seattle Seahawks",
+      "opponent": "Arizona Cardinals",
+      "is_home": true,
+      "p_blend": 0.8298,
+      "p_comp": 0.7991,
+      "p_mkt": 0.8604,
+      "source": "composite+wintotal",
+      "tier": "Very Safe",
+      "alternatives": [
+        {
+          "team": "Kansas City Chiefs",
+          "p_blend": 0.7967,
+          "opponent": "New York Jets",
+          "is_home": true
+        },
+        {
+          "team": "Detroit Lions",
+          "p_blend": 0.7557,
+          "opponent": "Miami Dolphins",
+          "is_home": false
+        },
+        {
+          "team": "Philadelphia Eagles",
+          "p_blend": 0.7384,
+          "opponent": "New York Giants",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "team": "Indianapolis Colts",
+      "opponent": "Miami Dolphins",
+      "is_home": true,
+      "p_blend": 0.7452,
+      "p_comp": 0.7532,
+      "p_mkt": 0.7372,
+      "source": "composite+wintotal",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "Los Angeles Rams",
+          "p_blend": 0.7752,
+          "opponent": "Arizona Cardinals",
+          "is_home": false
+        },
+        {
+          "team": "Buffalo Bills",
+          "p_blend": 0.725,
+          "opponent": "New York Jets",
+          "is_home": false
+        },
+        {
+          "team": "Seattle Seahawks",
+          "p_blend": 0.6996,
+          "opponent": "Las Vegas Raiders",
+          "is_home": false
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "team": "Los Angeles Chargers",
+      "opponent": "New York Jets",
+      "is_home": true,
+      "p_blend": 0.7187,
+      "p_comp": 0.6611,
+      "p_mkt": 0.7763,
+      "source": "composite+wintotal",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "Buffalo Bills",
+          "p_blend": 0.8741,
+          "opponent": "Miami Dolphins",
+          "is_home": true
+        },
+        {
+          "team": "Kansas City Chiefs",
+          "p_blend": 0.822,
+          "opponent": "Arizona Cardinals",
+          "is_home": true
+        },
+        {
+          "team": "Dallas Cowboys",
+          "p_blend": 0.7397,
+          "opponent": "Tennessee Titans",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "team": "Minnesota Vikings",
+      "opponent": "Atlanta Falcons",
+      "is_home": true,
+      "p_blend": 0.667,
+      "p_comp": 0.7154,
+      "p_mkt": 0.6186,
+      "source": "composite+wintotal",
+      "tier": "Moderate",
+      "alternatives": [
+        {
+          "team": "Cincinnati Bengals",
+          "p_blend": 0.7033,
+          "opponent": "New Orleans Saints",
+          "is_home": true
+        },
+        {
+          "team": "Los Angeles Rams",
+          "p_blend": 0.6983,
+          "opponent": "Green Bay Packers",
+          "is_home": true
+        },
+        {
+          "team": "Detroit Lions",
+          "p_blend": 0.6334,
+          "opponent": "Chicago Bears",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "team": "Denver Broncos",
+      "opponent": "Miami Dolphins",
+      "is_home": true,
+      "p_blend": 0.8189,
+      "p_comp": 0.8139,
+      "p_mkt": 0.824,
+      "source": "composite+wintotal",
+      "tier": "Very Safe",
+      "alternatives": [
+        {
+          "team": "Philadelphia Eagles",
+          "p_blend": 0.7123,
+          "opponent": "Arizona Cardinals",
+          "is_home": false
+        },
+        {
+          "team": "Cincinnati Bengals",
+          "p_blend": 0.7037,
+          "opponent": "Cleveland Browns",
+          "is_home": false
+        },
+        {
+          "team": "Minnesota Vikings",
+          "p_blend": 0.6507,
+          "opponent": "Carolina Panthers",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "team": "Detroit Lions",
+      "opponent": "Tennessee Titans",
+      "is_home": true,
+      "p_blend": 0.7673,
+      "p_comp": 0.7604,
+      "p_mkt": 0.7741,
+      "source": "composite+wintotal",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "Seattle Seahawks",
+          "p_blend": 0.7626,
+          "opponent": "New York Giants",
+          "is_home": true
+        },
+        {
+          "team": "Baltimore Ravens",
+          "p_blend": 0.7392,
+          "opponent": "Tampa Bay Buccaneers",
+          "is_home": true
+        },
+        {
+          "team": "Philadelphia Eagles",
+          "p_blend": 0.6964,
+          "opponent": "Indianapolis Colts",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "team": "Green Bay Packers",
+      "opponent": "Miami Dolphins",
+      "is_home": true,
+      "p_blend": 0.8016,
+      "p_comp": 0.7791,
+      "p_mkt": 0.824,
+      "source": "composite+wintotal",
+      "tier": "Very Safe",
+      "alternatives": [
+        {
+          "team": "Buffalo Bills",
+          "p_blend": 0.6841,
+          "opponent": "Chicago Bears",
+          "is_home": true
+        },
+        {
+          "team": "Los Angeles Rams",
+          "p_blend": 0.6754,
+          "opponent": "Dallas Cowboys",
+          "is_home": true
+        },
+        {
+          "team": "New York Giants",
+          "p_blend": 0.6497,
+          "opponent": "Cleveland Browns",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "team": "Baltimore Ravens",
+      "opponent": "Cleveland Browns",
+      "is_home": true,
+      "p_blend": 0.8418,
+      "p_comp": 0.826,
+      "p_mkt": 0.8576,
+      "source": "composite+wintotal",
+      "tier": "Very Safe",
+      "alternatives": [
+        {
+          "team": "Detroit Lions",
+          "p_blend": 0.7323,
+          "opponent": "New York Giants",
+          "is_home": true
+        },
+        {
+          "team": "Los Angeles Chargers",
+          "p_blend": 0.6986,
+          "opponent": "Miami Dolphins",
+          "is_home": false
+        },
+        {
+          "team": "New Orleans Saints",
+          "p_blend": 0.679,
+          "opponent": "Arizona Cardinals",
+          "is_home": true
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "team": "Buffalo Bills",
+      "opponent": "Miami Dolphins",
+      "is_home": false,
+      "p_blend": 0.7993,
+      "p_comp": 0.818,
+      "p_mkt": 0.7806,
+      "source": "composite+wintotal",
+      "tier": "Safe",
+      "alternatives": [
+        {
+          "team": "Dallas Cowboys",
+          "p_blend": 0.7022,
+          "opponent": "New York Giants",
+          "is_home": true
+        },
+        {
+          "team": "Los Angeles Rams",
+          "p_blend": 0.6549,
+          "opponent": "Tampa Bay Buccaneers",
+          "is_home": false
+        },
+        {
+          "team": "Seattle Seahawks",
+          "p_blend": 0.6492,
+          "opponent": "Carolina Panthers",
+          "is_home": false
+        }
+      ]
+    },
+    {
+      "week": 18,
+      "team": "New England Patriots",
+      "opponent": "Miami Dolphins",
+      "is_home": true,
+      "p_blend": 0.8279,
+      "p_comp": 0.8319,
+      "p_mkt": 0.824,
+      "source": "composite+wintotal",
+      "tier": "Very Safe",
+      "alternatives": [
+        {
+          "team": "Buffalo Bills",
+          "p_blend": 0.8174,
+          "opponent": "New York Jets",
+          "is_home": true
+        },
+        {
+          "team": "Cincinnati Bengals",
+          "p_blend": 0.8001,
+          "opponent": "Cleveland Browns",
+          "is_home": true
+        },
+        {
+          "team": "Kansas City Chiefs",
+          "p_blend": 0.7884,
+          "opponent": "Las Vegas Raiders",
+          "is_home": true
+        }
+      ]
+    }
+  ],
+  "survival_prob": 0.016701,
+  "season_win_totals": {
+    "Baltimore Ravens": 11.5,
+    "Los Angeles Rams": 11.5,
+    "Buffalo Bills": 10.5,
+    "Cincinnati Bengals": 10.5,
+    "Kansas City Chiefs": 10.5,
+    "Philadelphia Eagles": 10.5,
+    "Seattle Seahawks": 10.5,
+    "Detroit Lions": 10.5,
+    "San Francisco 49ers": 10.5,
+    "New England Patriots": 9.5,
+    "Green Bay Packers": 9.5,
+    "Los Angeles Chargers": 9.5,
+    "Houston Texans": 9.5,
+    "Chicago Bears": 9.5,
+    "Dallas Cowboys": 9.5,
+    "Denver Broncos": 9.5,
+    "Jacksonville Jaguars": 8.5,
+    "Pittsburgh Steelers": 8.5,
+    "Minnesota Vikings": 8.5,
+    "Indianapolis Colts": 7.5,
+    "New York Giants": 7.5,
+    "Washington Commanders": 7.5,
+    "Tampa Bay Buccaneers": 7.5,
+    "Atlanta Falcons": 7.5,
+    "New Orleans Saints": 7.5,
+    "Tennessee Titans": 6.5,
+    "Carolina Panthers": 6.5,
+    "New York Jets": 5.5,
+    "Las Vegas Raiders": 5.5,
+    "Cleveland Browns": 5.5,
+    "Miami Dolphins": 4.5,
+    "Arizona Cardinals": 4.5
+  },
+  "composite_ratings": {
+    "Buffalo Bills": 5.8,
+    "Los Angeles Rams": 5.5,
+    "San Francisco 49ers": 4.9,
+    "Seattle Seahawks": 4.6,
+    "Baltimore Ravens": 3.9,
+    "Kansas City Chiefs": 3.9,
+    "New England Patriots": 2.5,
+    "Philadelphia Eagles": 2.5,
+    "Detroit Lions": 2.0,
+    "Jacksonville Jaguars": 2.0,
+    "Houston Texans": 1.9,
+    "Cincinnati Bengals": 1.8,
+    "Dallas Cowboys": 1.7,
+    "Denver Broncos": 1.6,
+    "Minnesota Vikings": 0.6,
+    "Green Bay Packers": 0.0,
+    "Los Angeles Chargers": -0.5,
+    "Chicago Bears": -0.9,
+    "Tampa Bay Buccaneers": -1.0,
+    "Indianapolis Colts": -1.1,
+    "Carolina Panthers": -1.6,
+    "Pittsburgh Steelers": -1.8,
+    "New Orleans Saints": -2.3,
+    "Las Vegas Raiders": -3.2,
+    "Washington Commanders": -3.2,
+    "New York Jets": -3.9,
+    "Arizona Cardinals": -4.3,
+    "New York Giants": -4.3,
+    "Atlanta Falcons": -4.8,
+    "Tennessee Titans": -5.2,
+    "Cleveland Browns": -6.3,
+    "Miami Dolphins": -8.0
+  },
+  "generated_note": "Weeks 4-18 blend this week's composite power ratings with 2026 season win totals (50/50); Week 3 uses the fully-built model (real market lines, QB and injury adjustments). Full-season optimization (assignment problem, not greedy) maximizes total survival probability across all 16 remaining weeks at once."
+}

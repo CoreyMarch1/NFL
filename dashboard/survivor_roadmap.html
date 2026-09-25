@@ -1,0 +1,247 @@
+<title>Survivor Roadmap</title>
+<style>
+  :root{
+    --bg:#0a0e17; --surface:#121826; --surface2:#1a2233; --border:#263349;
+    --text:#e7ecf5; --text-dim:#93a1b8; --text-faint:#5c6a83;
+    --accent:#4f8cff; --accent-soft:#4f8cff26;
+    --good:#34d399; --good-soft:#34d39922; --bad:#fb7373; --bad-soft:#fb737322;
+    --warn:#ffd166; --warn-soft:#ffd16622; --shadow: 0 8px 24px -8px rgba(0,0,0,.5);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f4f6fb; --surface:#ffffff; --surface2:#edf1f8; --border:#dde3ee;
+      --text:#131a29; --text-dim:#57647d; --text-faint:#8a95ab;
+      --accent:#2f6fed; --accent-soft:#2f6fed17;
+      --good:#0f9d68; --good-soft:#0f9d6817; --bad:#d1453a; --bad-soft:#d1453a17;
+      --warn:#b8860b; --warn-soft:#b8860b17; --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f6fb; --surface:#ffffff; --surface2:#edf1f8; --border:#dde3ee;
+    --text:#131a29; --text-dim:#57647d; --text-faint:#8a95ab;
+    --accent:#2f6fed; --accent-soft:#2f6fed17;
+    --good:#0f9d68; --good-soft:#0f9d6817; --bad:#d1453a; --bad-soft:#d1453a17;
+    --warn:#b8860b; --warn-soft:#b8860b17; --shadow: 0 8px 24px -10px rgba(20,30,60,.18);
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg); color:var(--text); margin:0; font-family:'IBM Plex Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased;}
+  .num{font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums;}
+  h1,h2,h3,.disp{font-family:'Barlow Condensed',system-ui,sans-serif; letter-spacing:.01em;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 20px 80px;}
+  a{color:var(--accent);}
+
+  header.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--border);}
+  .topbar{max-width:920px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{display:flex; align-items:baseline; gap:10px;}
+  .brand .mark{width:28px; height:28px; border-radius:7px; background:linear-gradient(135deg,var(--accent),#8a5cf6); display:flex; align-items:center; justify-content:center; font:700 14px/1 'Barlow Condensed',sans-serif; color:#fff; flex:none;}
+  .brand .t{font:600 16px/1.1 'Barlow Condensed',sans-serif; letter-spacing:.02em;}
+  .brand .sub{font-size:11px; color:var(--text-faint);}
+
+  .hero{padding:36px 0 28px;}
+  .hero h1{font-size:40px; margin:0 0 8px; font-weight:600;}
+  .hero p.lede{color:var(--text-dim); font-size:15px; line-height:1.6; max-width:680px; margin:0 0 22px;}
+
+  .stat-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:28px;}
+  .stat{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px;}
+  .stat .k{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint); margin-bottom:6px;}
+  .stat .v{font-size:24px; font-weight:600;}
+  .stat .v.num{font-size:22px;}
+  .stat .sub{font-size:11px; color:var(--text-faint); margin-top:2px;}
+
+  .used-strip{display:flex; gap:10px; margin-bottom:36px; flex-wrap:wrap;}
+  .used-chip{display:flex; align-items:center; gap:8px; background:var(--good-soft); border:1px solid var(--good); border-radius:999px; padding:6px 14px 6px 8px; font-size:13px;}
+  .used-chip .badge{width:22px; height:22px; font-size:10px;}
+  .used-chip .check{color:var(--good); font-weight:700;}
+
+  .badge{display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; color:#fff; font:700 11px/1 'Barlow Condensed',sans-serif; letter-spacing:.02em; flex:none;}
+
+  h2.sec{font-size:22px; font-weight:600; margin:0 0 4px;}
+  p.sec-sub{color:var(--text-dim); font-size:13px; line-height:1.6; margin:0 0 20px;}
+  section{margin-bottom:44px;}
+
+  .roadmap{position:relative; padding-left:34px;}
+  .roadmap::before{content:""; position:absolute; left:14px; top:8px; bottom:8px; width:2px; background:var(--border);}
+  .week-row{position:relative; margin-bottom:14px;}
+  .week-row::before{content:""; position:absolute; left:-34px; top:18px; width:12px; height:12px; border-radius:50%; background:var(--surface); border:2px solid var(--tier-color,var(--accent));}
+  .week-card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px; box-shadow:var(--shadow);}
+  .week-head{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+  .wk-num{font:600 13px 'Barlow Condensed',sans-serif; color:var(--text-faint); width:44px; flex:none;}
+  .matchup{display:flex; align-items:center; gap:10px; flex:1; min-width:200px;}
+  .team-name{font-weight:600; font-size:15px;}
+  .vs{color:var(--text-faint); font-size:12px;}
+  .opp{color:var(--text-dim); font-size:13px;}
+  .prob-block{display:flex; align-items:center; gap:10px; margin-left:auto;}
+  .prob-num{font-size:18px; font-weight:600; min-width:52px; text-align:right;}
+  .tier-chip{font-size:11px; font-weight:600; padding:3px 10px; border-radius:999px; white-space:nowrap;}
+  .meter{width:64px; height:6px; border-radius:3px; background:var(--surface2); overflow:hidden; flex:none;}
+  .meter .fill{height:100%; border-radius:3px; background:var(--tier-color,var(--accent));}
+  .toggle-alt{background:none; border:none; color:var(--text-faint); font-size:12px; cursor:pointer; padding:6px 0 0; text-decoration:underline; text-decoration-style:dotted;}
+  .alt-panel{margin-top:10px; padding-top:10px; border-top:1px solid var(--border); font-size:12.5px; color:var(--text-dim); display:none;}
+  .alt-panel.open{display:block;}
+  .alt-panel .alt-row{display:flex; justify-content:space-between; padding:2px 0;}
+  .source-tag{font-size:10px; color:var(--text-faint); margin-top:8px;}
+
+  .watch-list{display:flex; flex-direction:column; gap:10px;}
+  .watch-item{background:var(--warn-soft); border:1px solid var(--warn); border-radius:10px; padding:12px 14px; font-size:13px; line-height:1.55;}
+  .watch-item b{color:var(--text);}
+
+  .method{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px 22px;}
+  .method h3{font-size:15px; margin:0 0 8px;}
+  .method p{color:var(--text-dim); font-size:13px; line-height:1.65; margin:0 0 14px;}
+  .method p:last-child{margin-bottom:0;}
+  .method ul{margin:0 0 14px; padding-left:18px; color:var(--text-dim); font-size:13px; line-height:1.65;}
+  .assumption{border-left:3px solid var(--accent); padding-left:12px; margin:14px 0;}
+
+  footer{color:var(--text-faint); font-size:11.5px; line-height:1.7; padding-top:20px; border-top:1px solid var(--border);}
+
+  @media (max-width:560px){
+    .hero h1{font-size:30px;}
+    .prob-block{margin-left:0; width:100%; justify-content:space-between;}
+    .week-head{gap:8px;}
+  }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<header class="top">
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark">S</div>
+      <div><div class="t">Survivor Roadmap</div><div class="sub">Companion tool &middot; NFL Composite Ratings Model</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>Survivor Roadmap</h1>
+    <p class="lede">One pick per week, no repeats, one loss and it's over. This is the full-season plan that gives you the best mathematical shot at making it all 18 weeks &mdash; not the biggest favorite each week in isolation, but the sequence of picks that saves the right teams for the weeks that actually need them.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="k">Weeks Survived</div><div class="v">2 <span style="color:var(--text-faint); font-size:14px;">of 2</span></div><div class="sub">Jaguars (Wk1), 49ers (Wk2)</div></div>
+      <div class="stat"><div class="k">Est. Full-Season Odds</div><div class="v num" id="survival-stat">--</div><div class="sub">surviving weeks 3&ndash;18 from here</div></div>
+      <div class="stat"><div class="k">Weeks Remaining</div><div class="v">16</div><div class="sub">Weeks 3 through 18</div></div>
+      <div class="stat"><div class="k">Teams Available</div><div class="v">30</div><div class="sub">32 minus the 2 already used</div></div>
+    </div>
+    <div class="used-strip" id="used-strip"></div>
+  </div>
+
+  <section>
+    <h2 class="sec">The 16-week plan</h2>
+    <p class="sec-sub">Each week shows the recommended pick, the win probability behind it, and a confidence tier. Tap a week for the next-best alternatives &mdash; useful context, though swapping one in changes the plan for later weeks too (see methodology below).</p>
+    <div class="roadmap" id="roadmap"></div>
+  </section>
+
+  <section id="watch-section">
+    <h2 class="sec">Close calls to watch</h2>
+    <p class="sec-sub">Weeks where the recommended pick is a real game, not a formality &mdash; worth re-checking closer to kickoff once injury reports and lines firm up.</p>
+    <div class="watch-list" id="watch-list"></div>
+  </section>
+
+  <section>
+    <h2 class="sec">Methodology</h2>
+    <div class="method">
+      <h3>Where the win probabilities come from</h3>
+      <p>Every future matchup is priced with a 50/50 blend of two views: this week's composite power rating (the FPI/nfelo/Inpredictable/Unexpected&nbsp;Points/DVOA/PFF blend already built and validated for the weekly matchup model) and each team's 2026 season win total, taken from a September sportsbook consensus. The composite is precise but reflects a single week's form; the win total is a market's full-season read but doesn't update play by play. Blending them is a deliberate hedge against trusting either one alone this far in advance. <b>Week 3 is the exception</b>: it uses the fully-built weekly model directly &mdash; real market lines, the QB adjustment, and the injury point-adjustment &mdash; since that's strictly more information than the blend has for any other week.</p>
+      <h3>Why this isn't just "pick the biggest favorite each week"</h3>
+      <p>Survivor is a resource-allocation problem: using a great team in an easy week you didn't need them for is the same mistake as saving a mediocre team for a week you did. This roadmap treats the whole remaining season as one optimization &mdash; a weeks&times;teams assignment problem solved to maximize the <i>product</i> of all 16 win probabilities at once, not the sum of each week's best pick taken greedily. That's why a team can show up as a strong "alternative" in one week's detail panel while the plan actually uses them several weeks later: the math found a better overall path by saving them.</p>
+      <div class="assumption">
+        <b>The load-bearing assumption:</b> this plan is only as good as "the season plays out roughly as expected." A season is long &mdash; injuries, coaching changes, and bad weeks will move some of these probabilities before they matter. Full-season plans, revisited weekly, beat locking in and forgetting it.
+      </div>
+      <h3>What this can't see yet</h3>
+      <ul>
+        <li>Weekly injury reports, starter changes, and weather for any week past the current one &mdash; the same real-time signal the main weekly model uses for Week 3 doesn't exist yet for Week 4 onward.</li>
+        <li>Market line movement between now and kickoff, which often carries sharp information (injuries, weather) before it's public.</li>
+        <li>Opponent quality drift &mdash; a team's composite rating is this week's snapshot, held static for every future week rather than re-derived as the season actually unfolds.</li>
+      </ul>
+      <p>Re-run <code>model/survivor_model.py</code> weekly as the composite ratings and injury picture update &mdash; the plan will re-optimize the remaining weeks around whatever's actually true by then.</p>
+    </div>
+  </section>
+
+  <footer>
+    Generated from the NFL Composite Ratings Model, Week 3 build. Season win totals: consensus of DraftKings/FanDuel/BetMGM/Fanatics as reported by FOX&nbsp;Sports, CBS&nbsp;Sports, ESPN, SI&nbsp;Betting, and Yahoo&nbsp;Sports, current as of mid/late September 2026. This is a probability estimate, not a guarantee &mdash; treat every week's pick as provisional until you've checked the injury report and line closer to kickoff.
+  </footer>
+</div>
+
+<script>
+const PLAN = {"already_used": [{"week": 1, "team": "Jacksonville Jaguars"}, {"week": 2, "team": "San Francisco 49ers"}], "plan": [{"week": 3, "team": "Kansas City Chiefs", "opponent": "Miami Dolphins", "is_home": false, "p_blend": 0.798, "p_comp": null, "p_mkt": null, "source": "week3_model", "tier": "Safe", "alternatives": [{"team": "Detroit Lions", "p_blend": 0.707, "opponent": "New York Jets", "is_home": true}, {"team": "Seattle Seahawks", "p_blend": 0.707, "opponent": "Washington Commanders", "is_home": false}, {"team": "Buffalo Bills", "p_blend": 0.697, "opponent": "Los Angeles Chargers", "is_home": true}]}, {"week": 4, "team": "Chicago Bears", "opponent": "New York Jets", "is_home": true, "p_blend": 0.713, "p_comp": 0.6497, "p_mkt": 0.7763, "source": "composite+wintotal", "tier": "Safe", "alternatives": [{"team": "Baltimore Ravens", "p_blend": 0.8111, "opponent": "Tennessee Titans", "is_home": true}, {"team": "Minnesota Vikings", "p_blend": 0.7878, "opponent": "Miami Dolphins", "is_home": true}, {"team": "Kansas City Chiefs", "p_blend": 0.6897, "opponent": "Las Vegas Raiders", "is_home": false}]}, {"week": 5, "team": "Cincinnati Bengals", "opponent": "Miami Dolphins", "is_home": false, "p_blend": 0.7532, "p_comp": 0.7257, "p_mkt": 0.7806, "source": "composite+wintotal", "tier": "Safe", "alternatives": [{"team": "New England Patriots", "p_blend": 0.7497, "opponent": "Las Vegas Raiders", "is_home": true}, {"team": "Detroit Lions", "p_blend": 0.7051, "opponent": "Arizona Cardinals", "is_home": false}, {"team": "Baltimore Ravens", "p_blend": 0.6856, "opponent": "Atlanta Falcons", "is_home": false}]}, {"week": 6, "team": "Los Angeles Rams", "opponent": "Arizona Cardinals", "is_home": true, "p_blend": 0.8553, "p_comp": 0.818, "p_mkt": 0.8926, "source": "composite+wintotal", "tier": "Very Safe", "alternatives": [{"team": "New England Patriots", "p_blend": 0.7586, "opponent": "New York Jets", "is_home": true}, {"team": "Baltimore Ravens", "p_blend": 0.7564, "opponent": "Cleveland Browns", "is_home": false}, {"team": "Philadelphia Eagles", "p_blend": 0.7273, "opponent": "Carolina Panthers", "is_home": true}]}, {"week": 7, "team": "Houston Texans", "opponent": "New York Giants", "is_home": true, "p_blend": 0.7047, "p_comp": 0.7359, "p_mkt": 0.6736, "source": "composite+wintotal", "tier": "Safe", "alternatives": [{"team": "Los Angeles Rams", "p_blend": 0.7369, "opponent": "Las Vegas Raiders", "is_home": false}, {"team": "Denver Broncos", "p_blend": 0.6756, "opponent": "Arizona Cardinals", "is_home": false}, {"team": "New York Jets", "p_blend": 0.654, "opponent": "Miami Dolphins", "is_home": true}]}, {"week": 8, "team": "Dallas Cowboys", "opponent": "Arizona Cardinals", "is_home": true, "p_blend": 0.7774, "p_comp": 0.7308, "p_mkt": 0.824, "source": "composite+wintotal", "tier": "Safe", "alternatives": [{"team": "Cincinnati Bengals", "p_blend": 0.7649, "opponent": "Tennessee Titans", "is_home": true}, {"team": "New England Patriots", "p_blend": 0.7384, "opponent": "Miami Dolphins", "is_home": false}, {"team": "Pittsburgh Steelers", "p_blend": 0.7105, "opponent": "Cleveland Browns", "is_home": true}]}, {"week": 9, "team": "Seattle Seahawks", "opponent": "Arizona Cardinals", "is_home": true, "p_blend": 0.8298, "p_comp": 0.7991, "p_mkt": 0.8604, "source": "composite+wintotal", "tier": "Very Safe", "alternatives": [{"team": "Kansas City Chiefs", "p_blend": 0.7967, "opponent": "New York Jets", "is_home": true}, {"team": "Detroit Lions", "p_blend": 0.7557, "opponent": "Miami Dolphins", "is_home": false}, {"team": "Philadelphia Eagles", "p_blend": 0.7384, "opponent": "New York Giants", "is_home": true}]}, {"week": 10, "team": "Indianapolis Colts", "opponent": "Miami Dolphins", "is_home": true, "p_blend": 0.7452, "p_comp": 0.7532, "p_mkt": 0.7372, "source": "composite+wintotal", "tier": "Safe", "alternatives": [{"team": "Los Angeles Rams", "p_blend": 0.7752, "opponent": "Arizona Cardinals", "is_home": false}, {"team": "Buffalo Bills", "p_blend": 0.725, "opponent": "New York Jets", "is_home": false}, {"team": "Seattle Seahawks", "p_blend": 0.6996, "opponent": "Las Vegas Raiders", "is_home": false}]}, {"week": 11, "team": "Los Angeles Chargers", "opponent": "New York Jets", "is_home": true, "p_blend": 0.7187, "p_comp": 0.6611, "p_mkt": 0.7763, "source": "composite+wintotal", "tier": "Safe", "alternatives": [{"team": "Buffalo Bills", "p_blend": 0.8741, "opponent": "Miami Dolphins", "is_home": true}, {"team": "Kansas City Chiefs", "p_blend": 0.822, "opponent": "Arizona Cardinals", "is_home": true}, {"team": "Dallas Cowboys", "p_blend": 0.7397, "opponent": "Tennessee Titans", "is_home": true}]}, {"week": 12, "team": "Minnesota Vikings", "opponent": "Atlanta Falcons", "is_home": true, "p_blend": 0.667, "p_comp": 0.7154, "p_mkt": 0.6186, "source": "composite+wintotal", "tier": "Moderate", "alternatives": [{"team": "Cincinnati Bengals", "p_blend": 0.7033, "opponent": "New Orleans Saints", "is_home": true}, {"team": "Los Angeles Rams", "p_blend": 0.6983, "opponent": "Green Bay Packers", "is_home": true}, {"team": "Detroit Lions", "p_blend": 0.6334, "opponent": "Chicago Bears", "is_home": true}]}, {"week": 13, "team": "Denver Broncos", "opponent": "Miami Dolphins", "is_home": true, "p_blend": 0.8189, "p_comp": 0.8139, "p_mkt": 0.824, "source": "composite+wintotal", "tier": "Very Safe", "alternatives": [{"team": "Philadelphia Eagles", "p_blend": 0.7123, "opponent": "Arizona Cardinals", "is_home": false}, {"team": "Cincinnati Bengals", "p_blend": 0.7037, "opponent": "Cleveland Browns", "is_home": false}, {"team": "Minnesota Vikings", "p_blend": 0.6507, "opponent": "Carolina Panthers", "is_home": true}]}, {"week": 14, "team": "Detroit Lions", "opponent": "Tennessee Titans", "is_home": true, "p_blend": 0.7673, "p_comp": 0.7604, "p_mkt": 0.7741, "source": "composite+wintotal", "tier": "Safe", "alternatives": [{"team": "Seattle Seahawks", "p_blend": 0.7626, "opponent": "New York Giants", "is_home": true}, {"team": "Baltimore Ravens", "p_blend": 0.7392, "opponent": "Tampa Bay Buccaneers", "is_home": true}, {"team": "Philadelphia Eagles", "p_blend": 0.6964, "opponent": "Indianapolis Colts", "is_home": true}]}, {"week": 15, "team": "Green Bay Packers", "opponent": "Miami Dolphins", "is_home": true, "p_blend": 0.8016, "p_comp": 0.7791, "p_mkt": 0.824, "source": "composite+wintotal", "tier": "Very Safe", "alternatives": [{"team": "Buffalo Bills", "p_blend": 0.6841, "opponent": "Chicago Bears", "is_home": true}, {"team": "Los Angeles Rams", "p_blend": 0.6754, "opponent": "Dallas Cowboys", "is_home": true}, {"team": "New York Giants", "p_blend": 0.6497, "opponent": "Cleveland Browns", "is_home": true}]}, {"week": 16, "team": "Baltimore Ravens", "opponent": "Cleveland Browns", "is_home": true, "p_blend": 0.8418, "p_comp": 0.826, "p_mkt": 0.8576, "source": "composite+wintotal", "tier": "Very Safe", "alternatives": [{"team": "Detroit Lions", "p_blend": 0.7323, "opponent": "New York Giants", "is_home": true}, {"team": "Los Angeles Chargers", "p_blend": 0.6986, "opponent": "Miami Dolphins", "is_home": false}, {"team": "New Orleans Saints", "p_blend": 0.679, "opponent": "Arizona Cardinals", "is_home": true}]}, {"week": 17, "team": "Buffalo Bills", "opponent": "Miami Dolphins", "is_home": false, "p_blend": 0.7993, "p_comp": 0.818, "p_mkt": 0.7806, "source": "composite+wintotal", "tier": "Safe", "alternatives": [{"team": "Dallas Cowboys", "p_blend": 0.7022, "opponent": "New York Giants", "is_home": true}, {"team": "Los Angeles Rams", "p_blend": 0.6549, "opponent": "Tampa Bay Buccaneers", "is_home": false}, {"team": "Seattle Seahawks", "p_blend": 0.6492, "opponent": "Carolina Panthers", "is_home": false}]}, {"week": 18, "team": "New England Patriots", "opponent": "Miami Dolphins", "is_home": true, "p_blend": 0.8279, "p_comp": 0.8319, "p_mkt": 0.824, "source": "composite+wintotal", "tier": "Very Safe", "alternatives": [{"team": "Buffalo Bills", "p_blend": 0.8174, "opponent": "New York Jets", "is_home": true}, {"team": "Cincinnati Bengals", "p_blend": 0.8001, "opponent": "Cleveland Browns", "is_home": true}, {"team": "Kansas City Chiefs", "p_blend": 0.7884, "opponent": "Las Vegas Raiders", "is_home": true}]}], "survival_prob": 0.016701, "season_win_totals": {"Baltimore Ravens": 11.5, "Los Angeles Rams": 11.5, "Buffalo Bills": 10.5, "Cincinnati Bengals": 10.5, "Kansas City Chiefs": 10.5, "Philadelphia Eagles": 10.5, "Seattle Seahawks": 10.5, "Detroit Lions": 10.5, "San Francisco 49ers": 10.5, "New England Patriots": 9.5, "Green Bay Packers": 9.5, "Los Angeles Chargers": 9.5, "Houston Texans": 9.5, "Chicago Bears": 9.5, "Dallas Cowboys": 9.5, "Denver Broncos": 9.5, "Jacksonville Jaguars": 8.5, "Pittsburgh Steelers": 8.5, "Minnesota Vikings": 8.5, "Indianapolis Colts": 7.5, "New York Giants": 7.5, "Washington Commanders": 7.5, "Tampa Bay Buccaneers": 7.5, "Atlanta Falcons": 7.5, "New Orleans Saints": 7.5, "Tennessee Titans": 6.5, "Carolina Panthers": 6.5, "New York Jets": 5.5, "Las Vegas Raiders": 5.5, "Cleveland Browns": 5.5, "Miami Dolphins": 4.5, "Arizona Cardinals": 4.5}, "composite_ratings": {"Buffalo Bills": 5.8, "Los Angeles Rams": 5.5, "San Francisco 49ers": 4.9, "Seattle Seahawks": 4.6, "Baltimore Ravens": 3.9, "Kansas City Chiefs": 3.9, "New England Patriots": 2.5, "Philadelphia Eagles": 2.5, "Detroit Lions": 2.0, "Jacksonville Jaguars": 2.0, "Houston Texans": 1.9, "Cincinnati Bengals": 1.8, "Dallas Cowboys": 1.7, "Denver Broncos": 1.6, "Minnesota Vikings": 0.6, "Green Bay Packers": 0.0, "Los Angeles Chargers": -0.5, "Chicago Bears": -0.9, "Tampa Bay Buccaneers": -1.0, "Indianapolis Colts": -1.1, "Carolina Panthers": -1.6, "Pittsburgh Steelers": -1.8, "New Orleans Saints": -2.3, "Las Vegas Raiders": -3.2, "Washington Commanders": -3.2, "New York Jets": -3.9, "Arizona Cardinals": -4.3, "New York Giants": -4.3, "Atlanta Falcons": -4.8, "Tennessee Titans": -5.2, "Cleveland Browns": -6.3, "Miami Dolphins": -8.0}, "generated_note": "Weeks 4-18 blend this week's composite power ratings with 2026 season win totals (50/50); Week 3 uses the fully-built model (real market lines, QB and injury adjustments). Full-season optimization (assignment problem, not greedy) maximizes total survival probability across all 16 remaining weeks at once."};
+
+const TEAM_META = {
+"Buffalo Bills":{ab:"BUF",c:"#00338D"},"Los Angeles Rams":{ab:"LAR",c:"#003594"},
+"Baltimore Ravens":{ab:"BAL",c:"#241773"},"San Francisco 49ers":{ab:"SF",c:"#AA0000"},
+"Kansas City Chiefs":{ab:"KC",c:"#E31837"},"Chicago Bears":{ab:"CHI",c:"#0B162A"},
+"Houston Texans":{ab:"HOU",c:"#03202F"},"Jacksonville Jaguars":{ab:"JAX",c:"#006778"},
+"Philadelphia Eagles":{ab:"PHI",c:"#004C54"},"Detroit Lions":{ab:"DET",c:"#0076B6"},
+"Seattle Seahawks":{ab:"SEA",c:"#69BE28"},"New England Patriots":{ab:"NE",c:"#002244"},
+"Cincinnati Bengals":{ab:"CIN",c:"#FB4F14"},"Dallas Cowboys":{ab:"DAL",c:"#041E42"},
+"Green Bay Packers":{ab:"GB",c:"#203731"},"Los Angeles Chargers":{ab:"LAC",c:"#0080C6"},
+"Denver Broncos":{ab:"DEN",c:"#FA4616"},"Tampa Bay Buccaneers":{ab:"TB",c:"#D50A0A"},
+"Minnesota Vikings":{ab:"MIN",c:"#4F2683"},"New York Giants":{ab:"NYG",c:"#0B2265"},
+"Pittsburgh Steelers":{ab:"PIT",c:"#FFB612"},"Washington Commanders":{ab:"WAS",c:"#773141"},
+"Indianapolis Colts":{ab:"IND",c:"#002C5F"},"New Orleans Saints":{ab:"NO",c:"#9F8458"},
+"Carolina Panthers":{ab:"CAR",c:"#0085CA"},"Arizona Cardinals":{ab:"ARI",c:"#97233F"},
+"Las Vegas Raiders":{ab:"LV",c:"#A5ACAF"},"New York Jets":{ab:"NYJ",c:"#125740"},
+"Atlanta Falcons":{ab:"ATL",c:"#A71930"},"Tennessee Titans":{ab:"TEN",c:"#4B92DB"},
+"Miami Dolphins":{ab:"MIA",c:"#008E97"},"Cleveland Browns":{ab:"CLE",c:"#311D00"}
+};
+function badge(team){
+  const m = TEAM_META[team] || {ab:"?",c:"#666"};
+  return `<span class="badge" style="background:${m.c}">${m.ab}</span>`;
+}
+const TIER_VAR = {"Very Safe":"var(--good)","Safe":"var(--accent)","Moderate":"var(--warn)","Risky":"var(--bad)"};
+const TIER_SOFT = {"Very Safe":"var(--good-soft)","Safe":"var(--accent-soft)","Moderate":"var(--warn-soft)","Risky":"var(--bad-soft)"};
+
+document.getElementById('survival-stat').textContent = (PLAN.survival_prob*100).toFixed(1) + '%';
+
+document.getElementById('used-strip').innerHTML = PLAN.already_used.map(u =>
+  `<div class="used-chip">${badge(u.team)}<span>Week ${u.week}: <b>${u.team}</b></span><span class="check">&#10003;</span></div>`
+).join('');
+
+document.getElementById('roadmap').innerHTML = PLAN.plan.map((p, idx) => {
+  const color = TIER_VAR[p.tier];
+  const soft = TIER_SOFT[p.tier];
+  const altRows = p.alternatives.map(a =>
+    `<div class="alt-row"><span>${a.team} (${a.is_home?'vs':'@'} ${a.opponent})</span><span class="num">${(a.p_blend*100).toFixed(1)}%</span></div>`
+  ).join('');
+  const sourceNote = p.source === 'week3_model'
+    ? "Source: this week's full market-blended model (real lines, QB + injury adjustments)."
+    : 'Source: composite rating &times; season win total blend' + (p.p_comp!=null ? ` (model ${(p.p_comp*100).toFixed(0)}% / win-total ${(p.p_mkt*100).toFixed(0)}%)` : '') + '.';
+  return `<div class="week-row" style="--tier-color:${color}">
+    <div class="week-card">
+      <div class="week-head">
+        <div class="wk-num">WK ${p.week}</div>
+        <div class="matchup">
+          ${badge(p.team)}
+          <div><div class="team-name">${p.team}</div><div class="opp">${p.is_home?'vs':'@'} ${p.opponent}</div></div>
+        </div>
+        <div class="prob-block">
+          <div class="meter"><div class="fill" style="width:${(p.p_blend*100).toFixed(0)}%"></div></div>
+          <div class="prob-num num">${(p.p_blend*100).toFixed(1)}%</div>
+          <div class="tier-chip" style="background:${soft}; color:${color};">${p.tier}</div>
+        </div>
+      </div>
+      <button class="toggle-alt" data-i="${idx}">Show alternatives</button>
+      <div class="alt-panel" id="alt-${idx}">
+        ${altRows}
+        <div class="source-tag">${sourceNote}</div>
+      </div>
+    </div>
+  </div>`;
+}).join('');
+
+document.querySelectorAll('.toggle-alt').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const panel = document.getElementById('alt-' + btn.dataset.i);
+    const open = panel.classList.toggle('open');
+    btn.textContent = open ? 'Hide alternatives' : 'Show alternatives';
+  });
+});
+
+const watchWeeks = PLAN.plan.filter(p => p.tier === 'Moderate' || p.tier === 'Risky');
+const watchList = document.getElementById('watch-list');
+if (watchWeeks.length === 0) {
+  document.getElementById('watch-section').style.display = 'none';
+} else {
+  watchList.innerHTML = watchWeeks.map(p =>
+    `<div class="watch-item"><b>Week ${p.week}: ${p.team}</b> ${p.is_home?'vs':'@'} ${p.opponent} sits at ${(p.p_blend*100).toFixed(1)}% (${p.tier}) &mdash; the thinnest margin in the plan. Worth re-checking against the injury report and line as the week approaches.</div>`
+  ).join('');
+}
+</script>

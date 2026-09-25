@@ -1,0 +1,273 @@
+Week,Date,AwayAbbr,AwayTeam,HomeAbbr,HomeTeam
+1,2026-09-09,NE,New England Patriots,SEA,Seattle Seahawks
+1,2026-09-10,SF,San Francisco 49ers,LAR,Los Angeles Rams
+1,2026-09-13,CHI,Chicago Bears,CAR,Carolina Panthers
+1,2026-09-13,TB,Tampa Bay Buccaneers,CIN,Cincinnati Bengals
+1,2026-09-13,NO,New Orleans Saints,DET,Detroit Lions
+1,2026-09-13,BUF,Buffalo Bills,HOU,Houston Texans
+1,2026-09-13,BAL,Baltimore Ravens,IND,Indianapolis Colts
+1,2026-09-13,CLE,Cleveland Browns,JAX,Jacksonville Jaguars
+1,2026-09-13,NYJ,New York Jets,TEN,Tennessee Titans
+1,2026-09-13,ATL,Atlanta Falcons,PIT,Pittsburgh Steelers
+1,2026-09-13,ARI,Arizona Cardinals,LAC,Los Angeles Chargers
+1,2026-09-13,MIA,Miami Dolphins,LV,Las Vegas Raiders
+1,2026-09-13,GB,Green Bay Packers,MIN,Minnesota Vikings
+1,2026-09-13,WAS,Washington Commanders,PHI,Philadelphia Eagles
+1,2026-09-13,DAL,Dallas Cowboys,NYG,New York Giants
+1,2026-09-14,DEN,Denver Broncos,KC,Kansas City Chiefs
+2,2026-09-17,DET,Detroit Lions,BUF,Buffalo Bills
+2,2026-09-20,CAR,Carolina Panthers,ATL,Atlanta Falcons
+2,2026-09-20,NO,New Orleans Saints,BAL,Baltimore Ravens
+2,2026-09-20,MIN,Minnesota Vikings,CHI,Chicago Bears
+2,2026-09-20,CIN,Cincinnati Bengals,HOU,Houston Texans
+2,2026-09-20,PIT,Pittsburgh Steelers,NE,New England Patriots
+2,2026-09-20,GB,Green Bay Packers,NYJ,New York Jets
+2,2026-09-20,CLE,Cleveland Browns,TB,Tampa Bay Buccaneers
+2,2026-09-20,PHI,Philadelphia Eagles,TEN,Tennessee Titans
+2,2026-09-20,JAX,Jacksonville Jaguars,DEN,Denver Broncos
+2,2026-09-20,LV,Las Vegas Raiders,LAC,Los Angeles Chargers
+2,2026-09-20,SEA,Seattle Seahawks,ARI,Arizona Cardinals
+2,2026-09-20,WAS,Washington Commanders,DAL,Dallas Cowboys
+2,2026-09-20,MIA,Miami Dolphins,SF,San Francisco 49ers
+2,2026-09-20,IND,Indianapolis Colts,KC,Kansas City Chiefs
+2,2026-09-21,NYG,New York Giants,LAR,Los Angeles Rams
+3,2026-09-24,ATL,Atlanta Falcons,GB,Green Bay Packers
+3,2026-09-27,LAC,Los Angeles Chargers,BUF,Buffalo Bills
+3,2026-09-27,CAR,Carolina Panthers,CLE,Cleveland Browns
+3,2026-09-27,NYJ,New York Jets,DET,Detroit Lions
+3,2026-09-27,HOU,Houston Texans,IND,Indianapolis Colts
+3,2026-09-27,NE,New England Patriots,JAX,Jacksonville Jaguars
+3,2026-09-27,KC,Kansas City Chiefs,MIA,Miami Dolphins
+3,2026-09-27,TEN,Tennessee Titans,NYG,New York Giants
+3,2026-09-27,CIN,Cincinnati Bengals,PIT,Pittsburgh Steelers
+3,2026-09-27,SEA,Seattle Seahawks,WAS,Washington Commanders
+3,2026-09-27,ARI,Arizona Cardinals,SF,San Francisco 49ers
+3,2026-09-27,MIN,Minnesota Vikings,TB,Tampa Bay Buccaneers
+3,2026-09-27,BAL,Baltimore Ravens,DAL,Dallas Cowboys
+3,2026-09-27,LV,Las Vegas Raiders,NO,New Orleans Saints
+3,2026-09-27,LAR,Los Angeles Rams,DEN,Denver Broncos
+3,2026-09-28,PHI,Philadelphia Eagles,CHI,Chicago Bears
+4,2026-10-01,PIT,Pittsburgh Steelers,CLE,Cleveland Browns
+4,2026-10-04,IND,Indianapolis Colts,WAS,Washington Commanders
+4,2026-10-04,TEN,Tennessee Titans,BAL,Baltimore Ravens
+4,2026-10-04,NE,New England Patriots,BUF,Buffalo Bills
+4,2026-10-04,NYJ,New York Jets,CHI,Chicago Bears
+4,2026-10-04,JAX,Jacksonville Jaguars,CIN,Cincinnati Bengals
+4,2026-10-04,DAL,Dallas Cowboys,HOU,Houston Texans
+4,2026-10-04,ARI,Arizona Cardinals,NYG,New York Giants
+4,2026-10-04,LAR,Los Angeles Rams,PHI,Philadelphia Eagles
+4,2026-10-04,GB,Green Bay Packers,TB,Tampa Bay Buccaneers
+4,2026-10-04,MIA,Miami Dolphins,MIN,Minnesota Vikings
+4,2026-10-04,KC,Kansas City Chiefs,LV,Las Vegas Raiders
+4,2026-10-04,LAC,Los Angeles Chargers,SEA,Seattle Seahawks
+4,2026-10-04,DEN,Denver Broncos,SF,San Francisco 49ers
+4,2026-10-04,DET,Detroit Lions,CAR,Carolina Panthers
+4,2026-10-05,ATL,Atlanta Falcons,NO,New Orleans Saints
+5,2026-10-08,TB,Tampa Bay Buccaneers,DAL,Dallas Cowboys
+5,2026-10-11,PHI,Philadelphia Eagles,JAX,Jacksonville Jaguars
+5,2026-10-11,CIN,Cincinnati Bengals,MIA,Miami Dolphins
+5,2026-10-11,LV,Las Vegas Raiders,NE,New England Patriots
+5,2026-10-11,MIN,Minnesota Vikings,NO,New Orleans Saints
+5,2026-10-11,CLE,Cleveland Browns,NYJ,New York Jets
+5,2026-10-11,IND,Indianapolis Colts,PIT,Pittsburgh Steelers
+5,2026-10-11,HOU,Houston Texans,TEN,Tennessee Titans
+5,2026-10-11,NYG,New York Giants,WAS,Washington Commanders
+5,2026-10-11,DEN,Denver Broncos,LAC,Los Angeles Chargers
+5,2026-10-11,DET,Detroit Lions,ARI,Arizona Cardinals
+5,2026-10-11,CHI,Chicago Bears,GB,Green Bay Packers
+5,2026-10-11,SF,San Francisco 49ers,SEA,Seattle Seahawks
+5,2026-10-11,BAL,Baltimore Ravens,ATL,Atlanta Falcons
+5,2026-10-12,BUF,Buffalo Bills,LAR,Los Angeles Rams
+6,2026-10-15,SEA,Seattle Seahawks,DEN,Denver Broncos
+6,2026-10-18,HOU,Houston Texans,JAX,Jacksonville Jaguars
+6,2026-10-18,CHI,Chicago Bears,ATL,Atlanta Falcons
+6,2026-10-18,BAL,Baltimore Ravens,CLE,Cleveland Browns
+6,2026-10-18,TEN,Tennessee Titans,IND,Indianapolis Colts
+6,2026-10-18,NYJ,New York Jets,NE,New England Patriots
+6,2026-10-18,NO,New Orleans Saints,NYG,New York Giants
+6,2026-10-18,CAR,Carolina Panthers,PHI,Philadelphia Eagles
+6,2026-10-18,PIT,Pittsburgh Steelers,TB,Tampa Bay Buccaneers
+6,2026-10-18,ARI,Arizona Cardinals,LAR,Los Angeles Rams
+6,2026-10-18,LAC,Los Angeles Chargers,KC,Kansas City Chiefs
+6,2026-10-18,BUF,Buffalo Bills,LV,Las Vegas Raiders
+6,2026-10-18,DAL,Dallas Cowboys,GB,Green Bay Packers
+6,2026-10-19,WAS,Washington Commanders,SF,San Francisco 49ers
+7,2026-10-22,NE,New England Patriots,CHI,Chicago Bears
+7,2026-10-25,PIT,Pittsburgh Steelers,NO,New Orleans Saints
+7,2026-10-25,SF,San Francisco 49ers,ATL,Atlanta Falcons
+7,2026-10-25,CIN,Cincinnati Bengals,BAL,Baltimore Ravens
+7,2026-10-25,TB,Tampa Bay Buccaneers,CAR,Carolina Panthers
+7,2026-10-25,NYG,New York Giants,HOU,Houston Texans
+7,2026-10-25,IND,Indianapolis Colts,MIN,Minnesota Vikings
+7,2026-10-25,MIA,Miami Dolphins,NYJ,New York Jets
+7,2026-10-25,CLE,Cleveland Browns,TEN,Tennessee Titans
+7,2026-10-25,DEN,Denver Broncos,ARI,Arizona Cardinals
+7,2026-10-25,GB,Green Bay Packers,DET,Detroit Lions
+7,2026-10-25,LAR,Los Angeles Rams,LV,Las Vegas Raiders
+7,2026-10-25,KC,Kansas City Chiefs,SEA,Seattle Seahawks
+7,2026-10-26,DAL,Dallas Cowboys,PHI,Philadelphia Eagles
+8,2026-10-29,CAR,Carolina Panthers,GB,Green Bay Packers
+8,2026-11-01,BAL,Baltimore Ravens,BUF,Buffalo Bills
+8,2026-11-01,TEN,Tennessee Titans,CIN,Cincinnati Bengals
+8,2026-11-01,ARI,Arizona Cardinals,DAL,Dallas Cowboys
+8,2026-11-01,MIN,Minnesota Vikings,DET,Detroit Lions
+8,2026-11-01,IND,Indianapolis Colts,JAX,Jacksonville Jaguars
+8,2026-11-01,LV,Las Vegas Raiders,NYJ,New York Jets
+8,2026-11-01,CLE,Cleveland Browns,PIT,Pittsburgh Steelers
+8,2026-11-01,ATL,Atlanta Falcons,TB,Tampa Bay Buccaneers
+8,2026-11-01,LAC,Los Angeles Chargers,LAR,Los Angeles Rams
+8,2026-11-01,KC,Kansas City Chiefs,DEN,Denver Broncos
+8,2026-11-01,NE,New England Patriots,MIA,Miami Dolphins
+8,2026-11-01,PHI,Philadelphia Eagles,WAS,Washington Commanders
+8,2026-11-02,CHI,Chicago Bears,SEA,Seattle Seahawks
+9,2026-11-05,JAX,Jacksonville Jaguars,BAL,Baltimore Ravens
+9,2026-11-08,CIN,Cincinnati Bengals,ATL,Atlanta Falcons
+9,2026-11-08,DEN,Denver Broncos,CAR,Carolina Panthers
+9,2026-11-08,DAL,Dallas Cowboys,IND,Indianapolis Colts
+9,2026-11-08,NYJ,New York Jets,KC,Kansas City Chiefs
+9,2026-11-08,DET,Detroit Lions,MIA,Miami Dolphins
+9,2026-11-08,CLE,Cleveland Browns,NO,New Orleans Saints
+9,2026-11-08,NYG,New York Giants,PHI,Philadelphia Eagles
+9,2026-11-08,LAR,Los Angeles Rams,WAS,Washington Commanders
+9,2026-11-08,HOU,Houston Texans,LAC,Los Angeles Chargers
+9,2026-11-08,LV,Las Vegas Raiders,SF,San Francisco 49ers
+9,2026-11-08,GB,Green Bay Packers,NE,New England Patriots
+9,2026-11-08,ARI,Arizona Cardinals,SEA,Seattle Seahawks
+9,2026-11-08,TB,Tampa Bay Buccaneers,CHI,Chicago Bears
+9,2026-11-09,BUF,Buffalo Bills,MIN,Minnesota Vikings
+10,2026-11-12,WAS,Washington Commanders,NYG,New York Giants
+10,2026-11-15,NE,New England Patriots,DET,Detroit Lions
+10,2026-11-15,KC,Kansas City Chiefs,ATL,Atlanta Falcons
+10,2026-11-15,HOU,Houston Texans,CLE,Cleveland Browns
+10,2026-11-15,MIN,Minnesota Vikings,GB,Green Bay Packers
+10,2026-11-15,MIA,Miami Dolphins,IND,Indianapolis Colts
+10,2026-11-15,CAR,Carolina Panthers,NO,New Orleans Saints
+10,2026-11-15,BUF,Buffalo Bills,NYJ,New York Jets
+10,2026-11-15,JAX,Jacksonville Jaguars,TEN,Tennessee Titans
+10,2026-11-15,LAR,Los Angeles Rams,ARI,Arizona Cardinals
+10,2026-11-15,SEA,Seattle Seahawks,LV,Las Vegas Raiders
+10,2026-11-15,SF,San Francisco 49ers,DAL,Dallas Cowboys
+10,2026-11-15,PIT,Pittsburgh Steelers,CIN,Cincinnati Bengals
+10,2026-11-16,LAC,Los Angeles Chargers,BAL,Baltimore Ravens
+11,2026-11-19,IND,Indianapolis Colts,HOU,Houston Texans
+11,2026-11-22,MIA,Miami Dolphins,BUF,Buffalo Bills
+11,2026-11-22,BAL,Baltimore Ravens,CAR,Carolina Panthers
+11,2026-11-22,NO,New Orleans Saints,CHI,Chicago Bears
+11,2026-11-22,TEN,Tennessee Titans,DAL,Dallas Cowboys
+11,2026-11-22,TB,Tampa Bay Buccaneers,DET,Detroit Lions
+11,2026-11-22,ARI,Arizona Cardinals,KC,Kansas City Chiefs
+11,2026-11-22,JAX,Jacksonville Jaguars,NYG,New York Giants
+11,2026-11-22,NYJ,New York Jets,LAC,Los Angeles Chargers
+11,2026-11-22,LV,Las Vegas Raiders,DEN,Denver Broncos
+11,2026-11-22,PIT,Pittsburgh Steelers,PHI,Philadelphia Eagles
+11,2026-11-22,MIN,Minnesota Vikings,SF,San Francisco 49ers
+11,2026-11-23,CIN,Cincinnati Bengals,WAS,Washington Commanders
+12,2026-11-25,GB,Green Bay Packers,LAR,Los Angeles Rams
+12,2026-11-26,CHI,Chicago Bears,DET,Detroit Lions
+12,2026-11-26,PHI,Philadelphia Eagles,DAL,Dallas Cowboys
+12,2026-11-26,KC,Kansas City Chiefs,BUF,Buffalo Bills
+12,2026-11-27,DEN,Denver Broncos,PIT,Pittsburgh Steelers
+12,2026-11-29,NO,New Orleans Saints,CIN,Cincinnati Bengals
+12,2026-11-29,LV,Las Vegas Raiders,CLE,Cleveland Browns
+12,2026-11-29,BAL,Baltimore Ravens,HOU,Houston Texans
+12,2026-11-29,NYG,New York Giants,IND,Indianapolis Colts
+12,2026-11-29,NYJ,New York Jets,MIA,Miami Dolphins
+12,2026-11-29,ATL,Atlanta Falcons,MIN,Minnesota Vikings
+12,2026-11-29,TEN,Tennessee Titans,JAX,Jacksonville Jaguars
+12,2026-11-29,WAS,Washington Commanders,ARI,Arizona Cardinals
+12,2026-11-29,SEA,Seattle Seahawks,SF,San Francisco 49ers
+12,2026-11-29,NE,New England Patriots,LAC,Los Angeles Chargers
+12,2026-11-30,CAR,Carolina Panthers,TB,Tampa Bay Buccaneers
+13,2026-12-03,KC,Kansas City Chiefs,LAR,Los Angeles Rams
+13,2026-12-06,DET,Detroit Lions,ATL,Atlanta Falcons
+13,2026-12-06,JAX,Jacksonville Jaguars,CHI,Chicago Bears
+13,2026-12-06,CIN,Cincinnati Bengals,CLE,Cleveland Browns
+13,2026-12-06,GB,Green Bay Packers,NO,New Orleans Saints
+13,2026-12-06,SF,San Francisco 49ers,NYG,New York Giants
+13,2026-12-06,LAC,Los Angeles Chargers,TB,Tampa Bay Buccaneers
+13,2026-12-06,WAS,Washington Commanders,TEN,Tennessee Titans
+13,2026-12-06,PHI,Philadelphia Eagles,ARI,Arizona Cardinals
+13,2026-12-06,MIA,Miami Dolphins,DEN,Denver Broncos
+13,2026-12-06,CAR,Carolina Panthers,MIN,Minnesota Vikings
+13,2026-12-06,BUF,Buffalo Bills,NE,New England Patriots
+13,2026-12-06,HOU,Houston Texans,PIT,Pittsburgh Steelers
+13,2026-12-07,DAL,Dallas Cowboys,SEA,Seattle Seahawks
+14,2026-12-10,MIN,Minnesota Vikings,NE,New England Patriots
+14,2026-12-13,TB,Tampa Bay Buccaneers,BAL,Baltimore Ravens
+14,2026-12-13,NO,New Orleans Saints,CAR,Carolina Panthers
+14,2026-12-13,ATL,Atlanta Falcons,CLE,Cleveland Browns
+14,2026-12-13,TEN,Tennessee Titans,DET,Detroit Lions
+14,2026-12-13,CHI,Chicago Bears,MIA,Miami Dolphins
+14,2026-12-13,DEN,Denver Broncos,NYJ,New York Jets
+14,2026-12-13,IND,Indianapolis Colts,PHI,Philadelphia Eagles
+14,2026-12-13,HOU,Houston Texans,WAS,Washington Commanders
+14,2026-12-13,LAC,Los Angeles Chargers,LV,Las Vegas Raiders
+14,2026-12-13,KC,Kansas City Chiefs,CIN,Cincinnati Bengals
+14,2026-12-13,NYG,New York Giants,SEA,Seattle Seahawks
+14,2026-12-13,LAR,Los Angeles Rams,SF,San Francisco 49ers
+14,2026-12-13,BUF,Buffalo Bills,GB,Green Bay Packers
+14,2026-12-14,PIT,Pittsburgh Steelers,JAX,Jacksonville Jaguars
+15,2026-12-17,SF,San Francisco 49ers,LAC,Los Angeles Chargers
+15,2026-12-19,SEA,Seattle Seahawks,PHI,Philadelphia Eagles
+15,2026-12-19,CHI,Chicago Bears,BUF,Buffalo Bills
+15,2026-12-20,CIN,Cincinnati Bengals,CAR,Carolina Panthers
+15,2026-12-20,MIA,Miami Dolphins,GB,Green Bay Packers
+15,2026-12-20,JAX,Jacksonville Jaguars,HOU,Houston Texans
+15,2026-12-20,CLE,Cleveland Browns,NYG,New York Giants
+15,2026-12-20,BAL,Baltimore Ravens,PIT,Pittsburgh Steelers
+15,2026-12-20,NO,New Orleans Saints,TB,Tampa Bay Buccaneers
+15,2026-12-20,IND,Indianapolis Colts,TEN,Tennessee Titans
+15,2026-12-20,ATL,Atlanta Falcons,WAS,Washington Commanders
+15,2026-12-20,NYJ,New York Jets,ARI,Arizona Cardinals
+15,2026-12-20,DAL,Dallas Cowboys,LAR,Los Angeles Rams
+15,2026-12-20,DEN,Denver Broncos,LV,Las Vegas Raiders
+15,2026-12-20,DET,Detroit Lions,MIN,Minnesota Vikings
+15,2026-12-21,NE,New England Patriots,KC,Kansas City Chiefs
+16,2026-12-24,HOU,Houston Texans,PHI,Philadelphia Eagles
+16,2026-12-25,GB,Green Bay Packers,CHI,Chicago Bears
+16,2026-12-25,BUF,Buffalo Bills,DEN,Denver Broncos
+16,2026-12-25,LAR,Los Angeles Rams,SEA,Seattle Seahawks
+16,2026-12-26,TB,Tampa Bay Buccaneers,ATL,Atlanta Falcons
+16,2026-12-26,CIN,Cincinnati Bengals,IND,Indianapolis Colts
+16,2026-12-27,WAS,Washington Commanders,MIN,Minnesota Vikings
+16,2026-12-27,CAR,Carolina Panthers,PIT,Pittsburgh Steelers
+16,2026-12-27,LAC,Los Angeles Chargers,MIA,Miami Dolphins
+16,2026-12-27,ARI,Arizona Cardinals,NO,New Orleans Saints
+16,2026-12-27,NE,New England Patriots,NYJ,New York Jets
+16,2026-12-27,CLE,Cleveland Browns,BAL,Baltimore Ravens
+16,2026-12-27,TEN,Tennessee Titans,LV,Las Vegas Raiders
+16,2026-12-27,SF,San Francisco 49ers,KC,Kansas City Chiefs
+16,2026-12-27,JAX,Jacksonville Jaguars,DAL,Dallas Cowboys
+16,2026-12-28,NYG,New York Giants,DET,Detroit Lions
+17,2026-12-31,BAL,Baltimore Ravens,CIN,Cincinnati Bengals
+17,2027-01-02,WAS,Washington Commanders,JAX,Jacksonville Jaguars
+17,2027-01-02,KC,Kansas City Chiefs,LAC,Los Angeles Chargers
+17,2027-01-03,DEN,Denver Broncos,NE,New England Patriots
+17,2027-01-03,LAR,Los Angeles Rams,TB,Tampa Bay Buccaneers
+17,2027-01-03,NO,New Orleans Saints,ATL,Atlanta Falcons
+17,2027-01-03,SEA,Seattle Seahawks,CAR,Carolina Panthers
+17,2027-01-03,IND,Indianapolis Colts,CLE,Cleveland Browns
+17,2027-01-03,NYG,New York Giants,DAL,Dallas Cowboys
+17,2027-01-03,BUF,Buffalo Bills,MIA,Miami Dolphins
+17,2027-01-03,MIN,Minnesota Vikings,NYJ,New York Jets
+17,2027-01-03,PIT,Pittsburgh Steelers,TEN,Tennessee Titans
+17,2027-01-03,LV,Las Vegas Raiders,ARI,Arizona Cardinals
+17,2027-01-03,DET,Detroit Lions,CHI,Chicago Bears
+17,2027-01-03,PHI,Philadelphia Eagles,SF,San Francisco 49ers
+17,2027-01-04,HOU,Houston Texans,GB,Green Bay Packers
+18,2027-01-10,SF,San Francisco 49ers,ARI,Arizona Cardinals
+18,2027-01-10,PIT,Pittsburgh Steelers,BAL,Baltimore Ravens
+18,2027-01-10,NYJ,New York Jets,BUF,Buffalo Bills
+18,2027-01-10,ATL,Atlanta Falcons,CAR,Carolina Panthers
+18,2027-01-10,CLE,Cleveland Browns,CIN,Cincinnati Bengals
+18,2027-01-10,LAC,Los Angeles Chargers,DEN,Denver Broncos
+18,2027-01-10,DET,Detroit Lions,GB,Green Bay Packers
+18,2027-01-10,TEN,Tennessee Titans,HOU,Houston Texans
+18,2027-01-10,JAX,Jacksonville Jaguars,IND,Indianapolis Colts
+18,2027-01-10,LV,Las Vegas Raiders,KC,Kansas City Chiefs
+18,2027-01-10,SEA,Seattle Seahawks,LAR,Los Angeles Rams
+18,2027-01-10,CHI,Chicago Bears,MIN,Minnesota Vikings
+18,2027-01-10,MIA,Miami Dolphins,NE,New England Patriots
+18,2027-01-10,TB,Tampa Bay Buccaneers,NO,New Orleans Saints
+18,2027-01-10,PHI,Philadelphia Eagles,NYG,New York Giants
+18,2027-01-10,DAL,Dallas Cowboys,WAS,Washington Commanders
