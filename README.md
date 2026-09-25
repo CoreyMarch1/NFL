@@ -18,7 +18,15 @@ checked against.
 - `model/week3_model_output.json` — the model's output, consumed directly by the dashboard.
 - `model/parse_injuries.py` — parses the full-league injury report (`data/nfl_injuries_*.docx`)
   into structured per-team data, filtered to positions that plausibly move a line (QB, RB, WR,
-  TE, OT/OG/C, CB). Reference data only so far — see "what's still missing" below.
+  TE, OT/OG/C, CB). The docx text extraction had captured the whole report twice (an exact
+  duplicate second half); Washington, alphabetically last, had no anchor to stop its slice at and
+  absorbed the entire second copy (159 "injuries" instead of 4) — fixed by detecting and dropping
+  the duplicate before parsing.
+- `model/tier_injuries.py` — ranks each team's RB/WR/TE room by real 2025 season value (receiving
+  + rushing PAA) and tags the injury feed with a depth-chart tier (`WR1`, `RB2`, ...) instead of a
+  bare position; a player who's changed teams since 2025 gets their prior-team value slotted into
+  the new roster (flagged with a trailing `*`). Reference data only so far — see the levers list
+  in the dashboard (§07).
 - `data/sis_team_*def*.csv`, `sis_team_passrush_*.csv` — raw SIS DataHub team run-defense and
   pass-defense tables (2025 season + 2026 through Week 2), used to build the real off/def split.
   Pass-rush data is collected but intentionally **not** summed into the defense total — a
@@ -30,8 +38,11 @@ checked against.
   now feeding the `QB_2026_YTD` rush columns that were held at zero last build — the "passing-only"
   QB gap from the previous version of this README is closed.
 - `data/sis_receiving_2025.csv`, `data/sis_receiving_2026_thru_wk2.csv` — per-player receiving
-  value (SIS DataHub), full 2025 season and 2026 season-to-date. Not wired into the model yet; see
-  the injury-adjustment lever below.
+  value (SIS DataHub), full 2025 season and 2026 season-to-date.
+- `data/sis_rushing_2025.csv` — real full 2025 season rushing value, replacing an earlier upload
+  that turned out to be a byte-for-byte duplicate of the 2026-to-date file. Together with the
+  receiving tables, this now drives the injury report's depth-chart tiers (§06); it isn't a point
+  adjustment in the simulation yet — see the levers list in the dashboard (§07).
 - `dashboard/week3_dashboard.html` — interactive dashboard: team ratings (real off/def split),
   feature importance, a QB report, per-matchup projections vs. market lines, validation (Week 2's
   full scorecard + an early Week 3 read), an injury report, and ranked improvement levers.
@@ -54,7 +65,9 @@ Prior week's files (`model/week2_*`, `dashboard/week2_dashboard.html`, `model/ca
   starts Kyler Murray, and injuries push Washington (Jayden Daniels, elbow), Seattle (Sam Darnold),
   and the Giants (Jaxson Dart, IR) to backups.
 - **Full-league injury report** parsed and referenced (dashboard §06) — not yet a calibrated
-  point adjustment; see levers list for what that needs.
+  point adjustment; see levers list for what that needs. Also fixed a duplicate-data bug in the
+  parser (Washington was showing 159 "injuries" instead of 4 — see `model/parse_injuries.py`
+  above) and added depth-chart tiers (WR1, RB2, ...) from real 2025 season value.
 
 ## Key modeling assumptions
 

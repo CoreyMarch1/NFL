@@ -3,6 +3,14 @@ import re, json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 text = open(os.path.join(HERE, "week3_injuries_raw.txt")).read()
+# The docx extraction captured the entire injury table twice (verbatim duplicate halves) --
+# keep only the first copy, or the last team (Washington, alphabetically) has no anchor to
+# stop at and its chunk swallows the whole second copy.
+_occ = [i for i in range(len(text)) if text.startswith("Arizona CardinalsNAMEPOS", i)]
+if len(_occ) >= 2:
+    _first, _second = _occ[0], _occ[1]
+    if text[_first:_second] == text[_second:_second + (_second - _first)]:
+        text = text[:_second]
 
 TEAMS = ["Arizona Cardinals","Atlanta Falcons","Baltimore Ravens","Buffalo Bills",
 "Carolina Panthers","Chicago Bears","Cincinnati Bengals","Cleveland Browns",
