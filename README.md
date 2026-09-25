@@ -12,12 +12,16 @@ ratings (FPI, nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @
   simulation for all 16 Week 2 matchups both with and without that QB adjustment (spread, win
   probability, 68%/95% confidence intervals, and a confidence score).
 - `model/week2_model_output.json` — the model's output, consumed directly by the dashboard.
+- `model/validate_week2.py` — scores the base and QB-adjusted projections against confirmed
+  final results for all 16 Week 2 games (margin MAE, straight-up accuracy, total-points error,
+  ATS record vs. market where the model diverged), alongside the same metrics for the closing
+  market line as a benchmark. Output: `model/week2_validation_output.json`.
 - `data/sis_qb_*.csv` — raw SIS DataHub QB tables: 2025 season and 2026 Week 1, passing and
   rushing, box score/rate/points-based variants, used to build the QB adjustment layer.
 - `dashboard/week2_dashboard.html` — interactive dashboard: team ratings, feature importance, a
   QB report (tier, hot/cold trend vs. 2025 form, backup-starter flags), per-matchup projections
-  vs. market lines, a validation check against the Thursday night result, and a ranked list of
-  improvement levers.
+  vs. market lines, a full-slate validation scorecard against final results, and a ranked list
+  of improvement levers.
   Published version: https://claude.ai/artifact/UAHh6VMKw8rtVcrH2KXoMZ
 
 ## Key modeling assumptions (v0)
@@ -46,3 +50,25 @@ ratings (FPI, nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @
 
 Re-run the model with `python3 model/week2_ratings_model.py` (standard library only, no
 external dependencies).
+
+## Week 2 validation (final)
+
+All 16 games are complete. Scored against the model's own pre-game numbers, no hindsight refitting:
+
+| | Margin MAE | Straight-up |
+|---|---|---|
+| Base model (no QB adj.) | 12.26 pt | 10/16 (62%) |
+| QB-adjusted model | 12.03 pt | 10/16 (62%) |
+| Closing market line | 11.69 pt | 11/16 (69%) |
+
+The market beat both model versions on every measure. The QB adjustment nudged the model closer
+to the market on which side actually covered (6/13 vs. 3/13 among games where model and market
+diverged by ≥0.3 pt) without moving overall margin accuracy — directionally encouraging, not
+meaningful at this sample size. The week was upset-heavy (Panthers 34–3 over the Falcons,
+Browns and Raiders winning outright as 6.5–8.5 pt road underdogs, Saints coming back to beat the
+Ravens), which no rating-based model without injury/in-game context was going to catch — but the
+market didn't fully see those coming either and still won out. The clearest, most actionable
+finding: point totals ran well over the model's projections on the week's shootouts
+(Bills–Lions, Chiefs–Colts, Commanders–Cowboys all landed 15–30 points above the model's total),
+consistent with lever #3 (true offense/defense splits) being the more urgent fix. Run
+`python3 model/validate_week2.py` to reproduce.
