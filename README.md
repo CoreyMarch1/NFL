@@ -17,21 +17,22 @@ checked against.
   a confidence score).
 - `model/week3_model_output.json` — the model's output, consumed directly by the dashboard.
 - `model/parse_injuries.py` — parses the full-league injury report (`data/nfl_injuries_*.docx`)
-  into structured per-team data, filtered to positions that plausibly move a line (QB, RB, WR,
-  TE, OT/OG/C, CB). The docx text extraction had captured the whole report twice (an exact
-  duplicate second half); Washington, alphabetically last, had no anchor to stop its slice at and
-  absorbed the entire second copy (159 "injuries" instead of 4) — fixed by detecting and dropping
-  the duplicate before parsing.
-- `model/tier_injuries.py` — ranks each team's RB/WR/TE room by real 2025 season **usage**
-  (targets for WR/TE, rush attempts + targets for RB) and tags the injury feed with a depth-chart
-  tier (`WR1`, `RB2`, ...) instead of a bare position. Deliberately sorts on usage, not PAA: PAA is
-  an efficiency stat, and an inefficient starter (a 278-carry RB1 having a bad season) would rank
-  below a highly-efficient backup on PAA alone — exactly backwards for a "who's the starter" read.
-  A player who's changed teams since 2025 gets their prior-team usage slotted into the new roster
-  (flagged with a trailing `*`); a jet-sweep WR with a few garbage rush attempts and no receiving
-  record is kept out of the RB group by cross-checking position against the 2026 receiving file
-  and the injury report's own listed position. Reference data only so far — see the levers list in
-  the dashboard (§07).
+  into structured per-team data, filtered to positions that plausibly move a line (QB, RB, WR, TE,
+  OT, OG, C, CB, S, LB, DE, DT). The docx text extraction had captured the whole report twice (an
+  exact duplicate second half); Washington, alphabetically last, had no anchor to stop its slice at
+  and absorbed the entire second copy (159 "injuries" instead of 4) — fixed by detecting and
+  dropping the duplicate before parsing.
+- `model/tier_injuries.py` — ranks each team's room at every non-QB notable position by real 2025
+  season **usage** (targets for WR/TE, rush attempts + targets for RB, snaps for OT/OG/C, combined
+  run-defense/pass-rush/coverage snaps for CB/S/LB/DE/DT) and tags the injury feed with a
+  depth-chart tier (`WR1`, `DE2`, ...) instead of a bare position. Deliberately sorts on usage, not
+  PAA: PAA is an efficiency stat, and an inefficient starter (a 278-carry RB1 having a bad season)
+  would rank below a highly-efficient backup on PAA alone — exactly backwards for a "who's the
+  starter" read. A player who's changed teams since 2025 gets their prior-team usage slotted into
+  the new roster (flagged with a trailing `*`); a jet-sweep WR with a few garbage rush attempts and
+  no receiving record is kept out of the RB group by cross-checking position against the 2026
+  receiving file and the injury report's own listed position. Reference data only so far — see the
+  levers list in the dashboard (§07).
 - `data/sis_team_*def*.csv`, `sis_team_passrush_*.csv` — raw SIS DataHub team run-defense and
   pass-defense tables (2025 season + 2026 through Week 2), used to build the real off/def split.
   Pass-rush data is collected but intentionally **not** summed into the defense total — a
@@ -45,9 +46,19 @@ checked against.
 - `data/sis_receiving_2025.csv`, `data/sis_receiving_2026_thru_wk2.csv` — per-player receiving
   value (SIS DataHub), full 2025 season and 2026 season-to-date.
 - `data/sis_rushing_2025.csv` — real full 2025 season rushing value, replacing an earlier upload
-  that turned out to be a byte-for-byte duplicate of the 2026-to-date file. Together with the
-  receiving tables, this now drives the injury report's depth-chart tiers (§06); it isn't a point
-  adjustment in the simulation yet — see the levers list in the dashboard (§07).
+  that turned out to be a byte-for-byte duplicate of the 2026-to-date file.
+- `data/sis_blocking_2025.csv`, `sis_blocking_2026_thru_wk2.csv` — per-player offensive-line value
+  (SIS DataHub), used to rank each team's OT/OG/C room. The season file repeats the same three
+  column names (season total, then pass-block and run-block splits), so `tier_injuries.py` reads it
+  positionally rather than by header name to avoid silently picking up the wrong "Snaps" column.
+- `data/sis_player_passdef_2025.csv`, `sis_player_rundef_2025.csv`, `sis_player_passrush_2025.csv`
+  (plus their 2026-to-date counterparts) — per-player pass-coverage, run-defense, and pass-rush
+  value. A defender's snaps split cleanly across these three tables by play type (run play, pass
+  play he rushed, pass play he covered), so summing whichever of the three a player appears in
+  gives a real total-snaps usage figure for CB/S/LB/DE/DT, not a double count.
+- Together, the receiving/rushing/blocking/pass-defense/run-defense/pass-rush tables now drive
+  every non-QB tier in the injury report (§06); it isn't a point adjustment in the simulation yet —
+  see the levers list in the dashboard (§07).
 - `dashboard/week3_dashboard.html` — interactive dashboard: team ratings (real off/def split),
   feature importance, a QB report, per-matchup projections vs. market lines, validation (Week 2's
   full scorecard + an early Week 3 read), an injury report, and ranked improvement levers.

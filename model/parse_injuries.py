@@ -70,7 +70,7 @@ json.dump(report, open(os.path.join(HERE, "week3_injuries_parsed.json"),"w"), in
 
 # Filtered to positions that plausibly move a line -- this is what the dashboard consumes.
 # No depth-chart rank is available, so a WR1 and a WR4 both just show as "WR out".
-NOTABLE_POS = {"QB", "RB", "WR", "TE", "OT", "OG", "C", "CB"}
+NOTABLE_POS = {"QB", "RB", "WR", "TE", "OT", "OG", "C", "CB", "S", "LB", "DE", "DT"}
 notable = {}
 for t, players in report.items():
     notable[t] = [dict(name=p["name"], pos=p["pos"], status=p["status"])

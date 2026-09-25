@@ -58,6 +58,46 @@ for full_team, plist in parsed_injuries.items():
     for p in plist:
         known_pos.setdefault((short, norm(p["name"])), p["pos"])
 
+# Individual defensive value (CB/S/LB/DE/DT) and blocking (OL), same usage-first logic: role/
+# depth-chart rank comes from snaps, not PAA. A defender's snaps split cleanly across three
+# non-overlapping specialty tables by play type (run defense, pass-rush, pass coverage), so
+# summing whichever of the three a player shows up in gives a real total-snaps read, not
+# double-counting -- a single snap is either a run play (Run_Defense) or a pass play the player
+# either rushed (Pass_Rush) or covered on (Pass_Defense), never more than one of the three.
+DEF_SOURCES = [
+    ("sis_player_passdef_2025.csv", "Pos.", "Cov. Snaps", {"CB", "S", "LB"}),
+    ("sis_player_rundef_2025.csv", "Pos.", "Rush Snaps", {"CB", "S", "LB", "DE", "DT"}),
+    ("sis_player_passrush_2025.csv", "Pos.", "Pass Rushes", {"DE", "DT", "LB"}),
+]
+defense = {}  # (team, norm_name) -> [display_name, pos, usage, paa]
+for fname, pos_col, usage_col, allowed_pos in DEF_SOURCES:
+    with open(os.path.join(HERE, "..", "data", fname)) as f:
+        for row in csv.DictReader(f):
+            team, pos = row["Team"], row[pos_col]
+            if team == "2 teams" or pos not in allowed_pos:
+                continue
+            key = (team, norm(row["Player"]))
+            usage, paa = int(row[usage_col]), float(row["Points Above Avg"])
+            if key in defense:
+                defense[key][2] += usage
+                defense[key][3] += paa
+            else:
+                defense[key] = [row["Player"], pos, usage, paa]
+
+# Blocking_2025.csv repeats the "Snaps"/"Points Earned"/"Points Above Avg" headers three times
+# (season total, then a pass-block split, then a run-block split) -- csv.DictReader would silently
+# keep only the last (run-block) column under those names, so read this one positionally instead.
+OL_POS = {"LT": "OT", "RT": "OT", "LG": "OG", "RG": "OG", "C": "C"}
+blocking = {}  # (team, norm_name) -> (display_name, pos, snaps, paa)
+with open(os.path.join(HERE, "..", "data", "sis_blocking_2025.csv")) as f:
+    reader = csv.reader(f)
+    next(reader)
+    for row in reader:
+        team, raw_pos = row[3], row[4]
+        if team == "2 teams" or raw_pos not in OL_POS:
+            continue
+        blocking[(team, norm(row[2]))] = (row[2], OL_POS[raw_pos], int(row[5]), float(row[8]))
+
 QB_NAMES = {norm(n) for n in [
     "Bo Nix","Matthew Stafford","Caleb Williams","Jared Goff","Patrick Mahomes","Jordan Love",
     "Dak Prescott","Jalen Hurts","C.J. Stroud","Drake Maye","Bryce Young","Trevor Lawrence",
@@ -70,9 +110,16 @@ QB_NAMES = {norm(n) for n in [
     "Mac Jones","J.J. McCarthy","Brady Cook","Josh Johnson",
 ]}
 
+TIER_POS = {"RB", "WR", "TE", "OT", "OG", "C", "CB", "S", "LB", "DE", "DT"}
+
 # players: short_team -> list of (display_name, norm_name, pos, usage, paa)
-# usage = targets for WR/TE; rush attempts + targets ("touches") for RB.
+# usage = targets for WR/TE; rush attempts + targets ("touches") for RB; snaps for OT/OG/C;
+# combined run/pass-rush/coverage snaps for CB/S/LB/DE/DT.
 players = {}
+for (team, nkey), (name, pos, snaps, paa) in blocking.items():
+    players.setdefault(team, []).append((name, nkey, pos, snaps, paa))
+for (team, nkey), (name, pos, usage, paa) in defense.items():
+    players.setdefault(team, []).append((name, nkey, pos, usage, paa))
 for (team, nkey), (name, pos, tgts, paa_rec) in receiving.items():
     usage, paa = tgts, paa_rec
     if pos == "RB" and (team, nkey) in rushing:
@@ -95,7 +142,7 @@ for (team, nkey), (name, att, paa) in rushing.items():
 global_index = {}
 for team, plist in players.items():
     for name, nkey, pos, usage, paa in plist:
-        if pos in ("WR", "TE", "RB"):
+        if pos in TIER_POS:
             global_index[nkey] = (team, pos, usage, paa)
 
 def build_tiers(players):
@@ -104,7 +151,7 @@ def build_tiers(players):
     for team, plist in players.items():
         by_pos = {}
         for name, nkey, pos, usage, paa in plist:
-            if pos in ("WR", "TE", "RB"):
+            if pos in TIER_POS:
                 by_pos.setdefault(pos, []).append((name, nkey, usage, paa))
         tiers[team] = {}
         tier_reference[team] = {}
@@ -125,10 +172,12 @@ traded = []
 for full_team, plist in notable.items():
     short = TEAM_SHORT[full_team]
     for p in plist:
-        if p["pos"] not in ("RB", "WR", "TE"):
+        if p["pos"] not in TIER_POS:
             continue
         tier = tiers.get(short, {}).get(norm(p["name"]))
-        if tier and tier.startswith(p["pos"]):
+        # exact position-code match, not a prefix check: "C" is itself a prefix of "CB", so a
+        # naive startswith would let a CB's tier satisfy a Center's lookup.
+        if tier and re.match(r"[A-Z]+", tier).group() == p["pos"]:
             p["tier"] = tier
             continue
         # not on this team's 2025 roster in the data -- check if they simply changed teams
@@ -149,7 +198,8 @@ for full_team, plist in notable.items():
 json.dump(notable, open(os.path.join(HERE, "week3_injuries_notable.json"), "w"), indent=2)
 
 tagged = sum(1 for plist in notable.values() for p in plist if "tier" in p)
-print(f"Tagged {tagged} RB/WR/TE injury entries with a depth-chart tier from 2025 season usage (targets/touches).")
+print(f"Tagged {tagged} of {sum(len(v) for v in notable.values())} notable injury entries with a depth-chart")
+print(f"tier ({sorted(TIER_POS)}) from 2025 season usage (snaps/targets/touches, never PAA).")
 print(f"{len(traded)} of those are estimated from a different 2025 team (tier marked with *):")
 for t in traded:
     print("  ", t)

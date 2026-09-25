@@ -3,6 +3,22 @@
     {
       "name": "Will Johnson",
       "pos": "CB",
+      "status": "Injured Reserve",
+      "tier": "CB1"
+    },
+    {
+      "name": "Kitan Crawford",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Kaleb Proctor",
+      "pos": "DT",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Zachary Carter",
+      "pos": "DT",
       "status": "Injured Reserve"
     },
     {
@@ -21,6 +37,11 @@
       "pos": "RB",
       "status": "Injured Reserve",
       "tier": "RB5"
+    },
+    {
+      "name": "Joey Blount",
+      "pos": "S",
+      "status": "Injured Reserve"
     },
     {
       "name": "Jameson Geers",
@@ -55,8 +76,20 @@
       "status": "Out"
     },
     {
+      "name": "Samson Ebukam",
+      "pos": "DE",
+      "status": "Out",
+      "tier": "DE1*"
+    },
+    {
       "name": "A.J. Terrell Jr.",
       "pos": "CB",
+      "status": "Injured Reserve",
+      "tier": "CB1"
+    },
+    {
+      "name": "Da'Shawn Hand",
+      "pos": "DT",
       "status": "Injured Reserve"
     },
     {
@@ -70,9 +103,24 @@
       "status": "Out"
     },
     {
+      "name": "JD Bertrand",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Anterio Thompson",
+      "pos": "DT",
+      "status": "Out"
+    },
+    {
       "name": "Beaux Collins",
       "pos": "WR",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "DeAngelo Malone",
+      "pos": "LB",
+      "status": "Out"
     }
   ],
   "Baltimore Ravens": [
@@ -102,6 +150,11 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "Jahquez Robinson",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Skylar Thompson",
       "pos": "QB",
       "status": "Injured Reserve"
@@ -117,6 +170,11 @@
       "name": "Dorian Strong",
       "pos": "CB",
       "status": "Out"
+    },
+    {
+      "name": "Zane Durant",
+      "pos": "DT",
+      "status": "Injured Reserve"
     }
   ],
   "Carolina Panthers": [
@@ -132,26 +190,61 @@
       "tier": "RB3"
     },
     {
+      "name": "Bam Martin-Scott",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Taylor Moton",
       "pos": "OT",
-      "status": "Out"
+      "status": "Out",
+      "tier": "OT2"
     },
     {
       "name": "Ikem Ekwonu",
       "pos": "OT",
-      "status": "Out"
+      "status": "Out",
+      "tier": "OT1"
+    },
+    {
+      "name": "Tershawn Wharton",
+      "pos": "DT",
+      "status": "Out",
+      "tier": "DT3"
     },
     {
       "name": "Chris Brazzell II",
       "pos": "WR",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "Nic Scourton",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "tier": "LB3"
     }
   ],
   "Chicago Bears": [
     {
+      "name": "Anthony Johnson Jr.",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Caleb Williams",
       "pos": "QB",
       "status": "Doubtful"
+    },
+    {
+      "name": "Shemar Turner",
+      "pos": "DT",
+      "status": "Out"
+    },
+    {
+      "name": "Noah Sewell",
+      "pos": "LB",
+      "status": "Out",
+      "tier": "LB3"
     },
     {
       "name": "Kyler Gordon",
@@ -164,8 +257,29 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "Jonathan Garvin",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Hayden Large",
       "pos": "TE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Coby Bryant",
+      "pos": "S",
+      "status": "Injured Reserve",
+      "tier": "S3*"
+    },
+    {
+      "name": "Ruben Hyppolite II",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Tony Fields II",
+      "pos": "LB",
       "status": "Injured Reserve"
     },
     {
@@ -173,6 +287,11 @@
       "pos": "RB",
       "status": "Injured Reserve",
       "tier": "RB3"
+    },
+    {
+      "name": "Nephi Sewell",
+      "pos": "LB",
+      "status": "Injured Reserve"
     },
     {
       "name": "Nikola Kalinic",
@@ -206,14 +325,40 @@
       "tier": "RB2"
     },
     {
+      "name": "Jeremiah Owusu-Koramoah",
+      "pos": "LB",
+      "status": "Out"
+    },
+    {
       "name": "Dillon Gabriel",
       "pos": "QB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Kalia Davis",
+      "pos": "DT",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Edefuan Ulofoshio",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Elijah Chatman",
+      "pos": "DT",
       "status": "Injured Reserve"
     },
     {
       "name": "Joe Royer",
       "pos": "TE",
       "status": "Out"
+    },
+    {
+      "name": "Alex Wright",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "tier": "DE2"
     },
     {
       "name": "Damarri Mathis",
@@ -223,8 +368,24 @@
   ],
   "Dallas Cowboys": [
     {
+      "name": "P.J. Locke",
+      "pos": "S",
+      "status": "Out"
+    },
+    {
       "name": "Cobie Durant",
       "pos": "CB",
+      "status": "Out",
+      "tier": "CB2*"
+    },
+    {
+      "name": "Malik Hooker",
+      "pos": "S",
+      "status": "Out"
+    },
+    {
+      "name": "DeMarvion Overshown",
+      "pos": "LB",
       "status": "Out"
     },
     {
@@ -249,12 +410,28 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "Marist Liufau",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Kelvin Gilliam Jr.",
+      "pos": "DT",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Princeton Fant",
       "pos": "TE",
       "status": "Injured Reserve"
     }
   ],
   "Denver Broncos": [
+    {
+      "name": "Jonathon Cooper",
+      "pos": "LB",
+      "status": "Out",
+      "tier": "LB3"
+    },
     {
       "name": "Frank Crum",
       "pos": "OT",
@@ -263,6 +440,16 @@
     {
       "name": "Caleb Lohner",
       "pos": "TE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Levelle Bailey",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Matt Henningsen",
+      "pos": "DE",
       "status": "Injured Reserve"
     },
     {
@@ -286,12 +473,34 @@
     {
       "name": "Cade Mays",
       "pos": "C",
+      "status": "Injured Reserve",
+      "tier": "C2*"
+    },
+    {
+      "name": "Payton Turner",
+      "pos": "DE",
       "status": "Injured Reserve"
     },
     {
       "name": "Giovanni Manu",
       "pos": "OT",
       "status": "Out"
+    },
+    {
+      "name": "Kerby Joseph",
+      "pos": "S",
+      "status": "Out"
+    },
+    {
+      "name": "Brian Branch",
+      "pos": "S",
+      "status": "Out",
+      "tier": "S1"
+    },
+    {
+      "name": "Damone Clark",
+      "pos": "LB",
+      "status": "Injured Reserve"
     },
     {
       "name": "Kendrick Law",
@@ -301,6 +510,11 @@
   ],
   "Green Bay Packers": [
     {
+      "name": "Anthony Campbell",
+      "pos": "DT",
+      "status": "Out"
+    },
+    {
       "name": "Jayden Reed",
       "pos": "WR",
       "status": "Out"
@@ -308,6 +522,11 @@
     {
       "name": "Zach Bako-Bewele",
       "pos": "OT",
+      "status": "Out"
+    },
+    {
+      "name": "Warren Brinson",
+      "pos": "DT",
       "status": "Out"
     },
     {
@@ -322,18 +541,54 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "Jordon Riley",
+      "pos": "DT",
+      "status": "Out"
+    },
+    {
+      "name": "Collin Oliver",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Luke Musgrave",
       "pos": "TE",
       "status": "Out",
       "tier": "TE2"
     },
     {
+      "name": "Micah Parsons",
+      "pos": "DE",
+      "status": "Out",
+      "tier": "DE1"
+    },
+    {
       "name": "Thomas Yassmin",
       "pos": "TE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Johnathan Baldwin II",
+      "pos": "S",
       "status": "Injured Reserve"
     }
   ],
   "Houston Texans": [
+    {
+      "name": "M.J. Stewart",
+      "pos": "S",
+      "status": "Out"
+    },
+    {
+      "name": "Henry To'oTo'o",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Kayden McDonald",
+      "pos": "DT",
+      "status": "Injured Reserve"
+    },
     {
       "name": "Jayden Higgins",
       "pos": "WR",
@@ -348,11 +603,37 @@
     {
       "name": "Braden Smith",
       "pos": "OT",
+      "status": "Injured Reserve",
+      "tier": "OT3*"
+    },
+    {
+      "name": "Solomon Byrd",
+      "pos": "DE",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "Ali Gaye",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "E.J. Speed",
+      "pos": "LB",
+      "status": "Out"
     },
     {
       "name": "Ja'Marcus Ingram",
       "pos": "CB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Dylan Horton",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "K.C. Ossai",
+      "pos": "LB",
       "status": "Injured Reserve"
     },
     {
@@ -367,6 +648,12 @@
       "pos": "WR",
       "status": "Out",
       "tier": "WR3"
+    },
+    {
+      "name": "Micheal Clemons",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "tier": "DE3*"
     },
     {
       "name": "Carson Towt",
@@ -391,8 +678,28 @@
   ],
   "Jacksonville Jaguars": [
     {
+      "name": "B.J. Green II",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Sam Mustipher",
       "pos": "C",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Zach Durfee",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Parker Hughes",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Jared Bartlett",
+      "pos": "LB",
       "status": "Injured Reserve"
     },
     {
@@ -402,6 +709,16 @@
     }
   ],
   "Kansas City Chiefs": [
+    {
+      "name": "Cooper McDonald",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Omarr Norman-Lott",
+      "pos": "DT",
+      "status": "Out"
+    },
     {
       "name": "Jimmy Holiday",
       "pos": "WR",
@@ -415,6 +732,11 @@
     {
       "name": "Matt Waletzko",
       "pos": "OT",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Ethan Downs",
+      "pos": "LB",
       "status": "Injured Reserve"
     },
     {
@@ -435,8 +757,18 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "Keyron Crawford",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Chigozie Anusiem",
       "pos": "CB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Brennan Jackson",
+      "pos": "LB",
       "status": "Injured Reserve"
     },
     {
@@ -456,6 +788,11 @@
     }
   ],
   "Los Angeles Chargers": [
+    {
+      "name": "Dalvin Tomlinson",
+      "pos": "DT",
+      "status": "Doubtful"
+    },
     {
       "name": "David Njoku",
       "pos": "TE",
@@ -478,9 +815,15 @@
       "status": "Out"
     },
     {
+      "name": "Denzel Perryman",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Tyler Biadasz",
       "pos": "C",
-      "status": "Injured Reserve"
+      "status": "Injured Reserve",
+      "tier": "C2*"
     }
   ],
   "Los Angeles Rams": [
@@ -491,6 +834,17 @@
       "tier": "RB3"
     },
     {
+      "name": "Myles Garrett",
+      "pos": "DE",
+      "status": "Injured Reserve",
+      "tier": "DE1*"
+    },
+    {
+      "name": "Keir Thomas II",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Keagen Trost",
       "pos": "OT",
       "status": "Injured Reserve"
@@ -499,9 +853,40 @@
       "name": "Matthew Caldwell",
       "pos": "QB",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "Daniel Rickert",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Eddie Walls III",
+      "pos": "LB",
+      "status": "Injured Reserve"
     }
   ],
   "Miami Dolphins": [
+    {
+      "name": "Ronnie Harrison Jr.",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Kyle Louis",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Trey Moore",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Kenneth Grant",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "tier": "DT2"
+    },
     {
       "name": "Storm Duck",
       "pos": "CB",
@@ -510,11 +895,17 @@
     {
       "name": "Darrell Baker Jr.",
       "pos": "CB",
-      "status": "Out"
+      "status": "Out",
+      "tier": "CB3*"
     },
     {
       "name": "Cole Turner",
       "pos": "TE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Rene Konga",
+      "pos": "DT",
       "status": "Injured Reserve"
     }
   ],
@@ -534,9 +925,29 @@
       "name": "Michael Jurgens",
       "pos": "C",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "Tyler Batty",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Jamal Adams",
+      "pos": "LB",
+      "status": "Injured Reserve"
     }
   ],
   "New England Patriots": [
+    {
+      "name": "Dell Pettus",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Brenden Schooler",
+      "pos": "S",
+      "status": "Out"
+    },
     {
       "name": "A.J. Brown",
       "pos": "WR",
@@ -544,9 +955,19 @@
       "tier": "WR1*"
     },
     {
+      "name": "Khalil Jacobs",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Marcus Bryant",
       "pos": "OT",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "Harold Landry III",
+      "pos": "LB",
+      "status": "Out"
     },
     {
       "name": "Myles Montgomery",
@@ -568,6 +989,22 @@
     {
       "name": "Kelvin Banks Jr.",
       "pos": "OT",
+      "status": "Injured Reserve",
+      "tier": "OT1"
+    },
+    {
+      "name": "Zach WoodL",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Lorenzo Styles Jr.",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Jaylan Ford",
+      "pos": "LB",
       "status": "Injured Reserve"
     },
     {
@@ -602,6 +1039,12 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "Bryan Bresee",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "tier": "DT2"
+    },
+    {
       "name": "Nick Saldiveri",
       "pos": "OT",
       "status": "Out"
@@ -616,7 +1059,14 @@
     {
       "name": "Paulson Adebo",
       "pos": "CB",
-      "status": "Injured Reserve"
+      "status": "Injured Reserve",
+      "tier": "CB1"
+    },
+    {
+      "name": "Roy Robertson-Harris",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "tier": "DT2"
     },
     {
       "name": "Korie Black",
@@ -663,6 +1113,17 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "David Onyemata",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "tier": "DT1*"
+    },
+    {
+      "name": "Marcelino McCrary-Ball",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Omar Cooper Jr.",
       "pos": "WR",
       "status": "Injured Reserve"
@@ -673,9 +1134,24 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "VJ Payne",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Kingsley Jonathan",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Tre Brown",
       "pos": "CB",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "Tyler Baron",
+      "pos": "DE",
+      "status": "Out"
     },
     {
       "name": "Chip Trayanum",
@@ -696,6 +1172,11 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "Andre' Sam",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Jakorian Bennett",
       "pos": "CB",
       "status": "Injured Reserve"
@@ -709,9 +1190,19 @@
       "name": "Johnny Wilson",
       "pos": "WR",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "Tucker Large",
+      "pos": "S",
+      "status": "Out"
     }
   ],
   "Pittsburgh Steelers": [
+    {
+      "name": "DeShon Elliott",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
     {
       "name": "Jack Driscoll",
       "pos": "OT",
@@ -721,6 +1212,11 @@
       "name": "Donte Kent",
       "pos": "CB",
       "status": "Out"
+    },
+    {
+      "name": "Logan Lee",
+      "pos": "DT",
+      "status": "Injured Reserve"
     },
     {
       "name": "Cole Burgess",
@@ -734,6 +1230,16 @@
     }
   ],
   "San Francisco 49ers": [
+    {
+      "name": "C.J. West",
+      "pos": "DT",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "James Thompson Jr.",
+      "pos": "DT",
+      "status": "Doubtful"
+    },
     {
       "name": "Demarcus Robinson",
       "pos": "WR",
@@ -757,8 +1263,28 @@
       "tier": "TE2"
     },
     {
+      "name": "Alfred Collins",
+      "pos": "DT",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Mykel Williams",
+      "pos": "DE",
+      "status": "Out"
+    },
+    {
       "name": "Nate Hobbs",
       "pos": "CB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Sam Okuayinonu",
+      "pos": "DT",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Nick Martin",
+      "pos": "LB",
       "status": "Injured Reserve"
     },
     {
@@ -792,6 +1318,21 @@
       "pos": "WR",
       "status": "Injured Reserve",
       "tier": "WR2"
+    },
+    {
+      "name": "Mikail Kamara",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Andrew Farmer II",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Darrick Forrest",
+      "pos": "S",
+      "status": "Injured Reserve"
     }
   ],
   "Seattle Seahawks": [
@@ -809,7 +1350,13 @@
     {
       "name": "Terrion Arnold",
       "pos": "CB",
-      "status": "Out"
+      "status": "Out",
+      "tier": "CB4*"
+    },
+    {
+      "name": "Bud Clark",
+      "pos": "S",
+      "status": "Injured Reserve"
     },
     {
       "name": "Jake Bobo",
@@ -824,6 +1371,11 @@
       "status": "Injured Reserve"
     },
     {
+      "name": "Mohamed Kamara",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "David Sills V",
       "pos": "WR",
       "status": "Injured Reserve",
@@ -832,9 +1384,35 @@
   ],
   "Tennessee Titans": [
     {
+      "name": "Milo Eifler",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Kendell Brooks",
+      "pos": "S",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Tanoh Kpassagnon",
+      "pos": "DE",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Dorian Mausi",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
       "name": "Joshua Williams",
       "pos": "CB",
       "status": "Injured Reserve"
+    },
+    {
+      "name": "Jaylen Harrell",
+      "pos": "LB",
+      "status": "Injured Reserve",
+      "tier": "LB4"
     },
     {
       "name": "Jaren Kanak",
@@ -849,14 +1427,38 @@
       "status": "Out"
     },
     {
+      "name": "Nick Cross",
+      "pos": "S",
+      "status": "Out",
+      "tier": "S1*"
+    },
+    {
+      "name": "Jordan Magee",
+      "pos": "LB",
+      "status": "Injured Reserve"
+    },
+    {
+      "name": "Jer'Zhan Newton",
+      "pos": "DT",
+      "status": "Injured Reserve",
+      "tier": "DT3"
+    },
+    {
       "name": "Laremy Tunsil",
       "pos": "OT",
-      "status": "Injured Reserve"
+      "status": "Injured Reserve",
+      "tier": "OT2"
+    },
+    {
+      "name": "Deatrich Wise Jr.",
+      "pos": "DE",
+      "status": "Out"
     },
     {
       "name": "Trey Amos",
       "pos": "CB",
-      "status": "Injured Reserve"
+      "status": "Injured Reserve",
+      "tier": "CB3"
     },
     {
       "name": "Jeremy McNichols",
