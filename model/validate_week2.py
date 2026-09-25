@@ -85,16 +85,18 @@ def vegas_only_eval(results):
 
 base_rows, base_mae, base_su = eval_set(d["results"], "BASE MODEL (no QB adjustment)")
 qb_rows, qb_mae, qb_su = eval_set(d["results_qb_adjusted"], "QB-ADJUSTED MODEL")
+blend_rows, blend_mae, blend_su = eval_set(d["results_market_blended"], f"MARKET-BLENDED MODEL (model_weight={d.get('model_weight')})")
 vegas_only_eval(d["results"])
 
-print("Per-game detail (QB-adjusted):")
-for r in qb_rows:
+print("Per-game detail (market-blended):")
+for r in blend_rows:
     print(f"  {r['matchup']:42s} actual {r['actual']:>7s} (margin {r['actual_margin']:+3d}) | "
           f"pred {r['pred_margin']:+5.1f} | err {r['err']:4.1f} | SU {'HIT' if r['su_hit'] else 'MISS'} | "
           f"totals pred {r['pred_total']:.1f} vs actual {r['actual_total']}")
 
-out = dict(base=base_rows, qb_adjusted=qb_rows,
-           summary=dict(base_mae=round(base_mae,2), qb_mae=round(qb_mae,2),
+out = dict(base=base_rows, qb_adjusted=qb_rows, market_blended=blend_rows,
+           summary=dict(base_mae=round(base_mae,2), qb_mae=round(qb_mae,2), blend_mae=round(blend_mae,2),
+                        blend_su=blend_su, model_weight=d.get("model_weight"),
                         base_su=base_su, qb_su=qb_su, n=len(base_rows)))
 with open(os.path.join(HERE, "week2_validation_output.json"),"w") as f:
     json.dump(out, f, indent=2)

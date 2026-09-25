@@ -33,6 +33,7 @@
       "home_def": 20.0,
       "away_off": 24.1,
       "away_def": 21.9,
+      "model_margin": 4.7,
       "expected_margin": 4.7,
       "median_margin": 4.4,
       "ci68": [
@@ -61,6 +62,7 @@
       "home_def": 24.7,
       "away_off": 21.4,
       "away_def": 24.2,
+      "model_margin": -0.1,
       "expected_margin": -0.1,
       "median_margin": 0.3,
       "ci68": [
@@ -92,6 +94,7 @@
       "home_def": 20.6,
       "away_off": 21.5,
       "away_def": 24.2,
+      "model_margin": 8.8,
       "expected_margin": 8.8,
       "median_margin": 8.7,
       "ci68": [
@@ -123,6 +126,7 @@
       "home_def": 21.1,
       "away_off": 22.1,
       "away_def": 22.9,
+      "model_margin": 5.6,
       "expected_margin": 5.6,
       "median_margin": 5.6,
       "ci68": [
@@ -154,6 +158,7 @@
       "home_def": 21.2,
       "away_off": 23.4,
       "away_def": 22.0,
+      "model_margin": 3.1,
       "expected_margin": 3.1,
       "median_margin": 3.0,
       "ci68": [
@@ -185,6 +190,7 @@
       "home_def": 22.2,
       "away_off": 21.9,
       "away_def": 23.1,
+      "model_margin": 5.1,
       "expected_margin": 5.1,
       "median_margin": 5.1,
       "ci68": [
@@ -216,6 +222,7 @@
       "home_def": 24.5,
       "away_off": 23.5,
       "away_def": 22.7,
+      "model_margin": -3.1,
       "expected_margin": -3.1,
       "median_margin": -3.0,
       "ci68": [
@@ -247,6 +254,7 @@
       "home_def": 22.8,
       "away_off": 19.1,
       "away_def": 26.2,
+      "model_margin": 8.8,
       "expected_margin": 8.8,
       "median_margin": 9.2,
       "ci68": [
@@ -278,6 +286,7 @@
       "home_def": 25.1,
       "away_off": 23.1,
       "away_def": 20.8,
+      "model_margin": -6.1,
       "expected_margin": -6.1,
       "median_margin": -6.3,
       "ci68": [
@@ -309,6 +318,7 @@
       "home_def": 22.6,
       "away_off": 24.1,
       "away_def": 21.8,
+      "model_margin": 0.2,
       "expected_margin": 0.2,
       "median_margin": 0.1,
       "ci68": [
@@ -340,6 +350,7 @@
       "home_def": 22.1,
       "away_off": 20.1,
       "away_def": 24.0,
+      "model_margin": 6.6,
       "expected_margin": 6.6,
       "median_margin": 7.1,
       "ci68": [
@@ -371,6 +382,7 @@
       "home_def": 23.9,
       "away_off": 23.8,
       "away_def": 21.6,
+      "model_margin": -3.7,
       "expected_margin": -3.7,
       "median_margin": -3.3,
       "ci68": [
@@ -402,6 +414,7 @@
       "home_def": 22.0,
       "away_off": 22.1,
       "away_def": 23.3,
+      "model_margin": 4.1,
       "expected_margin": 4.1,
       "median_margin": 4.0,
       "ci68": [
@@ -433,6 +446,7 @@
       "home_def": 20.4,
       "away_off": 19.2,
       "away_def": 26.2,
+      "model_margin": 12.6,
       "expected_margin": 12.6,
       "median_margin": 12.5,
       "ci68": [
@@ -464,6 +478,7 @@
       "home_def": 21.1,
       "away_off": 21.7,
       "away_def": 23.3,
+      "model_margin": 6.9,
       "expected_margin": 6.9,
       "median_margin": 7.0,
       "ci68": [
@@ -495,6 +510,7 @@
       "home_def": 20.7,
       "away_off": 22.1,
       "away_def": 23.1,
+      "model_margin": 7.4,
       "expected_margin": 7.4,
       "median_margin": 7.7,
       "ci68": [
@@ -528,6 +544,7 @@
       "home_def": 20.0,
       "away_off": 23.3,
       "away_def": 21.9,
+      "model_margin": 5.6,
       "expected_margin": 5.6,
       "median_margin": 5.9,
       "ci68": [
@@ -557,6 +574,7 @@
       "home_def": 24.7,
       "away_off": 21.6,
       "away_def": 24.2,
+      "model_margin": 0.6,
       "expected_margin": 0.6,
       "median_margin": 0.4,
       "ci68": [
@@ -586,6 +604,7 @@
       "home_def": 20.6,
       "away_off": 22.0,
       "away_def": 24.2,
+      "model_margin": 7.9,
       "expected_margin": 7.9,
       "median_margin": 8.0,
       "ci68": [
@@ -615,6 +634,7 @@
       "home_def": 21.1,
       "away_off": 22.1,
       "away_def": 22.9,
+      "model_margin": 5.5,
       "expected_margin": 5.5,
       "median_margin": 5.4,
       "ci68": [
@@ -644,6 +664,7 @@
       "home_def": 21.2,
       "away_off": 22.8,
       "away_def": 22.0,
+      "model_margin": 4.2,
       "expected_margin": 4.2,
       "median_margin": 3.8,
       "ci68": [
@@ -673,6 +694,7 @@
       "home_def": 22.2,
       "away_off": 21.8,
       "away_def": 23.1,
+      "model_margin": 5.5,
       "expected_margin": 5.5,
       "median_margin": 5.6,
       "ci68": [
@@ -702,6 +724,7 @@
       "home_def": 24.5,
       "away_off": 24.7,
       "away_def": 22.7,
+      "model_margin": -4.9,
       "expected_margin": -4.9,
       "median_margin": -5.0,
       "ci68": [
@@ -731,6 +754,7 @@
       "home_def": 22.8,
       "away_off": 19.1,
       "away_def": 26.2,
+      "model_margin": 9.5,
       "expected_margin": 9.5,
       "median_margin": 9.4,
       "ci68": [
@@ -760,6 +784,7 @@
       "home_def": 25.1,
       "away_off": 23.0,
       "away_def": 20.8,
+      "model_margin": -6.8,
       "expected_margin": -6.8,
       "median_margin": -6.7,
       "ci68": [
@@ -789,6 +814,7 @@
       "home_def": 22.6,
       "away_off": 23.9,
       "away_def": 21.8,
+      "model_margin": 1.3,
       "expected_margin": 1.3,
       "median_margin": 1.1,
       "ci68": [
@@ -818,6 +844,7 @@
       "home_def": 22.1,
       "away_off": 20.2,
       "away_def": 24.0,
+      "model_margin": 6.8,
       "expected_margin": 6.8,
       "median_margin": 6.5,
       "ci68": [
@@ -847,6 +874,7 @@
       "home_def": 23.9,
       "away_off": 23.8,
       "away_def": 21.6,
+      "model_margin": -4.3,
       "expected_margin": -4.3,
       "median_margin": -4.6,
       "ci68": [
@@ -876,6 +904,7 @@
       "home_def": 22.0,
       "away_off": 20.9,
       "away_def": 23.3,
+      "model_margin": 4.6,
       "expected_margin": 4.6,
       "median_margin": 4.4,
       "ci68": [
@@ -905,6 +934,7 @@
       "home_def": 20.4,
       "away_off": 19.2,
       "away_def": 26.2,
+      "model_margin": 12.8,
       "expected_margin": 12.8,
       "median_margin": 12.8,
       "ci68": [
@@ -934,6 +964,7 @@
       "home_def": 21.1,
       "away_off": 21.8,
       "away_def": 23.3,
+      "model_margin": 7.4,
       "expected_margin": 7.4,
       "median_margin": 7.3,
       "ci68": [
@@ -963,6 +994,7 @@
       "home_def": 20.7,
       "away_off": 21.8,
       "away_def": 23.1,
+      "model_margin": 8.6,
       "expected_margin": 8.6,
       "median_margin": 8.6,
       "ci68": [
@@ -986,6 +1018,505 @@
       "edge_pts": -1.6
     }
   ],
+  "results_market_blended": [
+    {
+      "home": "Buffalo Bills",
+      "away": "Detroit Lions",
+      "home_off": 25.0,
+      "home_def": 20.0,
+      "away_off": 23.3,
+      "away_def": 21.9,
+      "model_margin": 5.6,
+      "expected_margin": 5.5,
+      "median_margin": 5.6,
+      "ci68": [
+        -7.0,
+        19.0
+      ],
+      "ci95": [
+        -20.1,
+        31.3
+      ],
+      "win_home": 66.9,
+      "win_away": 33.1,
+      "confidence": 34,
+      "proj_home_score": 27.0,
+      "proj_away_score": 21.3,
+      "combined_sd": 13.15,
+      "home_qb_adj": 0.08,
+      "away_qb_adj": -0.85,
+      "model_weight": 0.2,
+      "vegas_home_spread": -5.5,
+      "model_home_spread": -5.6,
+      "edge_pts": -0.1
+    },
+    {
+      "home": "Atlanta Falcons",
+      "away": "Carolina Panthers",
+      "home_off": 20.7,
+      "home_def": 24.7,
+      "away_off": 21.6,
+      "away_def": 24.2,
+      "model_margin": 0.6,
+      "expected_margin": -1.9,
+      "median_margin": -1.8,
+      "ci68": [
+        -15.0,
+        11.7
+      ],
+      "ci95": [
+        -28.2,
+        25.5
+      ],
+      "win_home": 45.2,
+      "win_away": 54.8,
+      "confidence": 10,
+      "proj_home_score": 20.3,
+      "proj_away_score": 22.0,
+      "combined_sd": 13.5,
+      "home_qb_adj": 0.91,
+      "away_qb_adj": 0.18,
+      "model_weight": 0.2,
+      "vegas_home_spread": 2.5,
+      "model_home_spread": 1.8,
+      "edge_pts": -0.7
+    },
+    {
+      "home": "Baltimore Ravens",
+      "away": "New Orleans Saints",
+      "home_off": 24.2,
+      "home_def": 20.6,
+      "away_off": 22.0,
+      "away_def": 24.2,
+      "model_margin": 7.9,
+      "expected_margin": 8.4,
+      "median_margin": 8.4,
+      "ci68": [
+        -5.3,
+        21.5
+      ],
+      "ci95": [
+        -18.3,
+        34.7
+      ],
+      "win_home": 73.0,
+      "win_away": 27.0,
+      "confidence": 46,
+      "proj_home_score": 27.2,
+      "proj_away_score": 18.9,
+      "combined_sd": 13.33,
+      "home_qb_adj": -0.45,
+      "away_qb_adj": 0.48,
+      "model_weight": 0.2,
+      "vegas_home_spread": -8.5,
+      "model_home_spread": -8.4,
+      "edge_pts": 0.1
+    },
+    {
+      "home": "Chicago Bears",
+      "away": "Minnesota Vikings",
+      "home_off": 23.9,
+      "home_def": 21.1,
+      "away_off": 22.1,
+      "away_def": 22.9,
+      "model_margin": 5.5,
+      "expected_margin": 4.7,
+      "median_margin": 4.8,
+      "ci68": [
+        -8.4,
+        18.4
+      ],
+      "ci95": [
+        -21.4,
+        31.1
+      ],
+      "win_home": 64.9,
+      "win_away": 35.1,
+      "confidence": 30,
+      "proj_home_score": 25.6,
+      "proj_away_score": 20.6,
+      "combined_sd": 13.27,
+      "home_qb_adj": -0.04,
+      "away_qb_adj": 0.01,
+      "model_weight": 0.2,
+      "vegas_home_spread": -4.5,
+      "model_home_spread": -4.8,
+      "edge_pts": -0.3
+    },
+    {
+      "home": "Houston Texans",
+      "away": "Cincinnati Bengals",
+      "home_off": 24.1,
+      "home_def": 21.2,
+      "away_off": 22.8,
+      "away_def": 22.0,
+      "model_margin": 4.2,
+      "expected_margin": 2.8,
+      "median_margin": 3.0,
+      "ci68": [
+        -10.2,
+        15.9
+      ],
+      "ci95": [
+        -22.7,
+        27.8
+      ],
+      "win_home": 58.6,
+      "win_away": 41.4,
+      "confidence": 17,
+      "proj_home_score": 24.9,
+      "proj_away_score": 22.0,
+      "combined_sd": 13.11,
+      "home_qb_adj": 0.47,
+      "away_qb_adj": -0.61,
+      "model_weight": 0.2,
+      "vegas_home_spread": -2.5,
+      "model_home_spread": -3.0,
+      "edge_pts": -0.5
+    },
+    {
+      "home": "New England Patriots",
+      "away": "Pittsburgh Steelers",
+      "home_off": 24.3,
+      "home_def": 22.2,
+      "away_off": 21.8,
+      "away_def": 23.1,
+      "model_margin": 5.5,
+      "expected_margin": 5.5,
+      "median_margin": 5.4,
+      "ci68": [
+        -7.7,
+        18.8
+      ],
+      "ci95": [
+        -20.8,
+        31.3
+      ],
+      "win_home": 65.8,
+      "win_away": 34.2,
+      "confidence": 32,
+      "proj_home_score": 25.6,
+      "proj_away_score": 20.2,
+      "combined_sd": 13.24,
+      "home_qb_adj": 0.26,
+      "away_qb_adj": -0.12,
+      "model_weight": 0.2,
+      "vegas_home_spread": -5.5,
+      "model_home_spread": -5.4,
+      "edge_pts": 0.1
+    },
+    {
+      "home": "New York Jets",
+      "away": "Green Bay Packers",
+      "home_off": 19.6,
+      "home_def": 24.5,
+      "away_off": 24.7,
+      "away_def": 22.7,
+      "model_margin": -4.9,
+      "expected_margin": -3.8,
+      "median_margin": -3.7,
+      "ci68": [
+        -17.1,
+        9.7
+      ],
+      "ci95": [
+        -30.1,
+        22.9
+      ],
+      "win_home": 39.1,
+      "win_away": 60.9,
+      "confidence": 22,
+      "proj_home_score": 20.4,
+      "proj_away_score": 24.1,
+      "combined_sd": 13.43,
+      "home_qb_adj": -0.6,
+      "away_qb_adj": 1.2,
+      "model_weight": 0.2,
+      "vegas_home_spread": 3.5,
+      "model_home_spread": 3.7,
+      "edge_pts": 0.2
+    },
+    {
+      "home": "Tampa Bay Buccaneers",
+      "away": "Cleveland Browns",
+      "home_off": 23.2,
+      "home_def": 22.8,
+      "away_off": 19.1,
+      "away_def": 26.2,
+      "model_margin": 9.5,
+      "expected_margin": 8.7,
+      "median_margin": 8.9,
+      "ci68": [
+        -4.3,
+        22.1
+      ],
+      "ci95": [
+        -17.7,
+        34.1
+      ],
+      "win_home": 74.0,
+      "win_away": 26.0,
+      "confidence": 48,
+      "proj_home_score": 25.6,
+      "proj_away_score": 16.9,
+      "combined_sd": 13.19,
+      "home_qb_adj": 0.74,
+      "away_qb_adj": 0.0,
+      "model_weight": 0.2,
+      "vegas_home_spread": -8.5,
+      "model_home_spread": -8.9,
+      "edge_pts": -0.4
+    },
+    {
+      "home": "Tennessee Titans",
+      "away": "Philadelphia Eagles",
+      "home_off": 18.6,
+      "home_def": 25.1,
+      "away_off": 23.0,
+      "away_def": 20.8,
+      "model_margin": -6.8,
+      "expected_margin": -7.0,
+      "median_margin": -7.2,
+      "ci68": [
+        -19.9,
+        5.8
+      ],
+      "ci95": [
+        -32.3,
+        19.3
+      ],
+      "win_home": 28.5,
+      "win_away": 71.5,
+      "confidence": 43,
+      "proj_home_score": 17.3,
+      "proj_away_score": 24.4,
+      "combined_sd": 13.24,
+      "home_qb_adj": -0.72,
+      "away_qb_adj": -0.07,
+      "model_weight": 0.2,
+      "vegas_home_spread": 7.0,
+      "model_home_spread": 7.2,
+      "edge_pts": 0.2
+    },
+    {
+      "home": "Denver Broncos",
+      "away": "Jacksonville Jaguars",
+      "home_off": 24.0,
+      "home_def": 22.6,
+      "away_off": 23.9,
+      "away_def": 21.8,
+      "model_margin": 1.3,
+      "expected_margin": 2.3,
+      "median_margin": 2.0,
+      "ci68": [
+        -11.1,
+        15.6
+      ],
+      "ci95": [
+        -24.4,
+        28.1
+      ],
+      "win_home": 56.6,
+      "win_away": 43.4,
+      "confidence": 13,
+      "proj_home_score": 24.9,
+      "proj_away_score": 22.8,
+      "combined_sd": 13.36,
+      "home_qb_adj": 0.91,
+      "away_qb_adj": -0.21,
+      "model_weight": 0.2,
+      "vegas_home_spread": -2.5,
+      "model_home_spread": -2.0,
+      "edge_pts": 0.5
+    },
+    {
+      "home": "Los Angeles Chargers",
+      "away": "Las Vegas Raiders",
+      "home_off": 23.1,
+      "home_def": 22.1,
+      "away_off": 20.2,
+      "away_def": 24.0,
+      "model_margin": 6.8,
+      "expected_margin": 6.6,
+      "median_margin": 6.8,
+      "ci68": [
+        -6.4,
+        19.4
+      ],
+      "ci95": [
+        -18.9,
+        31.8
+      ],
+      "win_home": 70.0,
+      "win_away": 30.0,
+      "confidence": 40,
+      "proj_home_score": 25.1,
+      "proj_away_score": 18.5,
+      "combined_sd": 13.17,
+      "home_qb_adj": 0.33,
+      "away_qb_adj": 0.12,
+      "model_weight": 0.2,
+      "vegas_home_spread": -6.5,
+      "model_home_spread": -6.8,
+      "edge_pts": -0.3
+    },
+    {
+      "home": "Arizona Cardinals",
+      "away": "Seattle Seahawks",
+      "home_off": 19.9,
+      "home_def": 23.9,
+      "away_off": 23.8,
+      "away_def": 21.6,
+      "model_margin": -4.3,
+      "expected_margin": -3.7,
+      "median_margin": -3.3,
+      "ci68": [
+        -17.9,
+        11.1
+      ],
+      "ci95": [
+        -31.1,
+        25.3
+      ],
+      "win_home": 41.7,
+      "win_away": 58.3,
+      "confidence": 17,
+      "proj_home_score": 20.2,
+      "proj_away_score": 23.5,
+      "combined_sd": 14.45,
+      "home_qb_adj": -0.58,
+      "away_qb_adj": 0.0,
+      "model_weight": 0.2,
+      "vegas_home_spread": 3.5,
+      "model_home_spread": 3.3,
+      "edge_pts": -0.2
+    },
+    {
+      "home": "Dallas Cowboys",
+      "away": "Washington Commanders",
+      "home_off": 22.2,
+      "home_def": 22.0,
+      "away_off": 20.9,
+      "away_def": 23.3,
+      "model_margin": 4.6,
+      "expected_margin": 4.5,
+      "median_margin": 4.6,
+      "ci68": [
+        -8.4,
+        17.9
+      ],
+      "ci95": [
+        -20.7,
+        31.0
+      ],
+      "win_home": 63.8,
+      "win_away": 36.2,
+      "confidence": 28,
+      "proj_home_score": 23.9,
+      "proj_away_score": 19.2,
+      "combined_sd": 13.11,
+      "home_qb_adj": -0.71,
+      "away_qb_adj": -1.2,
+      "model_weight": 0.2,
+      "vegas_home_spread": -4.5,
+      "model_home_spread": -4.6,
+      "edge_pts": -0.1
+    },
+    {
+      "home": "San Francisco 49ers",
+      "away": "Miami Dolphins",
+      "home_off": 24.2,
+      "home_def": 20.4,
+      "away_off": 19.2,
+      "away_def": 26.2,
+      "model_margin": 12.8,
+      "expected_margin": 12.6,
+      "median_margin": 12.6,
+      "ci68": [
+        -1.0,
+        26.0
+      ],
+      "ci95": [
+        -13.6,
+        38.5
+      ],
+      "win_home": 81.7,
+      "win_away": 18.3,
+      "confidence": 63,
+      "proj_home_score": 28.0,
+      "proj_away_score": 15.5,
+      "combined_sd": 13.5,
+      "home_qb_adj": 0.17,
+      "away_qb_adj": 0.0,
+      "model_weight": 0.2,
+      "vegas_home_spread": -12.5,
+      "model_home_spread": -12.6,
+      "edge_pts": -0.1
+    },
+    {
+      "home": "Kansas City Chiefs",
+      "away": "Indianapolis Colts",
+      "home_off": 25.0,
+      "home_def": 21.1,
+      "away_off": 21.8,
+      "away_def": 23.3,
+      "model_margin": 7.4,
+      "expected_margin": 6.7,
+      "median_margin": 6.5,
+      "ci68": [
+        -5.9,
+        19.7
+      ],
+      "ci95": [
+        -19.1,
+        32.9
+      ],
+      "win_home": 69.5,
+      "win_away": 30.5,
+      "confidence": 39,
+      "proj_home_score": 26.7,
+      "proj_away_score": 20.0,
+      "combined_sd": 13.19,
+      "home_qb_adj": 0.59,
+      "away_qb_adj": 0.12,
+      "model_weight": 0.2,
+      "vegas_home_spread": -6.5,
+      "model_home_spread": -6.5,
+      "edge_pts": 0.0
+    },
+    {
+      "home": "Los Angeles Rams",
+      "away": "New York Giants",
+      "home_off": 25.9,
+      "home_def": 20.7,
+      "away_off": 21.8,
+      "away_def": 23.1,
+      "model_margin": 8.6,
+      "expected_margin": 7.3,
+      "median_margin": 7.6,
+      "ci68": [
+        -5.8,
+        20.6
+      ],
+      "ci95": [
+        -18.5,
+        33.3
+      ],
+      "win_home": 71.5,
+      "win_away": 28.5,
+      "confidence": 43,
+      "proj_home_score": 27.5,
+      "proj_away_score": 20.1,
+      "combined_sd": 13.22,
+      "home_qb_adj": 0.82,
+      "away_qb_adj": -0.33,
+      "model_weight": 0.2,
+      "vegas_home_spread": -7.0,
+      "model_home_spread": -7.6,
+      "edge_pts": -0.6
+    }
+  ],
+  "model_weight": 0.2,
   "qb_profiles": {
     "Carolina Panthers": {
       "team": "Carolina Panthers",

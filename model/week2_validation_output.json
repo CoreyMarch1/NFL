@@ -355,9 +355,190 @@
       "actual_total": 34
     }
   ],
+  "market_blended": [
+    {
+      "matchup": "Detroit Lions @ Buffalo Bills",
+      "actual": "31-41",
+      "actual_margin": 10,
+      "pred_margin": 5.6,
+      "err": 4.4,
+      "su_hit": true,
+      "vegas_spread": -5.5,
+      "pred_total": 48.3,
+      "actual_total": 72
+    },
+    {
+      "matchup": "Carolina Panthers @ Atlanta Falcons",
+      "actual": "34-3",
+      "actual_margin": -31,
+      "pred_margin": -1.8,
+      "err": 29.2,
+      "su_hit": true,
+      "vegas_spread": 2.5,
+      "pred_total": 42.3,
+      "actual_total": 37
+    },
+    {
+      "matchup": "New Orleans Saints @ Baltimore Ravens",
+      "actual": "24-17",
+      "actual_margin": -7,
+      "pred_margin": 8.4,
+      "err": 15.4,
+      "su_hit": false,
+      "vegas_spread": -8.5,
+      "pred_total": 46.1,
+      "actual_total": 41
+    },
+    {
+      "matchup": "Minnesota Vikings @ Chicago Bears",
+      "actual": "9-3",
+      "actual_margin": -6,
+      "pred_margin": 4.8,
+      "err": 10.8,
+      "su_hit": false,
+      "vegas_spread": -4.5,
+      "pred_total": 46.2,
+      "actual_total": 12
+    },
+    {
+      "matchup": "Cincinnati Bengals @ Houston Texans",
+      "actual": "20-6",
+      "actual_margin": -14,
+      "pred_margin": 3.0,
+      "err": 17.0,
+      "su_hit": false,
+      "vegas_spread": -2.5,
+      "pred_total": 46.9,
+      "actual_total": 26
+    },
+    {
+      "matchup": "Pittsburgh Steelers @ New England Patriots",
+      "actual": "3-20",
+      "actual_margin": 17,
+      "pred_margin": 5.4,
+      "err": 11.6,
+      "su_hit": true,
+      "vegas_spread": -5.5,
+      "pred_total": 45.8,
+      "actual_total": 23
+    },
+    {
+      "matchup": "Green Bay Packers @ New York Jets",
+      "actual": "20-17",
+      "actual_margin": -3,
+      "pred_margin": -3.7,
+      "err": 0.7,
+      "su_hit": true,
+      "vegas_spread": 3.5,
+      "pred_total": 44.5,
+      "actual_total": 37
+    },
+    {
+      "matchup": "Cleveland Browns @ Tampa Bay Buccaneers",
+      "actual": "23-19",
+      "actual_margin": -4,
+      "pred_margin": 8.9,
+      "err": 12.9,
+      "su_hit": false,
+      "vegas_spread": -8.5,
+      "pred_total": 42.5,
+      "actual_total": 42
+    },
+    {
+      "matchup": "Philadelphia Eagles @ Tennessee Titans",
+      "actual": "24-20",
+      "actual_margin": -4,
+      "pred_margin": -7.2,
+      "err": 3.2,
+      "su_hit": true,
+      "vegas_spread": 7.0,
+      "pred_total": 41.7,
+      "actual_total": 44
+    },
+    {
+      "matchup": "Jacksonville Jaguars @ Denver Broncos",
+      "actual": "13-20",
+      "actual_margin": 7,
+      "pred_margin": 2.0,
+      "err": 5.0,
+      "su_hit": true,
+      "vegas_spread": -2.5,
+      "pred_total": 47.7,
+      "actual_total": 33
+    },
+    {
+      "matchup": "Las Vegas Raiders @ Los Angeles Chargers",
+      "actual": "26-14",
+      "actual_margin": -12,
+      "pred_margin": 6.8,
+      "err": 18.8,
+      "su_hit": false,
+      "vegas_spread": -6.5,
+      "pred_total": 43.6,
+      "actual_total": 40
+    },
+    {
+      "matchup": "Seattle Seahawks @ Arizona Cardinals",
+      "actual": "31-7",
+      "actual_margin": -24,
+      "pred_margin": -3.3,
+      "err": 20.7,
+      "su_hit": true,
+      "vegas_spread": 3.5,
+      "pred_total": 43.7,
+      "actual_total": 38
+    },
+    {
+      "matchup": "Washington Commanders @ Dallas Cowboys",
+      "actual": "20-37",
+      "actual_margin": 17,
+      "pred_margin": 4.6,
+      "err": 12.4,
+      "su_hit": true,
+      "vegas_spread": -4.5,
+      "pred_total": 43.1,
+      "actual_total": 57
+    },
+    {
+      "matchup": "Miami Dolphins @ San Francisco 49ers",
+      "actual": "13-35",
+      "actual_margin": 22,
+      "pred_margin": 12.6,
+      "err": 9.4,
+      "su_hit": true,
+      "vegas_spread": -12.5,
+      "pred_total": 43.5,
+      "actual_total": 48
+    },
+    {
+      "matchup": "Indianapolis Colts @ Kansas City Chiefs",
+      "actual": "30-33",
+      "actual_margin": 3,
+      "pred_margin": 6.5,
+      "err": 3.5,
+      "su_hit": true,
+      "vegas_spread": -6.5,
+      "pred_total": 46.7,
+      "actual_total": 63
+    },
+    {
+      "matchup": "New York Giants @ Los Angeles Rams",
+      "actual": "6-28",
+      "actual_margin": 22,
+      "pred_margin": 7.6,
+      "err": 14.4,
+      "su_hit": true,
+      "vegas_spread": -7.0,
+      "pred_total": 47.6,
+      "actual_total": 34
+    }
+  ],
   "summary": {
     "base_mae": 12.26,
     "qb_mae": 12.03,
+    "blend_mae": 11.84,
+    "blend_su": 11,
+    "model_weight": 0.2,
     "base_su": 10,
     "qb_su": 10,
     "n": 16
