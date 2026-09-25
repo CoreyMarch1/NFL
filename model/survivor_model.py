@@ -163,10 +163,32 @@ def optimize(start_week=3, end_week=18):
     for p in plan:
         if p.get("p_blend"):
             survival_prob *= p["p_blend"]
-    return plan, survival_prob
+
+    # Per-team view: for every team, every week 3-18 they play, ranked best matchup first --
+    # "if I want to save this team, which weeks are worth it" independent of the single optimal
+    # path above. Includes the already-used teams too (their remaining schedule is moot to pick,
+    # but the UI can still show it labeled as unavailable rather than just omitting them).
+    plan_week_by_team = {p["team"]: p["week"] for p in plan if p.get("team")}
+    team_schedule = {}
+    for team in ALL_TEAMS:
+        rows = []
+        for wk in weeks:
+            info = options.get(wk, {}).get(team)
+            if not info:
+                continue  # bye week
+            occupied_by = plan_week_by_team.get(team) == wk
+            other_team_here = next((p["team"] for p in plan if p["week"] == wk and p.get("team") != team), None)
+            rows.append(dict(week=wk, opponent=info["opponent"], is_home=info["is_home"],
+                              p_blend=round(info["p_blend"], 4), tier=tier(info["p_blend"]),
+                              is_plan_pick=occupied_by,
+                              plan_uses_instead=None if occupied_by else other_team_here))
+        rows.sort(key=lambda r: -r["p_blend"])
+        team_schedule[team] = rows
+
+    return plan, survival_prob, team_schedule
 
 if __name__ == "__main__":
-    plan, survival_prob = optimize()
+    plan, survival_prob, team_schedule = optimize()
     print(f"{'Wk':>3s} {'Team':26s} {'Opp':22s} {'H/A':4s} {'P(win)':>7s} {'Tier':10s} {'Top alt (p)'}")
     for p in plan:
         if p["team"] is None:
@@ -184,6 +206,7 @@ if __name__ == "__main__":
         already_used=[dict(week=wk, team=t) for wk, t in ALREADY_USED.items()],
         plan=plan,
         survival_prob=round(survival_prob, 6),
+        team_schedule=team_schedule,
         season_win_totals=SEASON_WIN_TOTALS,
         composite_ratings={t: round(v, 1) for t, v in COMP.items()},
         generated_note="Weeks 4-18 blend this week's composite power ratings with 2026 season win "

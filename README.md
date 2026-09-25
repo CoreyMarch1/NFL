@@ -246,7 +246,10 @@ recommends which of the remaining 30 teams to pick in each of Weeks 3–18.
   uploaded `.xlsx`), every team's opponent and home/away for all 18 weeks.
 - `dashboard/survivor_roadmap.html` — the published roadmap: a week-by-week pick with a
   confidence tier, alternatives on request, a "close calls to watch" list (weeks below "Very
-  Safe"), and the same transparency about assumptions and blind spots as the main dashboard.
+  Safe"), a **pick finder** (choose any team, see every remaining week they play ranked best
+  matchup first, independent of the plan above — flags when the plan actually uses a different
+  team that week instead, so you can see the tradeoff of overriding it), and the same transparency
+  about assumptions and blind spots as the main dashboard.
   Published version: https://claude.ai/artifact/YDVPUeuoXnxhY1JqgCawok
 
 **What this can't see:** weekly injury reports, starter changes, and market-line movement for any

@@ -508,6 +508,4374 @@
     }
   ],
   "survival_prob": 0.016701,
+  "team_schedule": {
+    "Arizona Cardinals": [
+      {
+        "week": 15,
+        "opponent": "New York Jets",
+        "is_home": true,
+        "p_blend": 0.5211,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 17,
+        "opponent": "Las Vegas Raiders",
+        "is_home": true,
+        "p_blend": 0.5104,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 12,
+        "opponent": "Washington Commanders",
+        "is_home": true,
+        "p_blend": 0.4497,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 4,
+        "opponent": "New York Giants",
+        "is_home": false,
+        "p_blend": 0.3508,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 7,
+        "opponent": "Denver Broncos",
+        "is_home": true,
+        "p_blend": 0.3244,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 16,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.321,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 5,
+        "opponent": "Detroit Lions",
+        "is_home": true,
+        "p_blend": 0.2949,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 13,
+        "opponent": "Philadelphia Eagles",
+        "is_home": true,
+        "p_blend": 0.2877,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 3,
+        "opponent": "San Francisco 49ers",
+        "is_home": false,
+        "p_blend": 0.26,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 18,
+        "opponent": "San Francisco 49ers",
+        "is_home": true,
+        "p_blend": 0.2546,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 10,
+        "opponent": "Los Angeles Rams",
+        "is_home": true,
+        "p_blend": 0.2248,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 8,
+        "opponent": "Dallas Cowboys",
+        "is_home": false,
+        "p_blend": 0.2226,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 11,
+        "opponent": "Kansas City Chiefs",
+        "is_home": false,
+        "p_blend": 0.178,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 9,
+        "opponent": "Seattle Seahawks",
+        "is_home": false,
+        "p_blend": 0.1702,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 6,
+        "opponent": "Los Angeles Rams",
+        "is_home": false,
+        "p_blend": 0.1447,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      }
+    ],
+    "Atlanta Falcons": [
+      {
+        "week": 14,
+        "opponent": "Cleveland Browns",
+        "is_home": false,
+        "p_blend": 0.5233,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 17,
+        "opponent": "New Orleans Saints",
+        "is_home": true,
+        "p_blend": 0.5229,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 16,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": true,
+        "p_blend": 0.503,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 6,
+        "opponent": "Chicago Bears",
+        "is_home": true,
+        "p_blend": 0.4427,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 18,
+        "opponent": "Carolina Panthers",
+        "is_home": false,
+        "p_blend": 0.4218,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 15,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.4149,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 4,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.4017,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 8,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": false,
+        "p_blend": 0.3833,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 9,
+        "opponent": "Cincinnati Bengals",
+        "is_home": true,
+        "p_blend": 0.3732,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 13,
+        "opponent": "Detroit Lions",
+        "is_home": true,
+        "p_blend": 0.3703,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 10,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.3439,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 12,
+        "opponent": "Minnesota Vikings",
+        "is_home": false,
+        "p_blend": 0.333,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 7,
+        "opponent": "San Francisco 49ers",
+        "is_home": true,
+        "p_blend": 0.3307,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 5,
+        "opponent": "Baltimore Ravens",
+        "is_home": true,
+        "p_blend": 0.3144,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      }
+    ],
+    "Baltimore Ravens": [
+      {
+        "week": 16,
+        "opponent": "Cleveland Browns",
+        "is_home": true,
+        "p_blend": 0.8418,
+        "tier": "Very Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 4,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.8111,
+        "tier": "Very Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 6,
+        "opponent": "Cleveland Browns",
+        "is_home": false,
+        "p_blend": 0.7564,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 14,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": true,
+        "p_blend": 0.7392,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 18,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": true,
+        "p_blend": 0.7264,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 5,
+        "opponent": "Atlanta Falcons",
+        "is_home": false,
+        "p_blend": 0.6856,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 10,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.6837,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 9,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": true,
+        "p_blend": 0.6738,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 11,
+        "opponent": "Carolina Panthers",
+        "is_home": false,
+        "p_blend": 0.6665,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 7,
+        "opponent": "Cincinnati Bengals",
+        "is_home": true,
+        "p_blend": 0.6232,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 15,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": false,
+        "p_blend": 0.6157,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 3,
+        "opponent": "Dallas Cowboys",
+        "is_home": false,
+        "p_blend": 0.592,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 12,
+        "opponent": "Houston Texans",
+        "is_home": false,
+        "p_blend": 0.531,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 17,
+        "opponent": "Cincinnati Bengals",
+        "is_home": false,
+        "p_blend": 0.5025,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 8,
+        "opponent": "Buffalo Bills",
+        "is_home": false,
+        "p_blend": 0.442,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      }
+    ],
+    "Buffalo Bills": [
+      {
+        "week": 11,
+        "opponent": "Miami Dolphins",
+        "is_home": true,
+        "p_blend": 0.8741,
+        "tier": "Very Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 18,
+        "opponent": "New York Jets",
+        "is_home": true,
+        "p_blend": 0.8174,
+        "tier": "Very Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 17,
+        "opponent": "Miami Dolphins",
+        "is_home": false,
+        "p_blend": 0.7993,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 10,
+        "opponent": "New York Jets",
+        "is_home": false,
+        "p_blend": 0.725,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 6,
+        "opponent": "Las Vegas Raiders",
+        "is_home": false,
+        "p_blend": 0.7159,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 3,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.697,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 15,
+        "opponent": "Chicago Bears",
+        "is_home": true,
+        "p_blend": 0.6841,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 4,
+        "opponent": "New England Patriots",
+        "is_home": true,
+        "p_blend": 0.6391,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 12,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.5895,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 9,
+        "opponent": "Minnesota Vikings",
+        "is_home": false,
+        "p_blend": 0.5775,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 8,
+        "opponent": "Baltimore Ravens",
+        "is_home": true,
+        "p_blend": 0.558,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 14,
+        "opponent": "Green Bay Packers",
+        "is_home": false,
+        "p_blend": 0.557,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 16,
+        "opponent": "Denver Broncos",
+        "is_home": false,
+        "p_blend": 0.5331,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 13,
+        "opponent": "New England Patriots",
+        "is_home": false,
+        "p_blend": 0.5194,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 5,
+        "opponent": "Los Angeles Rams",
+        "is_home": false,
+        "p_blend": 0.4127,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      }
+    ],
+    "Carolina Panthers": [
+      {
+        "week": 18,
+        "opponent": "Atlanta Falcons",
+        "is_home": true,
+        "p_blend": 0.5782,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 3,
+        "opponent": "Cleveland Browns",
+        "is_home": false,
+        "p_blend": 0.575,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 14,
+        "opponent": "New Orleans Saints",
+        "is_home": true,
+        "p_blend": 0.5416,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 7,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": true,
+        "p_blend": 0.5219,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 9,
+        "opponent": "Denver Broncos",
+        "is_home": true,
+        "p_blend": 0.4239,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 10,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.4201,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 12,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": false,
+        "p_blend": 0.4004,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 15,
+        "opponent": "Cincinnati Bengals",
+        "is_home": true,
+        "p_blend": 0.3927,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 4,
+        "opponent": "Detroit Lions",
+        "is_home": true,
+        "p_blend": 0.3896,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 16,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": false,
+        "p_blend": 0.3851,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 17,
+        "opponent": "Seattle Seahawks",
+        "is_home": true,
+        "p_blend": 0.3508,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 13,
+        "opponent": "Minnesota Vikings",
+        "is_home": false,
+        "p_blend": 0.3493,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 11,
+        "opponent": "Baltimore Ravens",
+        "is_home": true,
+        "p_blend": 0.3335,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 8,
+        "opponent": "Green Bay Packers",
+        "is_home": false,
+        "p_blend": 0.3324,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 6,
+        "opponent": "Philadelphia Eagles",
+        "is_home": false,
+        "p_blend": 0.2727,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      }
+    ],
+    "Chicago Bears": [
+      {
+        "week": 4,
+        "opponent": "New York Jets",
+        "is_home": true,
+        "p_blend": 0.713,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 14,
+        "opponent": "Miami Dolphins",
+        "is_home": false,
+        "p_blend": 0.693,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 11,
+        "opponent": "New Orleans Saints",
+        "is_home": true,
+        "p_blend": 0.6384,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 9,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": true,
+        "p_blend": 0.6189,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 6,
+        "opponent": "Atlanta Falcons",
+        "is_home": false,
+        "p_blend": 0.5573,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 16,
+        "opponent": "Green Bay Packers",
+        "is_home": true,
+        "p_blend": 0.5474,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 13,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": true,
+        "p_blend": 0.5455,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 7,
+        "opponent": "New England Patriots",
+        "is_home": true,
+        "p_blend": 0.5091,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 17,
+        "opponent": "Detroit Lions",
+        "is_home": true,
+        "p_blend": 0.4867,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 18,
+        "opponent": "Minnesota Vikings",
+        "is_home": false,
+        "p_blend": 0.4458,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 5,
+        "opponent": "Green Bay Packers",
+        "is_home": false,
+        "p_blend": 0.4253,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 3,
+        "opponent": "Philadelphia Eagles",
+        "is_home": true,
+        "p_blend": 0.389,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 12,
+        "opponent": "Detroit Lions",
+        "is_home": false,
+        "p_blend": 0.3666,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 8,
+        "opponent": "Seattle Seahawks",
+        "is_home": false,
+        "p_blend": 0.3311,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 15,
+        "opponent": "Buffalo Bills",
+        "is_home": false,
+        "p_blend": 0.3159,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      }
+    ],
+    "Cincinnati Bengals": [
+      {
+        "week": 18,
+        "opponent": "Cleveland Browns",
+        "is_home": true,
+        "p_blend": 0.8001,
+        "tier": "Very Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 8,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.7649,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 5,
+        "opponent": "Miami Dolphins",
+        "is_home": false,
+        "p_blend": 0.7532,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 13,
+        "opponent": "Cleveland Browns",
+        "is_home": false,
+        "p_blend": 0.7037,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 12,
+        "opponent": "New Orleans Saints",
+        "is_home": true,
+        "p_blend": 0.7033,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 10,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": true,
+        "p_blend": 0.6707,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 9,
+        "opponent": "Atlanta Falcons",
+        "is_home": false,
+        "p_blend": 0.6268,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 4,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": true,
+        "p_blend": 0.6149,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 15,
+        "opponent": "Carolina Panthers",
+        "is_home": false,
+        "p_blend": 0.6073,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 11,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.6033,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 3,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": false,
+        "p_blend": 0.603,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 16,
+        "opponent": "Indianapolis Colts",
+        "is_home": false,
+        "p_blend": 0.5715,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 14,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.529,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 17,
+        "opponent": "Baltimore Ravens",
+        "is_home": true,
+        "p_blend": 0.4975,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 7,
+        "opponent": "Baltimore Ravens",
+        "is_home": false,
+        "p_blend": 0.3768,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      }
+    ],
+    "Cleveland Browns": [
+      {
+        "week": 12,
+        "opponent": "Las Vegas Raiders",
+        "is_home": true,
+        "p_blend": 0.5137,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 14,
+        "opponent": "Atlanta Falcons",
+        "is_home": true,
+        "p_blend": 0.4767,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 3,
+        "opponent": "Carolina Panthers",
+        "is_home": true,
+        "p_blend": 0.425,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 17,
+        "opponent": "Indianapolis Colts",
+        "is_home": true,
+        "p_blend": 0.4204,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 5,
+        "opponent": "New York Jets",
+        "is_home": false,
+        "p_blend": 0.4032,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 4,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": true,
+        "p_blend": 0.4022,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 7,
+        "opponent": "Tennessee Titans",
+        "is_home": false,
+        "p_blend": 0.3916,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 15,
+        "opponent": "New York Giants",
+        "is_home": false,
+        "p_blend": 0.3503,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 9,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.3218,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 10,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.3212,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 13,
+        "opponent": "Cincinnati Bengals",
+        "is_home": true,
+        "p_blend": 0.2963,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 8,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": false,
+        "p_blend": 0.2895,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 6,
+        "opponent": "Baltimore Ravens",
+        "is_home": true,
+        "p_blend": 0.2436,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 18,
+        "opponent": "Cincinnati Bengals",
+        "is_home": false,
+        "p_blend": 0.1999,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 16,
+        "opponent": "Baltimore Ravens",
+        "is_home": false,
+        "p_blend": 0.1582,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      }
+    ],
+    "Dallas Cowboys": [
+      {
+        "week": 8,
+        "opponent": "Arizona Cardinals",
+        "is_home": true,
+        "p_blend": 0.7774,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 11,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.7397,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 17,
+        "opponent": "New York Giants",
+        "is_home": true,
+        "p_blend": 0.7022,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 5,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": true,
+        "p_blend": 0.6574,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 16,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": true,
+        "p_blend": 0.5853,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 18,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.5724,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 9,
+        "opponent": "Indianapolis Colts",
+        "is_home": false,
+        "p_blend": 0.5405,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 12,
+        "opponent": "Philadelphia Eagles",
+        "is_home": true,
+        "p_blend": 0.5189,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 10,
+        "opponent": "San Francisco 49ers",
+        "is_home": true,
+        "p_blend": 0.4821,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 6,
+        "opponent": "Green Bay Packers",
+        "is_home": false,
+        "p_blend": 0.4648,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 4,
+        "opponent": "Houston Texans",
+        "is_home": false,
+        "p_blend": 0.4358,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 3,
+        "opponent": "Baltimore Ravens",
+        "is_home": true,
+        "p_blend": 0.408,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 7,
+        "opponent": "Philadelphia Eagles",
+        "is_home": false,
+        "p_blend": 0.3974,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 13,
+        "opponent": "Seattle Seahawks",
+        "is_home": false,
+        "p_blend": 0.3666,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 15,
+        "opponent": "Los Angeles Rams",
+        "is_home": false,
+        "p_blend": 0.3246,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      }
+    ],
+    "Denver Broncos": [
+      {
+        "week": 13,
+        "opponent": "Miami Dolphins",
+        "is_home": true,
+        "p_blend": 0.8189,
+        "tier": "Very Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 11,
+        "opponent": "Las Vegas Raiders",
+        "is_home": true,
+        "p_blend": 0.7379,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 7,
+        "opponent": "Arizona Cardinals",
+        "is_home": false,
+        "p_blend": 0.6756,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 14,
+        "opponent": "New York Jets",
+        "is_home": false,
+        "p_blend": 0.6402,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 15,
+        "opponent": "Las Vegas Raiders",
+        "is_home": false,
+        "p_blend": 0.6298,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 18,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.5924,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 9,
+        "opponent": "Carolina Panthers",
+        "is_home": false,
+        "p_blend": 0.5761,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 12,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": false,
+        "p_blend": 0.5203,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 8,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.4959,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 6,
+        "opponent": "Seattle Seahawks",
+        "is_home": true,
+        "p_blend": 0.4852,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 5,
+        "opponent": "Los Angeles Chargers",
+        "is_home": false,
+        "p_blend": 0.471,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 16,
+        "opponent": "Buffalo Bills",
+        "is_home": true,
+        "p_blend": 0.4669,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 3,
+        "opponent": "Los Angeles Rams",
+        "is_home": true,
+        "p_blend": 0.428,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 17,
+        "opponent": "New England Patriots",
+        "is_home": false,
+        "p_blend": 0.4253,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 4,
+        "opponent": "San Francisco 49ers",
+        "is_home": false,
+        "p_blend": 0.3609,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      }
+    ],
+    "Detroit Lions": [
+      {
+        "week": 14,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.7673,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 9,
+        "opponent": "Miami Dolphins",
+        "is_home": false,
+        "p_blend": 0.7557,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 16,
+        "opponent": "New York Giants",
+        "is_home": true,
+        "p_blend": 0.7323,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 3,
+        "opponent": "New York Jets",
+        "is_home": true,
+        "p_blend": 0.707,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 5,
+        "opponent": "Arizona Cardinals",
+        "is_home": false,
+        "p_blend": 0.7051,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 11,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": true,
+        "p_blend": 0.6879,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 8,
+        "opponent": "Minnesota Vikings",
+        "is_home": true,
+        "p_blend": 0.639,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 12,
+        "opponent": "Chicago Bears",
+        "is_home": true,
+        "p_blend": 0.6334,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 13,
+        "opponent": "Atlanta Falcons",
+        "is_home": false,
+        "p_blend": 0.6297,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 7,
+        "opponent": "Green Bay Packers",
+        "is_home": true,
+        "p_blend": 0.6204,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 4,
+        "opponent": "Carolina Panthers",
+        "is_home": false,
+        "p_blend": 0.6104,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 10,
+        "opponent": "New England Patriots",
+        "is_home": true,
+        "p_blend": 0.5829,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 15,
+        "opponent": "Minnesota Vikings",
+        "is_home": false,
+        "p_blend": 0.5197,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 17,
+        "opponent": "Chicago Bears",
+        "is_home": false,
+        "p_blend": 0.5133,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 18,
+        "opponent": "Green Bay Packers",
+        "is_home": false,
+        "p_blend": 0.4995,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      }
+    ],
+    "Green Bay Packers": [
+      {
+        "week": 15,
+        "opponent": "Miami Dolphins",
+        "is_home": true,
+        "p_blend": 0.8016,
+        "tier": "Very Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 8,
+        "opponent": "Carolina Panthers",
+        "is_home": true,
+        "p_blend": 0.6676,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 10,
+        "opponent": "Minnesota Vikings",
+        "is_home": true,
+        "p_blend": 0.5807,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 5,
+        "opponent": "Chicago Bears",
+        "is_home": true,
+        "p_blend": 0.5747,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 6,
+        "opponent": "Dallas Cowboys",
+        "is_home": true,
+        "p_blend": 0.5352,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 13,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.5329,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 17,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.5321,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 4,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": false,
+        "p_blend": 0.5129,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 18,
+        "opponent": "Detroit Lions",
+        "is_home": true,
+        "p_blend": 0.5005,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 16,
+        "opponent": "Chicago Bears",
+        "is_home": false,
+        "p_blend": 0.4526,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 14,
+        "opponent": "Buffalo Bills",
+        "is_home": true,
+        "p_blend": 0.443,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 9,
+        "opponent": "New England Patriots",
+        "is_home": false,
+        "p_blend": 0.4017,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 7,
+        "opponent": "Detroit Lions",
+        "is_home": false,
+        "p_blend": 0.3796,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 12,
+        "opponent": "Los Angeles Rams",
+        "is_home": false,
+        "p_blend": 0.3017,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      }
+    ],
+    "Houston Texans": [
+      {
+        "week": 18,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.7421,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 7,
+        "opponent": "New York Giants",
+        "is_home": true,
+        "p_blend": 0.7047,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 10,
+        "opponent": "Cleveland Browns",
+        "is_home": false,
+        "p_blend": 0.6788,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 11,
+        "opponent": "Indianapolis Colts",
+        "is_home": true,
+        "p_blend": 0.6617,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 5,
+        "opponent": "Tennessee Titans",
+        "is_home": false,
+        "p_blend": 0.634,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 15,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": true,
+        "p_blend": 0.5884,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 3,
+        "opponent": "Indianapolis Colts",
+        "is_home": false,
+        "p_blend": 0.576,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 14,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.5754,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 4,
+        "opponent": "Dallas Cowboys",
+        "is_home": true,
+        "p_blend": 0.5642,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 13,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": false,
+        "p_blend": 0.5248,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 9,
+        "opponent": "Los Angeles Chargers",
+        "is_home": false,
+        "p_blend": 0.4756,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 12,
+        "opponent": "Baltimore Ravens",
+        "is_home": true,
+        "p_blend": 0.469,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 17,
+        "opponent": "Green Bay Packers",
+        "is_home": false,
+        "p_blend": 0.4679,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 6,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": false,
+        "p_blend": 0.4667,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 16,
+        "opponent": "Philadelphia Eagles",
+        "is_home": false,
+        "p_blend": 0.4004,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      }
+    ],
+    "Indianapolis Colts": [
+      {
+        "week": 10,
+        "opponent": "Miami Dolphins",
+        "is_home": true,
+        "p_blend": 0.7452,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 6,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.6502,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 12,
+        "opponent": "New York Giants",
+        "is_home": true,
+        "p_blend": 0.6083,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 17,
+        "opponent": "Cleveland Browns",
+        "is_home": false,
+        "p_blend": 0.5796,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 15,
+        "opponent": "Tennessee Titans",
+        "is_home": false,
+        "p_blend": 0.5316,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 18,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": true,
+        "p_blend": 0.4843,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 4,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.471,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 9,
+        "opponent": "Dallas Cowboys",
+        "is_home": true,
+        "p_blend": 0.4595,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 16,
+        "opponent": "Cincinnati Bengals",
+        "is_home": true,
+        "p_blend": 0.4285,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 3,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.424,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 5,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": false,
+        "p_blend": 0.4208,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 7,
+        "opponent": "Minnesota Vikings",
+        "is_home": false,
+        "p_blend": 0.3847,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 8,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": false,
+        "p_blend": 0.3644,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 11,
+        "opponent": "Houston Texans",
+        "is_home": false,
+        "p_blend": 0.3383,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 14,
+        "opponent": "Philadelphia Eagles",
+        "is_home": false,
+        "p_blend": 0.3036,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      }
+    ],
+    "Jacksonville Jaguars": [
+      {
+        "week": 12,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.7176,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 17,
+        "opponent": "Washington Commanders",
+        "is_home": true,
+        "p_blend": 0.6644,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 8,
+        "opponent": "Indianapolis Colts",
+        "is_home": true,
+        "p_blend": 0.6356,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 14,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": true,
+        "p_blend": 0.6167,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 10,
+        "opponent": "Tennessee Titans",
+        "is_home": false,
+        "p_blend": 0.6066,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 3,
+        "opponent": "New England Patriots",
+        "is_home": true,
+        "p_blend": 0.578,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 11,
+        "opponent": "New York Giants",
+        "is_home": false,
+        "p_blend": 0.5636,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 6,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.5333,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 18,
+        "opponent": "Indianapolis Colts",
+        "is_home": false,
+        "p_blend": 0.5157,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 5,
+        "opponent": "Philadelphia Eagles",
+        "is_home": true,
+        "p_blend": 0.4941,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 13,
+        "opponent": "Chicago Bears",
+        "is_home": false,
+        "p_blend": 0.4545,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 16,
+        "opponent": "Dallas Cowboys",
+        "is_home": false,
+        "p_blend": 0.4147,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 15,
+        "opponent": "Houston Texans",
+        "is_home": false,
+        "p_blend": 0.4116,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 4,
+        "opponent": "Cincinnati Bengals",
+        "is_home": false,
+        "p_blend": 0.3851,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 9,
+        "opponent": "Baltimore Ravens",
+        "is_home": false,
+        "p_blend": 0.3262,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      }
+    ],
+    "Kansas City Chiefs": [
+      {
+        "week": 11,
+        "opponent": "Arizona Cardinals",
+        "is_home": true,
+        "p_blend": 0.822,
+        "tier": "Very Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 3,
+        "opponent": "Miami Dolphins",
+        "is_home": false,
+        "p_blend": 0.798,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 9,
+        "opponent": "New York Jets",
+        "is_home": true,
+        "p_blend": 0.7967,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 18,
+        "opponent": "Las Vegas Raiders",
+        "is_home": true,
+        "p_blend": 0.7884,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 4,
+        "opponent": "Las Vegas Raiders",
+        "is_home": false,
+        "p_blend": 0.6897,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 10,
+        "opponent": "Atlanta Falcons",
+        "is_home": false,
+        "p_blend": 0.6561,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 6,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.6543,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 15,
+        "opponent": "New England Patriots",
+        "is_home": true,
+        "p_blend": 0.6115,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 16,
+        "opponent": "San Francisco 49ers",
+        "is_home": true,
+        "p_blend": 0.5459,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 17,
+        "opponent": "Los Angeles Chargers",
+        "is_home": false,
+        "p_blend": 0.5361,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 8,
+        "opponent": "Denver Broncos",
+        "is_home": false,
+        "p_blend": 0.5041,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 14,
+        "opponent": "Cincinnati Bengals",
+        "is_home": false,
+        "p_blend": 0.471,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 7,
+        "opponent": "Seattle Seahawks",
+        "is_home": false,
+        "p_blend": 0.4283,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 12,
+        "opponent": "Buffalo Bills",
+        "is_home": false,
+        "p_blend": 0.4105,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 13,
+        "opponent": "Los Angeles Rams",
+        "is_home": false,
+        "p_blend": 0.3841,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      }
+    ],
+    "Las Vegas Raiders": [
+      {
+        "week": 16,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.5595,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 17,
+        "opponent": "Arizona Cardinals",
+        "is_home": false,
+        "p_blend": 0.4896,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 12,
+        "opponent": "Cleveland Browns",
+        "is_home": false,
+        "p_blend": 0.4863,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 8,
+        "opponent": "New York Jets",
+        "is_home": false,
+        "p_blend": 0.4495,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 3,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.417,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 14,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.4021,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 15,
+        "opponent": "Denver Broncos",
+        "is_home": true,
+        "p_blend": 0.3702,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 4,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.3103,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 10,
+        "opponent": "Seattle Seahawks",
+        "is_home": true,
+        "p_blend": 0.3004,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 6,
+        "opponent": "Buffalo Bills",
+        "is_home": true,
+        "p_blend": 0.2841,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 7,
+        "opponent": "Los Angeles Rams",
+        "is_home": true,
+        "p_blend": 0.2631,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 11,
+        "opponent": "Denver Broncos",
+        "is_home": false,
+        "p_blend": 0.2621,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 5,
+        "opponent": "New England Patriots",
+        "is_home": false,
+        "p_blend": 0.2503,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 18,
+        "opponent": "Kansas City Chiefs",
+        "is_home": false,
+        "p_blend": 0.2116,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 9,
+        "opponent": "San Francisco 49ers",
+        "is_home": false,
+        "p_blend": 0.1999,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      }
+    ],
+    "Los Angeles Chargers": [
+      {
+        "week": 11,
+        "opponent": "New York Jets",
+        "is_home": true,
+        "p_blend": 0.7187,
+        "tier": "Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 16,
+        "opponent": "Miami Dolphins",
+        "is_home": false,
+        "p_blend": 0.6986,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 14,
+        "opponent": "Las Vegas Raiders",
+        "is_home": false,
+        "p_blend": 0.5979,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 5,
+        "opponent": "Denver Broncos",
+        "is_home": true,
+        "p_blend": 0.529,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 9,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.5244,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 12,
+        "opponent": "New England Patriots",
+        "is_home": true,
+        "p_blend": 0.5152,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 13,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": false,
+        "p_blend": 0.5053,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 17,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.4639,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 15,
+        "opponent": "San Francisco 49ers",
+        "is_home": true,
+        "p_blend": 0.4489,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 18,
+        "opponent": "Denver Broncos",
+        "is_home": false,
+        "p_blend": 0.4076,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 6,
+        "opponent": "Kansas City Chiefs",
+        "is_home": false,
+        "p_blend": 0.3457,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 4,
+        "opponent": "Seattle Seahawks",
+        "is_home": false,
+        "p_blend": 0.3363,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 10,
+        "opponent": "Baltimore Ravens",
+        "is_home": false,
+        "p_blend": 0.3163,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 3,
+        "opponent": "Buffalo Bills",
+        "is_home": false,
+        "p_blend": 0.303,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 8,
+        "opponent": "Los Angeles Rams",
+        "is_home": false,
+        "p_blend": 0.2953,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      }
+    ],
+    "Los Angeles Rams": [
+      {
+        "week": 6,
+        "opponent": "Arizona Cardinals",
+        "is_home": true,
+        "p_blend": 0.8553,
+        "tier": "Very Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 10,
+        "opponent": "Arizona Cardinals",
+        "is_home": false,
+        "p_blend": 0.7752,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 7,
+        "opponent": "Las Vegas Raiders",
+        "is_home": false,
+        "p_blend": 0.7369,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 8,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.7047,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 12,
+        "opponent": "Green Bay Packers",
+        "is_home": true,
+        "p_blend": 0.6983,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 9,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.6856,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 15,
+        "opponent": "Dallas Cowboys",
+        "is_home": true,
+        "p_blend": 0.6754,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 17,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": false,
+        "p_blend": 0.6549,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 13,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.6159,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 18,
+        "opponent": "Seattle Seahawks",
+        "is_home": true,
+        "p_blend": 0.6054,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 5,
+        "opponent": "Buffalo Bills",
+        "is_home": true,
+        "p_blend": 0.5873,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 3,
+        "opponent": "Denver Broncos",
+        "is_home": false,
+        "p_blend": 0.572,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 4,
+        "opponent": "Philadelphia Eagles",
+        "is_home": false,
+        "p_blend": 0.5163,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 16,
+        "opponent": "Seattle Seahawks",
+        "is_home": false,
+        "p_blend": 0.4841,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 14,
+        "opponent": "San Francisco 49ers",
+        "is_home": false,
+        "p_blend": 0.4795,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      }
+    ],
+    "Miami Dolphins": [
+      {
+        "week": 12,
+        "opponent": "New York Jets",
+        "is_home": true,
+        "p_blend": 0.4645,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 7,
+        "opponent": "New York Jets",
+        "is_home": false,
+        "p_blend": 0.346,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 14,
+        "opponent": "Chicago Bears",
+        "is_home": true,
+        "p_blend": 0.307,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 16,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.3014,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 8,
+        "opponent": "New England Patriots",
+        "is_home": true,
+        "p_blend": 0.2616,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 10,
+        "opponent": "Indianapolis Colts",
+        "is_home": false,
+        "p_blend": 0.2548,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 5,
+        "opponent": "Cincinnati Bengals",
+        "is_home": true,
+        "p_blend": 0.2468,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 9,
+        "opponent": "Detroit Lions",
+        "is_home": true,
+        "p_blend": 0.2443,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 4,
+        "opponent": "Minnesota Vikings",
+        "is_home": false,
+        "p_blend": 0.2122,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 3,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.202,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 17,
+        "opponent": "Buffalo Bills",
+        "is_home": true,
+        "p_blend": 0.2007,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 15,
+        "opponent": "Green Bay Packers",
+        "is_home": false,
+        "p_blend": 0.1984,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 13,
+        "opponent": "Denver Broncos",
+        "is_home": false,
+        "p_blend": 0.1811,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 18,
+        "opponent": "New England Patriots",
+        "is_home": false,
+        "p_blend": 0.1721,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 11,
+        "opponent": "Buffalo Bills",
+        "is_home": false,
+        "p_blend": 0.1259,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      }
+    ],
+    "Minnesota Vikings": [
+      {
+        "week": 4,
+        "opponent": "Miami Dolphins",
+        "is_home": true,
+        "p_blend": 0.7878,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 12,
+        "opponent": "Atlanta Falcons",
+        "is_home": true,
+        "p_blend": 0.667,
+        "tier": "Moderate",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 13,
+        "opponent": "Carolina Panthers",
+        "is_home": true,
+        "p_blend": 0.6507,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 16,
+        "opponent": "Washington Commanders",
+        "is_home": true,
+        "p_blend": 0.6454,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 7,
+        "opponent": "Indianapolis Colts",
+        "is_home": true,
+        "p_blend": 0.6153,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 17,
+        "opponent": "New York Jets",
+        "is_home": false,
+        "p_blend": 0.5978,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 18,
+        "opponent": "Chicago Bears",
+        "is_home": true,
+        "p_blend": 0.5542,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 3,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": false,
+        "p_blend": 0.54,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 5,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.5126,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 15,
+        "opponent": "Detroit Lions",
+        "is_home": true,
+        "p_blend": 0.4803,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 9,
+        "opponent": "Buffalo Bills",
+        "is_home": true,
+        "p_blend": 0.4225,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 10,
+        "opponent": "Green Bay Packers",
+        "is_home": false,
+        "p_blend": 0.4193,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 14,
+        "opponent": "New England Patriots",
+        "is_home": false,
+        "p_blend": 0.3817,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 8,
+        "opponent": "Detroit Lions",
+        "is_home": false,
+        "p_blend": 0.361,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 11,
+        "opponent": "San Francisco 49ers",
+        "is_home": false,
+        "p_blend": 0.3196,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      }
+    ],
+    "New England Patriots": [
+      {
+        "week": 18,
+        "opponent": "Miami Dolphins",
+        "is_home": true,
+        "p_blend": 0.8279,
+        "tier": "Very Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 6,
+        "opponent": "New York Jets",
+        "is_home": true,
+        "p_blend": 0.7586,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 5,
+        "opponent": "Las Vegas Raiders",
+        "is_home": true,
+        "p_blend": 0.7497,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 8,
+        "opponent": "Miami Dolphins",
+        "is_home": false,
+        "p_blend": 0.7384,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 16,
+        "opponent": "New York Jets",
+        "is_home": false,
+        "p_blend": 0.6534,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 14,
+        "opponent": "Minnesota Vikings",
+        "is_home": true,
+        "p_blend": 0.6183,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 9,
+        "opponent": "Green Bay Packers",
+        "is_home": true,
+        "p_blend": 0.5983,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 17,
+        "opponent": "Denver Broncos",
+        "is_home": true,
+        "p_blend": 0.5747,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 7,
+        "opponent": "Chicago Bears",
+        "is_home": false,
+        "p_blend": 0.4909,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 12,
+        "opponent": "Los Angeles Chargers",
+        "is_home": false,
+        "p_blend": 0.4848,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 13,
+        "opponent": "Buffalo Bills",
+        "is_home": true,
+        "p_blend": 0.4806,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 3,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": false,
+        "p_blend": 0.422,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 10,
+        "opponent": "Detroit Lions",
+        "is_home": false,
+        "p_blend": 0.4171,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 15,
+        "opponent": "Kansas City Chiefs",
+        "is_home": false,
+        "p_blend": 0.3885,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 4,
+        "opponent": "Buffalo Bills",
+        "is_home": false,
+        "p_blend": 0.3609,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      }
+    ],
+    "New Orleans Saints": [
+      {
+        "week": 16,
+        "opponent": "Arizona Cardinals",
+        "is_home": true,
+        "p_blend": 0.679,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 9,
+        "opponent": "Cleveland Browns",
+        "is_home": true,
+        "p_blend": 0.6782,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 4,
+        "opponent": "Atlanta Falcons",
+        "is_home": true,
+        "p_blend": 0.5983,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 3,
+        "opponent": "Las Vegas Raiders",
+        "is_home": true,
+        "p_blend": 0.583,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 10,
+        "opponent": "Carolina Panthers",
+        "is_home": true,
+        "p_blend": 0.5799,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 18,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": true,
+        "p_blend": 0.5413,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 7,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": true,
+        "p_blend": 0.5241,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 5,
+        "opponent": "Minnesota Vikings",
+        "is_home": true,
+        "p_blend": 0.4874,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 17,
+        "opponent": "Atlanta Falcons",
+        "is_home": false,
+        "p_blend": 0.4771,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 6,
+        "opponent": "New York Giants",
+        "is_home": false,
+        "p_blend": 0.4694,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 13,
+        "opponent": "Green Bay Packers",
+        "is_home": true,
+        "p_blend": 0.4671,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 14,
+        "opponent": "Carolina Panthers",
+        "is_home": false,
+        "p_blend": 0.4584,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 15,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": false,
+        "p_blend": 0.4193,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 11,
+        "opponent": "Chicago Bears",
+        "is_home": false,
+        "p_blend": 0.3616,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 12,
+        "opponent": "Cincinnati Bengals",
+        "is_home": false,
+        "p_blend": 0.2967,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      }
+    ],
+    "New York Giants": [
+      {
+        "week": 15,
+        "opponent": "Cleveland Browns",
+        "is_home": true,
+        "p_blend": 0.6497,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 4,
+        "opponent": "Arizona Cardinals",
+        "is_home": true,
+        "p_blend": 0.6492,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 3,
+        "opponent": "Tennessee Titans",
+        "is_home": true,
+        "p_blend": 0.586,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 10,
+        "opponent": "Washington Commanders",
+        "is_home": true,
+        "p_blend": 0.5444,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 6,
+        "opponent": "New Orleans Saints",
+        "is_home": true,
+        "p_blend": 0.5306,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 11,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": true,
+        "p_blend": 0.4364,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 5,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.4223,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 12,
+        "opponent": "Indianapolis Colts",
+        "is_home": false,
+        "p_blend": 0.3917,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 18,
+        "opponent": "Philadelphia Eagles",
+        "is_home": true,
+        "p_blend": 0.3703,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 13,
+        "opponent": "San Francisco 49ers",
+        "is_home": true,
+        "p_blend": 0.3372,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 17,
+        "opponent": "Dallas Cowboys",
+        "is_home": false,
+        "p_blend": 0.2978,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 7,
+        "opponent": "Houston Texans",
+        "is_home": false,
+        "p_blend": 0.2953,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 16,
+        "opponent": "Detroit Lions",
+        "is_home": false,
+        "p_blend": 0.2677,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 9,
+        "opponent": "Philadelphia Eagles",
+        "is_home": false,
+        "p_blend": 0.2616,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 14,
+        "opponent": "Seattle Seahawks",
+        "is_home": false,
+        "p_blend": 0.2374,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      }
+    ],
+    "New York Jets": [
+      {
+        "week": 7,
+        "opponent": "Miami Dolphins",
+        "is_home": true,
+        "p_blend": 0.654,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 5,
+        "opponent": "Cleveland Browns",
+        "is_home": true,
+        "p_blend": 0.5968,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 8,
+        "opponent": "Las Vegas Raiders",
+        "is_home": true,
+        "p_blend": 0.5505,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 12,
+        "opponent": "Miami Dolphins",
+        "is_home": false,
+        "p_blend": 0.5355,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 15,
+        "opponent": "Arizona Cardinals",
+        "is_home": false,
+        "p_blend": 0.4789,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 17,
+        "opponent": "Minnesota Vikings",
+        "is_home": true,
+        "p_blend": 0.4022,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 14,
+        "opponent": "Denver Broncos",
+        "is_home": true,
+        "p_blend": 0.3598,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 16,
+        "opponent": "New England Patriots",
+        "is_home": true,
+        "p_blend": 0.3466,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 3,
+        "opponent": "Detroit Lions",
+        "is_home": false,
+        "p_blend": 0.293,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 4,
+        "opponent": "Chicago Bears",
+        "is_home": false,
+        "p_blend": 0.287,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 11,
+        "opponent": "Los Angeles Chargers",
+        "is_home": false,
+        "p_blend": 0.2813,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 10,
+        "opponent": "Buffalo Bills",
+        "is_home": true,
+        "p_blend": 0.275,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 6,
+        "opponent": "New England Patriots",
+        "is_home": false,
+        "p_blend": 0.2414,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 9,
+        "opponent": "Kansas City Chiefs",
+        "is_home": false,
+        "p_blend": 0.2033,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 18,
+        "opponent": "Buffalo Bills",
+        "is_home": false,
+        "p_blend": 0.1826,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      }
+    ],
+    "Philadelphia Eagles": [
+      {
+        "week": 9,
+        "opponent": "New York Giants",
+        "is_home": true,
+        "p_blend": 0.7384,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 6,
+        "opponent": "Carolina Panthers",
+        "is_home": true,
+        "p_blend": 0.7273,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 13,
+        "opponent": "Arizona Cardinals",
+        "is_home": false,
+        "p_blend": 0.7123,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 14,
+        "opponent": "Indianapolis Colts",
+        "is_home": true,
+        "p_blend": 0.6964,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 11,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": true,
+        "p_blend": 0.6804,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 18,
+        "opponent": "New York Giants",
+        "is_home": false,
+        "p_blend": 0.6297,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 8,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.6137,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 3,
+        "opponent": "Chicago Bears",
+        "is_home": false,
+        "p_blend": 0.611,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 7,
+        "opponent": "Dallas Cowboys",
+        "is_home": true,
+        "p_blend": 0.6026,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 16,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.5996,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 15,
+        "opponent": "Seattle Seahawks",
+        "is_home": true,
+        "p_blend": 0.529,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 5,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": false,
+        "p_blend": 0.5059,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 4,
+        "opponent": "Los Angeles Rams",
+        "is_home": true,
+        "p_blend": 0.4837,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 12,
+        "opponent": "Dallas Cowboys",
+        "is_home": false,
+        "p_blend": 0.4811,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 17,
+        "opponent": "San Francisco 49ers",
+        "is_home": false,
+        "p_blend": 0.4032,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      }
+    ],
+    "Pittsburgh Steelers": [
+      {
+        "week": 8,
+        "opponent": "Cleveland Browns",
+        "is_home": true,
+        "p_blend": 0.7105,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 16,
+        "opponent": "Carolina Panthers",
+        "is_home": true,
+        "p_blend": 0.6149,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 4,
+        "opponent": "Cleveland Browns",
+        "is_home": false,
+        "p_blend": 0.5978,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 5,
+        "opponent": "Indianapolis Colts",
+        "is_home": true,
+        "p_blend": 0.5792,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 17,
+        "opponent": "Tennessee Titans",
+        "is_home": false,
+        "p_blend": 0.5504,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 12,
+        "opponent": "Denver Broncos",
+        "is_home": true,
+        "p_blend": 0.4797,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 7,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.4759,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 13,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.4752,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 6,
+        "opponent": "Tampa Bay Buccaneers",
+        "is_home": false,
+        "p_blend": 0.4562,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 3,
+        "opponent": "Cincinnati Bengals",
+        "is_home": true,
+        "p_blend": 0.397,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 15,
+        "opponent": "Baltimore Ravens",
+        "is_home": true,
+        "p_blend": 0.3843,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 14,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": false,
+        "p_blend": 0.3833,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 10,
+        "opponent": "Cincinnati Bengals",
+        "is_home": false,
+        "p_blend": 0.3293,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 11,
+        "opponent": "Philadelphia Eagles",
+        "is_home": false,
+        "p_blend": 0.3196,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 18,
+        "opponent": "Baltimore Ravens",
+        "is_home": false,
+        "p_blend": 0.2736,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      }
+    ],
+    "San Francisco 49ers": [
+      {
+        "week": 9,
+        "opponent": "Las Vegas Raiders",
+        "is_home": true,
+        "p_blend": 0.8001,
+        "tier": "Very Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 6,
+        "opponent": "Washington Commanders",
+        "is_home": true,
+        "p_blend": 0.7538,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 18,
+        "opponent": "Arizona Cardinals",
+        "is_home": false,
+        "p_blend": 0.7454,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 3,
+        "opponent": "Arizona Cardinals",
+        "is_home": true,
+        "p_blend": 0.74,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 11,
+        "opponent": "Minnesota Vikings",
+        "is_home": true,
+        "p_blend": 0.6804,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 7,
+        "opponent": "Atlanta Falcons",
+        "is_home": false,
+        "p_blend": 0.6693,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 13,
+        "opponent": "New York Giants",
+        "is_home": false,
+        "p_blend": 0.6628,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 4,
+        "opponent": "Denver Broncos",
+        "is_home": true,
+        "p_blend": 0.6391,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 17,
+        "opponent": "Philadelphia Eagles",
+        "is_home": true,
+        "p_blend": 0.5968,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 12,
+        "opponent": "Seattle Seahawks",
+        "is_home": true,
+        "p_blend": 0.5657,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 15,
+        "opponent": "Los Angeles Chargers",
+        "is_home": false,
+        "p_blend": 0.5511,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 14,
+        "opponent": "Los Angeles Rams",
+        "is_home": true,
+        "p_blend": 0.5205,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 10,
+        "opponent": "Dallas Cowboys",
+        "is_home": false,
+        "p_blend": 0.5179,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 16,
+        "opponent": "Kansas City Chiefs",
+        "is_home": false,
+        "p_blend": 0.4541,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 5,
+        "opponent": "Seattle Seahawks",
+        "is_home": false,
+        "p_blend": 0.4434,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      }
+    ],
+    "Seattle Seahawks": [
+      {
+        "week": 9,
+        "opponent": "Arizona Cardinals",
+        "is_home": true,
+        "p_blend": 0.8298,
+        "tier": "Very Safe",
+        "is_plan_pick": true,
+        "plan_uses_instead": null
+      },
+      {
+        "week": 14,
+        "opponent": "New York Giants",
+        "is_home": true,
+        "p_blend": 0.7626,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 3,
+        "opponent": "Washington Commanders",
+        "is_home": false,
+        "p_blend": 0.707,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 10,
+        "opponent": "Las Vegas Raiders",
+        "is_home": false,
+        "p_blend": 0.6996,
+        "tier": "Safe",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 8,
+        "opponent": "Chicago Bears",
+        "is_home": true,
+        "p_blend": 0.6689,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 4,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.6637,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 17,
+        "opponent": "Carolina Panthers",
+        "is_home": false,
+        "p_blend": 0.6492,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 13,
+        "opponent": "Dallas Cowboys",
+        "is_home": true,
+        "p_blend": 0.6334,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 7,
+        "opponent": "Kansas City Chiefs",
+        "is_home": true,
+        "p_blend": 0.5717,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 5,
+        "opponent": "San Francisco 49ers",
+        "is_home": true,
+        "p_blend": 0.5566,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 16,
+        "opponent": "Los Angeles Rams",
+        "is_home": true,
+        "p_blend": 0.5159,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 6,
+        "opponent": "Denver Broncos",
+        "is_home": false,
+        "p_blend": 0.5148,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 15,
+        "opponent": "Philadelphia Eagles",
+        "is_home": false,
+        "p_blend": 0.471,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 12,
+        "opponent": "San Francisco 49ers",
+        "is_home": false,
+        "p_blend": 0.4343,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 18,
+        "opponent": "Los Angeles Rams",
+        "is_home": false,
+        "p_blend": 0.3946,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      }
+    ],
+    "Tampa Bay Buccaneers": [
+      {
+        "week": 8,
+        "opponent": "Atlanta Falcons",
+        "is_home": true,
+        "p_blend": 0.6167,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 12,
+        "opponent": "Carolina Panthers",
+        "is_home": true,
+        "p_blend": 0.5996,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 15,
+        "opponent": "New Orleans Saints",
+        "is_home": true,
+        "p_blend": 0.5807,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 6,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": true,
+        "p_blend": 0.5438,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 16,
+        "opponent": "Atlanta Falcons",
+        "is_home": false,
+        "p_blend": 0.497,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 13,
+        "opponent": "Los Angeles Chargers",
+        "is_home": true,
+        "p_blend": 0.4947,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 4,
+        "opponent": "Green Bay Packers",
+        "is_home": true,
+        "p_blend": 0.4871,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 7,
+        "opponent": "Carolina Panthers",
+        "is_home": false,
+        "p_blend": 0.4781,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 3,
+        "opponent": "Minnesota Vikings",
+        "is_home": true,
+        "p_blend": 0.46,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 18,
+        "opponent": "New Orleans Saints",
+        "is_home": false,
+        "p_blend": 0.4587,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 9,
+        "opponent": "Chicago Bears",
+        "is_home": false,
+        "p_blend": 0.3811,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 17,
+        "opponent": "Los Angeles Rams",
+        "is_home": true,
+        "p_blend": 0.3451,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 5,
+        "opponent": "Dallas Cowboys",
+        "is_home": false,
+        "p_blend": 0.3426,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 11,
+        "opponent": "Detroit Lions",
+        "is_home": false,
+        "p_blend": 0.3121,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 14,
+        "opponent": "Baltimore Ravens",
+        "is_home": false,
+        "p_blend": 0.2608,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      }
+    ],
+    "Tennessee Titans": [
+      {
+        "week": 7,
+        "opponent": "Cleveland Browns",
+        "is_home": true,
+        "p_blend": 0.6084,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Houston Texans"
+      },
+      {
+        "week": 13,
+        "opponent": "Washington Commanders",
+        "is_home": true,
+        "p_blend": 0.5005,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 15,
+        "opponent": "Indianapolis Colts",
+        "is_home": true,
+        "p_blend": 0.4684,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 17,
+        "opponent": "Pittsburgh Steelers",
+        "is_home": true,
+        "p_blend": 0.4496,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 16,
+        "opponent": "Las Vegas Raiders",
+        "is_home": false,
+        "p_blend": 0.4405,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 3,
+        "opponent": "New York Giants",
+        "is_home": false,
+        "p_blend": 0.414,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 10,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": true,
+        "p_blend": 0.3934,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 5,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.366,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 6,
+        "opponent": "Indianapolis Colts",
+        "is_home": false,
+        "p_blend": 0.3498,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      },
+      {
+        "week": 12,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": false,
+        "p_blend": 0.2824,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 11,
+        "opponent": "Dallas Cowboys",
+        "is_home": false,
+        "p_blend": 0.2603,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 18,
+        "opponent": "Houston Texans",
+        "is_home": false,
+        "p_blend": 0.2579,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 8,
+        "opponent": "Cincinnati Bengals",
+        "is_home": false,
+        "p_blend": 0.2351,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 14,
+        "opponent": "Detroit Lions",
+        "is_home": false,
+        "p_blend": 0.2327,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 4,
+        "opponent": "Baltimore Ravens",
+        "is_home": false,
+        "p_blend": 0.1889,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      }
+    ],
+    "Washington Commanders": [
+      {
+        "week": 15,
+        "opponent": "Atlanta Falcons",
+        "is_home": true,
+        "p_blend": 0.5851,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Green Bay Packers"
+      },
+      {
+        "week": 5,
+        "opponent": "New York Giants",
+        "is_home": true,
+        "p_blend": 0.5777,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Cincinnati Bengals"
+      },
+      {
+        "week": 12,
+        "opponent": "Arizona Cardinals",
+        "is_home": false,
+        "p_blend": 0.5503,
+        "tier": "Moderate",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Minnesota Vikings"
+      },
+      {
+        "week": 4,
+        "opponent": "Indianapolis Colts",
+        "is_home": true,
+        "p_blend": 0.529,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Chicago Bears"
+      },
+      {
+        "week": 13,
+        "opponent": "Tennessee Titans",
+        "is_home": false,
+        "p_blend": 0.4995,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Denver Broncos"
+      },
+      {
+        "week": 10,
+        "opponent": "New York Giants",
+        "is_home": false,
+        "p_blend": 0.4556,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Indianapolis Colts"
+      },
+      {
+        "week": 18,
+        "opponent": "Dallas Cowboys",
+        "is_home": true,
+        "p_blend": 0.4276,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "New England Patriots"
+      },
+      {
+        "week": 14,
+        "opponent": "Houston Texans",
+        "is_home": true,
+        "p_blend": 0.4246,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Detroit Lions"
+      },
+      {
+        "week": 11,
+        "opponent": "Cincinnati Bengals",
+        "is_home": true,
+        "p_blend": 0.3967,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Chargers"
+      },
+      {
+        "week": 8,
+        "opponent": "Philadelphia Eagles",
+        "is_home": true,
+        "p_blend": 0.3863,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Dallas Cowboys"
+      },
+      {
+        "week": 16,
+        "opponent": "Minnesota Vikings",
+        "is_home": false,
+        "p_blend": 0.3546,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Baltimore Ravens"
+      },
+      {
+        "week": 17,
+        "opponent": "Jacksonville Jaguars",
+        "is_home": false,
+        "p_blend": 0.3356,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Buffalo Bills"
+      },
+      {
+        "week": 9,
+        "opponent": "Los Angeles Rams",
+        "is_home": true,
+        "p_blend": 0.3144,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Seattle Seahawks"
+      },
+      {
+        "week": 3,
+        "opponent": "Seattle Seahawks",
+        "is_home": true,
+        "p_blend": 0.293,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Kansas City Chiefs"
+      },
+      {
+        "week": 6,
+        "opponent": "San Francisco 49ers",
+        "is_home": false,
+        "p_blend": 0.2462,
+        "tier": "Risky",
+        "is_plan_pick": false,
+        "plan_uses_instead": "Los Angeles Rams"
+      }
+    ]
+  },
   "season_win_totals": {
     "Baltimore Ravens": 11.5,
     "Los Angeles Rams": 11.5,
