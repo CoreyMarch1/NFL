@@ -65,7 +65,8 @@ checked against.
   Published version: https://claude.ai/artifact/UAHh6VMKw8rtVcrH2KXoMZ
 
 Prior week's files (`model/week2_*`, `dashboard/week2_dashboard.html`, `model/calibrate_market_blend.py`,
-`model/validate_week2.py`) are kept as-is — they're the validated history the Week 3 build was calibrated against.
+`model/calibrate_qb_layer.py`, `model/validate_week2.py`) are kept as-is — they're the validated
+history the Week 3 build was calibrated against.
 
 ## What changed this week
 
@@ -86,6 +87,35 @@ Prior week's files (`model/week2_*`, `dashboard/week2_dashboard.html`, `model/ca
   above) and added depth-chart tiers (WR1, RB2, ...) from real 2025 season usage (targets/rush
   attempts, not PAA — see `model/tier_injuries.py` above for why value and role aren't the same
   thing here).
+
+## QB layer calibration attempt (against Week 2, no change made)
+
+`model/calibrate_qb_layer.py` grid-searches the QB layer's five hand-picked constants
+(`REG_WEIGHT`, `RECENCY_BOOST`, `STABILIZE_CAP`, `TEAM_CHANGE_DISCOUNT`, `QB_ADJ_CAP`) against
+Week 2's 16 actual results — 3,360 combinations, scored on margin MAE and straight-up accuracy.
+Two findings, neither of which changed the production constants:
+
+- **`RECENCY_BOOST` and `STABILIZE_CAP` don't affect any prediction.** They only shape
+  `blended_paa` — the number behind each QB's Elite/Average/Replacement-Level tier badge on the
+  dashboard. The actual `qb_adj` fed into the simulation is `REG_WEIGHT × (2025 per-game PAA −
+  this game's PAA)`, capped, which never references either constant. So of the five "tunable"
+  constants the README used to list together, only three (`REG_WEIGHT`, `TEAM_CHANGE_DISCOUNT`,
+  `QB_ADJ_CAP`) actually move a spread; the other two are display-only. Worth deciding deliberately
+  whether `qb_adj` *should* use the recency-weighted blend instead of the raw hot/cold gap — that's
+  a real design question, not something this calibration pass should just decide by fitting 16
+  games.
+- **The achievable MAE range across all 3,360 combinations is 11.96–12.24 pts** — a 0.28-pt spread,
+  against a baseline MAE around 12.1. That's noise, not signal: the QB adjustment is capped small
+  (≤1.2 pt/game by default) and mostly nets out across 16 games, so there's nothing in this sample
+  that distinguishes the current constants from most of the grid. The current values (`REG_WEIGHT
+  =0.11`, `TEAM_CHANGE_DISCOUNT=0.5`, `QB_ADJ_CAP=1.2`) sit in the middle of that flat range, not
+  meaningfully worse than the in-sample "best" — which itself is driven almost entirely by a single
+  game (Cooper Rush, the only team-change case in Week 2) and isn't a real answer, the same
+  small-sample-overfit caveat `calibrate_market_blend.py` already documents for the blend weight.
+
+No constants were changed. Re-run `python3 model/calibrate_qb_layer.py` once Week 3 (or more
+weeks) are validated — a wider actual sample, and more team-change cases than just one, is what
+would make this exercise trustworthy rather than descriptive.
 
 ## Key modeling assumptions
 
