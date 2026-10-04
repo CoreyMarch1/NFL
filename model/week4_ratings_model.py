@@ -20,8 +20,10 @@ random.seed(42)
 #     their qb_adj falls back to 0.0 (no fabricated numbers).
 #   - Injury adjustments: STALE -- reusing week3_injury_adjustments.json
 #     unchanged; no refreshed Week 4 injury report was available.
-#   - Market lines (VEGAS): NONE sourced this week -- left empty, so every
-#     game runs on the model's own margin with no market blend applied.
+#   - Market lines (VEGAS): FRESH for 11 of 15 games (user-supplied sportsbook
+#     screenshots, spread/total/moneyline). Washington@Indianapolis,
+#     Chicago@NY Jets, Cincinnati@Jacksonville, and Tampa Bay@Green Bay have
+#     no line sourced and run on the model's own margin with no market blend.
 # This was an explicit user-requested tradeoff (partial/best-effort update
 # now rather than waiting on fresh data uploads) -- see injury_point_adjustment.py
 # and week3_ratings_model.py for the full methodology these levers implement.
@@ -266,10 +268,24 @@ MATCHUPS = [
 ]
 # tuple = (home, away)
 
-# No current market lines were sourced this session for Week 4 -- left empty,
-# so every game falls back to the model's own margin with no market blend
-# applied (simulate() treats market_home_spread=None as "use model_margin").
-VEGAS = {}
+# Week 4 market lines (spread/total/moneyline), via user-supplied sportsbook
+# screenshots. 11 of the 15 games are covered; Washington@Indianapolis,
+# Chicago@NY Jets, Cincinnati@Jacksonville, and Tampa Bay@Green Bay have no
+# line sourced and fall back to the model's own margin (simulate() treats
+# market_home_spread=None as "use model_margin").
+VEGAS = {
+    ("San Francisco 49ers","Denver Broncos"):     dict(home_spread=-2.5, total=47.5, home_ml=-148, away_ml=126),
+    ("Carolina Panthers","Detroit Lions"):        dict(home_spread=3.5,  total=50.5, home_ml=172,  away_ml=-205),
+    ("New Orleans Saints","Atlanta Falcons"):     dict(home_spread=-2.5, total=47.5, home_ml=-132, away_ml=112),
+    ("Houston Texans","Dallas Cowboys"):          dict(home_spread=-3.0, total=48.5, home_ml=-158, away_ml=134),
+    ("Minnesota Vikings","Miami Dolphins"):       dict(home_spread=-9.5, total=38.5, home_ml=-510, away_ml=390),
+    ("Las Vegas Raiders","Kansas City Chiefs"):   dict(home_spread=4.5,  total=47.5, home_ml=180,  away_ml=-215),
+    ("Seattle Seahawks","Los Angeles Chargers"):  dict(home_spread=-7.0, total=43.5, home_ml=-370, away_ml=295),
+    ("Philadelphia Eagles","Los Angeles Rams"):   dict(home_spread=3.5,  total=42.5, home_ml=162,  away_ml=-194),
+    ("New York Giants","Arizona Cardinals"):      dict(home_spread=2.5,  total=44.5, home_ml=118,  away_ml=-138),
+    ("Buffalo Bills","New England Patriots"):     dict(home_spread=-6.5, total=49.5, home_ml=-340, away_ml=275),
+    ("Baltimore Ravens","Tennessee Titans"):      dict(home_spread=-11.5,total=42.5, home_ml=-750, away_ml=530),
+}
 
 def ml_to_prob(ml):
     if ml is None:

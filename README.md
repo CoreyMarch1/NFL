@@ -15,14 +15,17 @@ files are kept alongside as the validated baseline everything since has been che
   starters** — three changes from Week 3: Chicago (Tyson Bagent), Tampa Bay (Jalon Daniels, a
   backup/rookie starting for an injured Baker Mayfield), and Seattle (Sam Darnold, back from
   injury and no longer a backup). None of those three have a 2025 or 2026 production record, so
-  their QB adjustment falls back to 0.0 rather than a fabricated number. Everything else feeding
-  the simulation is a **deliberate, flagged gap**: the offense/defense split (SIS DataHub run/pass
-  defense) is still through Week 2 only, every QB's underlying performance numbers are still
-  through Week 2, and the injury adjustments reuse `week3_injury_adjustments.json` unchanged —
-  none were refreshed for Week 4. No current market lines were sourced either, so there's no market
-  blend this week; every projection is the pure model view. This was an explicit user-requested
-  tradeoff (ship a partial update now, on gameday, rather than wait for fresh data) — see the model
-  file's own header comment for the itemized fresh-vs-stale breakdown.
+  their QB adjustment falls back to 0.0 rather than a fabricated number. **Real market lines**
+  (spread/total/moneyline, user-supplied sportsbook screenshots) are wired in for 11 of the 15
+  games, blended at `31/(31+64)` ≈ 33% model / 67% market — the other 4 (Washington–Indianapolis,
+  Chicago–NY Jets, Cincinnati–Jacksonville, Tampa Bay–Green Bay) have no line sourced and run on
+  the pure model view. What's still a **deliberate, flagged gap**: the offense/defense split (SIS
+  DataHub run/pass defense) is still through Week 2 only, and every QB's underlying performance
+  numbers are still through Week 2, and the injury adjustments reuse
+  `week3_injury_adjustments.json` unchanged — none were refreshed for Week 4. This was an explicit
+  user-requested tradeoff (ship a partial update now, on gameday, rather than wait for fresh data,
+  then layer in real starters and lines as they came in) — see the model file's own header comment
+  for the itemized fresh-vs-stale breakdown.
 - `model/validate_week3.py` → `model/week3_validation_output.json` — scores all four Week 3 model
   stages against final scores (via user-supplied ESPN scoreboard screenshots). See "Week 3
   validation" below.
