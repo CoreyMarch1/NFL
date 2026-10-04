@@ -331,17 +331,22 @@ effect on this week's output, just keeps the constant honest for Week 5 onward.
 ## Secondary tool: Survivor pool roadmap
 
 A separate, full-season tool for NFL survivor pools (pick one team per week to win outright; the
-same team can never be picked twice; one loss or tie and you're out). Given two picks already
-spent — Jacksonville Jaguars (Week 1) and San Francisco 49ers (Week 2), both assumed won — it
-recommends which of the remaining 30 teams to pick in each of Weeks 3–18.
+same team can never be picked twice; one loss or tie and you're out). Given three picks already
+spent and won — Jacksonville Jaguars (Week 1), San Francisco 49ers (Week 2), and Kansas City Chiefs
+(Week 3, beat Miami 24–10) — it recommends which of the remaining 29 teams to pick in each of
+Weeks 4–18. **Current Week 4 pick: Minnesota Vikings vs. Miami (77.6%)**, with an estimated 2.1%
+chance of surviving all of Weeks 4–18.
 
 - `model/survivor_model.py` → `model/survivor_plan.json` — for every future matchup, blends this
-  week's composite rating with each team's 2026 season win total (a September sportsbook
-  consensus, researched separately) 50/50; Week 3 itself uses the fully-built weekly model instead
-  (real market lines, QB and injury adjustments — strictly more information than the blend has for
-  any other week). Then, instead of greedily taking the best team each week, solves a
+  week's composite rating (from `week{CURRENT_WEEK}_ratings_model.py`, now including the Oct 4
+  Inpredictable refresh) with each team's 2026 season win total (a September sportsbook consensus,
+  researched separately) 50/50. The current week itself uses the fully-built weekly model instead
+  (market lines where sourced, QB and injury adjustments — strictly more information than the blend
+  has for any other week); a game that's already been played (Week 4's Thursday Steelers–Browns)
+  isn't offered. Advancing a week means bumping `CURRENT_WEEK` and adding the last pick to
+  `ALREADY_USED`. Then, instead of greedily taking the best team each week, solves a
   weeks-by-teams assignment problem (`scipy.optimize.linear_sum_assignment`) that picks one
-  distinct team per week to maximize the *product* of all 16 win probabilities at once — the
+  distinct team per week to maximize the *product* of every remaining week's win probability at once — the
   correct objective for "maximize the odds of surviving the whole season," and the reason a team
   can look like a strong pick in one week's alternatives while the plan actually saves them for a
   tougher week later. Needs `scipy`, unlike the weekly model.
@@ -357,8 +362,20 @@ recommends which of the remaining 30 teams to pick in each of Weeks 3–18.
   port of the same assignment-problem solver used to build the plan), and a **reset** button
   restores the original optimal plan exactly, with no re-solve. A **save** button stores the
   current set of overrides — persisted in the artifact's own database, so it's there next time
-  anyone opens the link — and a saved-paths list lets you reload or delete them later.
+  anyone opens the link — and a saved-paths list lets you reload or delete them later. Saved paths
+  show survival odds recomputed under the current ratings, not the number stored when saved, and
+  any override for a week that's passed (or a team no longer playable that week) is dropped on load.
   Published version: https://claude.ai/artifact/YDVPUeuoXnxhY1JqgCawok
+
+**Week 4 update.** Four picks changed from the Week 3 plan: Week 4 Bears → Vikings (Chicago is
+starting backup Tyson Bagent and its rating dropped), Week 5 Bengals → Cowboys, Week 8 Cowboys →
+Steelers, Week 12 Vikings → Bengals. Every week in the new plan clears 71%; the old plan's weakest
+spot (Vikings vs. Falcons, Week 12, 66.7%) is gone. Weeks 4–18 survival moved from 2.09% to 2.13%.
+Robustness check: the weekly model's Week 4 win probabilities run 2–5 points below what the
+moneylines imply, so the plan was re-run with Week 4 priced straight off no-vig moneylines — same
+Week 4 pick and no other week changed. Using the Ravens this week instead (82% vs. Tennessee) costs
+the season overall (2.0% vs. 2.1%), since the plan saves them for Week 16 against Cleveland; they'd
+only be worth spending now if their Week 4 win probability were about 8 points higher.
 
 **What this can't see:** weekly injury reports, starter changes, and market-line movement for any
 week past the current one — the composite rating is held static at this week's snapshot for the

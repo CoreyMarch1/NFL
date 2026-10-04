@@ -8,16 +8,18 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # of the blend. It's a single-week snapshot, not a preseason projection, but it's the most
 # current, validated signal this project has, and the user chose to blend it with market win
 # totals rather than either alone.
-spec = importlib.util.spec_from_file_location("week3_ratings_model", os.path.join(HERE, "week3_ratings_model.py"))
-w3 = importlib.util.module_from_spec(spec)
+CURRENT_WEEK = 4   # the next week to pick; its probabilities come from that week's full model
+
+spec = importlib.util.spec_from_file_location("ratings_model", os.path.join(HERE, f"week{CURRENT_WEEK}_ratings_model.py"))
+rm = importlib.util.module_from_spec(spec)
 _stdout = sys.stdout
 sys.stdout = open(os.devnull, "w")
-spec.loader.exec_module(w3)
+spec.loader.exec_module(rm)
 sys.stdout = _stdout
 
-COMP = {t: w3.TEAMS[t]["comp"] for t in w3.TEAMS}
-HFA = w3.HFA
-BASE_MARGIN_SD = w3.BASE_MARGIN_SD
+COMP = {t: rm.TEAMS[t]["comp"] for t in rm.TEAMS}
+HFA = rm.HFA
+BASE_MARGIN_SD = rm.BASE_MARGIN_SD
 
 # --- 2026 season win totals (market consensus), used as the second half of the blend. A
 # season-long number smooths out the single-week noise a composite snapshot can carry, and
@@ -82,36 +84,38 @@ def blended_win_prob(team, opp, is_home):
         return p_comp, p_comp, None
     return (p_comp + p_mkt) / 2, p_comp, p_mkt
 
-ALREADY_USED = {1: "Jacksonville Jaguars", 2: "San Francisco 49ers"}
+ALREADY_USED = {1: "Jacksonville Jaguars", 2: "San Francisco 49ers", 3: "Kansas City Chiefs"}
 ALL_TEAMS = sorted(COMP.keys())
 
 def tier(p):
     return "Very Safe" if p >= 0.80 else "Safe" if p >= 0.68 else "Moderate" if p >= 0.55 else "Risky"
 
-def load_week3_overrides():
-    # Week 3 already has a fully-built model (real market lines, QB adjustment, and the injury
-    # point-adjustment) -- use its win probabilities instead of the coarse season-long blend for
-    # that one week, since it's strictly more information than a composite+win-total estimate.
+def load_current_week_overrides():
+    # The current week already has a fully-built model (market lines where sourced, QB adjustment,
+    # injury point-adjustment) -- use its win probabilities instead of the coarse season-long blend
+    # for that one week, since it's strictly more information than a composite+win-total estimate.
+    # A game that's already been played (e.g. a Thursday game) isn't in the weekly model's slate,
+    # so neither team is offered as a pick that week.
     try:
-        with open(os.path.join(HERE, "week3_model_output.json")) as f:
+        with open(os.path.join(HERE, f"week{CURRENT_WEEK}_model_output.json")) as f:
             d = json.load(f)
     except FileNotFoundError:
         return {}
     overrides = {}
     for r in d["results_market_blended"]:
         overrides[r["home"]] = dict(opponent=r["away"], is_home=True, p_blend=r["win_home"] / 100,
-                                     p_comp=None, p_mkt=None, source="week3_model")
+                                     p_comp=None, p_mkt=None, source="weekly_model")
         overrides[r["away"]] = dict(opponent=r["home"], is_home=False, p_blend=r["win_away"] / 100,
-                                     p_comp=None, p_mkt=None, source="week3_model")
+                                     p_comp=None, p_mkt=None, source="weekly_model")
     return overrides
 
 def build_week_options(games_by_week):
     # week -> {team: dict(opponent, is_home, p_blend, p_comp, p_mkt)}
     options = {}
-    week3_overrides = load_week3_overrides()
+    current_overrides = load_current_week_overrides()
     for wk, games in games_by_week.items():
-        if wk == 3 and week3_overrides:
-            options[wk] = week3_overrides
+        if wk == CURRENT_WEEK and current_overrides:
+            options[wk] = current_overrides
             continue
         opts = {}
         for g in games:
@@ -122,7 +126,7 @@ def build_week_options(games_by_week):
         options[wk] = opts
     return options
 
-def optimize(start_week=3, end_week=18):
+def optimize(start_week=CURRENT_WEEK, end_week=18):
     games_by_week = load_schedule()
     options = build_week_options(games_by_week)
     used_already = set(ALREADY_USED.values())
@@ -164,7 +168,7 @@ def optimize(start_week=3, end_week=18):
         if p.get("p_blend"):
             survival_prob *= p["p_blend"]
 
-    # Per-team view: for every team, every week 3-18 they play, ranked best matchup first --
+    # Per-team view: for every team, every remaining week they play, ranked best matchup first --
     # "if I want to save this team, which weeks are worth it" independent of the single optimal
     # path above. Includes the already-used teams too (their remaining schedule is moot to pick,
     # but the UI can still show it labeled as unavailable rather than just omitting them).
@@ -199,21 +203,22 @@ if __name__ == "__main__":
         print(f"{p['week']:>3d} {p['team']:26s} {p['opponent']:22s} {'vs' if p['is_home'] else '@':4s} "
               f"{p['p_blend']:>6.1%} {p['tier']:10s} {alt_str}")
     print(f"\nEstimated probability of surviving weeks {plan[0]['week']}-{plan[-1]['week']}: {survival_prob:.1%}")
-    # Combine with the two already-clinched weeks (assumed won, or this exercise wouldn't be live)
-    print(f"(Weeks 1-2 already used: Jacksonville Jaguars, San Francisco 49ers -- assumed already won)")
+    used = ", ".join(f"{t} (Wk{wk})" for wk, t in sorted(ALREADY_USED.items()))
+    print(f"(Already used and won: {used})")
 
     out = dict(
-        already_used=[dict(week=wk, team=t) for wk, t in ALREADY_USED.items()],
+        already_used=[dict(week=wk, team=t) for wk, t in sorted(ALREADY_USED.items())],
+        start_week=CURRENT_WEEK,
         plan=plan,
         survival_prob=round(survival_prob, 6),
         team_schedule=team_schedule,
         season_win_totals=SEASON_WIN_TOTALS,
         composite_ratings={t: round(v, 1) for t, v in COMP.items()},
-        generated_note="Weeks 4-18 blend this week's composite power ratings with 2026 season win "
-                        "totals (50/50); Week 3 uses the fully-built model (real market lines, QB "
-                        "and injury adjustments). Full-season optimization (assignment problem, "
-                        "not greedy) maximizes total survival probability across all 16 remaining "
-                        "weeks at once.",
+        generated_note=f"Weeks {CURRENT_WEEK+1}-18 blend this week's composite power ratings with 2026 "
+                        f"season win totals (50/50); Week {CURRENT_WEEK} uses the fully-built weekly "
+                        "model (market lines where sourced, QB and injury adjustments). Full-season "
+                        "optimization (assignment problem, not greedy) maximizes total survival "
+                        "probability across all remaining weeks at once.",
     )
     with open(os.path.join(HERE, "survivor_plan.json"), "w") as f:
         json.dump(out, f, indent=2)
