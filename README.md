@@ -1,11 +1,32 @@
 # NFL Composite Ratings Model
 
 A team rating and game-projection system built on the weekly composite power ratings (FPI,
-nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 3
-(v0.4)** — Week 2 files are kept alongside as the validated baseline everything since has been
-checked against.
+nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 4
+(partial update)** — composite ratings and schedule are fresh, but the off/def split, QB layer,
+and injury adjustments are carried forward unchanged from Week 3 (see below). Week 2 and Week 3
+files are kept alongside as the validated baseline everything since has been checked against.
 
-## Contents (current: Week 3)
+## Contents (current: Week 4 — partial update)
+
+- `model/week4_ratings_model.py` → `model/week4_model_output.json` — same pipeline as the Week 3
+  build (below), run on **fresh Week 4 composite ratings** (via @SamHoppen) and the **fresh Week 4
+  schedule** (15 active matchups; Pittsburgh @ Cleveland already played Thursday 10/1 and is
+  excluded, since its result wasn't available this session). Everything feeding the simulation
+  underneath those composites is a **deliberate, flagged gap**: the offense/defense split (SIS
+  DataHub run/pass defense) is still through Week 2 only, the QB layer (starters + 2026-to-date
+  form) is still the Week 3 build's, and the injury adjustments reuse `week3_injury_adjustments.json`
+  unchanged — none were refreshed for Week 4. No current market lines were sourced either, so there's
+  no market blend this week; every projection is the pure model view. This was an explicit
+  user-requested tradeoff (ship a partial update now, on gameday, rather than wait for fresh data) —
+  see the model file's own header comment for the itemized fresh-vs-stale breakdown.
+- `dashboard/week4_dashboard.html` — same dashboard as Week 3's, rebuilt against the Week 4 output,
+  with every section that relies on stale inputs (QB report, injury report, validation) explicitly
+  labeled as carried-forward rather than silently reused. Trend is computed directly from the
+  Week 3→4 composite change. No Week 3 results were validated this session (not available), so §05
+  still shows Week 2's scorecard, flagged as the most recent completed validation.
+  Published version: https://claude.ai/artifact/XH7aRoAQyNMrGQXsB4RiFS
+
+## Week 3 build (v0.4, full update)
 
 - `model/week3_ratings_model.py` — decomposes each team's composite rating into a **real**
   offense/defense split (SIS DataHub run-defense + pass-defense data; offense is the residual of

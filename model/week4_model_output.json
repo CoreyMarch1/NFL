@@ -1,0 +1,3037 @@
+{
+  "importance": {
+    "fpi": {
+      "corr": 0.969,
+      "mae_vs_composite": 0.784
+    },
+    "nfelo": {
+      "corr": 0.984,
+      "mae_vs_composite": 0.597
+    },
+    "inpred": {
+      "corr": 0.973,
+      "mae_vs_composite": 0.672
+    },
+    "up": {
+      "corr": 0.976,
+      "mae_vs_composite": 0.75
+    },
+    "dvoa": {
+      "corr": 0.954,
+      "mae_vs_composite": 0.891
+    },
+    "pff": {
+      "corr": 0.96,
+      "mae_vs_composite": 0.913
+    }
+  },
+  "results": [
+    {
+      "home": "Washington Commanders",
+      "away": "Indianapolis Colts",
+      "home_off": 22.6,
+      "home_def": 25.8,
+      "away_off": 28.5,
+      "away_def": 29.6,
+      "model_margin": -0.1,
+      "expected_margin": -0.1,
+      "median_margin": -0.4,
+      "ci68": [
+        -13.7,
+        13.2
+      ],
+      "ci95": [
+        -27.1,
+        25.5
+      ],
+      "win_home": 48.5,
+      "win_away": 51.5,
+      "confidence": 3,
+      "proj_home_score": 30.6,
+      "proj_away_score": 30.9,
+      "combined_sd": 13.46
+    },
+    {
+      "home": "Baltimore Ravens",
+      "away": "Tennessee Titans",
+      "home_off": 25.9,
+      "home_def": 21.9,
+      "away_off": 18.1,
+      "away_def": 23.6,
+      "model_margin": 11.5,
+      "expected_margin": 11.5,
+      "median_margin": 11.9,
+      "ci68": [
+        -1.4,
+        24.9
+      ],
+      "ci95": [
+        -13.8,
+        36.2
+      ],
+      "win_home": 81.0,
+      "win_away": 19.0,
+      "confidence": 62,
+      "proj_home_score": 28.1,
+      "proj_away_score": 16.5,
+      "combined_sd": 13.09
+    },
+    {
+      "home": "Buffalo Bills",
+      "away": "New England Patriots",
+      "home_off": 30.9,
+      "home_def": 25.1,
+      "away_off": 20.5,
+      "away_def": 19.5,
+      "model_margin": 6.8,
+      "expected_margin": 6.8,
+      "median_margin": 6.7,
+      "ci68": [
+        -6.5,
+        20.1
+      ],
+      "ci95": [
+        -19.0,
+        32.2
+      ],
+      "win_home": 69.5,
+      "win_away": 30.5,
+      "confidence": 39,
+      "proj_home_score": 29.0,
+      "proj_away_score": 22.3,
+      "combined_sd": 13.36
+    },
+    {
+      "home": "Chicago Bears",
+      "away": "New York Jets",
+      "home_off": 21.5,
+      "home_def": 21.8,
+      "away_off": 18.2,
+      "away_def": 21.6,
+      "model_margin": 5.1,
+      "expected_margin": 5.1,
+      "median_margin": 5.1,
+      "ci68": [
+        -8.3,
+        18.1
+      ],
+      "ci95": [
+        -21.3,
+        30.7
+      ],
+      "win_home": 64.8,
+      "win_away": 35.2,
+      "confidence": 30,
+      "proj_home_score": 21.6,
+      "proj_away_score": 16.6,
+      "combined_sd": 13.36
+    },
+    {
+      "home": "Cincinnati Bengals",
+      "away": "Jacksonville Jaguars",
+      "home_off": 26.2,
+      "home_def": 24.3,
+      "away_off": 21.8,
+      "away_def": 18.5,
+      "model_margin": 0.6,
+      "expected_margin": 0.6,
+      "median_margin": 0.5,
+      "ci68": [
+        -12.4,
+        13.9
+      ],
+      "ci95": [
+        -24.8,
+        26.6
+      ],
+      "win_home": 51.7,
+      "win_away": 48.3,
+      "confidence": 3,
+      "proj_home_score": 23.3,
+      "proj_away_score": 22.6,
+      "combined_sd": 13.27
+    },
+    {
+      "home": "Houston Texans",
+      "away": "Dallas Cowboys",
+      "home_off": 26.8,
+      "home_def": 25.2,
+      "away_off": 29.2,
+      "away_def": 27.3,
+      "model_margin": 1.7,
+      "expected_margin": 1.7,
+      "median_margin": 1.7,
+      "ci68": [
+        -11.5,
+        15.4
+      ],
+      "ci95": [
+        -24.6,
+        28.8
+      ],
+      "win_home": 54.4,
+      "win_away": 45.6,
+      "confidence": 9,
+      "proj_home_score": 32.7,
+      "proj_away_score": 30.9,
+      "combined_sd": 13.3
+    },
+    {
+      "home": "New York Giants",
+      "away": "Arizona Cardinals",
+      "home_off": 22.3,
+      "home_def": 27.3,
+      "away_off": 19.9,
+      "away_def": 23.9,
+      "model_margin": 1.0,
+      "expected_margin": 1.0,
+      "median_margin": 1.1,
+      "ci68": [
+        -12.7,
+        15.0
+      ],
+      "ci95": [
+        -26.2,
+        29.2
+      ],
+      "win_home": 53.0,
+      "win_away": 47.0,
+      "confidence": 6,
+      "proj_home_score": 24.9,
+      "proj_away_score": 23.7,
+      "combined_sd": 13.89
+    },
+    {
+      "home": "Philadelphia Eagles",
+      "away": "Los Angeles Rams",
+      "home_off": 22.1,
+      "home_def": 21.2,
+      "away_off": 24.6,
+      "away_def": 19.3,
+      "model_margin": -2.4,
+      "expected_margin": -2.4,
+      "median_margin": -2.0,
+      "ci68": [
+        -15.7,
+        11.2
+      ],
+      "ci95": [
+        -28.1,
+        24.2
+      ],
+      "win_home": 44.2,
+      "win_away": 55.8,
+      "confidence": 12,
+      "proj_home_score": 20.0,
+      "proj_away_score": 22.2,
+      "combined_sd": 13.27
+    },
+    {
+      "home": "Tampa Bay Buccaneers",
+      "away": "Green Bay Packers",
+      "home_off": 16.6,
+      "home_def": 21.6,
+      "away_off": 21.8,
+      "away_def": 22.3,
+      "model_margin": -2.5,
+      "expected_margin": -2.5,
+      "median_margin": -2.7,
+      "ci68": [
+        -15.9,
+        11.0
+      ],
+      "ci95": [
+        -28.4,
+        24.1
+      ],
+      "win_home": 41.8,
+      "win_away": 58.2,
+      "confidence": 16,
+      "proj_home_score": 17.6,
+      "proj_away_score": 20.2,
+      "combined_sd": 13.5
+    },
+    {
+      "home": "Minnesota Vikings",
+      "away": "Miami Dolphins",
+      "home_off": 23.2,
+      "home_def": 22.4,
+      "away_off": 14.3,
+      "away_def": 22.4,
+      "model_margin": 10.9,
+      "expected_margin": 10.9,
+      "median_margin": 10.8,
+      "ci68": [
+        -2.8,
+        23.8
+      ],
+      "ci95": [
+        -15.0,
+        35.2
+      ],
+      "win_home": 78.6,
+      "win_away": 21.4,
+      "confidence": 57,
+      "proj_home_score": 24.1,
+      "proj_away_score": 13.5,
+      "combined_sd": 13.27
+    },
+    {
+      "home": "Las Vegas Raiders",
+      "away": "Kansas City Chiefs",
+      "home_off": 18.8,
+      "home_def": 21.0,
+      "away_off": 26.7,
+      "away_def": 22.4,
+      "model_margin": -4.5,
+      "expected_margin": -4.5,
+      "median_margin": -4.0,
+      "ci68": [
+        -17.5,
+        8.3
+      ],
+      "ci95": [
+        -30.3,
+        20.8
+      ],
+      "win_home": 37.0,
+      "win_away": 63.0,
+      "confidence": 26,
+      "proj_home_score": 19.7,
+      "proj_away_score": 24.1,
+      "combined_sd": 13.05
+    },
+    {
+      "home": "Seattle Seahawks",
+      "away": "Los Angeles Chargers",
+      "home_off": 23.3,
+      "home_def": 17.9,
+      "away_off": 23.0,
+      "away_def": 23.4,
+      "model_margin": 7.8,
+      "expected_margin": 7.8,
+      "median_margin": 8.2,
+      "ci68": [
+        -4.9,
+        20.8
+      ],
+      "ci95": [
+        -18.1,
+        32.8
+      ],
+      "win_home": 73.6,
+      "win_away": 26.4,
+      "confidence": 47,
+      "proj_home_score": 25.3,
+      "proj_away_score": 17.4,
+      "combined_sd": 13.13
+    },
+    {
+      "home": "San Francisco 49ers",
+      "away": "Denver Broncos",
+      "home_off": 29.1,
+      "home_def": 23.7,
+      "away_off": 23.0,
+      "away_def": 21.2,
+      "model_margin": 5.6,
+      "expected_margin": 5.6,
+      "median_margin": 5.5,
+      "ci68": [
+        -7.8,
+        19.0
+      ],
+      "ci95": [
+        -19.7,
+        32.7
+      ],
+      "win_home": 66.1,
+      "win_away": 33.9,
+      "confidence": 32,
+      "proj_home_score": 28.8,
+      "proj_away_score": 23.2,
+      "combined_sd": 13.36
+    },
+    {
+      "home": "Carolina Panthers",
+      "away": "Detroit Lions",
+      "home_off": 18.3,
+      "home_def": 20.0,
+      "away_off": 26.0,
+      "away_def": 23.3,
+      "model_margin": -2.4,
+      "expected_margin": -2.4,
+      "median_margin": -2.5,
+      "ci68": [
+        -15.5,
+        10.6
+      ],
+      "ci95": [
+        -27.8,
+        22.7
+      ],
+      "win_home": 42.1,
+      "win_away": 57.9,
+      "confidence": 16,
+      "proj_home_score": 20.0,
+      "proj_away_score": 22.5,
+      "combined_sd": 13.13
+    },
+    {
+      "home": "New Orleans Saints",
+      "away": "Atlanta Falcons",
+      "home_off": 22.6,
+      "home_def": 25.0,
+      "away_off": 16.4,
+      "away_def": 19.2,
+      "model_margin": 2.4,
+      "expected_margin": 2.4,
+      "median_margin": 2.5,
+      "ci68": [
+        -11.3,
+        15.8
+      ],
+      "ci95": [
+        -24.3,
+        28.0
+      ],
+      "win_home": 57.6,
+      "win_away": 42.4,
+      "confidence": 15,
+      "proj_home_score": 20.3,
+      "proj_away_score": 17.9,
+      "combined_sd": 13.54
+    }
+  ],
+  "results_qb_adjusted": [
+    {
+      "home": "Washington Commanders",
+      "away": "Indianapolis Colts",
+      "home_off": 22.6,
+      "home_def": 25.8,
+      "away_off": 28.8,
+      "away_def": 29.6,
+      "model_margin": -0.4,
+      "expected_margin": -0.4,
+      "median_margin": -0.1,
+      "ci68": [
+        -13.5,
+        12.7
+      ],
+      "ci95": [
+        -26.6,
+        26.7
+      ],
+      "win_home": 49.8,
+      "win_away": 50.2,
+      "confidence": 0,
+      "proj_home_score": 30.8,
+      "proj_away_score": 31.1,
+      "combined_sd": 13.46,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.29
+    },
+    {
+      "home": "Baltimore Ravens",
+      "away": "Tennessee Titans",
+      "home_off": 25.7,
+      "home_def": 21.9,
+      "away_off": 17.5,
+      "away_def": 23.6,
+      "model_margin": 11.9,
+      "expected_margin": 11.9,
+      "median_margin": 12.1,
+      "ci68": [
+        -1.1,
+        24.8
+      ],
+      "ci95": [
+        -13.3,
+        36.8
+      ],
+      "win_home": 82.2,
+      "win_away": 17.8,
+      "confidence": 64,
+      "proj_home_score": 27.8,
+      "proj_away_score": 15.8,
+      "combined_sd": 13.09,
+      "home_qb_adj": -0.22,
+      "away_qb_adj": -0.59
+    },
+    {
+      "home": "Buffalo Bills",
+      "away": "New England Patriots",
+      "home_off": 30.8,
+      "home_def": 25.1,
+      "away_off": 20.8,
+      "away_def": 19.5,
+      "model_margin": 6.5,
+      "expected_margin": 6.5,
+      "median_margin": 6.3,
+      "ci68": [
+        -7.0,
+        20.1
+      ],
+      "ci95": [
+        -19.6,
+        33.7
+      ],
+      "win_home": 68.1,
+      "win_away": 31.9,
+      "confidence": 36,
+      "proj_home_score": 28.9,
+      "proj_away_score": 22.4,
+      "combined_sd": 13.36,
+      "home_qb_adj": -0.05,
+      "away_qb_adj": 0.27
+    },
+    {
+      "home": "Chicago Bears",
+      "away": "New York Jets",
+      "home_off": 21.5,
+      "home_def": 21.8,
+      "away_off": 17.7,
+      "away_def": 21.6,
+      "model_margin": 5.6,
+      "expected_margin": 5.6,
+      "median_margin": 5.7,
+      "ci68": [
+        -7.7,
+        19.1
+      ],
+      "ci95": [
+        -20.2,
+        32.0
+      ],
+      "win_home": 66.3,
+      "win_away": 33.7,
+      "confidence": 33,
+      "proj_home_score": 21.9,
+      "proj_away_score": 16.2,
+      "combined_sd": 13.36,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.51
+    },
+    {
+      "home": "Cincinnati Bengals",
+      "away": "Jacksonville Jaguars",
+      "home_off": 26.1,
+      "home_def": 24.3,
+      "away_off": 22.0,
+      "away_def": 18.5,
+      "model_margin": 0.3,
+      "expected_margin": 0.3,
+      "median_margin": 0.1,
+      "ci68": [
+        -13.1,
+        13.2
+      ],
+      "ci95": [
+        -25.8,
+        26.2
+      ],
+      "win_home": 50.4,
+      "win_away": 49.6,
+      "confidence": 1,
+      "proj_home_score": 22.9,
+      "proj_away_score": 22.8,
+      "combined_sd": 13.27,
+      "home_qb_adj": -0.06,
+      "away_qb_adj": 0.22
+    },
+    {
+      "home": "Houston Texans",
+      "away": "Dallas Cowboys",
+      "home_off": 27.5,
+      "home_def": 25.2,
+      "away_off": 28.7,
+      "away_def": 27.3,
+      "model_margin": 2.9,
+      "expected_margin": 2.9,
+      "median_margin": 2.6,
+      "ci68": [
+        -9.9,
+        16.2
+      ],
+      "ci95": [
+        -22.9,
+        29.0
+      ],
+      "win_home": 58.2,
+      "win_away": 41.8,
+      "confidence": 16,
+      "proj_home_score": 33.3,
+      "proj_away_score": 30.4,
+      "combined_sd": 13.3,
+      "home_qb_adj": 0.65,
+      "away_qb_adj": -0.58
+    },
+    {
+      "home": "New York Giants",
+      "away": "Arizona Cardinals",
+      "home_off": 22.3,
+      "home_def": 27.3,
+      "away_off": 20.0,
+      "away_def": 23.9,
+      "model_margin": 0.9,
+      "expected_margin": 0.9,
+      "median_margin": 1.0,
+      "ci68": [
+        -12.7,
+        14.8
+      ],
+      "ci95": [
+        -25.4,
+        28.2
+      ],
+      "win_home": 52.5,
+      "win_away": 47.5,
+      "confidence": 5,
+      "proj_home_score": 24.8,
+      "proj_away_score": 23.7,
+      "combined_sd": 13.89,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.09
+    },
+    {
+      "home": "Philadelphia Eagles",
+      "away": "Los Angeles Rams",
+      "home_off": 22.1,
+      "home_def": 21.2,
+      "away_off": 24.7,
+      "away_def": 19.3,
+      "model_margin": -2.6,
+      "expected_margin": -2.6,
+      "median_margin": -2.7,
+      "ci68": [
+        -15.7,
+        10.8
+      ],
+      "ci95": [
+        -28.3,
+        23.4
+      ],
+      "win_home": 42.1,
+      "win_away": 57.9,
+      "confidence": 16,
+      "proj_home_score": 19.8,
+      "proj_away_score": 22.3,
+      "combined_sd": 13.27,
+      "home_qb_adj": -0.08,
+      "away_qb_adj": 0.1
+    },
+    {
+      "home": "Tampa Bay Buccaneers",
+      "away": "Green Bay Packers",
+      "home_off": 17.1,
+      "home_def": 21.6,
+      "away_off": 22.7,
+      "away_def": 22.3,
+      "model_margin": -2.9,
+      "expected_margin": -2.9,
+      "median_margin": -3.1,
+      "ci68": [
+        -16.4,
+        10.6
+      ],
+      "ci95": [
+        -29.3,
+        23.3
+      ],
+      "win_home": 41.4,
+      "win_away": 58.6,
+      "confidence": 17,
+      "proj_home_score": 17.9,
+      "proj_away_score": 20.8,
+      "combined_sd": 13.5,
+      "home_qb_adj": 0.42,
+      "away_qb_adj": 0.86
+    },
+    {
+      "home": "Minnesota Vikings",
+      "away": "Miami Dolphins",
+      "home_off": 23.5,
+      "home_def": 22.4,
+      "away_off": 14.3,
+      "away_def": 22.4,
+      "model_margin": 11.2,
+      "expected_margin": 11.2,
+      "median_margin": 11.2,
+      "ci68": [
+        -2.2,
+        24.5
+      ],
+      "ci95": [
+        -15.3,
+        35.4
+      ],
+      "win_home": 79.3,
+      "win_away": 20.7,
+      "confidence": 59,
+      "proj_home_score": 24.5,
+      "proj_away_score": 13.4,
+      "combined_sd": 13.27,
+      "home_qb_adj": 0.29,
+      "away_qb_adj": 0.0
+    },
+    {
+      "home": "Las Vegas Raiders",
+      "away": "Kansas City Chiefs",
+      "home_off": 18.7,
+      "home_def": 21.0,
+      "away_off": 26.7,
+      "away_def": 22.4,
+      "model_margin": -4.6,
+      "expected_margin": -4.6,
+      "median_margin": -4.8,
+      "ci68": [
+        -17.6,
+        8.7
+      ],
+      "ci95": [
+        -29.7,
+        21.9
+      ],
+      "win_home": 36.1,
+      "win_away": 63.9,
+      "confidence": 28,
+      "proj_home_score": 19.6,
+      "proj_away_score": 24.2,
+      "combined_sd": 13.05,
+      "home_qb_adj": -0.13,
+      "away_qb_adj": 0.01
+    },
+    {
+      "home": "Seattle Seahawks",
+      "away": "Los Angeles Chargers",
+      "home_off": 23.3,
+      "home_def": 17.9,
+      "away_off": 23.5,
+      "away_def": 23.4,
+      "model_margin": 7.3,
+      "expected_margin": 7.3,
+      "median_margin": 7.0,
+      "ci68": [
+        -6.2,
+        20.1
+      ],
+      "ci95": [
+        -18.4,
+        32.6
+      ],
+      "win_home": 70.1,
+      "win_away": 29.9,
+      "confidence": 40,
+      "proj_home_score": 24.9,
+      "proj_away_score": 17.9,
+      "combined_sd": 13.13,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.52
+    },
+    {
+      "home": "San Francisco 49ers",
+      "away": "Denver Broncos",
+      "home_off": 28.7,
+      "home_def": 23.7,
+      "away_off": 23.6,
+      "away_def": 21.2,
+      "model_margin": 4.7,
+      "expected_margin": 4.7,
+      "median_margin": 4.4,
+      "ci68": [
+        -8.7,
+        17.7
+      ],
+      "ci95": [
+        -21.1,
+        30.3
+      ],
+      "win_home": 63.1,
+      "win_away": 36.9,
+      "confidence": 26,
+      "proj_home_score": 28.3,
+      "proj_away_score": 23.9,
+      "combined_sd": 13.36,
+      "home_qb_adj": -0.34,
+      "away_qb_adj": 0.59
+    },
+    {
+      "home": "Carolina Panthers",
+      "away": "Detroit Lions",
+      "home_off": 18.3,
+      "home_def": 20.0,
+      "away_off": 25.7,
+      "away_def": 23.3,
+      "model_margin": -2.1,
+      "expected_margin": -2.1,
+      "median_margin": -2.3,
+      "ci68": [
+        -15.5,
+        11.0
+      ],
+      "ci95": [
+        -27.4,
+        23.7
+      ],
+      "win_home": 43.3,
+      "win_away": 56.7,
+      "confidence": 13,
+      "proj_home_score": 20.0,
+      "proj_away_score": 22.2,
+      "combined_sd": 13.13,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.33
+    },
+    {
+      "home": "New Orleans Saints",
+      "away": "Atlanta Falcons",
+      "home_off": 22.6,
+      "home_def": 25.0,
+      "away_off": 16.4,
+      "away_def": 19.2,
+      "model_margin": 2.5,
+      "expected_margin": 2.5,
+      "median_margin": 2.5,
+      "ci68": [
+        -10.1,
+        16.0
+      ],
+      "ci95": [
+        -23.0,
+        28.4
+      ],
+      "win_home": 57.5,
+      "win_away": 42.5,
+      "confidence": 15,
+      "proj_home_score": 20.6,
+      "proj_away_score": 17.9,
+      "combined_sd": 13.54,
+      "home_qb_adj": 0.06,
+      "away_qb_adj": 0.0
+    }
+  ],
+  "results_injury_adjusted": [
+    {
+      "home": "Washington Commanders",
+      "away": "Indianapolis Colts",
+      "home_off": 21.6,
+      "home_def": 26.8,
+      "away_off": 28.7,
+      "away_def": 29.6,
+      "model_margin": -2.3,
+      "expected_margin": -2.3,
+      "median_margin": -2.4,
+      "ci68": [
+        -15.7,
+        10.9
+      ],
+      "ci95": [
+        -28.6,
+        23.7
+      ],
+      "win_home": 43.7,
+      "win_away": 56.3,
+      "confidence": 13,
+      "proj_home_score": 29.7,
+      "proj_away_score": 32.1,
+      "combined_sd": 13.46,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.29,
+      "home_off_injury_adj": -1.0,
+      "home_def_injury_adj": 1.0,
+      "away_off_injury_adj": -0.09,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "Baltimore Ravens",
+      "away": "Tennessee Titans",
+      "home_off": 25.7,
+      "home_def": 21.9,
+      "away_off": 17.5,
+      "away_def": 23.6,
+      "model_margin": 11.9,
+      "expected_margin": 11.9,
+      "median_margin": 11.9,
+      "ci68": [
+        -0.7,
+        24.6
+      ],
+      "ci95": [
+        -13.4,
+        37.2
+      ],
+      "win_home": 82.5,
+      "win_away": 17.5,
+      "confidence": 65,
+      "proj_home_score": 27.7,
+      "proj_away_score": 15.9,
+      "combined_sd": 13.09,
+      "home_qb_adj": -0.22,
+      "away_qb_adj": -0.59,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "Buffalo Bills",
+      "away": "New England Patriots",
+      "home_off": 30.8,
+      "home_def": 25.1,
+      "away_off": 20.1,
+      "away_def": 19.5,
+      "model_margin": 7.2,
+      "expected_margin": 7.2,
+      "median_margin": 7.4,
+      "ci68": [
+        -5.5,
+        20.9
+      ],
+      "ci95": [
+        -18.8,
+        33.4
+      ],
+      "win_home": 70.9,
+      "win_away": 29.1,
+      "confidence": 42,
+      "proj_home_score": 29.0,
+      "proj_away_score": 21.6,
+      "combined_sd": 13.36,
+      "home_qb_adj": -0.05,
+      "away_qb_adj": 0.27,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": -0.76,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "Chicago Bears",
+      "away": "New York Jets",
+      "home_off": 21.5,
+      "home_def": 21.8,
+      "away_off": 17.4,
+      "away_def": 21.6,
+      "model_margin": 5.9,
+      "expected_margin": 5.9,
+      "median_margin": 6.0,
+      "ci68": [
+        -7.2,
+        19.3
+      ],
+      "ci95": [
+        -20.2,
+        31.7
+      ],
+      "win_home": 67.3,
+      "win_away": 32.7,
+      "confidence": 35,
+      "proj_home_score": 21.7,
+      "proj_away_score": 15.7,
+      "combined_sd": 13.36,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.51,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": -0.32,
+      "away_def_injury_adj": -0.06
+    },
+    {
+      "home": "Cincinnati Bengals",
+      "away": "Jacksonville Jaguars",
+      "home_off": 27.1,
+      "home_def": 24.3,
+      "away_off": 22.0,
+      "away_def": 18.5,
+      "model_margin": 1.3,
+      "expected_margin": 1.3,
+      "median_margin": 1.4,
+      "ci68": [
+        -12.3,
+        14.4
+      ],
+      "ci95": [
+        -25.2,
+        27.7
+      ],
+      "win_home": 54.0,
+      "win_away": 46.0,
+      "confidence": 8,
+      "proj_home_score": 24.0,
+      "proj_away_score": 22.8,
+      "combined_sd": 13.27,
+      "home_qb_adj": -0.06,
+      "away_qb_adj": 0.22,
+      "home_off_injury_adj": 1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "Houston Texans",
+      "away": "Dallas Cowboys",
+      "home_off": 26.5,
+      "home_def": 25.2,
+      "away_off": 28.7,
+      "away_def": 28.3,
+      "model_margin": 2.9,
+      "expected_margin": 2.9,
+      "median_margin": 3.0,
+      "ci68": [
+        -10.2,
+        16.6
+      ],
+      "ci95": [
+        -23.3,
+        29.4
+      ],
+      "win_home": 59.6,
+      "win_away": 40.4,
+      "confidence": 19,
+      "proj_home_score": 33.5,
+      "proj_away_score": 30.3,
+      "combined_sd": 13.3,
+      "home_qb_adj": 0.65,
+      "away_qb_adj": -0.58,
+      "home_off_injury_adj": -1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.96
+    },
+    {
+      "home": "New York Giants",
+      "away": "Arizona Cardinals",
+      "home_off": 22.3,
+      "home_def": 26.3,
+      "away_off": 20.0,
+      "away_def": 24.1,
+      "model_margin": 2.1,
+      "expected_margin": 2.1,
+      "median_margin": 2.3,
+      "ci68": [
+        -11.6,
+        15.9
+      ],
+      "ci95": [
+        -24.9,
+        28.6
+      ],
+      "win_home": 56.2,
+      "win_away": 43.8,
+      "confidence": 12,
+      "proj_home_score": 24.9,
+      "proj_away_score": 22.7,
+      "combined_sd": 13.89,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.09,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": -1.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.21
+    },
+    {
+      "home": "Philadelphia Eagles",
+      "away": "Los Angeles Rams",
+      "home_off": 21.1,
+      "home_def": 21.2,
+      "away_off": 25.1,
+      "away_def": 19.3,
+      "model_margin": -4.0,
+      "expected_margin": -4.0,
+      "median_margin": -4.2,
+      "ci68": [
+        -17.2,
+        9.3
+      ],
+      "ci95": [
+        -30.2,
+        21.9
+      ],
+      "win_home": 38.1,
+      "win_away": 61.9,
+      "confidence": 24,
+      "proj_home_score": 18.7,
+      "proj_away_score": 22.8,
+      "combined_sd": 13.27,
+      "home_qb_adj": -0.08,
+      "away_qb_adj": 0.1,
+      "home_off_injury_adj": -1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.48,
+      "away_def_injury_adj": 0.01
+    },
+    {
+      "home": "Tampa Bay Buccaneers",
+      "away": "Green Bay Packers",
+      "home_off": 17.1,
+      "home_def": 21.6,
+      "away_off": 22.7,
+      "away_def": 22.3,
+      "model_margin": -2.9,
+      "expected_margin": -2.9,
+      "median_margin": -2.9,
+      "ci68": [
+        -16.3,
+        10.6
+      ],
+      "ci95": [
+        -28.9,
+        23.7
+      ],
+      "win_home": 41.6,
+      "win_away": 58.4,
+      "confidence": 17,
+      "proj_home_score": 18.0,
+      "proj_away_score": 20.9,
+      "combined_sd": 13.5,
+      "home_qb_adj": 0.42,
+      "away_qb_adj": 0.86,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "Minnesota Vikings",
+      "away": "Miami Dolphins",
+      "home_off": 24.5,
+      "home_def": 22.4,
+      "away_off": 14.3,
+      "away_def": 22.4,
+      "model_margin": 12.2,
+      "expected_margin": 12.2,
+      "median_margin": 12.4,
+      "ci68": [
+        -0.9,
+        25.4
+      ],
+      "ci95": [
+        -14.4,
+        36.4
+      ],
+      "win_home": 82.0,
+      "win_away": 18.0,
+      "confidence": 64,
+      "proj_home_score": 25.5,
+      "proj_away_score": 13.4,
+      "combined_sd": 13.27,
+      "home_qb_adj": 0.29,
+      "away_qb_adj": 0.0,
+      "home_off_injury_adj": 1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "Las Vegas Raiders",
+      "away": "Kansas City Chiefs",
+      "home_off": 18.7,
+      "home_def": 21.0,
+      "away_off": 26.7,
+      "away_def": 22.4,
+      "model_margin": -4.6,
+      "expected_margin": -4.6,
+      "median_margin": -4.9,
+      "ci68": [
+        -17.4,
+        8.0
+      ],
+      "ci95": [
+        -29.9,
+        21.2
+      ],
+      "win_home": 35.1,
+      "win_away": 64.9,
+      "confidence": 30,
+      "proj_home_score": 19.5,
+      "proj_away_score": 24.3,
+      "combined_sd": 13.05,
+      "home_qb_adj": -0.13,
+      "away_qb_adj": 0.01,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "Seattle Seahawks",
+      "away": "Los Angeles Chargers",
+      "home_off": 23.3,
+      "home_def": 17.9,
+      "away_off": 24.4,
+      "away_def": 23.4,
+      "model_margin": 6.3,
+      "expected_margin": 6.3,
+      "median_margin": 6.0,
+      "ci68": [
+        -6.8,
+        19.4
+      ],
+      "ci95": [
+        -19.9,
+        31.5
+      ],
+      "win_home": 68.0,
+      "win_away": 32.0,
+      "confidence": 36,
+      "proj_home_score": 25.0,
+      "proj_away_score": 18.9,
+      "combined_sd": 13.13,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.52,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.97,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "San Francisco 49ers",
+      "away": "Denver Broncos",
+      "home_off": 27.7,
+      "home_def": 23.7,
+      "away_off": 23.6,
+      "away_def": 21.2,
+      "model_margin": 3.7,
+      "expected_margin": 3.7,
+      "median_margin": 3.9,
+      "ci68": [
+        -9.4,
+        16.7
+      ],
+      "ci95": [
+        -22.2,
+        29.7
+      ],
+      "win_home": 61.7,
+      "win_away": 38.3,
+      "confidence": 23,
+      "proj_home_score": 27.6,
+      "proj_away_score": 23.8,
+      "combined_sd": 13.36,
+      "home_qb_adj": -0.34,
+      "away_qb_adj": 0.59,
+      "home_off_injury_adj": -1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "Carolina Panthers",
+      "away": "Detroit Lions",
+      "home_off": 18.3,
+      "home_def": 20.0,
+      "away_off": 25.7,
+      "away_def": 23.3,
+      "model_margin": -2.1,
+      "expected_margin": -2.1,
+      "median_margin": -1.8,
+      "ci68": [
+        -15.0,
+        11.3
+      ],
+      "ci95": [
+        -27.1,
+        24.3
+      ],
+      "win_home": 45.2,
+      "win_away": 54.8,
+      "confidence": 10,
+      "proj_home_score": 20.2,
+      "proj_away_score": 22.0,
+      "combined_sd": 13.13,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.33,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0
+    },
+    {
+      "home": "New Orleans Saints",
+      "away": "Atlanta Falcons",
+      "home_off": 21.9,
+      "home_def": 25.0,
+      "away_off": 16.4,
+      "away_def": 20.2,
+      "model_margin": 2.8,
+      "expected_margin": 2.8,
+      "median_margin": 2.9,
+      "ci68": [
+        -10.6,
+        16.5
+      ],
+      "ci95": [
+        -23.2,
+        29.7
+      ],
+      "win_home": 58.4,
+      "win_away": 41.6,
+      "confidence": 17,
+      "proj_home_score": 20.8,
+      "proj_away_score": 17.9,
+      "combined_sd": 13.54,
+      "home_qb_adj": 0.06,
+      "away_qb_adj": 0.0,
+      "home_off_injury_adj": -0.71,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 1.01
+    }
+  ],
+  "results_market_blended": [
+    {
+      "home": "Washington Commanders",
+      "away": "Indianapolis Colts",
+      "home_off": 21.6,
+      "home_def": 26.8,
+      "away_off": 28.7,
+      "away_def": 29.6,
+      "model_margin": -2.3,
+      "expected_margin": -2.3,
+      "median_margin": -2.2,
+      "ci68": [
+        -15.8,
+        11.2
+      ],
+      "ci95": [
+        -28.4,
+        25.0
+      ],
+      "win_home": 43.5,
+      "win_away": 56.5,
+      "confidence": 13,
+      "proj_home_score": 29.7,
+      "proj_away_score": 32.0,
+      "combined_sd": 13.46,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.29,
+      "home_off_injury_adj": -1.0,
+      "home_def_injury_adj": 1.0,
+      "away_off_injury_adj": -0.09,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Baltimore Ravens",
+      "away": "Tennessee Titans",
+      "home_off": 25.7,
+      "home_def": 21.9,
+      "away_off": 17.5,
+      "away_def": 23.6,
+      "model_margin": 11.9,
+      "expected_margin": 11.9,
+      "median_margin": 11.7,
+      "ci68": [
+        -0.6,
+        24.8
+      ],
+      "ci95": [
+        -13.7,
+        36.8
+      ],
+      "win_home": 82.4,
+      "win_away": 17.6,
+      "confidence": 65,
+      "proj_home_score": 27.8,
+      "proj_away_score": 15.9,
+      "combined_sd": 13.09,
+      "home_qb_adj": -0.22,
+      "away_qb_adj": -0.59,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Buffalo Bills",
+      "away": "New England Patriots",
+      "home_off": 30.8,
+      "home_def": 25.1,
+      "away_off": 20.1,
+      "away_def": 19.5,
+      "model_margin": 7.2,
+      "expected_margin": 7.2,
+      "median_margin": 7.5,
+      "ci68": [
+        -6.0,
+        20.6
+      ],
+      "ci95": [
+        -18.9,
+        33.5
+      ],
+      "win_home": 71.2,
+      "win_away": 28.8,
+      "confidence": 42,
+      "proj_home_score": 28.9,
+      "proj_away_score": 21.6,
+      "combined_sd": 13.36,
+      "home_qb_adj": -0.05,
+      "away_qb_adj": 0.27,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": -0.76,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Chicago Bears",
+      "away": "New York Jets",
+      "home_off": 21.5,
+      "home_def": 21.8,
+      "away_off": 17.4,
+      "away_def": 21.6,
+      "model_margin": 5.9,
+      "expected_margin": 5.9,
+      "median_margin": 5.5,
+      "ci68": [
+        -7.5,
+        18.9
+      ],
+      "ci95": [
+        -20.4,
+        30.1
+      ],
+      "win_home": 66.9,
+      "win_away": 33.1,
+      "confidence": 34,
+      "proj_home_score": 21.6,
+      "proj_away_score": 16.0,
+      "combined_sd": 13.36,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.51,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": -0.32,
+      "away_def_injury_adj": -0.06,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Cincinnati Bengals",
+      "away": "Jacksonville Jaguars",
+      "home_off": 27.1,
+      "home_def": 24.3,
+      "away_off": 22.0,
+      "away_def": 18.5,
+      "model_margin": 1.3,
+      "expected_margin": 1.3,
+      "median_margin": 1.1,
+      "ci68": [
+        -12.1,
+        14.8
+      ],
+      "ci95": [
+        -24.9,
+        28.4
+      ],
+      "win_home": 53.4,
+      "win_away": 46.6,
+      "confidence": 7,
+      "proj_home_score": 24.0,
+      "proj_away_score": 22.7,
+      "combined_sd": 13.27,
+      "home_qb_adj": -0.06,
+      "away_qb_adj": 0.22,
+      "home_off_injury_adj": 1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Houston Texans",
+      "away": "Dallas Cowboys",
+      "home_off": 26.5,
+      "home_def": 25.2,
+      "away_off": 28.7,
+      "away_def": 28.3,
+      "model_margin": 2.9,
+      "expected_margin": 2.9,
+      "median_margin": 2.8,
+      "ci68": [
+        -10.3,
+        16.1
+      ],
+      "ci95": [
+        -23.0,
+        29.2
+      ],
+      "win_home": 58.7,
+      "win_away": 41.3,
+      "confidence": 17,
+      "proj_home_score": 33.3,
+      "proj_away_score": 30.4,
+      "combined_sd": 13.3,
+      "home_qb_adj": 0.65,
+      "away_qb_adj": -0.58,
+      "home_off_injury_adj": -1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.96,
+      "model_weight": 0.2
+    },
+    {
+      "home": "New York Giants",
+      "away": "Arizona Cardinals",
+      "home_off": 22.3,
+      "home_def": 26.3,
+      "away_off": 20.0,
+      "away_def": 24.1,
+      "model_margin": 2.1,
+      "expected_margin": 2.1,
+      "median_margin": 2.1,
+      "ci68": [
+        -11.2,
+        15.8
+      ],
+      "ci95": [
+        -24.4,
+        28.8
+      ],
+      "win_home": 55.9,
+      "win_away": 44.1,
+      "confidence": 12,
+      "proj_home_score": 25.1,
+      "proj_away_score": 23.1,
+      "combined_sd": 13.89,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.09,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": -1.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.21,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Philadelphia Eagles",
+      "away": "Los Angeles Rams",
+      "home_off": 21.1,
+      "home_def": 21.2,
+      "away_off": 25.1,
+      "away_def": 19.3,
+      "model_margin": -4.0,
+      "expected_margin": -4.0,
+      "median_margin": -4.0,
+      "ci68": [
+        -17.4,
+        9.3
+      ],
+      "ci95": [
+        -30.9,
+        22.0
+      ],
+      "win_home": 38.2,
+      "win_away": 61.8,
+      "confidence": 24,
+      "proj_home_score": 18.8,
+      "proj_away_score": 22.9,
+      "combined_sd": 13.27,
+      "home_qb_adj": -0.08,
+      "away_qb_adj": 0.1,
+      "home_off_injury_adj": -1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.48,
+      "away_def_injury_adj": 0.01,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Tampa Bay Buccaneers",
+      "away": "Green Bay Packers",
+      "home_off": 17.1,
+      "home_def": 21.6,
+      "away_off": 22.7,
+      "away_def": 22.3,
+      "model_margin": -2.9,
+      "expected_margin": -2.9,
+      "median_margin": -2.7,
+      "ci68": [
+        -16.0,
+        10.6
+      ],
+      "ci95": [
+        -29.0,
+        23.5
+      ],
+      "win_home": 41.9,
+      "win_away": 58.1,
+      "confidence": 16,
+      "proj_home_score": 18.1,
+      "proj_away_score": 20.8,
+      "combined_sd": 13.5,
+      "home_qb_adj": 0.42,
+      "away_qb_adj": 0.86,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Minnesota Vikings",
+      "away": "Miami Dolphins",
+      "home_off": 24.5,
+      "home_def": 22.4,
+      "away_off": 14.3,
+      "away_def": 22.4,
+      "model_margin": 12.2,
+      "expected_margin": 12.2,
+      "median_margin": 12.3,
+      "ci68": [
+        -1.0,
+        25.2
+      ],
+      "ci95": [
+        -14.1,
+        36.5
+      ],
+      "win_home": 81.9,
+      "win_away": 18.1,
+      "confidence": 64,
+      "proj_home_score": 25.4,
+      "proj_away_score": 13.5,
+      "combined_sd": 13.27,
+      "home_qb_adj": 0.29,
+      "away_qb_adj": 0.0,
+      "home_off_injury_adj": 1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Las Vegas Raiders",
+      "away": "Kansas City Chiefs",
+      "home_off": 18.7,
+      "home_def": 21.0,
+      "away_off": 26.7,
+      "away_def": 22.4,
+      "model_margin": -4.6,
+      "expected_margin": -4.6,
+      "median_margin": -4.9,
+      "ci68": [
+        -17.8,
+        8.3
+      ],
+      "ci95": [
+        -29.2,
+        21.0
+      ],
+      "win_home": 36.2,
+      "win_away": 63.8,
+      "confidence": 28,
+      "proj_home_score": 19.5,
+      "proj_away_score": 24.2,
+      "combined_sd": 13.05,
+      "home_qb_adj": -0.13,
+      "away_qb_adj": 0.01,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Seattle Seahawks",
+      "away": "Los Angeles Chargers",
+      "home_off": 23.3,
+      "home_def": 17.9,
+      "away_off": 24.4,
+      "away_def": 23.4,
+      "model_margin": 6.3,
+      "expected_margin": 6.3,
+      "median_margin": 6.4,
+      "ci68": [
+        -6.4,
+        19.2
+      ],
+      "ci95": [
+        -19.0,
+        31.5
+      ],
+      "win_home": 69.6,
+      "win_away": 30.4,
+      "confidence": 39,
+      "proj_home_score": 25.1,
+      "proj_away_score": 18.8,
+      "combined_sd": 13.13,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": 0.52,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.97,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "San Francisco 49ers",
+      "away": "Denver Broncos",
+      "home_off": 27.7,
+      "home_def": 23.7,
+      "away_off": 23.6,
+      "away_def": 21.2,
+      "model_margin": 3.7,
+      "expected_margin": 3.7,
+      "median_margin": 3.5,
+      "ci68": [
+        -9.3,
+        17.2
+      ],
+      "ci95": [
+        -22.5,
+        29.5
+      ],
+      "win_home": 60.7,
+      "win_away": 39.3,
+      "confidence": 21,
+      "proj_home_score": 27.4,
+      "proj_away_score": 23.7,
+      "combined_sd": 13.36,
+      "home_qb_adj": -0.34,
+      "away_qb_adj": 0.59,
+      "home_off_injury_adj": -1.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "Carolina Panthers",
+      "away": "Detroit Lions",
+      "home_off": 18.3,
+      "home_def": 20.0,
+      "away_off": 25.7,
+      "away_def": 23.3,
+      "model_margin": -2.1,
+      "expected_margin": -2.1,
+      "median_margin": -2.2,
+      "ci68": [
+        -15.3,
+        10.3
+      ],
+      "ci95": [
+        -27.8,
+        22.8
+      ],
+      "win_home": 43.1,
+      "win_away": 56.9,
+      "confidence": 14,
+      "proj_home_score": 20.0,
+      "proj_away_score": 22.3,
+      "combined_sd": 13.13,
+      "home_qb_adj": 0.0,
+      "away_qb_adj": -0.33,
+      "home_off_injury_adj": 0.0,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 0.0,
+      "model_weight": 0.2
+    },
+    {
+      "home": "New Orleans Saints",
+      "away": "Atlanta Falcons",
+      "home_off": 21.9,
+      "home_def": 25.0,
+      "away_off": 16.4,
+      "away_def": 20.2,
+      "model_margin": 2.8,
+      "expected_margin": 2.8,
+      "median_margin": 2.7,
+      "ci68": [
+        -10.6,
+        16.3
+      ],
+      "ci95": [
+        -23.8,
+        29.3
+      ],
+      "win_home": 57.8,
+      "win_away": 42.2,
+      "confidence": 16,
+      "proj_home_score": 20.7,
+      "proj_away_score": 17.9,
+      "combined_sd": 13.54,
+      "home_qb_adj": 0.06,
+      "away_qb_adj": 0.0,
+      "home_off_injury_adj": -0.71,
+      "home_def_injury_adj": 0.0,
+      "away_off_injury_adj": 0.0,
+      "away_def_injury_adj": 1.01,
+      "model_weight": 0.2
+    }
+  ],
+  "model_weight": 0.2,
+  "qb_profiles": {
+    "Carolina Panthers": {
+      "team": "Carolina Panthers",
+      "name": "Bryce Young",
+      "is_backup": false,
+      "paa2025": 1.67,
+      "paa2026": 1.62,
+      "blended_paa": 1.65,
+      "hot_cold_delta": -0.04,
+      "qb_adj": 0.0,
+      "data_quality": "full",
+      "tier": "Above Average"
+    },
+    "Atlanta Falcons": {
+      "team": "Atlanta Falcons",
+      "name": "Michael Penix Jr.",
+      "is_backup": false,
+      "paa2025": 0.32,
+      "paa2026": null,
+      "blended_paa": 0.32,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2026-games-yet",
+      "tier": "Average"
+    },
+    "New Orleans Saints": {
+      "team": "New Orleans Saints",
+      "name": "Tyler Shough",
+      "is_backup": false,
+      "paa2025": 0.96,
+      "paa2026": 0.41,
+      "blended_paa": 0.64,
+      "hot_cold_delta": -0.55,
+      "qb_adj": 0.06,
+      "data_quality": "full",
+      "tier": "Average"
+    },
+    "Baltimore Ravens": {
+      "team": "Baltimore Ravens",
+      "name": "Lamar Jackson",
+      "is_backup": false,
+      "paa2025": 0.17,
+      "paa2026": 2.19,
+      "blended_paa": 1.13,
+      "hot_cold_delta": 2.01,
+      "qb_adj": -0.22,
+      "data_quality": "full",
+      "tier": "Above Average"
+    },
+    "Minnesota Vikings": {
+      "team": "Minnesota Vikings",
+      "name": "Kyler Murray",
+      "is_backup": false,
+      "paa2025": 3.58,
+      "paa2026": -1.69,
+      "blended_paa": 2.97,
+      "hot_cold_delta": -5.26,
+      "qb_adj": 0.29,
+      "data_quality": "team-change",
+      "tier": "Elite"
+    },
+    "Chicago Bears": {
+      "team": "Chicago Bears",
+      "name": "Case Keenum",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": null,
+      "blended_paa": null,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-data",
+      "tier": "Unrated"
+    },
+    "Cincinnati Bengals": {
+      "team": "Cincinnati Bengals",
+      "name": "Joe Burrow",
+      "is_backup": false,
+      "paa2025": 0.54,
+      "paa2026": 1.07,
+      "blended_paa": 0.85,
+      "hot_cold_delta": 0.53,
+      "qb_adj": -0.06,
+      "data_quality": "full",
+      "tier": "Average"
+    },
+    "Houston Texans": {
+      "team": "Houston Texans",
+      "name": "C.J. Stroud",
+      "is_backup": false,
+      "paa2025": 2.4,
+      "paa2026": -3.54,
+      "blended_paa": -0.7,
+      "hot_cold_delta": -5.94,
+      "qb_adj": 0.65,
+      "data_quality": "full",
+      "tier": "Replacement Level"
+    },
+    "Pittsburgh Steelers": {
+      "team": "Pittsburgh Steelers",
+      "name": "Aaron Rodgers",
+      "is_backup": false,
+      "paa2025": -1.54,
+      "paa2026": -6.26,
+      "blended_paa": -3.75,
+      "hot_cold_delta": -4.73,
+      "qb_adj": 0.52,
+      "data_quality": "full",
+      "tier": "Replacement Level"
+    },
+    "New England Patriots": {
+      "team": "New England Patriots",
+      "name": "Drake Maye",
+      "is_backup": false,
+      "paa2025": 0.85,
+      "paa2026": -1.64,
+      "blended_paa": -0.2,
+      "hot_cold_delta": -2.49,
+      "qb_adj": 0.27,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "Green Bay Packers": {
+      "team": "Green Bay Packers",
+      "name": "Jordan Love",
+      "is_backup": false,
+      "paa2025": 3.2,
+      "paa2026": -4.64,
+      "blended_paa": -0.26,
+      "hot_cold_delta": -7.84,
+      "qb_adj": 0.86,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "New York Jets": {
+      "team": "New York Jets",
+      "name": "Geno Smith",
+      "is_backup": false,
+      "paa2025": -4.95,
+      "paa2026": 4.24,
+      "blended_paa": -0.75,
+      "hot_cold_delta": 9.19,
+      "qb_adj": -0.51,
+      "data_quality": "team-change",
+      "tier": "Replacement Level"
+    },
+    "Cleveland Browns": {
+      "team": "Cleveland Browns",
+      "name": "Deshaun Watson",
+      "is_backup": false,
+      "paa2025": null,
+      "paa2026": 0.32,
+      "blended_paa": 0.32,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Average"
+    },
+    "Tampa Bay Buccaneers": {
+      "team": "Tampa Bay Buccaneers",
+      "name": "Baker Mayfield",
+      "is_backup": false,
+      "paa2025": 0.77,
+      "paa2026": -3.01,
+      "blended_paa": -0.9,
+      "hot_cold_delta": -3.78,
+      "qb_adj": 0.42,
+      "data_quality": "full",
+      "tier": "Replacement Level"
+    },
+    "Philadelphia Eagles": {
+      "team": "Philadelphia Eagles",
+      "name": "Jalen Hurts",
+      "is_backup": false,
+      "paa2025": 0.73,
+      "paa2026": 1.5,
+      "blended_paa": 1.08,
+      "hot_cold_delta": 0.77,
+      "qb_adj": -0.08,
+      "data_quality": "full",
+      "tier": "Above Average"
+    },
+    "Tennessee Titans": {
+      "team": "Tennessee Titans",
+      "name": "Cam Ward",
+      "is_backup": false,
+      "paa2025": -2.71,
+      "paa2026": 2.69,
+      "blended_paa": -0.55,
+      "hot_cold_delta": 5.39,
+      "qb_adj": -0.59,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "Jacksonville Jaguars": {
+      "team": "Jacksonville Jaguars",
+      "name": "Trevor Lawrence",
+      "is_backup": false,
+      "paa2025": 0.99,
+      "paa2026": -1.02,
+      "blended_paa": 0.25,
+      "hot_cold_delta": -2.01,
+      "qb_adj": 0.22,
+      "data_quality": "full",
+      "tier": "Average"
+    },
+    "Denver Broncos": {
+      "team": "Denver Broncos",
+      "name": "Bo Nix",
+      "is_backup": false,
+      "paa2025": 3.22,
+      "paa2026": -2.12,
+      "blended_paa": 0.94,
+      "hot_cold_delta": -5.35,
+      "qb_adj": 0.59,
+      "data_quality": "full",
+      "tier": "Average"
+    },
+    "Las Vegas Raiders": {
+      "team": "Las Vegas Raiders",
+      "name": "Kirk Cousins",
+      "is_backup": false,
+      "paa2025": -0.02,
+      "paa2026": 2.36,
+      "blended_paa": 1.28,
+      "hot_cold_delta": 2.38,
+      "qb_adj": -0.13,
+      "data_quality": "team-change",
+      "tier": "Above Average"
+    },
+    "Los Angeles Chargers": {
+      "team": "Los Angeles Chargers",
+      "name": "Justin Herbert",
+      "is_backup": false,
+      "paa2025": -0.66,
+      "paa2026": -5.4,
+      "blended_paa": -2.59,
+      "hot_cold_delta": -4.74,
+      "qb_adj": 0.52,
+      "data_quality": "full",
+      "tier": "Replacement Level"
+    },
+    "Seattle Seahawks": {
+      "team": "Seattle Seahawks",
+      "name": "Drew Lock",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": 3.96,
+      "blended_paa": 3.96,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Elite"
+    },
+    "Arizona Cardinals": {
+      "team": "Arizona Cardinals",
+      "name": "Jacoby Brissett",
+      "is_backup": false,
+      "paa2025": 0.59,
+      "paa2026": -0.27,
+      "blended_paa": 0.21,
+      "hot_cold_delta": -0.86,
+      "qb_adj": 0.09,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "Washington Commanders": {
+      "team": "Washington Commanders",
+      "name": "Marcus Mariota",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": 1.94,
+      "blended_paa": 1.94,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Above Average"
+    },
+    "Dallas Cowboys": {
+      "team": "Dallas Cowboys",
+      "name": "Dak Prescott",
+      "is_backup": false,
+      "paa2025": 1.49,
+      "paa2026": 6.77,
+      "blended_paa": 3.82,
+      "hot_cold_delta": 5.28,
+      "qb_adj": -0.58,
+      "data_quality": "full",
+      "tier": "Elite"
+    },
+    "Miami Dolphins": {
+      "team": "Miami Dolphins",
+      "name": "Malik Willis",
+      "is_backup": false,
+      "paa2025": null,
+      "paa2026": -0.2,
+      "blended_paa": -0.2,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Below Average"
+    },
+    "San Francisco 49ers": {
+      "team": "San Francisco 49ers",
+      "name": "Brock Purdy",
+      "is_backup": false,
+      "paa2025": 3.2,
+      "paa2026": 6.33,
+      "blended_paa": 4.77,
+      "hot_cold_delta": 3.13,
+      "qb_adj": -0.34,
+      "data_quality": "full",
+      "tier": "Elite"
+    },
+    "Indianapolis Colts": {
+      "team": "Indianapolis Colts",
+      "name": "Daniel Jones",
+      "is_backup": false,
+      "paa2025": 0.43,
+      "paa2026": -2.19,
+      "blended_paa": -0.67,
+      "hot_cold_delta": -2.62,
+      "qb_adj": 0.29,
+      "data_quality": "full",
+      "tier": "Below Average"
+    },
+    "Kansas City Chiefs": {
+      "team": "Kansas City Chiefs",
+      "name": "Patrick Mahomes",
+      "is_backup": false,
+      "paa2025": 3.68,
+      "paa2026": 3.62,
+      "blended_paa": 3.65,
+      "hot_cold_delta": -0.06,
+      "qb_adj": 0.01,
+      "data_quality": "full",
+      "tier": "Elite"
+    },
+    "New York Giants": {
+      "team": "New York Giants",
+      "name": "Jameis Winston",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": -1.02,
+      "blended_paa": -1.02,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-2025-baseline",
+      "tier": "Replacement Level"
+    },
+    "Los Angeles Rams": {
+      "team": "Los Angeles Rams",
+      "name": "Matthew Stafford",
+      "is_backup": false,
+      "paa2025": 2.78,
+      "paa2026": 1.88,
+      "blended_paa": 2.41,
+      "hot_cold_delta": -0.9,
+      "qb_adj": 0.1,
+      "data_quality": "full",
+      "tier": "Elite"
+    },
+    "Buffalo Bills": {
+      "team": "Buffalo Bills",
+      "name": "Josh Allen",
+      "is_backup": false,
+      "paa2025": 1.74,
+      "paa2026": 2.16,
+      "blended_paa": 1.94,
+      "hot_cold_delta": 0.42,
+      "qb_adj": -0.05,
+      "data_quality": "full",
+      "tier": "Above Average"
+    },
+    "Detroit Lions": {
+      "team": "Detroit Lions",
+      "name": "Jared Goff",
+      "is_backup": false,
+      "paa2025": 2.04,
+      "paa2026": 5.03,
+      "blended_paa": 3.47,
+      "hot_cold_delta": 2.99,
+      "qb_adj": -0.33,
+      "data_quality": "full",
+      "tier": "Elite"
+    }
+  },
+  "injury_adjustments": {
+    "Arizona Cardinals": {
+      "off_adj": 0.0,
+      "def_adj": 0.21,
+      "detail": [
+        {
+          "pos": "CB",
+          "injured": "Will Johnson",
+          "tier": "CB1",
+          "replacement": "Denzel Burke",
+          "injured_vpg": 0.37,
+          "replacement_vpg": 0.16,
+          "impact": 0.21
+        },
+        {
+          "pos": "RB",
+          "injured": "James Conner",
+          "tier": "RB4",
+          "replacement": "Corey Kiner",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "RB",
+          "injured": "Trey Benson",
+          "tier": "RB5",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Atlanta Falcons": {
+      "off_adj": 0.0,
+      "def_adj": 1.01,
+      "detail": [
+        {
+          "pos": "DE",
+          "injured": "Samson Ebukam",
+          "tier": "DE1",
+          "replacement": null,
+          "injured_vpg": 0.01,
+          "replacement_vpg": 0.0,
+          "impact": 0.01
+        },
+        {
+          "pos": "CB",
+          "injured": "A.J. Terrell Jr.",
+          "tier": "CB1",
+          "replacement": "Dee Alford",
+          "injured_vpg": 1.83,
+          "replacement_vpg": 0.0,
+          "impact": 1.0
+        }
+      ]
+    },
+    "Carolina Panthers": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "RB",
+          "injured": "Trevor Etienne",
+          "tier": "RB3",
+          "replacement": "Jimmy Horn Jr.",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "OT",
+          "injured": "Ikem Ekwonu",
+          "tier": "OT1",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "OT",
+          "injured": "Taylor Moton",
+          "tier": "OT2",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "DT",
+          "injured": "Tershawn Wharton",
+          "tier": "DT3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "LB",
+          "injured": "Nic Scourton",
+          "tier": "LB3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Chicago Bears": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "LB",
+          "injured": "Noah Sewell",
+          "tier": "LB3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "S",
+          "injured": "Coby Bryant",
+          "tier": "S3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "RB",
+          "injured": "Brittain Brown",
+          "tier": "RB3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Cincinnati Bengals": {
+      "off_adj": 1.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "WR",
+          "injured": "Andrei Iosivas",
+          "tier": "WR3",
+          "replacement": null,
+          "injured_vpg": -2.62,
+          "replacement_vpg": 0.0,
+          "impact": 1.0
+        }
+      ]
+    },
+    "Cleveland Browns": {
+      "off_adj": 0.0,
+      "def_adj": 0.01,
+      "detail": [
+        {
+          "pos": "RB",
+          "injured": "Dylan Sampson",
+          "tier": "RB2",
+          "replacement": "Jerome Ford",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "DE",
+          "injured": "Alex Wright",
+          "tier": "DE2",
+          "replacement": "Isaiah McGuire",
+          "injured_vpg": 0.0,
+          "replacement_vpg": -0.01,
+          "impact": 0.01
+        }
+      ]
+    },
+    "Dallas Cowboys": {
+      "off_adj": 0.0,
+      "def_adj": 0.96,
+      "detail": [
+        {
+          "pos": "CB",
+          "injured": "Cobie Durant",
+          "tier": "CB2",
+          "replacement": "Shavon Revel Jr.",
+          "injured_vpg": -1.14,
+          "replacement_vpg": -2.1,
+          "impact": 0.96
+        },
+        {
+          "pos": "RB",
+          "injured": "Malik Davis",
+          "tier": "RB2",
+          "replacement": "Jaydon Blue",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Denver Broncos": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "LB",
+          "injured": "Jonathon Cooper",
+          "tier": "LB3",
+          "replacement": "Dondrea Tillman",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Detroit Lions": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "RB",
+          "injured": "Isiah Pacheco",
+          "tier": "RB3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "C",
+          "injured": "Cade Mays",
+          "tier": "C2",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "S",
+          "injured": "Brian Branch",
+          "tier": "S1",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Green Bay Packers": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "RB",
+          "injured": "Josh Jacobs",
+          "tier": "RB1",
+          "replacement": "Emanuel Wilson",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "TE",
+          "injured": "Luke Musgrave",
+          "tier": "TE2",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "DE",
+          "injured": "Micah Parsons",
+          "tier": "DE1",
+          "replacement": "Rashan Gary",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Houston Texans": {
+      "off_adj": -1.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "WR",
+          "injured": "Jayden Higgins",
+          "tier": "WR2",
+          "replacement": "Xavier Hutchinson",
+          "injured_vpg": 0.0,
+          "replacement_vpg": -1.24,
+          "impact": -1.0
+        },
+        {
+          "pos": "OT",
+          "injured": "Braden Smith",
+          "tier": "OT3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Indianapolis Colts": {
+      "off_adj": -0.09,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "WR",
+          "injured": "Alec Pierce",
+          "tier": "WR3",
+          "replacement": null,
+          "injured_vpg": 0.09,
+          "replacement_vpg": 0.0,
+          "impact": -0.09
+        },
+        {
+          "pos": "DE",
+          "injured": "Micheal Clemons",
+          "tier": "DE3",
+          "replacement": "Tyquan Lewis",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Los Angeles Chargers": {
+      "off_adj": 0.97,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "TE",
+          "injured": "David Njoku",
+          "tier": "TE2",
+          "replacement": null,
+          "injured_vpg": -0.97,
+          "replacement_vpg": 0.0,
+          "impact": 0.97
+        },
+        {
+          "pos": "C",
+          "injured": "Tyler Biadasz",
+          "tier": "C2",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Los Angeles Rams": {
+      "off_adj": 0.48,
+      "def_adj": 0.01,
+      "detail": [
+        {
+          "pos": "RB",
+          "injured": "Ronnie Rivers",
+          "tier": "RB3",
+          "replacement": null,
+          "injured_vpg": -0.48,
+          "replacement_vpg": 0.0,
+          "impact": 0.48
+        },
+        {
+          "pos": "DE",
+          "injured": "Myles Garrett",
+          "tier": "DE1",
+          "replacement": "Braden Fiske",
+          "injured_vpg": 0.0,
+          "replacement_vpg": -0.01,
+          "impact": 0.01
+        }
+      ]
+    },
+    "Miami Dolphins": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "DT",
+          "injured": "Kenneth Grant",
+          "tier": "DT2",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "CB",
+          "injured": "Darrell Baker Jr.",
+          "tier": "CB3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Minnesota Vikings": {
+      "off_adj": 1.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "RB",
+          "injured": "Jordan Mason",
+          "tier": "RB2",
+          "replacement": "Zavier Scott",
+          "injured_vpg": -1.09,
+          "replacement_vpg": 0.0,
+          "impact": 1.0
+        }
+      ]
+    },
+    "New England Patriots": {
+      "off_adj": -0.76,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "WR",
+          "injured": "A.J. Brown",
+          "tier": "WR1",
+          "replacement": "Mack Hollins",
+          "injured_vpg": 0.83,
+          "replacement_vpg": 0.07,
+          "impact": -0.76
+        }
+      ]
+    },
+    "New Orleans Saints": {
+      "off_adj": -0.71,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "OT",
+          "injured": "Kelvin Banks Jr.",
+          "tier": "OT1",
+          "replacement": "Taliese Fuaga",
+          "injured_vpg": 0.33,
+          "replacement_vpg": -0.38,
+          "impact": -0.71
+        },
+        {
+          "pos": "RB",
+          "injured": "Ty Chandler",
+          "tier": "RB7",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "DT",
+          "injured": "Bryan Bresee",
+          "tier": "DT2",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "New York Giants": {
+      "off_adj": 0.0,
+      "def_adj": -1.0,
+      "detail": [
+        {
+          "pos": "CB",
+          "injured": "Paulson Adebo",
+          "tier": "CB1",
+          "replacement": "Andru Phillips",
+          "injured_vpg": -1.33,
+          "replacement_vpg": 0.0,
+          "impact": -1.0
+        },
+        {
+          "pos": "DT",
+          "injured": "Roy Robertson-Harris",
+          "tier": "DT2",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "WR",
+          "injured": "Calvin Austin III",
+          "tier": "WR3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "New York Jets": {
+      "off_adj": -0.32,
+      "def_adj": -0.06,
+      "detail": [
+        {
+          "pos": "TE",
+          "injured": "Mason Taylor",
+          "tier": "TE1",
+          "replacement": null,
+          "injured_vpg": 0.32,
+          "replacement_vpg": 0.0,
+          "impact": -0.32
+        },
+        {
+          "pos": "DT",
+          "injured": "David Onyemata",
+          "tier": "DT1",
+          "replacement": "Jowon Briggs",
+          "injured_vpg": 0.01,
+          "replacement_vpg": 0.07,
+          "impact": -0.06
+        }
+      ]
+    },
+    "Philadelphia Eagles": {
+      "off_adj": -1.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "TE",
+          "injured": "Dallas Goedert",
+          "tier": "TE1",
+          "replacement": null,
+          "injured_vpg": 1.32,
+          "replacement_vpg": 0.0,
+          "impact": -1.0
+        }
+      ]
+    },
+    "San Francisco 49ers": {
+      "off_adj": -1.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "WR",
+          "injured": "Ricky Pearsall",
+          "tier": "WR2",
+          "replacement": "Kendrick Bourne",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "WR",
+          "injured": "Christian Kirk",
+          "tier": "WR4",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "WR",
+          "injured": "Demarcus Robinson",
+          "tier": "WR4",
+          "replacement": null,
+          "injured_vpg": 1.16,
+          "replacement_vpg": 0.0,
+          "impact": -1.0
+        },
+        {
+          "pos": "TE",
+          "injured": "Jake Tonges",
+          "tier": "TE2",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Seattle Seahawks": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "RB",
+          "injured": "Zach Charbonnet",
+          "tier": "RB2",
+          "replacement": "Sam Darnold",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "CB",
+          "injured": "Terrion Arnold",
+          "tier": "CB4",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Tampa Bay Buccaneers": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "WR",
+          "injured": "David Sills V",
+          "tier": "WR6",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Tennessee Titans": {
+      "off_adj": 0.0,
+      "def_adj": 0.0,
+      "detail": [
+        {
+          "pos": "LB",
+          "injured": "Jaylen Harrell",
+          "tier": "LB4",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    },
+    "Washington Commanders": {
+      "off_adj": -1.0,
+      "def_adj": 1.0,
+      "detail": [
+        {
+          "pos": "S",
+          "injured": "Nick Cross",
+          "tier": "S1",
+          "replacement": "Jeremy Reaves",
+          "injured_vpg": 0.82,
+          "replacement_vpg": -1.88,
+          "impact": 1.0
+        },
+        {
+          "pos": "DT",
+          "injured": "Jer'Zhan Newton",
+          "tier": "DT3",
+          "replacement": null,
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "OT",
+          "injured": "Laremy Tunsil",
+          "tier": "OT2",
+          "replacement": "Brandon Coleman",
+          "injured_vpg": 0.0,
+          "replacement_vpg": -1.01,
+          "impact": -1.0
+        },
+        {
+          "pos": "CB",
+          "injured": "Trey Amos",
+          "tier": "CB3",
+          "replacement": "Jonathan Jones",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        },
+        {
+          "pos": "RB",
+          "injured": "Jeremy McNichols",
+          "tier": "RB3",
+          "replacement": "Austin Ekeler",
+          "injured_vpg": 0.0,
+          "replacement_vpg": 0.0,
+          "impact": 0.0
+        }
+      ]
+    }
+  },
+  "teams": {
+    "Buffalo Bills": {
+      "comp": 5.8,
+      "sd": 0.7,
+      "off": 30.9,
+      "defr": 25.1
+    },
+    "Seattle Seahawks": {
+      "comp": 5.4,
+      "sd": 0.6,
+      "off": 23.3,
+      "defr": 17.9
+    },
+    "San Francisco 49ers": {
+      "comp": 5.4,
+      "sd": 1.5,
+      "off": 29.1,
+      "defr": 23.7
+    },
+    "Los Angeles Rams": {
+      "comp": 5.3,
+      "sd": 0.7,
+      "off": 24.6,
+      "defr": 19.3
+    },
+    "Kansas City Chiefs": {
+      "comp": 4.3,
+      "sd": 0.4,
+      "off": 26.7,
+      "defr": 22.4
+    },
+    "Baltimore Ravens": {
+      "comp": 4.0,
+      "sd": 0.6,
+      "off": 25.9,
+      "defr": 21.9
+    },
+    "Jacksonville Jaguars": {
+      "comp": 3.3,
+      "sd": 0.9,
+      "off": 21.8,
+      "defr": 18.5
+    },
+    "Detroit Lions": {
+      "comp": 2.7,
+      "sd": 0.3,
+      "off": 26.0,
+      "defr": 23.3
+    },
+    "Cincinnati Bengals": {
+      "comp": 1.9,
+      "sd": 1.0,
+      "off": 26.2,
+      "defr": 24.3
+    },
+    "Dallas Cowboys": {
+      "comp": 1.9,
+      "sd": 1.1,
+      "off": 29.2,
+      "defr": 27.3
+    },
+    "Denver Broncos": {
+      "comp": 1.8,
+      "sd": 0.7,
+      "off": 23.0,
+      "defr": 21.2
+    },
+    "Houston Texans": {
+      "comp": 1.6,
+      "sd": 0.9,
+      "off": 26.8,
+      "defr": 25.2
+    },
+    "New England Patriots": {
+      "comp": 1.0,
+      "sd": 1.5,
+      "off": 20.5,
+      "defr": 19.5
+    },
+    "Philadelphia Eagles": {
+      "comp": 0.9,
+      "sd": 1.2,
+      "off": 22.1,
+      "defr": 21.2
+    },
+    "Minnesota Vikings": {
+      "comp": 0.8,
+      "sd": 0.9,
+      "off": 23.2,
+      "defr": 22.4
+    },
+    "Chicago Bears": {
+      "comp": -0.3,
+      "sd": 1.4,
+      "off": 21.5,
+      "defr": 21.8
+    },
+    "Los Angeles Chargers": {
+      "comp": -0.4,
+      "sd": 0.7,
+      "off": 23.0,
+      "defr": 23.4
+    },
+    "Green Bay Packers": {
+      "comp": -0.5,
+      "sd": 1.2,
+      "off": 21.8,
+      "defr": 22.3
+    },
+    "Indianapolis Colts": {
+      "comp": -1.1,
+      "sd": 1.0,
+      "off": 28.5,
+      "defr": 29.6
+    },
+    "Pittsburgh Steelers": {
+      "comp": -1.3,
+      "sd": 0.9,
+      "off": 20.0,
+      "defr": 21.3
+    },
+    "Carolina Panthers": {
+      "comp": -1.7,
+      "sd": 1.0,
+      "off": 18.3,
+      "defr": 20.0
+    },
+    "Las Vegas Raiders": {
+      "comp": -2.2,
+      "sd": 0.4,
+      "off": 18.8,
+      "defr": 21.0
+    },
+    "New Orleans Saints": {
+      "comp": -2.4,
+      "sd": 1.3,
+      "off": 22.6,
+      "defr": 25.0
+    },
+    "Atlanta Falcons": {
+      "comp": -2.8,
+      "sd": 1.4,
+      "off": 16.4,
+      "defr": 19.2
+    },
+    "Washington Commanders": {
+      "comp": -3.2,
+      "sd": 1.5,
+      "off": 22.6,
+      "defr": 25.8
+    },
+    "New York Jets": {
+      "comp": -3.4,
+      "sd": 0.8,
+      "off": 18.2,
+      "defr": 21.6
+    },
+    "Arizona Cardinals": {
+      "comp": -4.0,
+      "sd": 1.6,
+      "off": 19.9,
+      "defr": 23.9
+    },
+    "New York Giants": {
+      "comp": -5.0,
+      "sd": 1.9,
+      "off": 22.3,
+      "defr": 27.3
+    },
+    "Tampa Bay Buccaneers": {
+      "comp": -5.0,
+      "sd": 1.4,
+      "off": 16.6,
+      "defr": 21.6
+    },
+    "Tennessee Titans": {
+      "comp": -5.5,
+      "sd": 0.5,
+      "off": 18.1,
+      "defr": 23.6
+    },
+    "Cleveland Browns": {
+      "comp": -5.9,
+      "sd": 0.8,
+      "off": 13.6,
+      "defr": 19.5
+    },
+    "Miami Dolphins": {
+      "comp": -8.1,
+      "sd": 1.0,
+      "off": 14.3,
+      "defr": 22.4
+    }
+  },
+  "stale_inputs": {
+    "off_def_split": "through Week 2 only (no Week 3 refresh available)",
+    "qb_layer": "through Week 2 only (no Week 3 refresh available)",
+    "injuries": "Week 3 report, reused unchanged",
+    "market_lines": "none sourced for Week 4"
+  }
+}
