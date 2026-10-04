@@ -622,28 +622,28 @@
     {
       "home": "Tampa Bay Buccaneers",
       "away": "Green Bay Packers",
-      "home_off": 17.1,
+      "home_off": 16.6,
       "home_def": 21.6,
       "away_off": 22.7,
       "away_def": 22.3,
-      "model_margin": -2.9,
-      "expected_margin": -2.9,
-      "median_margin": -3.1,
+      "model_margin": -3.4,
+      "expected_margin": -3.4,
+      "median_margin": -3.5,
       "ci68": [
-        -16.4,
-        10.6
+        -16.8,
+        10.1
       ],
       "ci95": [
-        -29.3,
-        23.3
+        -29.7,
+        22.9
       ],
-      "win_home": 41.4,
-      "win_away": 58.6,
-      "confidence": 17,
-      "proj_home_score": 17.9,
+      "win_home": 40.2,
+      "win_away": 59.8,
+      "confidence": 20,
+      "proj_home_score": 17.5,
       "proj_away_score": 20.8,
       "combined_sd": 13.5,
-      "home_qb_adj": 0.42,
+      "home_qb_adj": 0.0,
       "away_qb_adj": 0.86
     },
     {
@@ -1061,28 +1061,28 @@
     {
       "home": "Tampa Bay Buccaneers",
       "away": "Green Bay Packers",
-      "home_off": 17.1,
+      "home_off": 16.6,
       "home_def": 21.6,
       "away_off": 22.7,
       "away_def": 22.3,
-      "model_margin": -2.9,
-      "expected_margin": -2.9,
-      "median_margin": -2.9,
+      "model_margin": -3.4,
+      "expected_margin": -3.4,
+      "median_margin": -3.3,
       "ci68": [
-        -16.3,
-        10.6
+        -16.7,
+        10.2
       ],
       "ci95": [
-        -28.9,
-        23.7
+        -29.3,
+        23.3
       ],
-      "win_home": 41.6,
-      "win_away": 58.4,
-      "confidence": 17,
-      "proj_home_score": 18.0,
+      "win_home": 40.5,
+      "win_away": 59.5,
+      "confidence": 19,
+      "proj_home_score": 17.6,
       "proj_away_score": 20.9,
       "combined_sd": 13.5,
-      "home_qb_adj": 0.42,
+      "home_qb_adj": 0.0,
       "away_qb_adj": 0.86,
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 0.0,
@@ -1536,28 +1536,28 @@
     {
       "home": "Tampa Bay Buccaneers",
       "away": "Green Bay Packers",
-      "home_off": 17.1,
+      "home_off": 16.6,
       "home_def": 21.6,
       "away_off": 22.7,
       "away_def": 22.3,
-      "model_margin": -2.9,
-      "expected_margin": -2.9,
-      "median_margin": -2.7,
+      "model_margin": -3.4,
+      "expected_margin": -3.4,
+      "median_margin": -3.1,
       "ci68": [
-        -16.0,
-        10.6
+        -16.4,
+        10.2
       ],
       "ci95": [
-        -29.0,
-        23.5
+        -29.2,
+        23.1
       ],
-      "win_home": 41.9,
-      "win_away": 58.1,
-      "confidence": 16,
-      "proj_home_score": 18.1,
+      "win_home": 40.8,
+      "win_away": 59.2,
+      "confidence": 18,
+      "proj_home_score": 17.7,
       "proj_away_score": 20.8,
       "combined_sd": 13.5,
-      "home_qb_adj": 0.42,
+      "home_qb_adj": 0.0,
       "away_qb_adj": 0.86,
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 0.0,
@@ -1822,7 +1822,7 @@
     },
     "Chicago Bears": {
       "team": "Chicago Bears",
-      "name": "Case Keenum",
+      "name": "Tyson Bagent",
       "is_backup": true,
       "paa2025": null,
       "paa2026": null,
@@ -1918,15 +1918,15 @@
     },
     "Tampa Bay Buccaneers": {
       "team": "Tampa Bay Buccaneers",
-      "name": "Baker Mayfield",
-      "is_backup": false,
-      "paa2025": 0.77,
-      "paa2026": -3.01,
-      "blended_paa": -0.9,
-      "hot_cold_delta": -3.78,
-      "qb_adj": 0.42,
-      "data_quality": "full",
-      "tier": "Replacement Level"
+      "name": "Jalon Daniels",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": null,
+      "blended_paa": null,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-data",
+      "tier": "Unrated"
     },
     "Philadelphia Eagles": {
       "team": "Philadelphia Eagles",
@@ -1962,7 +1962,7 @@
       "hot_cold_delta": -2.01,
       "qb_adj": 0.22,
       "data_quality": "full",
-      "tier": "Average"
+      "tier": "Below Average"
     },
     "Denver Broncos": {
       "team": "Denver Broncos",
@@ -2002,15 +2002,15 @@
     },
     "Seattle Seahawks": {
       "team": "Seattle Seahawks",
-      "name": "Drew Lock",
-      "is_backup": true,
+      "name": "Sam Darnold",
+      "is_backup": false,
       "paa2025": null,
-      "paa2026": 3.96,
-      "blended_paa": 3.96,
+      "paa2026": null,
+      "blended_paa": null,
       "hot_cold_delta": null,
       "qb_adj": 0.0,
-      "data_quality": "no-2025-baseline",
-      "tier": "Elite"
+      "data_quality": "no-data",
+      "tier": "Unrated"
     },
     "Arizona Cardinals": {
       "team": "Arizona Cardinals",
@@ -2082,7 +2082,7 @@
       "hot_cold_delta": -2.62,
       "qb_adj": 0.29,
       "data_quality": "full",
-      "tier": "Below Average"
+      "tier": "Replacement Level"
     },
     "Kansas City Chiefs": {
       "team": "Kansas City Chiefs",

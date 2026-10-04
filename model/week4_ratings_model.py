@@ -13,8 +13,11 @@ random.seed(42)
 #   - Off/def split inputs (RUN_DEF_2026 / PASS_DEF_2026): STALE -- still only
 #     through Week 2; no refreshed Week 3 SIS DataHub export was available
 #     this session.
-#   - QB layer (STARTERS / QB_2026_YTD): STALE -- carried forward unchanged
-#     from the Week 3 build; reflects QB form through Week 2, not Week 3.
+#   - QB layer: STARTERS is FRESH (real Week 4 starters, confirmed by the user --
+#     three changes from Week 3: Bears, Buccaneers, Seahawks). The underlying
+#     performance data (QB_2025 / QB_2026_YTD) is still STALE -- through Week 2
+#     only, and the three changed starters have no entry in either table, so
+#     their qb_adj falls back to 0.0 (no fabricated numbers).
 #   - Injury adjustments: STALE -- reusing week3_injury_adjustments.json
 #     unchanged; no refreshed Week 4 injury report was available.
 #   - Market lines (VEGAS): NONE sourced this week -- left empty, so every
@@ -283,21 +286,29 @@ def ml_to_prob(ml):
 STARTERS = {
     "Carolina Panthers": ("Bryce Young", False), "Atlanta Falcons": ("Michael Penix Jr.", False),
     "New Orleans Saints": ("Tyler Shough", False), "Baltimore Ravens": ("Lamar Jackson", False),
-    "Minnesota Vikings": ("Kyler Murray", False), "Chicago Bears": ("Case Keenum", True),
+    "Minnesota Vikings": ("Kyler Murray", False), "Chicago Bears": ("Tyson Bagent", True),
     "Cincinnati Bengals": ("Joe Burrow", False), "Houston Texans": ("C.J. Stroud", False),
     "Pittsburgh Steelers": ("Aaron Rodgers", False), "New England Patriots": ("Drake Maye", False),
     "Green Bay Packers": ("Jordan Love", False), "New York Jets": ("Geno Smith", False),
-    "Cleveland Browns": ("Deshaun Watson", False), "Tampa Bay Buccaneers": ("Baker Mayfield", False),
+    "Cleveland Browns": ("Deshaun Watson", False), "Tampa Bay Buccaneers": ("Jalon Daniels", True),
     "Philadelphia Eagles": ("Jalen Hurts", False), "Tennessee Titans": ("Cam Ward", False),
     "Jacksonville Jaguars": ("Trevor Lawrence", False), "Denver Broncos": ("Bo Nix", False),
     "Las Vegas Raiders": ("Kirk Cousins", False), "Los Angeles Chargers": ("Justin Herbert", False),
-    "Seattle Seahawks": ("Drew Lock", True), "Arizona Cardinals": ("Jacoby Brissett", False),
+    "Seattle Seahawks": ("Sam Darnold", False), "Arizona Cardinals": ("Jacoby Brissett", False),
     "Washington Commanders": ("Marcus Mariota", True), "Dallas Cowboys": ("Dak Prescott", False),
     "Miami Dolphins": ("Malik Willis", False), "San Francisco 49ers": ("Brock Purdy", False),
     "Indianapolis Colts": ("Daniel Jones", False), "Kansas City Chiefs": ("Patrick Mahomes", False),
     "New York Giants": ("Jameis Winston", True), "Los Angeles Rams": ("Matthew Stafford", False),
     "Buffalo Bills": ("Josh Allen", False), "Detroit Lions": ("Jared Goff", False),
 }
+# Week 4 starters as confirmed by the user (real, not carried forward). Three changes from the
+# Week 3 build: Chicago (Case Keenum -> Tyson Bagent), Tampa Bay (Baker Mayfield -> Jalon Daniels,
+# a backup/rookie now starting), and Seattle (Drew Lock -> Sam Darnold, who's back as the starter,
+# no longer a backup). Bagent, Daniels, and Darnold all have no entry in QB_2025 or QB_2026_YTD
+# below (no 2025 baseline was collected for any of them, and no 2026-to-date SIS data exists yet
+# for the two new backups) -- build_qb_profile's "no-data" branch handles this correctly: qb_adj
+# falls back to 0.0 rather than fabricating a number, same treatment the injury layer gives an
+# absent player.
 # Combines passing AND rushing production (SIS DataHub). name -> (games, pass_att,
 # pass_PAA_season_total, rush_att, rush_PAA_season_total, 2025 team)
 QB_2025 = {
