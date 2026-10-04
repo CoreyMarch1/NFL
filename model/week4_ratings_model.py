@@ -1,4 +1,4 @@
-import random, statistics, json, math, os
+import random, statistics, json, math, os, csv
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -10,9 +10,10 @@ random.seed(42)
 #     sourced from the user, itself built on ESPN/nfelo/Inpredictable/
 #     Unexpected Points/FTN/PFF through Week 3 results).
 #   - Schedule (MATCHUPS): FRESH (Week 4 slate).
-#   - Off/def split inputs (RUN_DEF_2026 / PASS_DEF_2026): STALE -- still only
-#     through Week 2; no refreshed Week 3 SIS DataHub export was available
-#     this session.
+#   - Inpredictable input to the composite: FRESH (Oct 4 betting-market GPF
+#     replaces the composite's older Inpredictable snapshot; comp/sd recomputed).
+#   - Off/def split: FRESH -- Inpredictable's market-derived dGPF, replacing the
+#     SIS DataHub split that was stuck at Week 2 data.
 #   - QB layer: STARTERS is FRESH (real Week 4 starters, confirmed by the user --
 #     three changes from Week 3: Bears, Buccaneers, Seahawks). The underlying
 #     performance data (QB_2025 / QB_2026_YTD) is still STALE -- through Week 2
@@ -69,82 +70,42 @@ TEAMS = {
 AVG_PTS = 22.5   # league-average team points/game baseline used for off/def decomposition
 
 # ============================================================================
-# Real offense/defense split (lever #3). STALE this week: still the same
-# through-Week-2 SIS DataHub Run/Pass Defense tables used for the Week 3
-# build -- no Week 3 refresh was available. Source: SIS DataHub team Run
-# Defense and Pass Defense tables (2025 season + 2026 through Week 2). Both
-# are "Points Above Avg" (PAA) -- positive = defense saves points relative
-# to league average.
-#
-# Pass Rush data was also supplied but is intentionally NOT summed in here:
-# a sack/pressure event that shows up in Pass Rush's own PAA also shows up in
-# Pass Defense's overall EPA-allowed number for that same play, so adding
-# both would double-count. It's kept below as a diagnostic-only figure.
-#
-# def_rating (points allowed/game, lower=better) = AVG_PTS - defense_total_ppg
-# off_rating is then a residual of the vendor composite identity comp=off-def:
-# off_rating = comp + def_rating. This needs no separate offense data at all.
+# Inpredictable betting-market ratings (as of Oct 4, 2026). Inpredictable is
+# already one of the composite's six inputs, so its fresh GPF REPLACES the older
+# snapshot in the composite rather than being added as a seventh source (which
+# would double-count it). The published composite reproduces exactly as the plain
+# mean of its six sources (sd = sample sd), so recomputing it with one input
+# swapped is the same formula the vendor uses. `comp_published` keeps the original.
 # ============================================================================
-TEAM_SHORT = {
-"Buffalo Bills":"Bills","Los Angeles Rams":"Rams","Baltimore Ravens":"Ravens",
-"San Francisco 49ers":"49ers","Kansas City Chiefs":"Chiefs","Chicago Bears":"Bears",
-"Houston Texans":"Texans","Jacksonville Jaguars":"Jaguars","Philadelphia Eagles":"Eagles",
-"Detroit Lions":"Lions","Seattle Seahawks":"Seahawks","New England Patriots":"Patriots",
-"Cincinnati Bengals":"Bengals","Dallas Cowboys":"Cowboys","Green Bay Packers":"Packers",
-"Los Angeles Chargers":"Chargers","Denver Broncos":"Broncos","Tampa Bay Buccaneers":"Buccaneers",
-"Minnesota Vikings":"Vikings","New York Giants":"Giants","Pittsburgh Steelers":"Steelers",
-"Washington Commanders":"Commanders","Indianapolis Colts":"Colts","New Orleans Saints":"Saints",
-"Carolina Panthers":"Panthers","Arizona Cardinals":"Cardinals","Las Vegas Raiders":"Raiders",
-"New York Jets":"Jets","Atlanta Falcons":"Falcons","Tennessee Titans":"Titans",
-"Miami Dolphins":"Dolphins","Cleveland Browns":"Browns",
-}
+INPRED_CSV = os.path.join(HERE, "..", "data", "inpredictable_gpf_2026-10-04.csv")
+SOURCES = ["fpi", "nfelo", "inpred", "up", "dvoa", "pff"]
+with open(INPRED_CSV) as f:
+    INPRED = {r["Team"]: r for r in csv.DictReader(f)}
+assert set(INPRED) == set(TEAMS), "Inpredictable team names must match TEAMS exactly"
 
-# short name -> 2025 season PAA total (Points Above Avg)
-RUN_DEF_2025 = {"Browns":30.16,"Vikings":4.80,"Raiders":14.63,"Saints":1.83,"Bears":7.30,
-"Jets":-0.66,"Bills":-7.85,"Dolphins":-0.76,"Cardinals":3.68,"Eagles":1.52,"Steelers":8.11,
-"Packers":-7.41,"Patriots":6.88,"Rams":2.50,"Cowboys":3.10,"Chargers":4.65,"Panthers":-17.61,
-"Texans":4.34,"Falcons":-8.72,"Bengals":-11.47,"Giants":-5.04,"Chiefs":-8.20,"Broncos":12.78,
-"Seahawks":9.59,"Ravens":7.32,"Titans":-9.69,"Commanders":-20.27,"Buccaneers":4.81,
-"Jaguars":14.73,"Colts":-7.62,"Lions":-17.38,"49ers":-22.46}
-# short name -> 2026 PAA total through Week 2 (~2 games) -- STALE, see note above
-RUN_DEF_2026 = {"Cardinals":5.88,"Steelers":3.40,"Raiders":6.80,"Eagles":2.08,"Dolphins":1.83,
-"Buccaneers":5.07,"Vikings":4.42,"Browns":0.68,"Seahawks":3.51,"Packers":1.77,"Chargers":0.50,
-"Jets":6.48,"Broncos":-1.49,"Panthers":-1.77,"Cowboys":-0.78,"49ers":-3.70,"Bears":-1.40,
-"Commanders":2.52,"Falcons":2.77,"Colts":-2.57,"Patriots":-0.39,"Titans":-5.64,"Jaguars":-2.35,
-"Bills":-0.63,"Texans":-1.63,"Giants":-1.46,"Rams":-4.12,"Chiefs":-3.49,"Lions":-2.75,
-"Bengals":0.33,"Ravens":-5.79,"Saints":-7.29}
-PASS_DEF_2025 = {"Jaguars":102.37,"Broncos":55.23,"Patriots":54.88,"Seahawks":43.26,
-"Eagles":42.48,"Rams":29.59,"Chargers":25.73,"Bears":31.09,"Texans":16.37,"Falcons":25.30,
-"Browns":32.10,"Lions":11.44,"Panthers":22.29,"Ravens":-7.32,"Chiefs":3.96,"Buccaneers":-15.76,
-"Bills":0.18,"Colts":-20.78,"Packers":-11.53,"49ers":-21.09,"Steelers":-20.37,"Saints":-4.40,
-"Raiders":-9.51,"Dolphins":-17.07,"Vikings":-1.91,"Titans":-39.79,"Giants":-40.50,
-"Cardinals":-48.83,"Commanders":-54.67,"Bengals":-68.69,"Cowboys":-77.95,"Jets":-75.23}
-# short name -> 2026 PAA total through Week 2 -- STALE, see note above
-PASS_DEF_2026 = {"Rams":14.43,"Jets":10.42,"Falcons":10.29,"Panthers":13.21,"Seahawks":9.93,
-"Ravens":8.80,"Bengals":4.45,"Titans":8.48,"Chiefs":4.91,"Patriots":4.40,"49ers":5.36,
-"Browns":3.40,"Packers":2.31,"Steelers":4.57,"Jaguars":2.36,"Buccaneers":0.92,"Lions":-0.14,
-"Raiders":-0.46,"Dolphins":1.60,"Bears":-1.64,"Saints":-4.17,"Vikings":-4.43,"Eagles":-3.31,
-"Broncos":-3.58,"Commanders":-6.00,"Cardinals":-5.13,"Bills":-10.58,"Cowboys":-10.09,
-"Chargers":-9.68,"Giants":-14.19,"Texans":-15.02,"Colts":-27.09}
+for t, d in TEAMS.items():
+    d["comp_published"], d["inpred_published"] = d["comp"], d["inpred"]
+    d["inpred"] = float(INPRED[t]["GPF"])
+    vals = [d[s] for s in SOURCES]
+    d["comp"], d["sd"] = statistics.mean(vals), statistics.stdev(vals)
 
-DEF_SEASON_GAMES_2025 = 17
-DEF_GAMES_2026 = 2          # elapsed through Week 2 -- data not refreshed past this
-DEF_RECENCY_BOOST = 6       # weight multiplier per 2026 game vs a 2025 game (roster turnover)
-
-def blended_def_component(short, season25, wk2_26):
-    pg25 = season25[short] / DEF_SEASON_GAMES_2025
-    pg26 = wk2_26[short] / DEF_GAMES_2026
-    w25 = DEF_SEASON_GAMES_2025
-    w26 = DEF_GAMES_2026 * DEF_RECENCY_BOOST
-    return (pg25*w25 + pg26*w26) / (w25+w26)
-
+# ============================================================================
+# Offense/defense split (lever #3), now from Inpredictable's market-derived
+# dGPF (the defensive share of a team's points-favored vs. an average opponent;
+# + = defense saves points). This replaces the SIS DataHub run/pass-defense split
+# used through Week 3 (see week3_ratings_model.py), which was stuck at Week 2
+# data -- and checked against the 11 real Week 4 market totals, that stale split
+# was off by 4.6 pts on average, worse than no split at all (4.1); dGPF is off by
+# 1.0. Caveat: dGPF is itself built from betting markets, so agreeing with market
+# totals is partly circular -- consistency, not proof. Actual Week 4 totals are
+# the real test. See compare_def_split.py.
+#
+# def_rating (points allowed/game, lower=better) = AVG_PTS - dGPF
+# off_rating is the residual of the composite identity comp = off - def, as before.
+# ============================================================================
 def decompose(team):
-    short = TEAM_SHORT[team]
-    run_def = blended_def_component(short, RUN_DEF_2025, RUN_DEF_2026)
-    pass_def = blended_def_component(short, PASS_DEF_2025, PASS_DEF_2026)
-    defense_total_ppg = run_def + pass_def          # points saved vs average; + = good D
-    dfn = AVG_PTS - defense_total_ppg                # points allowed/game; lower = better
-    off = TEAMS[team]["comp"] + dfn                  # off - def = comp, by the vendor's own definition
+    dfn = AVG_PTS - float(INPRED[team]["dGPF"])
+    off = TEAMS[team]["comp"] + dfn
     return off, dfn
 
 for t in TEAMS:
@@ -504,6 +465,7 @@ for home, away in MATCHUPS:
     r["model_weight"] = MODEL_WEIGHT
     if v:
         r["vegas_home_spread"] = v["home_spread"]
+        r["vegas_total"] = v["total"]
         r["model_home_spread"] = -r["median_margin"]
         r["edge_pts"] = round(r["model_home_spread"] - v["home_spread"], 1)
     results_blended.append(r)
@@ -512,14 +474,15 @@ out = dict(importance=importance, results=results, results_qb_adjusted=results_q
            results_injury_adjusted=results_injury,
            results_market_blended=results_blended, model_weight=MODEL_WEIGHT,
            qb_profiles=qb_profiles, injury_adjustments=INJURY_ADJ,
-           teams={t: dict(comp=TEAMS[t]["comp"], sd=TEAMS[t]["sd"],
+           teams={t: dict(comp=round(TEAMS[t]["comp"],2), sd=round(TEAMS[t]["sd"],2),
+                           comp_published=TEAMS[t]["comp_published"],
+                           inpred_published=TEAMS[t]["inpred_published"], inpred_gpf=TEAMS[t]["inpred"],
                            off=round(TEAMS[t]["off"],1), defr=round(TEAMS[t]["def"],1))
                   for t in TEAMS},
            stale_inputs=dict(
-               off_def_split="through Week 2 only (no Week 3 refresh available)",
-               qb_layer="through Week 2 only (no Week 3 refresh available)",
+               qb_performance="through Week 2 only (starters themselves are confirmed Week 4)",
                injuries="Week 3 report, reused unchanged",
-               market_lines="none sourced for Week 4"))
+               market_lines="11 of 15 games sourced; WAS-IND, CHI-NYJ, CIN-JAX, TB-GB missing"))
 
 with open(os.path.join(HERE, "week4_model_output.json"),"w") as f:
     json.dump(out, f, indent=2)

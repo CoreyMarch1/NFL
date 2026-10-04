@@ -2,8 +2,9 @@
 
 A team rating and game-projection system built on the weekly composite power ratings (FPI,
 nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 4
-(partial update)** — composite ratings and schedule are fresh, but the off/def split, QB layer,
-and injury adjustments are carried forward unchanged from Week 3 (see below). Week 2 and Week 3
+(partial update)** — composite ratings (with an Oct 4 Inpredictable refresh), the off/def split
+(Inpredictable dGPF), schedule, QB starters, and 11 of 15 market lines are fresh; QB performance
+stats and injury adjustments are still carried forward from Week 3 (see below). Week 2 and Week 3
 files are kept alongside as the validated baseline everything since has been checked against.
 
 ## Contents (current: Week 4 — partial update)
@@ -19,13 +20,19 @@ files are kept alongside as the validated baseline everything since has been che
   (spread/total/moneyline, user-supplied sportsbook screenshots) are wired in for 11 of the 15
   games, blended at `31/(31+64)` ≈ 33% model / 67% market — the other 4 (Washington–Indianapolis,
   Chicago–NY Jets, Cincinnati–Jacksonville, Tampa Bay–Green Bay) have no line sourced and run on
-  the pure model view. What's still a **deliberate, flagged gap**: the offense/defense split (SIS
-  DataHub run/pass defense) is still through Week 2 only, and every QB's underlying performance
-  numbers are still through Week 2, and the injury adjustments reuse
-  `week3_injury_adjustments.json` unchanged — none were refreshed for Week 4. This was an explicit
-  user-requested tradeoff (ship a partial update now, on gameday, rather than wait for fresh data,
-  then layer in real starters and lines as they came in) — see the model file's own header comment
-  for the itemized fresh-vs-stale breakdown.
+  the pure model view. **Inpredictable's betting-market ratings** (Oct 4) feed in two ways — see
+  "Inpredictable betting-market ratings" below. What's still a **deliberate, flagged gap**: every
+  QB's underlying performance numbers are still through Week 2, and the injury adjustments reuse
+  `week3_injury_adjustments.json` unchanged. This was an explicit user-requested tradeoff (ship a
+  partial update now, on gameday, rather than wait for fresh data, then layer in real starters,
+  lines, and ratings as they came in) — see the model file's own header comment for the itemized
+  fresh-vs-stale breakdown.
+- `data/inpredictable_gpf_2026-10-04.csv` — Inpredictable's NFL Betting Market Rankings as of Oct
+  4, 2026, transcribed from a user-supplied screenshot. Includes GPF, oGPF, dGPF, record, playoff
+  odds, and past/future strength of schedule. Transcription is checksummed: oGPF + dGPF = GPF
+  within rounding for all 32 teams, and every rank column agrees with its values.
+- `model/compare_def_split.py` — reproduces the off/def split comparison and the composite-refresh
+  bound check described below.
 - `model/validate_week3.py` → `model/week3_validation_output.json` — scores all four Week 3 model
   stages against final scores (via user-supplied ESPN scoreboard screenshots). See "Week 3
   validation" below.
@@ -34,6 +41,38 @@ files are kept alongside as the validated baseline everything since has been che
   carried-forward rather than silently reused. Trend is computed directly from the Week 3→4
   composite change. §05 now shows Week 3's real 15-game validation (see below) instead of Week 2's.
   Published version: https://claude.ai/artifact/XH7aRoAQyNMrGQXsB4RiFS
+
+## Inpredictable betting-market ratings (Week 4)
+
+Inpredictable's GPF ("Generic Points Favored") is what a team would be favored by against a
+league-average opponent on a neutral field, backed out of betting lines. oGPF/dGPF split it into
+offense and defense. **Inpredictable is already one of the composite's six sources**, so it isn't
+added as a seventh input, which would double-count it. It's used two ways instead:
+
+1. **Composite refresh.** The published composite reproduces exactly as the plain mean of its six
+   sources (sd = sample sd), and the composite's Inpredictable column is the same metric as GPF
+   (r = 0.98), just an older snapshot. So the model swaps in the Oct 4 GPF and recomputes the
+   mean. Each team moves by a sixth of its Inpredictable change, at most ~0.3 pts (biggest: Jets,
+   Bears, Saints down; Texans, Cowboys up). `comp_published` is kept in the output for comparison.
+2. **Offense/defense split.** Defense = league average − dGPF; offense stays the residual of
+   composite = offense − defense. This replaces the SIS DataHub run/pass-defense split, which was
+   stuck at Week 2 data. Against the 11 real Week 4 market totals:
+
+   | Split | Total-points MAE vs. market |
+   |---|---|
+   | SIS run+pass defense (thru Wk2) | 4.62 pt |
+   | No split at all | 4.17 pt |
+   | **Inpredictable dGPF** | **1.02 pt** |
+
+   The stale SIS split was worse than no split at all. **Caveat:** dGPF is itself built from
+   betting markets, so agreeing with market totals is partly circular. It shows consistency with
+   the market, not proven accuracy, and actual Week 4 totals are the real test. The split only
+   affects projected totals; spreads come from the composite.
+
+Not used as model inputs: playoff odds (an output of the same ratings, not new information) and
+past/future strength of schedule. The composite's sources already adjust for opponent strength,
+and the survivor tool works from the actual schedule rather than an SOS summary. Both are kept
+in the CSV.
 
 ## Week 3 build (v0.4, full update)
 
