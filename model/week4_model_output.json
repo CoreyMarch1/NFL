@@ -1307,7 +1307,7 @@
       "home_def_injury_adj": 1.0,
       "away_off_injury_adj": -0.09,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Baltimore Ravens",
@@ -1339,7 +1339,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Buffalo Bills",
@@ -1371,7 +1371,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": -0.76,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Chicago Bears",
@@ -1403,7 +1403,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": -0.32,
       "away_def_injury_adj": -0.06,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Cincinnati Bengals",
@@ -1435,7 +1435,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Houston Texans",
@@ -1467,7 +1467,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.96,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "New York Giants",
@@ -1499,7 +1499,7 @@
       "home_def_injury_adj": -1.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.21,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Philadelphia Eagles",
@@ -1531,7 +1531,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.48,
       "away_def_injury_adj": 0.01,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Tampa Bay Buccaneers",
@@ -1563,7 +1563,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Minnesota Vikings",
@@ -1595,7 +1595,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Las Vegas Raiders",
@@ -1627,7 +1627,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Seattle Seahawks",
@@ -1659,7 +1659,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.97,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "San Francisco 49ers",
@@ -1691,7 +1691,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "Carolina Panthers",
@@ -1723,7 +1723,7 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     },
     {
       "home": "New Orleans Saints",
@@ -1755,10 +1755,10 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 1.01,
-      "model_weight": 0.2
+      "model_weight": 0.3263157894736842
     }
   ],
-  "model_weight": 0.2,
+  "model_weight": 0.3263157894736842,
   "qb_profiles": {
     "Carolina Panthers": {
       "team": "Carolina Panthers",

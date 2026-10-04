@@ -461,11 +461,13 @@ for home, away in MATCHUPS:
 # ============================================================================
 # Market blend (lever #1): a no-op this week -- VEGAS is empty (no current
 # lines sourced), so market_spread is None for every game and simulate()
-# falls back to the model's own margin everywhere. VALIDATED_GAMES is left
-# unchanged pending a formal Week 3 validation pass (not yet run this
-# session); it has no effect on this week's output either way.
+# falls back to the model's own margin everywhere. VALIDATED_GAMES now
+# includes Week 3 (validate_week3.py, run against user-supplied final
+# scores): 16 from Week 2 + 15 from Week 3 = 31. This has no effect on this
+# week's output (no market lines to blend against), but keeps the constant
+# honest for whenever Week 5 actually has lines to blend.
 # ============================================================================
-VALIDATED_GAMES = 16
+VALIDATED_GAMES = 31
 BLEND_STABILIZE_K = 64
 MODEL_WEIGHT = min(0.5, VALIDATED_GAMES / (VALIDATED_GAMES + BLEND_STABILIZE_K))
 

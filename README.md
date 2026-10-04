@@ -9,21 +9,27 @@ files are kept alongside as the validated baseline everything since has been che
 ## Contents (current: Week 4 — partial update)
 
 - `model/week4_ratings_model.py` → `model/week4_model_output.json` — same pipeline as the Week 3
-  build (below), run on **fresh Week 4 composite ratings** (via @SamHoppen) and the **fresh Week 4
+  build (below), run on **fresh Week 4 composite ratings** (via @SamHoppen), the **fresh Week 4
   schedule** (15 active matchups; Pittsburgh @ Cleveland already played Thursday 10/1 and is
-  excluded, since its result wasn't available this session). Everything feeding the simulation
-  underneath those composites is a **deliberate, flagged gap**: the offense/defense split (SIS
-  DataHub run/pass defense) is still through Week 2 only, the QB layer (starters + 2026-to-date
-  form) is still the Week 3 build's, and the injury adjustments reuse `week3_injury_adjustments.json`
-  unchanged — none were refreshed for Week 4. No current market lines were sourced either, so there's
-  no market blend this week; every projection is the pure model view. This was an explicit
-  user-requested tradeoff (ship a partial update now, on gameday, rather than wait for fresh data) —
-  see the model file's own header comment for the itemized fresh-vs-stale breakdown.
+  excluded, since its result wasn't available this session), and **real, user-confirmed Week 4
+  starters** — three changes from Week 3: Chicago (Tyson Bagent), Tampa Bay (Jalon Daniels, a
+  backup/rookie starting for an injured Baker Mayfield), and Seattle (Sam Darnold, back from
+  injury and no longer a backup). None of those three have a 2025 or 2026 production record, so
+  their QB adjustment falls back to 0.0 rather than a fabricated number. Everything else feeding
+  the simulation is a **deliberate, flagged gap**: the offense/defense split (SIS DataHub run/pass
+  defense) is still through Week 2 only, every QB's underlying performance numbers are still
+  through Week 2, and the injury adjustments reuse `week3_injury_adjustments.json` unchanged —
+  none were refreshed for Week 4. No current market lines were sourced either, so there's no market
+  blend this week; every projection is the pure model view. This was an explicit user-requested
+  tradeoff (ship a partial update now, on gameday, rather than wait for fresh data) — see the model
+  file's own header comment for the itemized fresh-vs-stale breakdown.
+- `model/validate_week3.py` → `model/week3_validation_output.json` — scores all four Week 3 model
+  stages against final scores (via user-supplied ESPN scoreboard screenshots). See "Week 3
+  validation" below.
 - `dashboard/week4_dashboard.html` — same dashboard as Week 3's, rebuilt against the Week 4 output,
-  with every section that relies on stale inputs (QB report, injury report, validation) explicitly
-  labeled as carried-forward rather than silently reused. Trend is computed directly from the
-  Week 3→4 composite change. No Week 3 results were validated this session (not available), so §05
-  still shows Week 2's scorecard, flagged as the most recent completed validation.
+  with every section that relies on stale inputs (QB report, injury report) explicitly labeled as
+  carried-forward rather than silently reused. Trend is computed directly from the Week 3→4
+  composite change. §05 now shows Week 3's real 15-game validation (see below) instead of Week 2's.
   Published version: https://claude.ai/artifact/XH7aRoAQyNMrGQXsB4RiFS
 
 ## Week 3 build (v0.4, full update)
@@ -238,13 +244,47 @@ The week was upset-heavy (Panthers 34–3 over the Falcons, Browns and Raiders w
 without injury/in-game context was going to catch — but the market didn't fully see those coming
 either and still won out. Run `python3 model/validate_week2.py` to reproduce.
 
-## Week 3 so far
+## Week 3 final
 
-Thursday's game is final: **Falcons 35, Packers 14**. The model (run with Cooper Rush still the
-presumed Falcons QB, since Penix's return wasn't yet reflected pre-kickoff) favored Green Bay by
-6 — Michael Penix Jr.'s return plus a 194-yard, 2-TD game from Bijan Robinson blew that out by 27
-points. One data point, and exactly the kind of in-game swing (a QB return, a breakout rushing
-day) a rating-based model has no way to see coming. The other 15 games haven't kicked off yet.
+Thursday's game: **Falcons 35, Packers 14**. The model (run with Cooper Rush still the presumed
+Falcons QB, since Penix's return wasn't yet reflected pre-kickoff) favored Green Bay by 6 —
+Michael Penix Jr.'s return plus a 194-yard, 2-TD game from Bijan Robinson blew that out by 27
+points, exactly the kind of in-game swing (a QB return, a breakout rushing day) a rating-based
+model has no way to see coming. It was never in `MATCHUPS` (already final before the Week 3 build
+ran), so it isn't part of the 15-game scorecard below.
+
+## Week 3 validation (final, 15/15)
+
+`model/validate_week3.py`, scored against final scores the user supplied via ESPN scoreboard
+screenshots:
+
+| | Margin MAE | Straight-up |
+|---|---|---|
+| Base model (no QB/injury adj.) | 7.31 pt | 7/15 (47%) |
+| QB-adjusted model | 7.27 pt | 7/15 (47%) |
+| QB+injury-adjusted model | **7.01 pt** | **8/15 (53%)** |
+| Market-blended model | 7.13 pt | 8/15 (53%) |
+| Closing market line | 7.27 pt | 8/15 (53%) |
+
+Every model stage matched or trailed a coin flip on straight-up picks, same as the market. Margin
+MAE (7.0–7.3 pt) looks better than Week 2's (11.8–12.3 pt), but that's **not evidence of
+improvement** — it's one 15-game week against one 16-game week, and the lower MAE here is mostly
+driven by having fewer extreme misses in aggregate, not better-calibrated typical games. The
+QB+injury-adjusted stage edged out every other stage on both measures, a small, plausible signal
+in favor of those two levers (not yet a proven one with a 15-game sample).
+
+The week's real story is two blowouts the model had nowhere close: the model favored **Chicago by
+only 4.1** over Philadelphia (actual: Bears 27, Eagles 7, a 20-pt margin) and **Jacksonville by
+only 2.6** over New England (actual: Jaguars 35, Patriots 6, a 29-pt margin). Both were
+straight-up hits — the model had the right side — but the two margin misses (24.1 pt and 26.4 pt)
+account for more than a third of the week's total error between them, which is exactly the
+failure mode a composite-rating model with no in-game context will keep having: it can't see a
+blowout coming, only a lean.
+
+`VALIDATED_GAMES` (feeding the market-blend weight, lever #1) is now **31** (16 from Week 2 + 15
+from Week 3), moving the blend weight to `31/(31+64)` ≈ 33% model / 67% market for whenever a
+future week has market lines to blend against — Week 4 itself has none sourced, so this has no
+effect on this week's output, just keeps the constant honest for Week 5 onward.
 
 ## Secondary tool: Survivor pool roadmap
 
