@@ -33,6 +33,9 @@ files are kept alongside as the validated baseline everything since has been che
   within rounding for all 32 teams, and every rank column agrees with its values.
 - `model/compare_def_split.py` — reproduces the off/def split comparison and the composite-refresh
   bound check described below.
+- `model/validate_week4.py` → `model/week4_validation_output.json` — scores the Week 4 projections
+  (as committed before kickoff) against final scores, compares against the market on the 11 lined
+  games only, and tests each off/def split against actual totals. See "Week 4 validation" below.
 - `model/validate_week3.py` → `model/week3_validation_output.json` — scores all four Week 3 model
   stages against final scores (via user-supplied ESPN scoreboard screenshots). See "Week 3
   validation" below.
@@ -327,6 +330,52 @@ blowout coming, only a lean.
 from Week 3), moving the blend weight to `31/(31+64)` ≈ 33% model / 67% market for whenever a
 future week has market lines to blend against — Week 4 itself has none sourced, so this has no
 effect on this week's output, just keeps the constant honest for Week 5 onward.
+
+## Week 4 validation (final, 15/15)
+
+`model/validate_week4.py`, scored against final scores the user supplied via ESPN scoreboard
+screenshots. The projections scored are exactly the ones committed before the first kickoff (Oct 4,
+9:05 AM ET, ahead of the 9:30 London game) — the Week 4 model was not rerun or retuned first.
+Thursday's Browns 27, Steelers 24 isn't scored (already final before the build ran). Four games
+had no market line, so market comparisons use only the other 11:
+
+| 11 games with a line | Margin MAE | Straight-up | Total-points MAE |
+|---|---|---|---|
+| Base model | **7.15 pt** | **7/11** | 10.45 pt |
+| QB+injury-adjusted | 7.43 pt | 7/11 | 10.55 pt |
+| Market-blended (33% model) | 7.55 pt | 6/11 | 10.47 pt |
+| Closing market | 7.59 pt | 6/11 | **9.95 pt** |
+
+Across all 15 games the market-blended model scored 7.30 pt MAE and 9/15 straight-up (base model:
+7.12, 10/15). The biggest miss was one the market shared exactly: **Falcons 45, Saints 24**, with
+both the model and the line at Saints −2.5 (23.5 pt error). Blending toward the market made the
+model slightly worse this week after helping in Week 3 — noise at this sample size, not a reason
+to retune.
+
+**Weeks 3–4 combined (26 out-of-sample games with a line):** every model stage lands at 7.2–7.3 pt
+margin MAE vs. 7.40 for the closing market, and 14–15 of 26 straight-up vs. 14 for the market.
+Market-level, no demonstrated edge, and far too few games to separate the two.
+
+**The real test of the Inpredictable off/def split.** Week 4 switched to dGPF because it matched
+the *market's* totals far better (1.0 vs. 4.6 pt) — a partly circular check. Against **actual**
+totals:
+
+| Split | All 15 games | 11 lined games | Bias |
+|---|---|---|---|
+| Inpredictable dGPF | **9.50 pt** | 10.46 pt | −2.5 |
+| SIS run+pass defense (thru Wk2) | 10.06 pt | 10.63 pt | −1.6 |
+| No split | 10.71 pt | 12.10 pt | −2.5 |
+| Market total | — | **9.95 pt** | |
+
+The switch helped, but modestly — the market-totals check overstated the gain — and the market's
+own totals still did better. Every split ran low: Week 4 scored more than projected (Falcons–Saints
+69, Cowboys–Texans 64, Cardinals–Giants 60). Totals remain the model's weakest output; candidates
+for the Week 5 build are a higher league-scoring baseline than `AVG_PTS = 22.5` or blending the
+market total into projected totals the same way the spread is already blended into margins.
+
+**For the Week 5 build:** `VALIDATED_GAMES` should be 46 (16 + 15 + 15), moving the market-blend
+weight to 46/(46+64) ≈ 42% model / 58% market. (Week 4's own model keeps 31 — changing it now would
+retroactively alter the projections that were just scored.)
 
 ## Secondary tool: Survivor pool roadmap
 
