@@ -14,10 +14,9 @@ random.seed(42)
 #   - Off/def split: Inpredictable dGPF as of Oct 4 (pre-Week 4) -- one week
 #     STALE, but still the best split available: against actual Week 4 totals it
 #     beat both the SIS split and no split (validate_week4.py).
-#   - QB layer: STARTERS carried forward from the confirmed Week 4 list, NOT
-#     reconfirmed for Week 5. Two composite moves this week look like QB news
-#     the model doesn't have (Ravens -3.5 composite; Bears' market-based
-#     Inpredictable rating +6.6). QB performance data still through Week 2.
+#   - QB layer: STARTERS FRESH (user-confirmed Week 5 list -- Ravens to backup
+#     Tyler Huntley, which explains their -3.5 composite move; Jayden Daniels
+#     back for Washington). QB performance data still through Week 2.
 #   - Injury adjustments: STALE -- reusing week3_injury_adjustments.json.
 #   - Market lines (VEGAS): NONE sourced yet for Week 5 -- every game runs on the
 #     model's own margin until lines are supplied.
@@ -220,14 +219,13 @@ def ml_to_prob(ml):
     return -ml/(-ml+100) if ml < 0 else 100/(ml+100)
 
 # ============================================================================
-# QB layer. STARTERS: the user-confirmed Week 4 list, carried forward and NOT yet
-# reconfirmed for Week 5 (see the header for the two teams most likely to have
-# changed). QB_2025 / QB_2026_YTD: performance data through Week 2 only. See
+# QB layer. STARTERS: user-confirmed for Week 5. QB_2025 / QB_2026_YTD: performance
+# data through Week 2 only. See
 # week3_ratings_model.py / calibrate_qb_layer.py for the methodology.
 # ============================================================================
 STARTERS = {
     "Carolina Panthers": ("Bryce Young", False), "Atlanta Falcons": ("Michael Penix Jr.", False),
-    "New Orleans Saints": ("Tyler Shough", False), "Baltimore Ravens": ("Lamar Jackson", False),
+    "New Orleans Saints": ("Tyler Shough", False), "Baltimore Ravens": ("Tyler Huntley", True),
     "Minnesota Vikings": ("Kyler Murray", False), "Chicago Bears": ("Tyson Bagent", True),
     "Cincinnati Bengals": ("Joe Burrow", False), "Houston Texans": ("C.J. Stroud", False),
     "Pittsburgh Steelers": ("Aaron Rodgers", False), "New England Patriots": ("Drake Maye", False),
@@ -237,20 +235,26 @@ STARTERS = {
     "Jacksonville Jaguars": ("Trevor Lawrence", False), "Denver Broncos": ("Bo Nix", False),
     "Las Vegas Raiders": ("Kirk Cousins", False), "Los Angeles Chargers": ("Justin Herbert", False),
     "Seattle Seahawks": ("Sam Darnold", False), "Arizona Cardinals": ("Jacoby Brissett", False),
-    "Washington Commanders": ("Marcus Mariota", True), "Dallas Cowboys": ("Dak Prescott", False),
+    "Washington Commanders": ("Jayden Daniels", False), "Dallas Cowboys": ("Dak Prescott", False),
     "Miami Dolphins": ("Malik Willis", False), "San Francisco 49ers": ("Brock Purdy", False),
     "Indianapolis Colts": ("Daniel Jones", False), "Kansas City Chiefs": ("Patrick Mahomes", False),
     "New York Giants": ("Jameis Winston", True), "Los Angeles Rams": ("Matthew Stafford", False),
     "Buffalo Bills": ("Josh Allen", False), "Detroit Lions": ("Jared Goff", False),
 }
-# Confirmed by the user for Week 4 (carried into Week 5 unconfirmed). Three changes from the
-# Week 3 build: Chicago (Case Keenum -> Tyson Bagent), Tampa Bay (Baker Mayfield -> Jalon Daniels,
-# a backup/rookie now starting), and Seattle (Drew Lock -> Sam Darnold, who's back as the starter,
-# no longer a backup). Bagent, Daniels, and Darnold all have no entry in QB_2025 or QB_2026_YTD
-# below (no 2025 baseline was collected for any of them, and no 2026-to-date SIS data exists yet
-# for the two new backups) -- build_qb_profile's "no-data" branch handles this correctly: qb_adj
-# falls back to 0.0 rather than fabricating a number, same treatment the injury layer gives an
-# absent player.
+# Week 5 starters as confirmed by the user. Two changes from Week 4: Baltimore (Lamar Jackson ->
+# Tyler Huntley, a backup) and Washington (Marcus Mariota -> Jayden Daniels, back from his elbow
+# injury). Buffalo and Detroit weren't on the user's list and keep Josh Allen and Jared Goff, as in
+# Week 4. Huntley, Bagent, Jalon Daniels, and Darnold have no entry in QB_2025 or QB_2026_YTD, so
+# their qb_adj falls back to 0.0 via the "no-data" branch rather than a fabricated number.
+#
+# Starters returning from injury get qb_adj = 0.0 too, for a different reason. The adjustment is a
+# partial regression of a starter's recent form toward his 2025 baseline, on the premise that the
+# team's composite already contains that recent form. That premise fails for a returning starter:
+# the composite has since been built on his backup's games. Applied anyway, it would mark
+# Washington DOWN 1.13 pts for Daniels' return (his two pre-injury games ran ~10 pts/game above his
+# 2025 rate) -- the wrong direction. Neutral is the honest value; a real backup-vs-starter
+# adjustment would need data this model doesn't have.
+RETURNING_STARTERS = {"Jayden Daniels"}
 # Combines passing AND rushing production (SIS DataHub). name -> (games, pass_att,
 # pass_PAA_season_total, rush_att, rush_PAA_season_total, 2025 team)
 QB_2025 = {
@@ -305,6 +309,10 @@ def build_qb_profile(team):
     if d25 and total26_pg is not None:
         games25, patt25, ppaa25, ratt25, rpaa25 = d25[0], d25[1], d25[2], d25[3], d25[4]
         ppg25 = (ppaa25+rpaa25)/games25
+        if name in RETURNING_STARTERS:
+            return dict(team=team, name=name, is_backup=is_backup, paa2025=round(ppg25, 2),
+                        paa2026=round(total26_pg, 2), blended_paa=round(ppg25, 2),
+                        hot_cold_delta=None, qb_adj=0.0, data_quality="returning-starter")
         w25 = min(patt25+ratt25, STABILIZE_CAP)
         w26 = (d26[0]+d26[2])*RECENCY_BOOST
         blended = (ppg25*w25 + total26_pg*w26) / (w25+w26)
@@ -439,8 +447,7 @@ out = dict(importance=importance, results=results, results_qb_adjusted=results_q
                            off=round(TEAMS[t]["off"],1), defr=round(TEAMS[t]["def"],1))
                   for t in TEAMS},
            stale_inputs=dict(
-               starters="Week 4 confirmed list, not reconfirmed for Week 5",
-               qb_performance="through Week 2 only",
+                              qb_performance="through Week 2 only",
                off_def_split="Inpredictable dGPF as of Oct 4 (pre-Week 4)",
                injuries="Week 3 report, reused unchanged",
                market_lines="none sourced for Week 5"))

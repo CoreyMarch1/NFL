@@ -759,27 +759,27 @@
       "away": "Baltimore Ravens",
       "home_off": 23.8,
       "home_def": 24.5,
-      "away_off": 21.6,
+      "away_off": 21.8,
       "away_def": 21.3,
-      "model_margin": 1.0,
-      "expected_margin": 1.0,
-      "median_margin": 0.8,
+      "model_margin": 0.8,
+      "expected_margin": 0.8,
+      "median_margin": 0.6,
       "ci68": [
-        -12.8,
-        14.3
+        -13.0,
+        14.1
       ],
       "ci95": [
-        -25.0,
-        27.4
+        -25.2,
+        27.2
       ],
-      "win_home": 52.4,
-      "win_away": 47.6,
-      "confidence": 5,
+      "win_home": 51.7,
+      "win_away": 48.3,
+      "confidence": 3,
       "proj_home_score": 23.5,
-      "proj_away_score": 22.6,
+      "proj_away_score": 22.8,
       "combined_sd": 13.43,
       "home_qb_adj": 0.0,
-      "away_qb_adj": -0.22
+      "away_qb_adj": 0.0
     },
     {
       "home": "Los Angeles Rams",
@@ -1218,27 +1218,27 @@
       "away": "Baltimore Ravens",
       "home_off": 23.8,
       "home_def": 25.5,
-      "away_off": 21.6,
+      "away_off": 21.8,
       "away_def": 21.3,
-      "model_margin": 0.0,
-      "expected_margin": 0.0,
-      "median_margin": 0.3,
+      "model_margin": -0.2,
+      "expected_margin": -0.2,
+      "median_margin": 0.1,
       "ci68": [
-        -13.2,
-        13.7
+        -13.5,
+        13.5
       ],
       "ci95": [
-        -25.7,
-        26.9
+        -25.9,
+        26.7
       ],
-      "win_home": 50.9,
-      "win_away": 49.1,
-      "confidence": 2,
+      "win_home": 50.2,
+      "win_away": 49.8,
+      "confidence": 0,
       "proj_home_score": 23.7,
-      "proj_away_score": 23.4,
+      "proj_away_score": 23.6,
       "combined_sd": 13.43,
       "home_qb_adj": 0.0,
-      "away_qb_adj": -0.22,
+      "away_qb_adj": 0.0,
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 1.01,
       "away_off_injury_adj": 0.0,
@@ -1698,27 +1698,27 @@
       "away": "Baltimore Ravens",
       "home_off": 23.8,
       "home_def": 25.5,
-      "away_off": 21.6,
+      "away_off": 21.8,
       "away_def": 21.3,
-      "model_margin": 0.0,
-      "expected_margin": 0.0,
-      "median_margin": -0.1,
+      "model_margin": -0.2,
+      "expected_margin": -0.2,
+      "median_margin": -0.3,
       "ci68": [
-        -13.5,
-        12.6
+        -13.7,
+        12.4
       ],
       "ci95": [
-        -26.4,
-        25.5
+        -26.7,
+        25.3
       ],
-      "win_home": 49.6,
-      "win_away": 50.4,
-      "confidence": 1,
+      "win_home": 48.9,
+      "win_away": 51.1,
+      "confidence": 2,
       "proj_home_score": 23.5,
-      "proj_away_score": 23.7,
+      "proj_away_score": 24.0,
       "combined_sd": 13.43,
       "home_qb_adj": 0.0,
-      "away_qb_adj": -0.22,
+      "away_qb_adj": 0.0,
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 1.01,
       "away_off_injury_adj": 0.0,
@@ -1798,15 +1798,15 @@
     },
     "Baltimore Ravens": {
       "team": "Baltimore Ravens",
-      "name": "Lamar Jackson",
-      "is_backup": false,
-      "paa2025": 0.17,
-      "paa2026": 2.19,
-      "blended_paa": 1.13,
-      "hot_cold_delta": 2.01,
-      "qb_adj": -0.22,
-      "data_quality": "full",
-      "tier": "Above Average"
+      "name": "Tyler Huntley",
+      "is_backup": true,
+      "paa2025": null,
+      "paa2026": null,
+      "blended_paa": null,
+      "hot_cold_delta": null,
+      "qb_adj": 0.0,
+      "data_quality": "no-data",
+      "tier": "Unrated"
     },
     "Minnesota Vikings": {
       "team": "Minnesota Vikings",
@@ -1962,7 +1962,7 @@
       "hot_cold_delta": -2.01,
       "qb_adj": 0.22,
       "data_quality": "full",
-      "tier": "Below Average"
+      "tier": "Average"
     },
     "Denver Broncos": {
       "team": "Denver Broncos",
@@ -2026,14 +2026,14 @@
     },
     "Washington Commanders": {
       "team": "Washington Commanders",
-      "name": "Marcus Mariota",
-      "is_backup": true,
-      "paa2025": null,
-      "paa2026": 1.94,
-      "blended_paa": 1.94,
+      "name": "Jayden Daniels",
+      "is_backup": false,
+      "paa2025": 2.02,
+      "paa2026": 12.29,
+      "blended_paa": 2.02,
       "hot_cold_delta": null,
       "qb_adj": 0.0,
-      "data_quality": "no-2025-baseline",
+      "data_quality": "returning-starter",
       "tier": "Above Average"
     },
     "Dallas Cowboys": {
@@ -3029,7 +3029,6 @@
     }
   },
   "stale_inputs": {
-    "starters": "Week 4 confirmed list, not reconfirmed for Week 5",
     "qb_performance": "through Week 2 only",
     "off_def_split": "Inpredictable dGPF as of Oct 4 (pre-Week 4)",
     "injuries": "Week 3 report, reused unchanged",
