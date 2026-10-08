@@ -1,13 +1,30 @@
 # NFL Composite Ratings Model
 
 A team rating and game-projection system built on the weekly composite power ratings (FPI,
-nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 4
-(partial update)** — composite ratings (with an Oct 4 Inpredictable refresh), the off/def split
-(Inpredictable dGPF), schedule, QB starters, and 11 of 15 market lines are fresh; QB performance
-stats and injury adjustments are still carried forward from Week 3 (see below). Week 2 and Week 3
-files are kept alongside as the validated baseline everything since has been checked against.
+nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 5
+(partial update)** — composite ratings and schedule are fresh; starters, the off/def split, QB
+performance stats, and injuries are carried forward and flagged, and no Week 5 market lines are in
+yet (see below). Weeks 2–4 files are kept alongside as the validated history everything since has
+been checked against.
 
-## Contents (current: Week 4 — partial update)
+## Contents (current: Week 5 — partial update)
+
+- `model/week5_ratings_model.py` → `model/week5_model_output.json` — the Week 4 pipeline on the
+  **fresh Week 5 composite** (via @SamHoppen; transcription checksummed — every team's composite
+  and sd reproduce from its six sources) and the **Week 5 slate** (15 games; Chiefs and Panthers on
+  bye). The composite is used as published: its Inpredictable column already reflects Week 4, so
+  the Week 4-style refresh from the Oct 4 snapshot would have made it *older*, not newer.
+  Carried forward and flagged: starters (the confirmed Week 4 list — **not reconfirmed**; two
+  rating moves look like QB news the model doesn't have: Ravens −3.5 composite in a week, and the
+  Bears' betting-market Inpredictable rating +6.6), the off/def split (Inpredictable dGPF from Oct
+  4, before Week 4), QB performance numbers (through Week 2), and injuries (Week 3 report). No
+  market lines yet, so the blend is off; once supplied it runs at `VALIDATED_GAMES = 46` →
+  46/(46+64) ≈ 42% model / 58% market.
+- `dashboard/week5_dashboard.html` — the Week 4 dashboard rebuilt on Week 5 output, with §05 still
+  showing the Week 4 scorecard as the most recent completed validation.
+  Published version: https://claude.ai/artifact/EPi2dgTdiLaeRHsW5Dbkzs
+
+## Week 4 build (partial update)
 
 - `model/week4_ratings_model.py` → `model/week4_model_output.json` — same pipeline as the Week 3
   build (below), run on **fresh Week 4 composite ratings** (via @SamHoppen), the **fresh Week 4
