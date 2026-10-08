@@ -471,6 +471,39 @@ Week 4 pick and no other week changed. Using the Ravens this week instead (82% v
 the season overall (2.0% vs. 2.1%), since the plan saves them for Week 16 against Cleveland; they'd
 only be worth spending now if their Week 4 win probability were about 8 points higher.
 
+### Pool ownership model (Week 5 projection)
+
+`model/survivor_ownership.py` → `model/survivor_ownership_week5.json` — projects what share of this
+pool (RickRunGood's NFL Survivor) will pick each team, fit on the pool's own Weeks 1–4 pick
+distributions (`data/survivor_pool_ownership_2026.csv`, transcribed from the pool's Stats tab: top
+10 teams per week, covering 97–99% of picks; win/loss colors cross-checked against actual results,
+30/30 match for Weeks 2–4).
+
+**Model.** Each team's share ∝ availability × exp(β × expected margin), normalized over every team
+playing that week. *Availability* is the estimated fraction of live entries that haven't already
+used the team — e.g. 42% of live entries already spent the Jaguars in Week 1 — entering as a fixed
+offset, since a used team mechanically can't be picked. *Expected margin* comes from the market
+spread (or, for the few past games with no line on file, that week's composite + 2.0 home field).
+Fit on Weeks 2–4 with each week weighted equally; Week 1 has no lines or ratings on file, so it only
+feeds availability. β ≈ 0.39/pt: each extra point of spread multiplies a team's share by ~1.5×.
+
+**Validation (leave one week out).** Average miss of 4.7 pick-% points across the teams shown,
+top pick right 2 of 3 weeks — but on the popular picks (10%+ actual) the average miss is **~10
+points, worst 31**. The worst case shows the ceiling: in Week 2 the Bucs and Ravens were *both*
+8.5-point favorites, yet the pool put 40.5% on the Bucs and 4.1% on the Ravens — a public
+preference no spread-based model can see. Adding season strength ("saving good teams") points the
+expected direction (γ = −0.22) but doesn't validate better on three weeks, so it's reported as a
+sensitivity rather than used. Read the projections as a ranking with roughly ±10-pt magnitudes.
+
+**Week 5 projection:** Cowboys ~25%, Texans ~17%, Bengals ~11%, Jaguars ~7–10% (heavily used in
+Week 1), Lions ~5–6%, everyone else under 4%. The ranking is stable across both variants and across
+the Week 5 pool-size assumption.
+
+**Pool quirk:** each week has more entrants than the previous week's survivors (×1.03, ×1.27,
+×1.16), suggesting buybacks, re-entries, or extra lives. Availability assumes re-entries keep
+their pick history; the Week 5 pool size is estimated from Week 4 survivors × the average inflow,
+and the projection barely moves across the observed inflow range.
+
 **What this can't see:** weekly injury reports, starter changes, and market-line movement for any
 week past the current one — the composite rating is held static at this week's snapshot for the
 whole season rather than re-derived weekly. Re-run `survivor_model.py` each week as the picture

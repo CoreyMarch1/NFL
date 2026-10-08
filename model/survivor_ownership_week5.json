@@ -1,0 +1,535 @@
+{
+  "model": "spread + availability",
+  "params": {
+    "beta": 0.38742187500000014,
+    "gamma": 0.0
+  },
+  "strength_variant_params": {
+    "beta": 0.4686789923582725,
+    "gamma": -0.2188584814295498
+  },
+  "cv": {
+    "spread only": {
+      "mae": 4.684459389972335,
+      "by_week": [
+        7.283551253003623,
+        3.770825626562933,
+        2.999001290350449
+      ],
+      "top_hits": 2,
+      "chalk_mae": 10.281203032499112,
+      "chalk_max": 31.101158062837616,
+      "chalk_n": 10
+    },
+    "spread + availability": {
+      "mae": 4.675477833397971,
+      "by_week": [
+        7.208270044635236,
+        3.8992386070832543,
+        2.918924848475423
+      ],
+      "top_hits": 2,
+      "chalk_mae": 10.286033766684632,
+      "chalk_max": 30.984609679532717,
+      "chalk_n": 10
+    },
+    "spread + availability + strength": {
+      "mae": 4.6918970374610165,
+      "by_week": [
+        6.611638581186448,
+        4.552673235673019,
+        2.911379295523583
+      ],
+      "top_hits": 2,
+      "chalk_mae": 9.958697217169549,
+      "chalk_max": 27.79513019596803,
+      "chalk_n": 10
+    }
+  },
+  "entrants": {
+    "1": 908,
+    "2": 707,
+    "3": 406,
+    "4": 314,
+    "5": 335
+  },
+  "week5_inflow_assumed": 1.1526476155411876,
+  "week5_projection": {
+    "Dallas Cowboys": {
+      "share": 0.2482,
+      "share_if_saving_strong_teams": 0.2603,
+      "margin": 8.5,
+      "used": 0.0197
+    },
+    "Tampa Bay Buccaneers": {
+      "share": 0.0003,
+      "share_if_saving_strong_teams": 0.0005,
+      "margin": -8.5,
+      "used": 0.0
+    },
+    "Jacksonville Jaguars": {
+      "share": 0.0994,
+      "share_if_saving_strong_teams": 0.0666,
+      "margin": 7.5,
+      "used": 0.4214
+    },
+    "Philadelphia Eagles": {
+      "share": 0.0004,
+      "share_if_saving_strong_teams": 0.0002,
+      "margin": -7.5,
+      "used": 0.1842
+    },
+    "Miami Dolphins": {
+      "share": 0.0008,
+      "share_if_saving_strong_teams": 0.0019,
+      "margin": -6.5,
+      "used": 0.0
+    },
+    "Cincinnati Bengals": {
+      "share": 0.1153,
+      "share_if_saving_strong_teams": 0.1074,
+      "margin": 6.5,
+      "used": 0.0113
+    },
+    "New England Patriots": {
+      "share": 0.0359,
+      "share_if_saving_strong_teams": 0.0287,
+      "margin": 3.5,
+      "used": 0.0172
+    },
+    "Las Vegas Raiders": {
+      "share": 0.0022,
+      "share_if_saving_strong_teams": 0.002,
+      "margin": -3.5,
+      "used": 0.1032
+    },
+    "New Orleans Saints": {
+      "share": 0.0053,
+      "share_if_saving_strong_teams": 0.0077,
+      "margin": -1.5,
+      "used": 0.0
+    },
+    "Minnesota Vikings": {
+      "share": 0.0111,
+      "share_if_saving_strong_teams": 0.0091,
+      "margin": 1.5,
+      "used": 0.3372
+    },
+    "New York Jets": {
+      "share": 0.0166,
+      "share_if_saving_strong_teams": 0.0381,
+      "margin": 1.5,
+      "used": 0.0099
+    },
+    "Cleveland Browns": {
+      "share": 0.0053,
+      "share_if_saving_strong_teams": 0.0106,
+      "margin": -1.5,
+      "used": 0.0
+    },
+    "Pittsburgh Steelers": {
+      "share": 0.0185,
+      "share_if_saving_strong_teams": 0.0234,
+      "margin": 2.5,
+      "used": 0.2546
+    },
+    "Indianapolis Colts": {
+      "share": 0.0034,
+      "share_if_saving_strong_teams": 0.0025,
+      "margin": -2.5,
+      "used": 0.0448
+    },
+    "Tennessee Titans": {
+      "share": 0.0005,
+      "share_if_saving_strong_teams": 0.0008,
+      "margin": -7.5,
+      "used": 0.0
+    },
+    "Houston Texans": {
+      "share": 0.1719,
+      "share_if_saving_strong_teams": 0.1763,
+      "margin": 7.5,
+      "used": 0.0
+    },
+    "Washington Commanders": {
+      "share": 0.0365,
+      "share_if_saving_strong_teams": 0.0952,
+      "margin": 3.5,
+      "used": 0.0
+    },
+    "New York Giants": {
+      "share": 0.0024,
+      "share_if_saving_strong_teams": 0.0042,
+      "margin": -3.5,
+      "used": 0.0
+    },
+    "Los Angeles Chargers": {
+      "share": 0.0024,
+      "share_if_saving_strong_teams": 0.0018,
+      "margin": -3.5,
+      "used": 0.0
+    },
+    "Denver Broncos": {
+      "share": 0.0365,
+      "share_if_saving_strong_teams": 0.0283,
+      "margin": 3.5,
+      "used": 0.0
+    },
+    "Arizona Cardinals": {
+      "share": 0.0011,
+      "share_if_saving_strong_teams": 0.0015,
+      "margin": -5.5,
+      "used": 0.0
+    },
+    "Detroit Lions": {
+      "share": 0.0586,
+      "share_if_saving_strong_teams": 0.0469,
+      "margin": 5.5,
+      "used": 0.2594
+    },
+    "Green Bay Packers": {
+      "share": 0.0035,
+      "share_if_saving_strong_teams": 0.0029,
+      "margin": -2.5,
+      "used": 0.0149
+    },
+    "Chicago Bears": {
+      "share": 0.0245,
+      "share_if_saving_strong_teams": 0.0192,
+      "margin": 2.5,
+      "used": 0.009
+    },
+    "Seattle Seahawks": {
+      "share": 0.0282,
+      "share_if_saving_strong_teams": 0.0097,
+      "margin": 3.0,
+      "used": 0.0627
+    },
+    "San Francisco 49ers": {
+      "share": 0.0011,
+      "share_if_saving_strong_teams": 0.0002,
+      "margin": -3.0,
+      "used": 0.6408
+    },
+    "Atlanta Falcons": {
+      "share": 0.0365,
+      "share_if_saving_strong_teams": 0.0435,
+      "margin": 3.5,
+      "used": 0.0
+    },
+    "Baltimore Ravens": {
+      "share": 0.0015,
+      "share_if_saving_strong_teams": 0.0009,
+      "margin": -3.5,
+      "used": 0.3819
+    },
+    "Los Angeles Rams": {
+      "share": 0.0293,
+      "share_if_saving_strong_teams": 0.009,
+      "margin": 3.0,
+      "used": 0.0246
+    },
+    "Buffalo Bills": {
+      "share": 0.0027,
+      "share_if_saving_strong_teams": 0.0006,
+      "margin": -3.0,
+      "used": 0.0829
+    }
+  },
+  "fitted_vs_actual": {
+    "2": {
+      "Buffalo Bills": {
+        "pred": 3.0
+      },
+      "Detroit Lions": {
+        "pred": 0.0
+      },
+      "Atlanta Falcons": {
+        "pred": 0.1
+      },
+      "Carolina Panthers": {
+        "pred": 0.9
+      },
+      "Baltimore Ravens": {
+        "pred": 9.6
+      },
+      "New Orleans Saints": {
+        "pred": 0.0
+      },
+      "Chicago Bears": {
+        "pred": 2.0
+      },
+      "Minnesota Vikings": {
+        "pred": 0.1
+      },
+      "Houston Texans": {
+        "pred": 0.9
+      },
+      "Cincinnati Bengals": {
+        "pred": 0.1
+      },
+      "New England Patriots": {
+        "pred": 3.0
+      },
+      "Pittsburgh Steelers": {
+        "pred": 0.0
+      },
+      "New York Jets": {
+        "pred": 0.1
+      },
+      "Green Bay Packers": {
+        "pred": 1.4
+      },
+      "Tampa Bay Buccaneers": {
+        "pred": 9.6
+      },
+      "Cleveland Browns": {
+        "pred": 0.0
+      },
+      "Tennessee Titans": {
+        "pred": 0.0
+      },
+      "Philadelphia Eagles": {
+        "pred": 5.0
+      },
+      "Denver Broncos": {
+        "pred": 0.9
+      },
+      "Jacksonville Jaguars": {
+        "pred": 0.1
+      },
+      "Los Angeles Chargers": {
+        "pred": 4.4
+      },
+      "Las Vegas Raiders": {
+        "pred": 0.0
+      },
+      "Arizona Cardinals": {
+        "pred": 0.1
+      },
+      "Seattle Seahawks": {
+        "pred": 1.4
+      },
+      "Dallas Cowboys": {
+        "pred": 2.0
+      },
+      "Washington Commanders": {
+        "pred": 0.1
+      },
+      "San Francisco 49ers": {
+        "pred": 45.1
+      },
+      "Miami Dolphins": {
+        "pred": 0.0
+      },
+      "Kansas City Chiefs": {
+        "pred": 4.4
+      },
+      "Indianapolis Colts": {
+        "pred": 0.0
+      },
+      "Los Angeles Rams": {
+        "pred": 5.4
+      },
+      "New York Giants": {
+        "pred": 0.0
+      }
+    },
+    "3": {
+      "Green Bay Packers": {
+        "pred": 7.5
+      },
+      "Atlanta Falcons": {
+        "pred": 0.0
+      },
+      "Buffalo Bills": {
+        "pred": 8.1
+      },
+      "Los Angeles Chargers": {
+        "pred": 0.0
+      },
+      "Cleveland Browns": {
+        "pred": 0.2
+      },
+      "Carolina Panthers": {
+        "pred": 1.4
+      },
+      "Detroit Lions": {
+        "pred": 6.1
+      },
+      "New York Jets": {
+        "pred": 0.0
+      },
+      "Indianapolis Colts": {
+        "pred": 0.2
+      },
+      "Houston Texans": {
+        "pred": 1.7
+      },
+      "Jacksonville Jaguars": {
+        "pred": 1.0
+      },
+      "New England Patriots": {
+        "pred": 0.2
+      },
+      "Miami Dolphins": {
+        "pred": 0.0
+      },
+      "Kansas City Chiefs": {
+        "pred": 45.1
+      },
+      "New York Giants": {
+        "pred": 1.4
+      },
+      "Tennessee Titans": {
+        "pred": 0.2
+      },
+      "Pittsburgh Steelers": {
+        "pred": 0.1
+      },
+      "Cincinnati Bengals": {
+        "pred": 2.1
+      },
+      "Washington Commanders": {
+        "pred": 0.0
+      },
+      "Seattle Seahawks": {
+        "pred": 8.1
+      },
+      "San Francisco 49ers": {
+        "pred": 7.1
+      },
+      "Arizona Cardinals": {
+        "pred": 0.0
+      },
+      "Tampa Bay Buccaneers": {
+        "pred": 0.3
+      },
+      "Minnesota Vikings": {
+        "pred": 1.0
+      },
+      "Dallas Cowboys": {
+        "pred": 0.1
+      },
+      "Baltimore Ravens": {
+        "pred": 2.1
+      },
+      "New Orleans Saints": {
+        "pred": 1.7
+      },
+      "Las Vegas Raiders": {
+        "pred": 0.2
+      },
+      "Denver Broncos": {
+        "pred": 0.2
+      },
+      "Los Angeles Rams": {
+        "pred": 1.4
+      },
+      "Chicago Bears": {
+        "pred": 0.1
+      },
+      "Philadelphia Eagles": {
+        "pred": 2.5
+      }
+    },
+    "4": {
+      "Cleveland Browns": {
+        "pred": 0.2
+      },
+      "Pittsburgh Steelers": {
+        "pred": 1.1
+      },
+      "Washington Commanders": {
+        "pred": 0.5
+      },
+      "Indianapolis Colts": {
+        "pred": 0.6
+      },
+      "Baltimore Ravens": {
+        "pred": 45.2
+      },
+      "Tennessee Titans": {
+        "pred": 0.0
+      },
+      "Buffalo Bills": {
+        "pred": 6.0
+      },
+      "New England Patriots": {
+        "pred": 0.0
+      },
+      "Chicago Bears": {
+        "pred": 3.9
+      },
+      "New York Jets": {
+        "pred": 0.1
+      },
+      "Cincinnati Bengals": {
+        "pred": 0.7
+      },
+      "Jacksonville Jaguars": {
+        "pred": 0.2
+      },
+      "Houston Texans": {
+        "pred": 1.7
+      },
+      "Dallas Cowboys": {
+        "pred": 0.2
+      },
+      "New York Giants": {
+        "pred": 0.2
+      },
+      "Arizona Cardinals": {
+        "pred": 1.4
+      },
+      "Philadelphia Eagles": {
+        "pred": 0.1
+      },
+      "Los Angeles Rams": {
+        "pred": 2.0
+      },
+      "Tampa Bay Buccaneers": {
+        "pred": 0.2
+      },
+      "Green Bay Packers": {
+        "pred": 1.4
+      },
+      "Minnesota Vikings": {
+        "pred": 20.8
+      },
+      "Miami Dolphins": {
+        "pred": 0.0
+      },
+      "Las Vegas Raiders": {
+        "pred": 0.1
+      },
+      "Kansas City Chiefs": {
+        "pred": 1.6
+      },
+      "Seattle Seahawks": {
+        "pred": 7.9
+      },
+      "Los Angeles Chargers": {
+        "pred": 0.0
+      },
+      "San Francisco 49ers": {
+        "pred": 0.5
+      },
+      "Denver Broncos": {
+        "pred": 0.2
+      },
+      "Carolina Panthers": {
+        "pred": 0.1
+      },
+      "Detroit Lions": {
+        "pred": 1.5
+      },
+      "New Orleans Saints": {
+        "pred": 1.4
+      },
+      "Atlanta Falcons": {
+        "pred": 0.2
+      }
+    }
+  }
+}
