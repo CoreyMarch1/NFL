@@ -2,9 +2,9 @@
 
 A team rating and game-projection system built on the weekly composite power ratings (FPI,
 nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 5
-(partial update)** — composite ratings, schedule, and QB starters are fresh; the off/def split, QB
-performance stats, and injuries are carried forward and flagged, and no Week 5 market lines are in
-yet (see below). Weeks 2–4 files are kept alongside as the validated history everything since has
+(partial update)** — composite ratings (with an Oct 7 Inpredictable refresh), the off/def split
+(Oct 7 dGPF), schedule, and QB starters are fresh; QB performance stats and injuries are carried
+forward and flagged, and no Week 5 market lines are in yet (see below). Weeks 2–4 files are kept alongside as the validated history everything since has
 been checked against.
 
 ## Contents (current: Week 5 — partial update)
@@ -12,8 +12,14 @@ been checked against.
 - `model/week5_ratings_model.py` → `model/week5_model_output.json` — the Week 4 pipeline on the
   **fresh Week 5 composite** (via @SamHoppen; transcription checksummed — every team's composite
   and sd reproduce from its six sources) and the **Week 5 slate** (15 games; Chiefs and Panthers on
-  bye). The composite is used as published: its Inpredictable column already reflects Week 4, so
-  the Week 4-style refresh from the Oct 4 snapshot would have made it *older*, not newer.
+  bye). The composite's Inpredictable input is refreshed to Inpredictable's **Oct 7** betting-market
+  GPF (`data/inpredictable_gpf_2026-10-07.csv`; checksummed: oGPF + dGPF = GPF for all 32 teams,
+  every rank column consistent, league W-L balances at 64–64), the same in-place swap as Week 4.
+  It's newer than the composite's own column: its two biggest gaps from it are the Ravens (−2.9,
+  Huntley starting) and Commanders (+1.3, Daniels back), so the refresh is how the market's read of
+  this week's QB changes reaches the ratings — the QB layer gives both changed starters a neutral
+  0.0, so nothing is double-counted. Biggest composite move: Ravens −0.5. The off/def split uses the
+  same Oct 7 dGPF.
   **Starters are user-confirmed for Week 5**, with two changes from Week 4: Baltimore to backup
   Tyler Huntley (which explains the Ravens' −3.5 composite move) and Jayden Daniels back for
   Washington. Buffalo and Detroit weren't on the list and keep Allen and Goff. **Returning starters
@@ -22,8 +28,8 @@ been checked against.
   form, which fails once the rating has been built on the backup's games. Applied mechanically it
   would have marked Washington *down* 1.13 pts for Daniels' return. The Bears' +6.6 move in their
   betting-market Inpredictable rating has no starter change behind it (Bagent still starts) and is
-  unexplained. Carried forward and flagged: the off/def split (Inpredictable dGPF from Oct 4, before
-  Week 4), QB performance numbers (through Week 2), and injuries (Week 3 report; the dashboard drops
+  unexplained — the Oct 7 data confirms the market really did move them from 24th to 7th. Carried
+  forward and flagged: QB performance numbers (through Week 2) and injuries (Week 3 report; the dashboard drops
   any QB entry that's now a confirmed starter, i.e. Daniels). No market lines yet, so the blend is
   off; once supplied it runs at `VALIDATED_GAMES = 46` → 46/(46+64) ≈ 42% model / 58% market.
 - `dashboard/week5_dashboard.html` — the Week 4 dashboard rebuilt on Week 5 output, with §05 still

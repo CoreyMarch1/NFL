@@ -7,16 +7,16 @@ random.seed(42)
 # ============================================================================
 # Week 5 build status -- what's fresh vs. carried forward stale this round:
 #   - Composite ratings below: FRESH (Week 5 composite via @SamHoppen, built on
-#     ESPN/nfelo/Inpredictable/Unexpected Points/FTN/PFF through Week 4). Its
-#     own Inpredictable column is post-Week 4, newer than the Oct 4 Inpredictable
-#     snapshot on file, so -- unlike Week 4 -- the composite is used as published.
+#     ESPN/nfelo/Inpredictable/Unexpected Points/FTN/PFF through Week 4), with its
+#     Inpredictable input refreshed to the Oct 7 betting-market GPF -- newer than
+#     the composite's own column, and already pricing this week's QB news.
 #   - Schedule (MATCHUPS): FRESH (Week 5 slate; Chiefs and Panthers on bye).
-#   - Off/def split: Inpredictable dGPF as of Oct 4 (pre-Week 4) -- one week
-#     STALE, but still the best split available: against actual Week 4 totals it
-#     beat both the SIS split and no split (validate_week4.py).
+#   - Off/def split: FRESH -- Inpredictable dGPF as of Oct 7 (post-Week 4).
 #   - QB layer: STARTERS FRESH (user-confirmed Week 5 list -- Ravens to backup
 #     Tyler Huntley, which explains their -3.5 composite move; Jayden Daniels
-#     back for Washington). QB performance data still through Week 2.
+#     back for Washington). QB performance data still through Week 2. Both
+#     changed starters get qb_adj = 0.0; the Oct 7 Inpredictable refresh is what
+#     carries the market's read of those QB changes into the ratings.
 #   - Injury adjustments: STALE -- reusing week3_injury_adjustments.json.
 #   - Market lines (VEGAS): NONE sourced yet for Week 5 -- every game runs on the
 #     model's own margin until lines are supplied.
@@ -64,23 +64,32 @@ TEAMS = {
 AVG_PTS = 22.5   # league-average team points/game baseline used for off/def decomposition
 
 # ============================================================================
-# Inpredictable betting-market ratings (as of Oct 4, 2026), used here only for the
-# off/def split (dGPF). Week 4 also swapped this GPF into the composite; Week 5's
-# published composite already carries a newer, post-Week 4 Inpredictable value, so
-# it's used as published and only dGPF is taken from this file.
+# Inpredictable betting-market ratings (as of Oct 7, 2026, after Week 4). Inpredictable is
+# already one of the composite's six inputs, so its fresh GPF REPLACES the composite's own
+# Inpredictable value rather than being added as a seventh source (which would double-count
+# it); the composite is the plain six-source mean with sample sd, so it's recomputed with the
+# vendor's own formula. This snapshot is newer than the composite's column: its two biggest
+# gaps from it are the Ravens (-2.9, Huntley starting) and Commanders (+1.3, Daniels back).
+# `comp_published` keeps the original.
 # ============================================================================
-INPRED_CSV = os.path.join(HERE, "..", "data", "inpredictable_gpf_2026-10-04.csv")
+INPRED_CSV = os.path.join(HERE, "..", "data", "inpredictable_gpf_2026-10-07.csv")
+SOURCES = ["fpi", "nfelo", "inpred", "up", "dvoa", "pff"]
 with open(INPRED_CSV) as f:
     INPRED = {r["Team"]: r for r in csv.DictReader(f)}
 assert set(INPRED) == set(TEAMS), "Inpredictable team names must match TEAMS exactly"
+
+for t, d in TEAMS.items():
+    d["comp_published"], d["inpred_published"] = d["comp"], d["inpred"]
+    d["inpred"] = float(INPRED[t]["GPF"])
+    vals = [d[s] for s in SOURCES]
+    d["comp"], d["sd"] = statistics.mean(vals), statistics.stdev(vals)
 
 # ============================================================================
 # Offense/defense split (lever #3), from Inpredictable's market-derived dGPF
 # (the defensive share of a team's points-favored vs. an average opponent;
 # + = defense saves points). Adopted in Week 4 over the stale SIS split; against
 # actual Week 4 totals dGPF missed by 9.5 pts vs. 10.1 for SIS and 10.7 for no
-# split (validate_week4.py) -- a real but modest gain. This file's dGPF predates
-# Week 4's games; refresh it when a newer Inpredictable snapshot is available.
+# split (validate_week4.py) -- a real but modest gain. Uses the Oct 7 snapshot.
 #
 # def_rating (points allowed/game, lower=better) = AVG_PTS - dGPF
 # off_rating is the residual of the composite identity comp = off - def, as before.
@@ -443,12 +452,13 @@ out = dict(importance=importance, results=results, results_qb_adjusted=results_q
            results_injury_adjusted=results_injury,
            results_market_blended=results_blended, model_weight=MODEL_WEIGHT,
            qb_profiles=qb_profiles, injury_adjustments=INJURY_ADJ,
-           teams={t: dict(comp=TEAMS[t]["comp"], sd=TEAMS[t]["sd"],
+           teams={t: dict(comp=round(TEAMS[t]["comp"],2), sd=round(TEAMS[t]["sd"],2),
+                           comp_published=TEAMS[t]["comp_published"],
+                           inpred_published=TEAMS[t]["inpred_published"], inpred_gpf=TEAMS[t]["inpred"],
                            off=round(TEAMS[t]["off"],1), defr=round(TEAMS[t]["def"],1))
                   for t in TEAMS},
            stale_inputs=dict(
                               qb_performance="through Week 2 only",
-               off_def_split="Inpredictable dGPF as of Oct 4 (pre-Week 4)",
                injuries="Week 3 report, reused unchanged",
                market_lines="none sourced for Week 5"))
 
