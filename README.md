@@ -3,7 +3,7 @@
 A team rating and game-projection system built on the weekly composite power ratings (FPI,
 nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 5
 (partial update)** — composite ratings (with an Oct 7 Inpredictable refresh), the off/def split
-(Oct 7 dGPF), schedule, QB starters, and 11 of 15 market lines are fresh; QB performance stats and
+(Oct 7 dGPF), schedule, QB starters, and all 15 market lines are fresh; QB performance stats and
 injuries are carried forward and flagged (see below). Weeks 2–4 files are kept alongside as the validated history everything since has
 been checked against.
 
@@ -31,13 +31,17 @@ been checked against.
   unexplained — the Oct 7 data confirms the market really did move them from 24th to 7th. Carried
   forward and flagged: QB performance numbers (through Week 2) and injuries (Week 3 report; the dashboard drops
   any QB entry that's now a confirmed starter, i.e. Daniels). **Market lines** (user-supplied
-  sportsbook screenshots) cover 11 of 15 games and are blended at `VALIDATED_GAMES = 46` →
-  46/(46+64) ≈ 42% model / 58% market; Bucs–Cowboys, Eagles–Jaguars, Texans–Titans, and
-  Giants–Commanders have no line. Biggest pure-model gaps vs. the market: Broncos @ Chargers
-  (model Chargers by 0.6, market Broncos by 3.5 — possibly the flat 2-pt home field overrating the
-  Chargers' shared stadium), Bears @ Packers (model Packers by 0.5, market Bears by 2.5), and
-  Ravens @ Falcons (model Falcons by 0.9, market by 3.5). Model totals sit within 1.2 pts of the
-  market's on average. The dashboard's "Model vs. market ≥ 2 pts" filter now uses the pure-model
+  sportsbook screenshots) cover all 15 games and are blended at `VALIDATED_GAMES = 46` →
+  46/(46+64) ≈ 42% model / 58% market. Six games show a pure-model gap of 2+ pts vs. the market.
+  The biggest is Broncos @ Chargers (model Chargers by 0.6, market Broncos by 3.5 — possibly the
+  flat 2-pt home field overrating the Chargers' shared stadium). **Two of the next three are this
+  week's QB changes**: Giants @ Commanders (model Giants by 0.2, market Washington by 3.5 —
+  Daniels back) and Ravens @ Falcons (model Falcons by 0.9, market by 3.5 — Huntley starting).
+  Both changed starters get a neutral 0.0 QB adjustment, so the market's read reaches the model
+  only via Inpredictable's one-sixth share of the composite: honest given the data, but it means
+  the model systematically under-reacts to QB changes. Fixing that needs per-QB value data for
+  backups. Bears @ Packers (model Packers by 0.5, market Bears by 2.5) has no starter change behind
+  it. Model totals sit within 1.5 pts of the market's on average. The dashboard's "Model vs. market ≥ 2 pts" filter now uses the pure-model
   gap; it used the blended gap, which the 58% market weight keeps under ~1.7, so it never fired.
 - `dashboard/week5_dashboard.html` — the Week 4 dashboard rebuilt on Week 5 output, with §05 still
   showing the Week 4 scorecard as the most recent completed validation.
