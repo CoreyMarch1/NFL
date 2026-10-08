@@ -8,7 +8,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # of the blend. It's a single-week snapshot, not a preseason projection, but it's the most
 # current, validated signal this project has, and the user chose to blend it with market win
 # totals rather than either alone.
-CURRENT_WEEK = 4   # the next week to pick; its probabilities come from that week's full model
+CURRENT_WEEK = 5   # the next week to pick; its probabilities come from that week's full model
 
 spec = importlib.util.spec_from_file_location("ratings_model", os.path.join(HERE, f"week{CURRENT_WEEK}_ratings_model.py"))
 rm = importlib.util.module_from_spec(spec)
@@ -84,7 +84,7 @@ def blended_win_prob(team, opp, is_home):
         return p_comp, p_comp, None
     return (p_comp + p_mkt) / 2, p_comp, p_mkt
 
-ALREADY_USED = {1: "Jacksonville Jaguars", 2: "San Francisco 49ers", 3: "Kansas City Chiefs"}
+ALREADY_USED = {1: "Jacksonville Jaguars", 2: "San Francisco 49ers", 3: "Kansas City Chiefs", 4: "Minnesota Vikings"}
 ALL_TEAMS = sorted(COMP.keys())
 
 def tier(p):

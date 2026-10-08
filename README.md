@@ -420,11 +420,11 @@ retroactively alter the projections that were just scored.)
 ## Secondary tool: Survivor pool roadmap
 
 A separate, full-season tool for NFL survivor pools (pick one team per week to win outright; the
-same team can never be picked twice; one loss or tie and you're out). Given three picks already
-spent and won — Jacksonville Jaguars (Week 1), San Francisco 49ers (Week 2), and Kansas City Chiefs
-(Week 3, beat Miami 24–10) — it recommends which of the remaining 29 teams to pick in each of
-Weeks 4–18. **Current Week 4 pick: Minnesota Vikings vs. Miami (77.6%)**, with an estimated 2.1%
-chance of surviving all of Weeks 4–18.
+same team can never be picked twice; one loss or tie and you're out). Given four picks already
+spent and won — Jacksonville Jaguars (Week 1), San Francisco 49ers (Week 2), Kansas City Chiefs
+(Week 3, beat Miami 24–10), and Minnesota Vikings (Week 4, beat Miami 15–10) — it recommends which
+of the remaining 28 teams to pick in each of Weeks 5–18. **Current Week 5 pick: Dallas Cowboys vs.
+Tampa Bay (72.9%; Thursday game)**, with an estimated 2.4% chance of surviving all of Weeks 5–18.
 
 - `model/survivor_model.py` → `model/survivor_plan.json` — for every future matchup, blends this
   week's composite rating (from `week{CURRENT_WEEK}_ratings_model.py`, now including the Oct 4
@@ -455,6 +455,11 @@ chance of surviving all of Weeks 4–18.
   show survival odds recomputed under the current ratings, not the number stored when saved, and
   any override for a week that's passed (or a team no longer playable that week) is dropped on load.
   Published version: https://claude.ai/artifact/YDVPUeuoXnxhY1JqgCawok
+
+**Week 5 update.** No picks changed from the Week 4 plan; Weeks 5–18 survival moved from 2.74% to
+2.41% as ratings shifted (e.g. the Ravens' Week 16 game fell from 84% to 78%). The Cowboys are both
+the plan's pick and the market's biggest favorite among unused teams (79.5% no-vig moneyline);
+re-running with Week 5 priced straight off moneylines changes nothing anywhere in the plan.
 
 **Week 4 update.** Four picks changed from the Week 3 plan: Week 4 Bears → Vikings (Chicago is
 starting backup Tyson Bagent and its rating dropped), Week 5 Bengals → Cowboys, Week 8 Cowboys →
