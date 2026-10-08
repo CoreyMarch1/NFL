@@ -3,8 +3,8 @@
 A team rating and game-projection system built on the weekly composite power ratings (FPI,
 nfelo, Inpredictable, Unexpected Points, FTN DVOA, PFF; data via @SamHoppen). Now on **Week 5
 (partial update)** — composite ratings (with an Oct 7 Inpredictable refresh), the off/def split
-(Oct 7 dGPF), schedule, and QB starters are fresh; QB performance stats and injuries are carried
-forward and flagged, and no Week 5 market lines are in yet (see below). Weeks 2–4 files are kept alongside as the validated history everything since has
+(Oct 7 dGPF), schedule, QB starters, and 11 of 15 market lines are fresh; QB performance stats and
+injuries are carried forward and flagged (see below). Weeks 2–4 files are kept alongside as the validated history everything since has
 been checked against.
 
 ## Contents (current: Week 5 — partial update)
@@ -30,8 +30,15 @@ been checked against.
   betting-market Inpredictable rating has no starter change behind it (Bagent still starts) and is
   unexplained — the Oct 7 data confirms the market really did move them from 24th to 7th. Carried
   forward and flagged: QB performance numbers (through Week 2) and injuries (Week 3 report; the dashboard drops
-  any QB entry that's now a confirmed starter, i.e. Daniels). No market lines yet, so the blend is
-  off; once supplied it runs at `VALIDATED_GAMES = 46` → 46/(46+64) ≈ 42% model / 58% market.
+  any QB entry that's now a confirmed starter, i.e. Daniels). **Market lines** (user-supplied
+  sportsbook screenshots) cover 11 of 15 games and are blended at `VALIDATED_GAMES = 46` →
+  46/(46+64) ≈ 42% model / 58% market; Bucs–Cowboys, Eagles–Jaguars, Texans–Titans, and
+  Giants–Commanders have no line. Biggest pure-model gaps vs. the market: Broncos @ Chargers
+  (model Chargers by 0.6, market Broncos by 3.5 — possibly the flat 2-pt home field overrating the
+  Chargers' shared stadium), Bears @ Packers (model Packers by 0.5, market Bears by 2.5), and
+  Ravens @ Falcons (model Falcons by 0.9, market by 3.5). Model totals sit within 1.2 pts of the
+  market's on average. The dashboard's "Model vs. market ≥ 2 pts" filter now uses the pure-model
+  gap; it used the blended gap, which the 58% market weight keeps under ~1.7, so it never fired.
 - `dashboard/week5_dashboard.html` — the Week 4 dashboard rebuilt on Week 5 output, with §05 still
   showing the Week 4 scorecard as the most recent completed validation.
   Published version: https://claude.ai/artifact/EPi2dgTdiLaeRHsW5Dbkzs

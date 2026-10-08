@@ -99,7 +99,14 @@
       "confidence": 43,
       "proj_home_score": 16.8,
       "proj_away_score": 24.2,
-      "combined_sd": 13.36
+      "combined_sd": 13.36,
+      "vegas_home_spread": 6.5,
+      "vegas_total": 42.5,
+      "model_home_spread": 7.5,
+      "edge_pts": 1.0,
+      "vegas_win_home": 27.9,
+      "vegas_win_away": 72.1,
+      "win_prob_edge": 0.5
     },
     {
       "home": "New England Patriots",
@@ -124,7 +131,14 @@
       "confidence": 30,
       "proj_home_score": 25.5,
       "proj_away_score": 20.4,
-      "combined_sd": 13.25
+      "combined_sd": 13.25,
+      "vegas_home_spread": -3.5,
+      "vegas_total": 44.5,
+      "model_home_spread": -5.2,
+      "edge_pts": -1.7,
+      "vegas_win_home": 63.6,
+      "vegas_win_away": 36.4,
+      "win_prob_edge": 1.5
     },
     {
       "home": "New Orleans Saints",
@@ -149,7 +163,14 @@
       "confidence": 12,
       "proj_home_score": 21.0,
       "proj_away_score": 22.7,
-      "combined_sd": 13.34
+      "combined_sd": 13.34,
+      "vegas_home_spread": 1.5,
+      "vegas_total": 42.5,
+      "model_home_spread": 1.8,
+      "edge_pts": 0.3,
+      "vegas_win_home": 44.9,
+      "vegas_win_away": 55.1,
+      "win_prob_edge": -0.9
     },
     {
       "home": "New York Jets",
@@ -174,7 +195,14 @@
       "confidence": 14,
       "proj_home_score": 21.0,
       "proj_away_score": 18.5,
-      "combined_sd": 13.2
+      "combined_sd": 13.2,
+      "vegas_home_spread": -1.5,
+      "vegas_total": 40.5,
+      "model_home_spread": -2.5,
+      "edge_pts": -1.0,
+      "vegas_win_home": 53.7,
+      "vegas_win_away": 46.3,
+      "win_prob_edge": 3.4
     },
     {
       "home": "Pittsburgh Steelers",
@@ -199,7 +227,14 @@
       "confidence": 9,
       "proj_home_score": 23.2,
       "proj_away_score": 21.6,
-      "combined_sd": 13.19
+      "combined_sd": 13.19,
+      "vegas_home_spread": -2.5,
+      "vegas_total": 44.5,
+      "model_home_spread": -1.5,
+      "edge_pts": 1.0,
+      "vegas_win_home": 55.1,
+      "vegas_win_away": 44.9,
+      "win_prob_edge": -0.6
     },
     {
       "home": "Tennessee Titans",
@@ -274,7 +309,14 @@
       "confidence": 3,
       "proj_home_score": 20.4,
       "proj_away_score": 21.1,
-      "combined_sd": 13.25
+      "combined_sd": 13.25,
+      "vegas_home_spread": 3.5,
+      "vegas_total": 42.5,
+      "model_home_spread": 0.6,
+      "edge_pts": -2.9,
+      "vegas_win_home": 38.2,
+      "vegas_win_away": 61.8,
+      "win_prob_edge": 10.4
     },
     {
       "home": "Arizona Cardinals",
@@ -299,7 +341,14 @@
       "confidence": 25,
       "proj_home_score": 24.0,
       "proj_away_score": 28.4,
-      "combined_sd": 13.38
+      "combined_sd": 13.38,
+      "vegas_home_spread": 5.5,
+      "vegas_total": 54.5,
+      "model_home_spread": 3.9,
+      "edge_pts": -1.6,
+      "vegas_win_home": 32.7,
+      "vegas_win_away": 67.3,
+      "win_prob_edge": 4.9
     },
     {
       "home": "Green Bay Packers",
@@ -324,7 +373,14 @@
       "confidence": 2,
       "proj_home_score": 22.0,
       "proj_away_score": 21.9,
-      "combined_sd": 13.39
+      "combined_sd": 13.39,
+      "vegas_home_spread": 2.5,
+      "vegas_total": 45.5,
+      "model_home_spread": -0.3,
+      "edge_pts": -2.8,
+      "vegas_win_home": 44.9,
+      "vegas_win_away": 55.1,
+      "win_prob_edge": 6.0
     },
     {
       "home": "Seattle Seahawks",
@@ -349,7 +405,14 @@
       "confidence": 9,
       "proj_home_score": 24.8,
       "proj_away_score": 23.1,
-      "combined_sd": 13.27
+      "combined_sd": 13.27,
+      "vegas_home_spread": -3.0,
+      "vegas_total": 45.5,
+      "model_home_spread": -1.6,
+      "edge_pts": 1.4,
+      "vegas_win_home": 59.3,
+      "vegas_win_away": 40.7,
+      "win_prob_edge": -4.6
     },
     {
       "home": "Atlanta Falcons",
@@ -374,7 +437,14 @@
       "confidence": 8,
       "proj_home_score": 22.5,
       "proj_away_score": 21.0,
-      "combined_sd": 13.24
+      "combined_sd": 13.24,
+      "vegas_home_spread": -3.5,
+      "vegas_total": 43.5,
+      "model_home_spread": -1.5,
+      "edge_pts": 2.0,
+      "vegas_win_home": 60.7,
+      "vegas_win_away": 39.3,
+      "win_prob_edge": -6.5
     },
     {
       "home": "Los Angeles Rams",
@@ -399,7 +469,14 @@
       "confidence": 18,
       "proj_home_score": 28.2,
       "proj_away_score": 25.3,
-      "combined_sd": 13.14
+      "combined_sd": 13.14,
+      "vegas_home_spread": -3.0,
+      "vegas_total": 54.5,
+      "model_home_spread": -3.1,
+      "edge_pts": -0.1,
+      "vegas_win_home": 59.7,
+      "vegas_win_away": 40.3,
+      "win_prob_edge": -0.5
     }
   ],
   "results_qb_adjusted": [
@@ -482,7 +559,10 @@
       "proj_away_score": 24.0,
       "combined_sd": 13.36,
       "home_qb_adj": 0.0,
-      "away_qb_adj": -0.06
+      "away_qb_adj": -0.06,
+      "vegas_home_spread": 6.5,
+      "model_home_spread": 7.6,
+      "edge_pts": 1.1
     },
     {
       "home": "New England Patriots",
@@ -509,7 +589,10 @@
       "proj_away_score": 20.4,
       "combined_sd": 13.25,
       "home_qb_adj": 0.27,
-      "away_qb_adj": -0.13
+      "away_qb_adj": -0.13,
+      "vegas_home_spread": -3.5,
+      "model_home_spread": -5.6,
+      "edge_pts": -2.1
     },
     {
       "home": "New Orleans Saints",
@@ -536,7 +619,10 @@
       "proj_away_score": 23.0,
       "combined_sd": 13.34,
       "home_qb_adj": 0.06,
-      "away_qb_adj": 0.29
+      "away_qb_adj": 0.29,
+      "vegas_home_spread": 1.5,
+      "model_home_spread": 2.2,
+      "edge_pts": 0.7
     },
     {
       "home": "New York Jets",
@@ -563,7 +649,10 @@
       "proj_away_score": 18.5,
       "combined_sd": 13.2,
       "home_qb_adj": -0.51,
-      "away_qb_adj": 0.0
+      "away_qb_adj": 0.0,
+      "vegas_home_spread": -1.5,
+      "model_home_spread": -1.7,
+      "edge_pts": -0.2
     },
     {
       "home": "Pittsburgh Steelers",
@@ -590,7 +679,10 @@
       "proj_away_score": 21.9,
       "combined_sd": 13.19,
       "home_qb_adj": 0.52,
-      "away_qb_adj": 0.29
+      "away_qb_adj": 0.29,
+      "vegas_home_spread": -2.5,
+      "model_home_spread": -1.7,
+      "edge_pts": 0.8
     },
     {
       "home": "Tennessee Titans",
@@ -671,7 +763,10 @@
       "proj_away_score": 21.6,
       "combined_sd": 13.25,
       "home_qb_adj": 0.52,
-      "away_qb_adj": 0.59
+      "away_qb_adj": 0.59,
+      "vegas_home_spread": 3.5,
+      "model_home_spread": 0.5,
+      "edge_pts": -3.0
     },
     {
       "home": "Arizona Cardinals",
@@ -698,7 +793,10 @@
       "proj_away_score": 28.1,
       "combined_sd": 13.38,
       "home_qb_adj": 0.09,
-      "away_qb_adj": -0.33
+      "away_qb_adj": -0.33,
+      "vegas_home_spread": 5.5,
+      "model_home_spread": 4.2,
+      "edge_pts": -1.3
     },
     {
       "home": "Green Bay Packers",
@@ -725,7 +823,10 @@
       "proj_away_score": 21.9,
       "combined_sd": 13.39,
       "home_qb_adj": 0.86,
-      "away_qb_adj": 0.0
+      "away_qb_adj": 0.0,
+      "vegas_home_spread": 2.5,
+      "model_home_spread": -0.5,
+      "edge_pts": -3.0
     },
     {
       "home": "Seattle Seahawks",
@@ -752,7 +853,10 @@
       "proj_away_score": 22.8,
       "combined_sd": 13.27,
       "home_qb_adj": 0.0,
-      "away_qb_adj": -0.34
+      "away_qb_adj": -0.34,
+      "vegas_home_spread": -3.0,
+      "model_home_spread": -1.8,
+      "edge_pts": 1.2
     },
     {
       "home": "Atlanta Falcons",
@@ -779,7 +883,10 @@
       "proj_away_score": 21.0,
       "combined_sd": 13.24,
       "home_qb_adj": 0.0,
-      "away_qb_adj": 0.0
+      "away_qb_adj": 0.0,
+      "vegas_home_spread": -3.5,
+      "model_home_spread": -1.4,
+      "edge_pts": 2.1
     },
     {
       "home": "Los Angeles Rams",
@@ -806,7 +913,10 @@
       "proj_away_score": 25.2,
       "combined_sd": 13.14,
       "home_qb_adj": 0.1,
-      "away_qb_adj": -0.05
+      "away_qb_adj": -0.05,
+      "vegas_home_spread": -3.0,
+      "model_home_spread": -3.1,
+      "edge_pts": -0.1
     }
   ],
   "results_injury_adjusted": [
@@ -901,7 +1011,10 @@
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 1.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": 6.5,
+      "model_home_spread": 8.3,
+      "edge_pts": 1.8
     },
     {
       "home": "New England Patriots",
@@ -932,7 +1045,10 @@
       "home_off_injury_adj": -0.76,
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": -3.5,
+      "model_home_spread": -4.9,
+      "edge_pts": -1.4
     },
     {
       "home": "New Orleans Saints",
@@ -963,7 +1079,10 @@
       "home_off_injury_adj": -0.71,
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 1.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": 1.5,
+      "model_home_spread": 3.7,
+      "edge_pts": 2.2
     },
     {
       "home": "New York Jets",
@@ -994,7 +1113,10 @@
       "home_off_injury_adj": -0.32,
       "home_def_injury_adj": -0.06,
       "away_off_injury_adj": 0.0,
-      "away_def_injury_adj": 0.01
+      "away_def_injury_adj": 0.01,
+      "vegas_home_spread": -1.5,
+      "model_home_spread": -1.9,
+      "edge_pts": -0.4
     },
     {
       "home": "Pittsburgh Steelers",
@@ -1025,7 +1147,10 @@
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": -0.09,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": -2.5,
+      "model_home_spread": -1.8,
+      "edge_pts": 0.7
     },
     {
       "home": "Tennessee Titans",
@@ -1118,7 +1243,10 @@
       "home_off_injury_adj": 0.97,
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": 3.5,
+      "model_home_spread": -0.6,
+      "edge_pts": -4.1
     },
     {
       "home": "Arizona Cardinals",
@@ -1149,7 +1277,10 @@
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 0.21,
       "away_off_injury_adj": 0.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": 5.5,
+      "model_home_spread": 4.5,
+      "edge_pts": -1.0
     },
     {
       "home": "Green Bay Packers",
@@ -1180,7 +1311,10 @@
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": 2.5,
+      "model_home_spread": -0.5,
+      "edge_pts": -3.0
     },
     {
       "home": "Seattle Seahawks",
@@ -1211,7 +1345,10 @@
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": -1.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": -3.0,
+      "model_home_spread": -3.3,
+      "edge_pts": -0.3
     },
     {
       "home": "Atlanta Falcons",
@@ -1242,7 +1379,10 @@
       "home_off_injury_adj": 0.0,
       "home_def_injury_adj": 1.01,
       "away_off_injury_adj": 0.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": -3.5,
+      "model_home_spread": -0.9,
+      "edge_pts": 2.6
     },
     {
       "home": "Los Angeles Rams",
@@ -1273,7 +1413,10 @@
       "home_off_injury_adj": 0.48,
       "home_def_injury_adj": 0.01,
       "away_off_injury_adj": 0.0,
-      "away_def_injury_adj": 0.0
+      "away_def_injury_adj": 0.0,
+      "vegas_home_spread": -3.0,
+      "model_home_spread": -3.6,
+      "edge_pts": -0.6
     }
   ],
   "results_market_blended": [
@@ -1349,21 +1492,21 @@
       "away_off": 25.2,
       "away_def": 22.4,
       "model_margin": -8.4,
-      "expected_margin": -8.4,
-      "median_margin": -8.1,
+      "expected_margin": -7.3,
+      "median_margin": -7.0,
       "ci68": [
-        -21.7,
-        5.0
+        -20.6,
+        6.1
       ],
       "ci95": [
-        -33.9,
-        18.0
+        -32.9,
+        19.1
       ],
-      "win_home": 26.5,
-      "win_away": 73.5,
-      "confidence": 47,
-      "proj_home_score": 16.7,
-      "proj_away_score": 24.9,
+      "win_home": 29.0,
+      "win_away": 71.0,
+      "confidence": 42,
+      "proj_home_score": 17.2,
+      "proj_away_score": 24.4,
       "combined_sd": 13.36,
       "home_qb_adj": 0.0,
       "away_qb_adj": -0.06,
@@ -1371,7 +1514,11 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 1.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": 6.5,
+      "vegas_total": 42.5,
+      "model_home_spread": 7.0,
+      "edge_pts": 0.5
     },
     {
       "home": "New England Patriots",
@@ -1381,21 +1528,21 @@
       "away_off": 21.8,
       "away_def": 23.7,
       "model_margin": 4.8,
-      "expected_margin": 4.8,
-      "median_margin": 4.4,
+      "expected_margin": 4.0,
+      "median_margin": 3.7,
       "ci68": [
-        -8.5,
-        17.7
+        -9.2,
+        17.0
       ],
       "ci95": [
-        -21.2,
-        29.8
+        -22.0,
+        29.0
       ],
-      "win_home": 63.9,
-      "win_away": 36.1,
-      "confidence": 28,
-      "proj_home_score": 25.1,
-      "proj_away_score": 20.5,
+      "win_home": 61.9,
+      "win_away": 38.1,
+      "confidence": 24,
+      "proj_home_score": 24.7,
+      "proj_away_score": 20.8,
       "combined_sd": 13.25,
       "home_qb_adj": 0.27,
       "away_qb_adj": -0.13,
@@ -1403,7 +1550,11 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": -3.5,
+      "vegas_total": 44.5,
+      "model_home_spread": -3.7,
+      "edge_pts": -0.2
     },
     {
       "home": "New Orleans Saints",
@@ -1413,21 +1564,21 @@
       "away_off": 22.5,
       "away_def": 20.6,
       "model_margin": -3.7,
-      "expected_margin": -3.7,
-      "median_margin": -4.0,
+      "expected_margin": -2.4,
+      "median_margin": -2.7,
       "ci68": [
-        -17.2,
-        9.8
+        -15.9,
+        11.1
       ],
       "ci95": [
-        -29.9,
-        23.5
+        -28.6,
+        24.8
       ],
-      "win_home": 39.3,
-      "win_away": 60.7,
-      "confidence": 21,
-      "proj_home_score": 20.2,
-      "proj_away_score": 23.9,
+      "win_home": 42.6,
+      "win_away": 57.4,
+      "confidence": 15,
+      "proj_home_score": 20.9,
+      "proj_away_score": 23.3,
       "combined_sd": 13.34,
       "home_qb_adj": 0.06,
       "away_qb_adj": 0.29,
@@ -1435,7 +1586,11 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 1.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": 1.5,
+      "vegas_total": 42.5,
+      "model_home_spread": 2.7,
+      "edge_pts": 1.2
     },
     {
       "home": "New York Jets",
@@ -1445,19 +1600,19 @@
       "away_off": 18.1,
       "away_def": 22.8,
       "model_margin": 1.8,
-      "expected_margin": 1.8,
-      "median_margin": 1.7,
+      "expected_margin": 1.6,
+      "median_margin": 1.5,
       "ci68": [
-        -11.3,
-        14.9
+        -11.5,
+        14.8
       ],
       "ci95": [
-        -24.0,
-        27.6
+        -24.1,
+        27.4
       ],
-      "win_home": 55.1,
-      "win_away": 44.9,
-      "confidence": 10,
+      "win_home": 54.6,
+      "win_away": 45.4,
+      "confidence": 9,
       "proj_home_score": 20.2,
       "proj_away_score": 18.5,
       "combined_sd": 13.2,
@@ -1467,7 +1622,11 @@
       "home_def_injury_adj": -0.06,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.01,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": -1.5,
+      "vegas_total": 40.5,
+      "model_home_spread": -1.5,
+      "edge_pts": 0.0
     },
     {
       "home": "Pittsburgh Steelers",
@@ -1477,21 +1636,21 @@
       "away_off": 23.8,
       "away_def": 24.1,
       "model_margin": 1.7,
-      "expected_margin": 1.7,
-      "median_margin": 1.7,
+      "expected_margin": 2.2,
+      "median_margin": 2.2,
       "ci68": [
-        -10.9,
-        14.7
+        -10.5,
+        15.1
       ],
       "ci95": [
-        -23.4,
-        27.0
+        -23.0,
+        27.4
       ],
-      "win_home": 55.0,
-      "win_away": 45.0,
-      "confidence": 10,
-      "proj_home_score": 23.7,
-      "proj_away_score": 22.1,
+      "win_home": 56.3,
+      "win_away": 43.7,
+      "confidence": 13,
+      "proj_home_score": 24.0,
+      "proj_away_score": 21.9,
       "combined_sd": 13.19,
       "home_qb_adj": 0.52,
       "away_qb_adj": 0.29,
@@ -1499,7 +1658,11 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": -0.09,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": -2.5,
+      "vegas_total": 44.5,
+      "model_home_spread": -2.2,
+      "edge_pts": 0.3
     },
     {
       "home": "Tennessee Titans",
@@ -1573,21 +1736,21 @@
       "away_off": 22.4,
       "away_def": 20.3,
       "model_margin": 0.4,
-      "expected_margin": 0.4,
-      "median_margin": 0.5,
+      "expected_margin": -1.9,
+      "median_margin": -1.7,
       "ci68": [
-        -12.8,
-        13.7
+        -15.1,
+        11.4
       ],
       "ci95": [
-        -25.8,
-        26.4
+        -28.0,
+        24.2
       ],
-      "win_home": 51.5,
-      "win_away": 48.5,
-      "confidence": 3,
-      "proj_home_score": 22.0,
-      "proj_away_score": 21.7,
+      "win_home": 44.4,
+      "win_away": 55.6,
+      "confidence": 11,
+      "proj_home_score": 20.9,
+      "proj_away_score": 22.8,
       "combined_sd": 13.25,
       "home_qb_adj": 0.52,
       "away_qb_adj": 0.59,
@@ -1595,7 +1758,11 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": 3.5,
+      "vegas_total": 42.5,
+      "model_home_spread": 1.7,
+      "edge_pts": -1.8
     },
     {
       "home": "Arizona Cardinals",
@@ -1605,21 +1772,21 @@
       "away_off": 25.9,
       "away_def": 24.1,
       "model_margin": -4.2,
-      "expected_margin": -4.2,
-      "median_margin": -4.4,
+      "expected_margin": -5.0,
+      "median_margin": -5.2,
       "ci68": [
-        -17.7,
-        9.1
+        -18.5,
+        8.3
       ],
       "ci95": [
-        -29.5,
-        22.1
+        -30.2,
+        21.3
       ],
-      "win_home": 37.8,
-      "win_away": 62.2,
-      "confidence": 24,
-      "proj_home_score": 24.1,
-      "proj_away_score": 28.3,
+      "win_home": 35.4,
+      "win_away": 64.6,
+      "confidence": 29,
+      "proj_home_score": 23.7,
+      "proj_away_score": 28.7,
       "combined_sd": 13.38,
       "home_qb_adj": 0.09,
       "away_qb_adj": -0.33,
@@ -1627,7 +1794,11 @@
       "home_def_injury_adj": 0.21,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": 5.5,
+      "vegas_total": 54.5,
+      "model_home_spread": 5.2,
+      "edge_pts": -0.3
     },
     {
       "home": "Green Bay Packers",
@@ -1637,21 +1808,21 @@
       "away_off": 22.9,
       "away_def": 21.8,
       "model_margin": 0.8,
-      "expected_margin": 0.8,
-      "median_margin": 0.9,
+      "expected_margin": -1.1,
+      "median_margin": -1.0,
       "ci68": [
-        -12.2,
-        13.9
+        -14.1,
+        12.0
       ],
       "ci95": [
-        -25.0,
-        26.5
+        -26.8,
+        24.6
       ],
-      "win_home": 52.9,
-      "win_away": 47.1,
+      "win_home": 47.1,
+      "win_away": 52.9,
       "confidence": 6,
-      "proj_home_score": 22.7,
-      "proj_away_score": 21.9,
+      "proj_home_score": 21.7,
+      "proj_away_score": 22.8,
       "combined_sd": 13.39,
       "home_qb_adj": 0.86,
       "away_qb_adj": 0.0,
@@ -1659,7 +1830,11 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": 2.5,
+      "vegas_total": 45.5,
+      "model_home_spread": 1.0,
+      "edge_pts": -1.5
     },
     {
       "home": "Seattle Seahawks",
@@ -1669,18 +1844,18 @@
       "away_off": 26.2,
       "away_def": 22.2,
       "model_margin": 3.1,
-      "expected_margin": 3.1,
+      "expected_margin": 3.0,
       "median_margin": 2.9,
       "ci68": [
-        -9.8,
-        16.5
+        -9.9,
+        16.4
       ],
       "ci95": [
         -22.9,
-        28.6
+        28.5
       ],
-      "win_home": 58.9,
-      "win_away": 41.1,
+      "win_home": 58.8,
+      "win_away": 41.2,
       "confidence": 18,
       "proj_home_score": 24.7,
       "proj_away_score": 21.6,
@@ -1691,7 +1866,11 @@
       "home_def_injury_adj": 0.0,
       "away_off_injury_adj": -1.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": -3.0,
+      "vegas_total": 45.5,
+      "model_home_spread": -2.9,
+      "edge_pts": 0.1
     },
     {
       "home": "Atlanta Falcons",
@@ -1701,21 +1880,21 @@
       "away_off": 22.3,
       "away_def": 22.3,
       "model_margin": 0.6,
-      "expected_margin": 0.6,
-      "median_margin": 0.5,
+      "expected_margin": 2.3,
+      "median_margin": 2.2,
       "ci68": [
-        -12.7,
-        13.0
+        -11.0,
+        14.7
       ],
       "ci95": [
-        -25.5,
-        25.7
+        -23.8,
+        27.4
       ],
-      "win_home": 51.2,
-      "win_away": 48.8,
-      "confidence": 2,
-      "proj_home_score": 22.5,
-      "proj_away_score": 22.1,
+      "win_home": 56.7,
+      "win_away": 43.3,
+      "confidence": 13,
+      "proj_home_score": 23.3,
+      "proj_away_score": 21.3,
       "combined_sd": 13.24,
       "home_qb_adj": 0.0,
       "away_qb_adj": 0.0,
@@ -1723,7 +1902,11 @@
       "home_def_injury_adj": 1.01,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": -3.5,
+      "vegas_total": 43.5,
+      "model_home_spread": -2.2,
+      "edge_pts": 1.3
     },
     {
       "home": "Los Angeles Rams",
@@ -1733,21 +1916,21 @@
       "away_off": 27.9,
       "away_def": 23.3,
       "model_margin": 3.6,
-      "expected_margin": 3.6,
-      "median_margin": 3.5,
+      "expected_margin": 3.2,
+      "median_margin": 3.2,
       "ci68": [
-        -9.5,
-        16.7
+        -9.8,
+        16.4
       ],
       "ci95": [
-        -22.4,
-        29.8
+        -22.7,
+        29.5
       ],
-      "win_home": 59.8,
-      "win_away": 40.2,
-      "confidence": 20,
-      "proj_home_score": 28.8,
-      "proj_away_score": 25.3,
+      "win_home": 59.1,
+      "win_away": 40.9,
+      "confidence": 18,
+      "proj_home_score": 28.7,
+      "proj_away_score": 25.4,
       "combined_sd": 13.14,
       "home_qb_adj": 0.1,
       "away_qb_adj": -0.05,
@@ -1755,7 +1938,11 @@
       "home_def_injury_adj": 0.01,
       "away_off_injury_adj": 0.0,
       "away_def_injury_adj": 0.0,
-      "model_weight": 0.41818181818181815
+      "model_weight": 0.41818181818181815,
+      "vegas_home_spread": -3.0,
+      "vegas_total": 54.5,
+      "model_home_spread": -3.2,
+      "edge_pts": -0.2
     }
   ],
   "model_weight": 0.41818181818181815,
@@ -3127,6 +3314,6 @@
   "stale_inputs": {
     "qb_performance": "through Week 2 only",
     "injuries": "Week 3 report, reused unchanged",
-    "market_lines": "none sourced for Week 5"
+    "market_lines": "11 of 15 games sourced; TB-DAL, PHI-JAX, HOU-TEN, NYG-WAS missing"
   }
 }

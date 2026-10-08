@@ -18,8 +18,9 @@ random.seed(42)
 #     changed starters get qb_adj = 0.0; the Oct 7 Inpredictable refresh is what
 #     carries the market's read of those QB changes into the ratings.
 #   - Injury adjustments: STALE -- reusing week3_injury_adjustments.json.
-#   - Market lines (VEGAS): NONE sourced yet for Week 5 -- every game runs on the
-#     model's own margin until lines are supplied.
+#   - Market lines (VEGAS): FRESH for 11 of 15 games (user-supplied sportsbook
+#     screenshots). TB@DAL, PHI@JAX, HOU@TEN, and NYG@WAS have no line and run on
+#     the model's own margin.
 # Same user-chosen approach as Week 4: ship a best-effort build now, then layer
 # in starters, lines, and ratings as they arrive.
 # ============================================================================
@@ -217,10 +218,23 @@ MATCHUPS = [
 ]
 # tuple = (home, away)
 
-# Week 5 market lines: none sourced yet. Every game runs on the model's own margin
-# (simulate() treats market_home_spread=None as "use model_margin") until lines are
-# supplied in this same {(home, away): dict(home_spread, total, home_ml, away_ml)} form.
-VEGAS = {}
+# Week 5 market lines (spread/total/moneyline), via user-supplied sportsbook screenshots.
+# 11 of 15 games; Tampa Bay@Dallas, Philadelphia@Jacksonville, Houston@Tennessee, and
+# NY Giants@Washington have no line and run on the model's own margin (simulate() treats
+# market_home_spread=None as "use model_margin").
+VEGAS = {
+    ("Arizona Cardinals","Detroit Lions"):        dict(home_spread=5.5,  total=54.5, home_ml=194,  away_ml=-235),
+    ("Atlanta Falcons","Baltimore Ravens"):       dict(home_spread=-3.5, total=43.5, home_ml=-172, away_ml=144),
+    ("Los Angeles Rams","Buffalo Bills"):         dict(home_spread=-3.0, total=54.5, home_ml=-164, away_ml=138),
+    ("New York Jets","Cleveland Browns"):         dict(home_spread=-1.5, total=40.5, home_ml=-126, away_ml=108),
+    ("New Orleans Saints","Minnesota Vikings"):   dict(home_spread=1.5,  total=42.5, home_ml=114,  away_ml=-134),
+    ("Los Angeles Chargers","Denver Broncos"):    dict(home_spread=3.5,  total=42.5, home_ml=152,  away_ml=-180),
+    ("Seattle Seahawks","San Francisco 49ers"):   dict(home_spread=-3.0, total=45.5, home_ml=-162, away_ml=136),
+    ("Pittsburgh Steelers","Indianapolis Colts"): dict(home_spread=-2.5, total=44.5, home_ml=-134, away_ml=114),
+    ("New England Patriots","Las Vegas Raiders"): dict(home_spread=-3.5, total=44.5, home_ml=-196, away_ml=164),
+    ("Miami Dolphins","Cincinnati Bengals"):      dict(home_spread=6.5,  total=42.5, home_ml=245,  away_ml=-300),
+    ("Green Bay Packers","Chicago Bears"):        dict(home_spread=2.5,  total=45.5, home_ml=114,  away_ml=-134),
+}
 
 def ml_to_prob(ml):
     if ml is None:
@@ -418,9 +432,8 @@ for home, away in MATCHUPS:
     results_injury.append(r)
 
 # ============================================================================
-# Market blend (lever #1): a no-op until Week 5 lines are supplied (VEGAS is
-# empty). VALIDATED_GAMES = 16 (Wk2) + 15 (Wk3) + 15 (Wk4) = 46, so once lines
-# exist the blend is 46/(46+64) ~= 42% model / 58% market.
+# Market blend (lever #1): live for the 11 lined games. VALIDATED_GAMES = 16 (Wk2)
+# + 15 (Wk3) + 15 (Wk4) = 46, so the blend is 46/(46+64) ~= 42% model / 58% market.
 # ============================================================================
 VALIDATED_GAMES = 46
 BLEND_STABILIZE_K = 64
@@ -460,7 +473,7 @@ out = dict(importance=importance, results=results, results_qb_adjusted=results_q
            stale_inputs=dict(
                               qb_performance="through Week 2 only",
                injuries="Week 3 report, reused unchanged",
-               market_lines="none sourced for Week 5"))
+               market_lines="11 of 15 games sourced; TB-DAL, PHI-JAX, HOU-TEN, NYG-WAS missing"))
 
 with open(os.path.join(HERE, "week5_model_output.json"),"w") as f:
     json.dump(out, f, indent=2)
