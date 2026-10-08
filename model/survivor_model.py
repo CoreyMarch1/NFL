@@ -126,12 +126,38 @@ def build_week_options(games_by_week):
         options[wk] = opts
     return options
 
-def optimize(start_week=CURRENT_WEEK, end_week=18):
+def load_ownership():
+    # Projected pool ownership for the current week (survivor_ownership.py), or None if missing.
+    try:
+        with open(os.path.join(HERE, f"survivor_ownership_week{CURRENT_WEEK}.json")) as f:
+            d = json.load(f)
+    except FileNotFoundError:
+        return None
+    return {t: v["share"] for t, v in d["projection"].items()} if d.get("week") == CURRENT_WEEK else None
+
+def equity_multipliers(week_options, own):
+    # If you pick team t and it wins, the share of the pool still alive is o_t + sum_{u!=t} o_u * p_u
+    # (everyone on t survives with you; everyone else survives at their own team's win probability).
+    # Your slice of the pool grows by 1 / that, so a win on a lightly-owned pick in a week where the
+    # chalk might fall is worth more than the same win alongside most of the field.
+    field = sum(o * week_options[u]["p_blend"] for u, o in own.items() if u in week_options)
+    return {t: 1.0 / (field + own.get(t, 0.0) * (1 - week_options[t]["p_blend"])) for t in week_options}
+
+def optimize(start_week=CURRENT_WEEK, end_week=18, mode="survival"):
+    # mode="survival": maximize the probability of surviving every remaining week.
+    # mode="ownership": same, except the current week is valued by p x equity multiplier -- expected
+    # growth in your share of the pool -- using projected ownership. Only the current week can be
+    # adjusted: ownership can't be projected further out, so later weeks stay pure survival, which is
+    # also what keeps the plan saving strong teams for the weeks that need them.
     games_by_week = load_schedule()
     options = build_week_options(games_by_week)
     used_already = set(ALREADY_USED.values())
     available_teams = [t for t in ALL_TEAMS if t not in used_already]
     weeks = list(range(start_week, end_week + 1))
+    own = load_ownership()
+    mult = equity_multipliers(options[CURRENT_WEEK], own) if own else {}
+    if mode == "ownership" and not own:
+        raise ValueError(f"ownership mode needs survivor_ownership_week{CURRENT_WEEK}.json")
 
     INFEASIBLE = 1e6
     cost = [[INFEASIBLE] * len(available_teams) for _ in weeks]
@@ -140,6 +166,8 @@ def optimize(start_week=CURRENT_WEEK, end_week=18):
             if team in options.get(wk, {}):
                 p = options[wk][team]["p_blend"]
                 cost[i][j] = -math.log(max(p, 1e-6))
+                if mode == "ownership" and wk == CURRENT_WEEK:
+                    cost[i][j] -= math.log(mult[team])
 
     row_ind, col_ind = linear_sum_assignment(cost)
     plan = []
@@ -162,6 +190,8 @@ def optimize(start_week=CURRENT_WEEK, end_week=18):
                           p_mkt=round(info["p_mkt"], 4) if info["p_mkt"] is not None else None,
                           source=info["source"], tier=tier(info["p_blend"]),
                           alternatives=[dict(team=t, p_blend=round(p, 4), opponent=o, is_home=h) for t, p, o, h in alts]))
+        if wk == CURRENT_WEEK and own:
+            plan[-1].update(ownership=round(own.get(team, 0.0), 4), equity_mult=round(mult[team], 4))
 
     survival_prob = 1.0
     for p in plan:
@@ -193,6 +223,8 @@ def optimize(start_week=CURRENT_WEEK, end_week=18):
 
 if __name__ == "__main__":
     plan, survival_prob, team_schedule = optimize()
+    own = load_ownership()
+    plan_own, survival_own, _ = optimize(mode="ownership") if own else (None, None, None)
     print(f"{'Wk':>3s} {'Team':26s} {'Opp':22s} {'H/A':4s} {'P(win)':>7s} {'Tier':10s} {'Top alt (p)'}")
     for p in plan:
         if p["team"] is None:
@@ -205,12 +237,22 @@ if __name__ == "__main__":
     print(f"\nEstimated probability of surviving weeks {plan[0]['week']}-{plan[-1]['week']}: {survival_prob:.1%}")
     used = ", ".join(f"{t} (Wk{wk})" for wk, t in sorted(ALREADY_USED.items()))
     print(f"(Already used and won: {used})")
+    if plan_own:
+        changed = [(a["week"], a["team"], b["team"]) for a, b in zip(plan, plan_own) if a["team"] != b["team"]]
+        print(f"\nOwnership-aware plan: survival {survival_own:.2%} (vs {survival_prob:.2%}); picks that differ: {changed or 'none'}")
+        cw = plan_own[0]
+        print(f"  Week {CURRENT_WEEK} pick: {cw['team']} -- win {cw['p_blend']:.1%}, projected ownership {cw['ownership']:.1%}, equity x{cw['equity_mult']:.3f}")
 
     out = dict(
         already_used=[dict(week=wk, team=t) for wk, t in sorted(ALREADY_USED.items())],
         start_week=CURRENT_WEEK,
         plan=plan,
         survival_prob=round(survival_prob, 6),
+        plan_ownership=plan_own,
+        survival_prob_ownership=round(survival_own, 6) if survival_own else None,
+        ownership={t: round(v, 4) for t, v in own.items()} if own else None,
+        equity_mult=({t: round(v, 6) for t, v in equity_multipliers(build_week_options(load_schedule())[CURRENT_WEEK], own).items()}
+                     if own else None),
         team_schedule=team_schedule,
         season_win_totals=SEASON_WIN_TOTALS,
         composite_ratings={t: round(v, 1) for t, v in COMP.items()},

@@ -499,6 +499,22 @@ sensitivity rather than used. Read the projections as a ranking with roughly ±1
 Week 1), Lions ~5–6%, everyone else under 4%. The ranking is stable across both variants and across
 the Week 5 pool-size assumption.
 
+**In the roadmap.** The roadmap page has an "Optimize for" setting: **Pure survival** (default,
+unchanged) or **Account for ownership**. Ownership-aware values the current week's picks at
+p × 1 / (field survival if that team wins), where field survival = o_t + Σ_{u≠t} o_u·p_u — the
+expected growth in your share of the pool. Only the current week is adjusted (ownership can't be
+projected further out; later weeks stay pure survival, which keeps the plan saving strong teams).
+`survivor_model.py` computes both plans (`plan`, `plan_ownership`) and exports the per-team
+multipliers so the page's in-browser re-optimizer applies the identical objective when you
+override picks — verified on a scenario where ownership changes the plan. The page also shows a
+projected-ownership table for the current week with each team's pick value, ownership on this
+week's card, and saved paths remember which setting they were saved under.
+
+This week both settings pick the **Cowboys**. The Bengals have the best single-week value (71%
+win, ~11% owned vs. the Cowboys' ~25%), but the full-season plan keeps them for Week 12. The call
+is fragile: Cowboys ownership ~10 pts above projection — within the model's error — flips the
+ownership-aware pick to the Texans.
+
 **Pool quirk:** each week has more entrants than the previous week's survivors (×1.03, ×1.27,
 ×1.16), suggesting buybacks, re-entries, or extra lives. Availability assumes re-entries keep
 their pick history; the Week 5 pool size is estimated from Week 4 survivors × the average inflow,

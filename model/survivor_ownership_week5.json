@@ -54,7 +54,8 @@
     "5": 335
   },
   "week5_inflow_assumed": 1.1526476155411876,
-  "week5_projection": {
+  "week": 5,
+  "projection": {
     "Dallas Cowboys": {
       "share": 0.2482,
       "share_if_saving_strong_teams": 0.2603,

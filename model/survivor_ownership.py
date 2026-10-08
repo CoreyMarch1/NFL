@@ -145,7 +145,7 @@ if __name__ == "__main__":
 
     out = dict(model=r["best"], params=r["params"], strength_variant_params=r["strength_variant_params"], cv=r["cv"],
                entrants={str(k): round(v) for k, v in r["n"].items()}, week5_inflow_assumed=r["inflow_used"],
-               week5_projection={t: {k: round(v, 4) for k, v in p.items()} for t, p in r["projection"].items()},
+               week=PROJECT_WEEK, projection={t: {k: round(v, 4) for k, v in p.items()} for t, p in r["projection"].items()},
                fitted_vs_actual={str(w): {t: dict(pred=round(pr[t]*100, 1)) for t in pr} for w, pr in r["fit_check"].items()})
-    with open(os.path.join(HERE, "survivor_ownership_week5.json"), "w") as f:
+    with open(os.path.join(HERE, f"survivor_ownership_week{PROJECT_WEEK}.json"), "w") as f:
         json.dump(out, f, indent=2)
