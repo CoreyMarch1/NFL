@@ -1,0 +1,235 @@
+<title>Hoops D10</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: die + result side by side on desktop, stacked on phone; side legend below */
+:root {
+  --bg: #f3efe8;
+  --panel: #ffffff;
+  --ink: #1d1a17;
+  --muted: #6e655b;
+  --line: #ddd4c8;
+  --accent: #d9581c;
+  --accent-ink: #ffffff;
+  --die-1: #e7672a;
+  --die-2: #c44d17;
+  --die-3: #a43f12;
+  --die-edge: #5b2208;
+  --hl: #fbe3d4;
+  --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17140f; --panel: #221e18; --ink: #f2ebe2; --muted: #a59a8d; --line: #3a332b;
+    --accent: #f0732f; --accent-ink: #1a0d05; --die-1: #f07a3c; --die-2: #d45d20; --die-3: #ad4714;
+    --die-edge: #2a1105; --hl: #3d2517; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17140f; --panel: #221e18; --ink: #f2ebe2; --muted: #a59a8d; --line: #3a332b;
+  --accent: #f0732f; --accent-ink: #1a0d05; --die-1: #f07a3c; --die-2: #d45d20; --die-3: #ad4714;
+  --die-edge: #2a1105; --hl: #3d2517; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 48px;
+}
+main { max-width: 880px; margin: 0 auto; display: grid; gap: 28px; }
+header h1 {
+  font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 7vw, 3.6rem);
+  letter-spacing: 0.01em; line-height: 1; margin: 0; text-transform: uppercase; text-wrap: balance;
+}
+header p { margin: 8px 0 0; color: var(--muted); max-width: 60ch; }
+
+.stage {
+  display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 32px; align-items: center;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 28px;
+}
+@media (max-width: 640px) { .stage { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 22px; } }
+
+.die-wrap { width: 100%; max-width: 240px; aspect-ratio: 200 / 220; }
+#die { width: 100%; height: 100%; display: block; transform-origin: 50% 55%; }
+#die.rolling { animation: tumble 0.9s cubic-bezier(.3,.7,.4,1); }
+@keyframes tumble {
+  0% { transform: rotate(0) scale(1); }
+  30% { transform: rotate(250deg) scale(0.82) translateY(-10px); }
+  65% { transform: rotate(520deg) scale(0.92); }
+  100% { transform: rotate(720deg) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) { #die.rolling { animation: none; } }
+.f1 { fill: var(--die-1); } .f2 { fill: var(--die-2); } .f3 { fill: var(--die-3); }
+#die polygon { stroke: var(--die-edge); stroke-width: 2; stroke-linejoin: round; }
+#die-num { font-family: var(--font-display); font-size: 58px; fill: #fff; }
+
+.result { display: grid; gap: 14px; min-width: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+#result-name {
+  font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1; margin: 0; text-wrap: balance; overflow-wrap: anywhere;
+}
+#result-note { margin: 0; color: var(--muted); min-height: 1.4em; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+@media (max-width: 640px) { .controls { justify-content: center; } }
+button {
+  font: 600 1rem var(--font-body); border-radius: 999px; cursor: pointer; padding: 12px 26px;
+  border: 1px solid var(--line); background: transparent; color: var(--ink);
+}
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-size: 1.1rem; padding: 14px 34px; letter-spacing: 0.02em; }
+button:hover { filter: brightness(1.06); }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+button:disabled { opacity: 0.6; cursor: wait; }
+
+h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: 1.5rem; margin: 0 0 12px; letter-spacing: 0.02em; }
+.sides { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 8px; }
+.sides li {
+  display: grid; grid-template-columns: 2.2em minmax(0, 1fr) auto; align-items: center; gap: 10px;
+  padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+  transition: background 0.2s, border-color 0.2s;
+}
+.sides li.hit { background: var(--hl); border-color: var(--accent); }
+.sides .n { font-family: var(--font-mono); color: var(--accent); font-size: 0.95rem; }
+.sides .p { font-weight: 500; }
+.sides .c { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.history { display: flex; flex-wrap: wrap; gap: 6px; min-height: 2em; }
+.chip { font-family: var(--font-mono); font-size: 0.8rem; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); }
+.chip:first-child { border-color: var(--accent); }
+.empty { color: var(--muted); margin: 0; }
+.meta { color: var(--muted); font-size: 0.9rem; margin: 0; }
+</style>
+
+<main>
+  <header>
+    <h1>Hoops D10</h1>
+    <p>A ten-sided die with one NBA player on each face. Roll it and see who comes up.</p>
+  </header>
+
+  <section class="stage" aria-live="polite">
+    <div class="die-wrap">
+      <svg id="die" viewBox="0 0 200 220" role="img" aria-label="Ten-sided die">
+        <!-- d10 (pentagonal trapezohedron) front view -->
+        <polygon class="f3" points="100,8 42,118 8,98" />
+        <polygon class="f2" points="100,8 192,98 158,118" />
+        <polygon class="f2" points="8,98 42,118 100,150 100,212 22,152" />
+        <polygon class="f3" points="192,98 178,152 100,212 100,150 158,118" />
+        <polygon class="f1" points="100,8 158,118 100,150 42,118" />
+        <text id="die-num" x="100" y="118" text-anchor="middle">7</text>
+      </svg>
+    </div>
+    <div class="result">
+      <span class="eyebrow" id="result-label">Example roll · side 7</span>
+      <p id="result-name">Anthony Edwards</p>
+      <p id="result-note">Press Roll to throw the die.</p>
+      <div class="controls">
+        <button class="primary" id="roll-btn" type="button">Roll the die</button>
+        <button id="reset-btn" type="button">Clear history</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The ten sides</h2>
+    <ul class="sides" id="sides"></ul>
+  </section>
+
+  <section>
+    <h2>Roll history</h2>
+    <div class="history" id="history"><p class="empty">No rolls yet.</p></div>
+    <p class="meta" id="count"></p>
+  </section>
+</main>
+
+<script>
+const SIDES = [
+  "Jalen Johnson", "Deni Avdija", "Domantas Sabonis", "Darius Garland", "Devin Booker",
+  "Kawhi Leonard", "Anthony Edwards", "Anthony Davis", "Paolo Banchero", "Wild Card: Roll Again"
+];
+const tally = new Array(SIDES.length).fill(0);
+let history = [];
+
+const $ = (id) => document.getElementById(id);
+const sidesEl = $("sides");
+
+function renderSides(hit) {
+  sidesEl.innerHTML = "";
+  SIDES.forEach((name, i) => {
+    const li = document.createElement("li");
+    if (i === hit) li.className = "hit";
+    li.innerHTML = `<span class="n">${String(i + 1).padStart(2, "0")}</span><span class="p"></span><span class="c">${tally[i]}×</span>`;
+    li.querySelector(".p").textContent = name;
+    sidesEl.appendChild(li);
+  });
+}
+
+function renderHistory() {
+  const h = $("history");
+  h.innerHTML = "";
+  if (!history.length) { h.innerHTML = '<p class="empty">No rolls yet.</p>'; $("count").textContent = ""; return; }
+  history.slice(0, 30).forEach((i) => {
+    const s = document.createElement("span");
+    s.className = "chip";
+    s.textContent = `${i + 1} · ${SIDES[i].split(":")[0]}`;
+    h.appendChild(s);
+  });
+  $("count").textContent = `${history.length} roll${history.length === 1 ? "" : "s"} total`;
+}
+
+// Fair 0–9 using crypto randomness (rejection sampling avoids bias)
+function randomSide() {
+  const buf = new Uint8Array(1);
+  const limit = 256 - (256 % SIDES.length);
+  do { crypto.getRandomValues(buf); } while (buf[0] >= limit);
+  return buf[0] % SIDES.length;
+}
+
+function roll() {
+  const btn = $("roll-btn");
+  const die = $("die");
+  btn.disabled = true;
+  $("result-note").textContent = "Rolling…";
+  const result = randomSide();
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  die.classList.remove("rolling"); void die.offsetWidth; die.classList.add("rolling");
+
+  // Flicker through faces while it tumbles
+  let ticks = 0;
+  const flick = setInterval(() => {
+    const f = Math.floor(Math.random() * SIDES.length);
+    $("die-num").textContent = f + 1;
+    $("result-name").textContent = SIDES[f].split(":")[0];
+    if (++ticks > 8) clearInterval(flick);
+  }, 85);
+
+  setTimeout(() => {
+    clearInterval(flick);
+    tally[result]++;
+    history.unshift(result);
+    $("die-num").textContent = result + 1;
+    $("result-label").textContent = `Side ${result + 1} of 10`;
+    $("result-name").textContent = SIDES[result].split(":")[0];
+    $("result-note").textContent = result === 9 ? "Wild card. Roll again!" : `${SIDES[result]} it is.`;
+    renderSides(result);
+    renderHistory();
+    btn.disabled = false;
+    btn.focus();
+  }, reduce ? 50 : 900);
+}
+
+$("roll-btn").addEventListener("click", roll);
+$("reset-btn").addEventListener("click", () => {
+  history = []; tally.fill(0);
+  renderSides(-1); renderHistory();
+  $("result-note").textContent = "History cleared.";
+});
+document.addEventListener("keydown", (e) => {
+  if ((e.key === " " || e.key === "Enter") && document.activeElement === document.body) { e.preventDefault(); roll(); }
+});
+
+renderSides(6);
+renderHistory();
+</script>
