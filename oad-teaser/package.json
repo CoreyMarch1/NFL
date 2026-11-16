@@ -1,0 +1,30 @@
+{
+  "name": "oad-teaser",
+  "version": "1.0.0",
+  "description": "One & Done Optimizer 2027 season teaser",
+  "scripts": {
+    "prep": "./scripts/prep_video.sh",
+    "audio": "python3 scripts/make_audio.py",
+    "stills": "node scripts/stills.mjs",
+    "render": "node scripts/render.mjs",
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "all": "npm run prep && npm run audio && npm run stills && npm run render"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/press-start-2p": "^5.3.0",
+    "@fontsource/space-mono": "^5.3.0",
+    "@remotion/bundler": "^4.0.544",
+    "@remotion/cli": "^4.0.544",
+    "@remotion/renderer": "^4.0.544",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.544",
+    "typescript": "^7.0.2"
+  },
+  "private": true
+}
