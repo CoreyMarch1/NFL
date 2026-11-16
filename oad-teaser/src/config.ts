@@ -21,8 +21,6 @@ export const COLORS = {
   pageBg: '#090C19', // sampled from the recordings (rgb 9,12,25)
   tileBg: '#18182C', // sampled from the roadmap stat tiles
   tileLabel: '#9A98A8',
-  charSelectBg: '#03101D', // sampled from character_select.png edges
-  barEmpty: '#474745', // sampled empty stat-bar gray
   logoBg: '#06090F', // sampled from logo_marquee.png corners
   cabinet: '#0A0C18',
   bezel: '#05060C',
@@ -81,10 +79,12 @@ export const SHOT1 = {
 
 export const SHOT2 = {
   cameraScale: [1.78, 1.84] as const, // screen fills the frame, bezel at sides
-  barsFrom: 66,
-  barsStagger: 4,
-  barsDuration: 10, // last bar finishes at 66 + 5*4 + 10 = 96
-  cursorMoves: [105, 120] as const, // jump right, jump back left
+  srcFrame: 4, // roadmap_scroll source frame (top of page, at rest)
+  rowsFrom: 66, // season rows wipe on one by one
+  rowsStagger: 4,
+  rowsDuration: 10, // last row finishes at 66 + 5*4 + 10 = 96
+  cursorRows: [0, 2, 1] as const, // row selected at start, after move 1, after move 2
+  cursorMoves: [105, 120] as const,
   lockAt: 135,
   lockFlashFrames: 3,
   blinkPeriod: 6,
@@ -195,32 +195,32 @@ export const ROADMAP = {
   tileValueY: 288,
 };
 
-// character_select.png (1920x1004)
-export const CHAR_SELECT = {
-  stageScale: 0.517, // image px -> screen units
-  stageTop: 18,
-  bars: [
-    // x0 = fill start, x1 = fill end, as painted in the image
-    {x0: 650, x1: 945, y: 357, h: 34, round: true},
-    {x0: 648, x1: 852, y: 454, h: 35, round: false},
-    {x0: 650, x1: 914, y: 551, h: 34, round: false},
-    {x0: 1315, x1: 1588, y: 357, h: 34, round: false},
-    {x0: 1316, x1: 1560, y: 455, h: 34, round: false},
-    {x0: 1315, x1: 1582, y: 551, h: 34, round: false},
+// The season table as shown in shots 2 and 5: two strips of the recording
+// (event column, then earnings + golfer selection) placed side by side, which
+// closes the empty middle of each row so the text can be shown larger.
+export const SEASON_TABLE = {
+  strips: [
+    {x: 16, w: 454},
+    {x: 1000, w: 416},
   ],
-  cards: [
-    {x: 364, y: 290, w: 258, h: 336},
-    {x: 1030, y: 290, w: 259, h: 336},
-  ] as Rect[],
-  button: {x: 626, y: 682, w: 668, h: 160},
+  width: 870,
+  rowTop: 428, // source y of the first row at the top-of-page frame
+  rowPitch: 73,
+  rows: 6,
+  rowBg: '#12101C', // sampled row background
+  selector: {x: 1156, w: 238, dy: 16, h: 42}, // golfer dropdown inside a row
+  shot2Top: 330, // source y shown at the top of the CRT in shot 2
 };
 
-// Shot 5 crops (source px). All exclude the player headshots.
-export const SHOT5_CROPS = {
-  radial: {src: 'images/chart_radial_sg.png', nat: {w: 911, h: 1067}, crop: {x: 120, y: 690, w: 670, h: 377}},
-  comparison: {src: 'images/comparison_last20.png', nat: {w: 1285, h: 1046}, crop: {x: 4, y: 328, w: 1277, h: 718}},
-  accuracy: {src: 'images/accuracy_report.png', nat: {w: 1299, h: 1561}, crop: {x: 0, y: 392, w: 1299, h: 731}},
-};
+// Shot 5: three flashes cut from the recordings.
+// type 'table' uses the two-strip season table (window is in strip coordinates),
+// type 'clip' is a plain window onto a recording.
+export type Flash = {type: 'table' | 'clip'; src: string; sourceFrame: number; win: {x: number; y: number; w: number; h: number}};
+export const SHOT5_FLASHES: Flash[] = [
+  {type: 'table', src: 'video/prepped/roadmap_scroll.mp4', sourceFrame: 92, win: {x: 0, y: 70, w: 870, h: 489}},
+  {type: 'clip', src: 'video/prepped/roadmap_scroll.mp4', sourceFrame: 150, win: {x: 0, y: 350, w: 956, h: 538}},
+  {type: 'clip', src: 'video/prepped/this_week.mp4', sourceFrame: 40, win: {x: 560, y: 380, w: 840, h: 472.5}},
+];
 
 // logo_marquee.png (949x457)
 export const LOGO = {
@@ -233,7 +233,6 @@ export const ASSETS = {
   home: 'video/prepped/home_hero.mp4',
   thisWeek: 'video/prepped/this_week.mp4',
   roadmap: 'video/prepped/roadmap_scroll.mp4',
-  charSelect: 'images/character_select.png',
   logo: 'images/logo_marquee.png',
   fontPixel: 'fonts/PressStart2P.woff2',
   fontMono: 'fonts/SpaceMono-Bold.woff2',

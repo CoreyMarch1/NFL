@@ -1,6 +1,6 @@
 import React from 'react';
 import {Freeze, OffthreadVideo, continueRender, delayRender, staticFile} from 'remotion';
-import {ASSETS, Rect} from '../config';
+import {ASSETS, Rect, SEASON_TABLE} from '../config';
 
 export const PIXEL_FONT = 'OADPixel';
 export const MONO_FONT = 'OADMono';
@@ -91,3 +91,31 @@ export const Box: React.FC<{r: Rect; style?: React.CSSProperties; children?: Rea
 }) => (
   <div style={{position: 'absolute', left: r.x, top: r.y, width: r.w, height: r.h, ...style}}>{children}</div>
 );
+
+// The season table with the empty middle of each row closed up: two strips of
+// the roadmap recording side by side. `top` is the source y at the top edge.
+export const SeasonTable: React.FC<{sourceFrame: number; top: number; height: number}> = ({sourceFrame, top, height}) => {
+  let left = 0;
+  return (
+    <>
+      {SEASON_TABLE.strips.map((st) => {
+        const x = left;
+        left += st.w;
+        return (
+          <div key={st.x} style={{position: 'absolute', left: x, top: 0, width: st.w + 0.5, height, overflow: 'hidden'}}>
+            <Clip src={ASSETS.roadmap} sourceFrame={sourceFrame} style={{left: -st.x, top: -top}} />
+          </div>
+        );
+      })}
+    </>
+  );
+};
+// source x -> x inside the two-strip table
+export const tableX = (x: number) => {
+  let left = 0;
+  for (const st of SEASON_TABLE.strips) {
+    if (x >= st.x && x <= st.x + st.w) return left + (x - st.x);
+    left += st.w;
+  }
+  return x;
+};

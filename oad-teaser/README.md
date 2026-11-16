@@ -57,7 +57,7 @@ Everything you are likely to tweak is in **`src/config.ts`**:
 | Per-shot timings (coin, power-on, bar fills, cursor moves, card reveals, button press, whip, count-up, end-card blink) | `SHOT1` to `SHOT6` |
 | CRT look (scanlines, RGB offset, bloom, noise, flicker, rolling band) | `CRT` |
 | Cabinet geometry | `CABINET` |
-| Crop windows and overlay rectangles for each asset | `HOME`, `THIS_WEEK`, `ROADMAP`, `CHAR_SELECT`, `SHOT5_CROPS`, `LOGO` |
+| Crop windows and overlay rectangles for each asset | `HOME`, `THIS_WEEK`, `ROADMAP`, `SEASON_TABLE`, `SHOT5_FLASHES`, `LOGO` |
 | Asset file names | `ASSETS` |
 
 Other files:
@@ -77,6 +77,17 @@ Other files:
 
 Every animation is a pure function of the frame number: there are no timers or
 free-running CSS animations, and recordings are sampled by explicit source frame.
+
+## Recordings first
+
+Every shot is built from the three product screen recordings. The only still
+image in the cut is `logo_marquee.png` (cabinet marquee and end card).
+`character_select.png` and the three chart PNGs in `assets/images/` are not used.
+
+Shots 2 and 5 show the Season Roadmap table as two strips of the recording
+placed side by side (`SEASON_TABLE.strips`): the event column and the
+earnings + golfer selection columns. This closes the empty middle of each row
+so the text can be shown about twice as large. Nothing inside the strips is changed.
 
 ## Fonts and licenses
 

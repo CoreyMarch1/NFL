@@ -1,8 +1,7 @@
 import React from 'react';
-import {Img, staticFile} from 'remotion';
-import {ASSETS, COLORS, COPY, CUTS, ROADMAP, SHOT3, SHOT4, SHOT5, SHOT5_CROPS, THIS_WEEK} from '../config';
+import {ASSETS, COLORS, COPY, CUTS, ROADMAP, SHOT3, SHOT4, SHOT5, SHOT5_FLASHES, THIS_WEEK} from '../config';
 import {FullFrameCRT} from '../components/CRT';
-import {Box, Clip, MONO_FONT, PIXEL_FONT, Window, easeInOut, easeOut, lerp, lerpRect, prog} from '../components/util';
+import {Box, Clip, MONO_FONT, PIXEL_FONT, SeasonTable, Window, easeInOut, easeOut, lerp, lerpRect, prog} from '../components/util';
 
 // ---------------------------- SHOT 3: THE RIGHT PICK -------------------------
 export const Shot3: React.FC<{frame: number}> = ({frame}) => {
@@ -229,19 +228,24 @@ export const Shot4: React.FC<{frame: number}> = ({frame}) => {
 };
 
 // --------------------------- SHOT 5: UNFAIR ADVANTAGE ------------------------
+// Three fast flashes cut from the product recordings, each with a push in.
 export const Shot5: React.FC<{frame: number}> = ({frame}) => {
   const idx = frame < SHOT5.flashes[1] ? 0 : frame < SHOT5.flashes[2] ? 1 : 2;
-  const def = [SHOT5_CROPS.radial, SHOT5_CROPS.comparison, SHOT5_CROPS.accuracy][idx];
+  const def = SHOT5_FLASHES[idx];
   const t = prog(frame, SHOT5.flashes[idx], SHOT5.flashes[idx] + SHOT5.each);
   const s = lerp(SHOT5.push[0], SHOT5.push[1], easeOut(t));
-  const c = def.crop;
+  const c = def.win;
   const w = c.w / s;
-  const win = {x: c.x + (c.w - w) / 2, y: c.y + ((c.h - c.h / s) / 2) * 0.8, w};
+  const win = {x: c.x + (c.w - w) / 2, y: c.y + ((c.h - c.h / s) / 2) * 0.6, w};
   const hit = frame - SHOT5.flashes[idx] < 1;
   return (
     <FullFrameCRT frame={frame}>
-      <Window win={win} outW={1920} outH={1080} background="#000">
-        <Img src={staticFile(def.src)} style={{position: 'absolute', left: 0, top: 0, width: def.nat.w, height: def.nat.h}} />
+      <Window win={win} outW={1920} outH={1080} background={COLORS.pageBg}>
+        {def.type === 'table' ? (
+          <SeasonTable sourceFrame={def.sourceFrame} top={0} height={888} />
+        ) : (
+          <Clip src={def.src} sourceFrame={def.sourceFrame} />
+        )}
       </Window>
       {hit ? <div style={{position: 'absolute', inset: 0, background: '#fff', opacity: 0.5}} /> : null}
     </FullFrameCRT>

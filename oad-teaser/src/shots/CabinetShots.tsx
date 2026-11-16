@@ -1,8 +1,8 @@
 import React from 'react';
 import {Img, staticFile} from 'remotion';
-import {ASSETS, BEAT, CABINET, CHAR_SELECT, COLORS, COPY, CUTS, HOME, LOGO, SHOT1, SHOT2, SHOT6} from '../config';
+import {ASSETS, BEAT, CABINET, COLORS, COPY, CUTS, HOME, LOGO, SEASON_TABLE, SHOT1, SHOT2, SHOT6} from '../config';
 import {Cabinet, SCREEN_CENTER, camLerp, camLookAt} from '../components/Cabinet';
-import {Box, Clip, PIXEL_FONT, Window, easeInOut, easeOut, hash, lerp, prog} from '../components/util';
+import {Box, Clip, PIXEL_FONT, SeasonTable, Window, easeInOut, easeOut, hash, lerp, prog, tableX} from '../components/util';
 
 const SW = CABINET.screen.w;
 const SH = CABINET.screen.h;
@@ -45,91 +45,75 @@ export const Shot1: React.FC<{frame: number}> = ({frame}) => {
 };
 
 // -------------------------- SHOT 2: CHOOSE YOUR GOLFER -----------------------
+// The Season Roadmap table on the CRT: one golfer per event. Rows wipe on,
+// then a selection cursor hops between the golfer dropdowns and locks.
 export const Shot2: React.FC<{frame: number}> = ({frame}) => {
   const t = prog(frame, CUTS.shot2, CUTS.shot3);
   const cam = camLookAt(lerp(SHOT2.cameraScale[0], SHOT2.cameraScale[1], t), SCREEN_CENTER.x, SCREEN_CENTER.y);
-  const s = CHAR_SELECT.stageScale;
-  const win = {x: (1920 - SW / s) / 2, y: -CHAR_SELECT.stageTop / s, w: SW / s};
+  const T = SEASON_TABLE;
+  const top = T.shot2Top;
+  const srcH = (SH * T.width) / SW;
 
-  // selection cursor: left -> right at 105 -> left at 120 -> lock at 135
   const [m1, m2] = SHOT2.cursorMoves;
-  const sel = frame >= m1 && frame < m2 ? 1 : 0;
+  const row = SHOT2.cursorRows[frame < m1 ? 0 : frame < m2 ? 1 : 2];
   const locked = frame >= SHOT2.lockAt;
+  const cursorOn = frame >= SHOT2.rowsFrom + 8;
   const blinkOn = locked || (frame - CUTS.shot2) % SHOT2.blinkPeriod < SHOT2.blinkPeriod / 2 + 1;
   const lockFlash = locked && frame < SHOT2.lockAt + SHOT2.lockFlashFrames;
-  const card = CHAR_SELECT.cards[sel];
-
-  // INSERT COIN pulses on every beat
-  const sinceBeat = (frame - CUTS.shot2) % BEAT;
-  const pulse = Math.pow(1 - sinceBeat / BEAT, 2.2);
-  const b = CHAR_SELECT.button;
+  const beat = Math.pow(1 - ((frame - CUTS.shot2) % BEAT) / BEAT, 2.2);
+  const rowY = (i: number) => T.rowTop + i * T.rowPitch - top;
+  const sel = {x: tableX(T.selector.x) - 8, y: rowY(row) + T.selector.dy - 8, w: T.selector.w + 16, h: T.selector.h + 16};
+  const color = locked ? COLORS.green : '#FFFFFF';
+  const glow = locked ? '57,255,20' : '34,211,238';
 
   return (
     <Cabinet frame={frame} cam={cam} marquee={1}>
-      <Window win={win} outW={SW} outH={SH} background={COLORS.charSelectBg}>
-        <Img
-          src={staticFile(ASSETS.charSelect)}
-          style={{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            width: 1920,
-            height: 1004,
-            WebkitMaskImage: 'linear-gradient(to bottom, #000 0%, #000 92.5%, transparent 100%)',
-            maskImage: 'linear-gradient(to bottom, #000 0%, #000 92.5%, transparent 100%)',
-          }}
-        />
-        {/* stat bars: gray covers shrink to the right to reveal the painted fill */}
-        {CHAR_SELECT.bars.map((bar, i) => {
-          const start = SHOT2.barsFrom + i * SHOT2.barsStagger;
-          const p = easeOut(prog(frame, start, start + SHOT2.barsDuration));
+      <Window win={{x: 0, y: 0, w: T.width}} outW={SW} outH={SH} background={COLORS.pageBg}>
+        <SeasonTable sourceFrame={SHOT2.srcFrame} top={top} height={srcH} />
+        {/* rows wipe on left to right, one after another */}
+        {Array.from({length: T.rows + 1}).map((_, i) => {
+          const start = SHOT2.rowsFrom + Math.min(i, T.rows - 1) * SHOT2.rowsStagger;
+          const p = easeOut(prog(frame, start, start + SHOT2.rowsDuration));
           if (p >= 1) return null;
-          const x = lerp(bar.x0, bar.x1, p);
           return (
             <div
               key={i}
               style={{
                 position: 'absolute',
-                left: x,
-                top: bar.y,
-                width: bar.x1 - x + 1,
-                height: bar.h,
-                background: COLORS.barEmpty,
-                borderRadius: bar.round ? '0 9px 9px 0' : 0,
+                left: 2 + (T.width - 2) * p,
+                top: rowY(i) + 1,
+                width: (T.width - 2) * (1 - p) + 2,
+                height: T.rowPitch,
+                background: T.rowBg,
+                borderLeft: p > 0 ? `4px solid ${COLORS.green}` : undefined,
               }}
             />
           );
         })}
-        {/* button pulse: a scaled, brightened copy of the button region */}
-        <Box
-          r={b}
-          style={{
-            overflow: 'hidden',
-            transform: `scale(${1 + 0.045 * pulse})`,
-            filter: `brightness(${1 + 0.35 * pulse})`,
-            borderRadius: 26,
-            boxShadow: `0 0 ${50 * pulse}px rgba(255,138,31,${0.8 * pulse})`,
-          }}
-        >
-          <Img
-            src={staticFile(ASSETS.charSelect)}
-            style={{position: 'absolute', left: -b.x, top: -b.y, width: 1920, height: 1004}}
-          />
-        </Box>
-        {/* selection outline */}
-        {blinkOn ? (
-          <Box
-            r={{x: card.x - 12, y: card.y - 12, w: card.w + 24, h: card.h + 24}}
+        {/* selected row tint + cursor on the golfer dropdown */}
+        {cursorOn ? (
+          <div
             style={{
-              border: `9px solid ${locked ? COLORS.green : '#FFFFFF'}`,
-              borderRadius: 22,
-              boxShadow: locked
-                ? `0 0 40px ${COLORS.green}, 0 0 90px rgba(57,255,20,0.6), inset 0 0 26px rgba(57,255,20,0.5)`
-                : `0 0 34px ${COLORS.cyan}, 0 0 70px rgba(34,211,238,0.55), inset 0 0 20px rgba(34,211,238,0.5)`,
+              position: 'absolute',
+              left: 2,
+              top: rowY(row) + 1,
+              width: T.width,
+              height: T.rowPitch - 1,
+              background: `rgba(${glow},${0.1 + 0.06 * beat})`,
             }}
           />
         ) : null}
-        {lockFlash ? <div style={{position: 'absolute', left: -200, top: -200, width: 2400, height: 1500, background: '#fff', opacity: 0.85}} /> : null}
+        {cursorOn && blinkOn ? (
+          <Box
+            r={sel}
+            style={{
+              border: `4px solid ${color}`,
+              borderRadius: 6,
+              boxShadow: `0 0 ${14 + 10 * beat}px rgba(${glow},1), 0 0 ${34 + 20 * beat}px rgba(${glow},0.6), inset 0 0 10px rgba(${glow},0.45)`,
+            }}
+          />
+        ) : null}
+        {lockFlash ? <div style={{position: 'absolute', left: -50, top: -50, width: 1000, height: 800, background: '#fff', opacity: 0.85}} /> : null}
       </Window>
     </Cabinet>
   );
